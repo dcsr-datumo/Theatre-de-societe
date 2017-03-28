@@ -4,7 +4,7 @@ Ces ontologies ont été définies pour intégrer les données dans la plateform
 
 Ce dossier comprend les ontologies du projet:
 - theatre-societe-onto.ttl
-- theatre-societe-biblio-onto.ttl
+- theatre-societe-biblio-onto.ttl (qui est une adaptation de https://github.com/dhlab-basel/Knora/blob/develop/webapi/_test_data/ontologies/biblio-onto.ttl) 
 
 Et également les listes (vocabulaires contrôlés, sous la forme de listes plates ou hiérarchiques):
 - theatre-de-societe-data-lists.ttl
