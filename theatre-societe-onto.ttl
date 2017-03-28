@@ -184,7 +184,7 @@ theatre-societe:groupHasPlace rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/theatre-societe#groupHasPlaceValue
 theatre-societe:groupHasPlaceValue rdf:type owl:ObjectProperty ;
                     	  rdfs:subPropertyOf theatre-societe:hasPlaceValue ;
-          	              knora-base:objectClassConstraint theatre-societe:LinkValue ;
+          	              knora-base:objectClassConstraint knora-base:LinkValue ;
 			         	  knora-base:subjectClassConstraint theatre-societe:Group ;
 						  rdfs:label "groupHasPlace"@fr ,
 							  "groupHasPlace"@en ;
@@ -635,8 +635,8 @@ theatre-societe:representationHasPlace rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/theatre-societe#representationHasPlaceValue
 theatre-societe:representationHasPlaceValue rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf theatre-societe:hasPlaceValue ;
-          	                knora-base:objectClassConstraint theatre-societe:Place ;
-                            knora-base:subjectClassConstraint knora-base:LinkValue ;
+          	                knora-base:subjectClassConstraint theatre-societe:Representation ;
+                            knora-base:objectClassConstraint knora-base:LinkValue ;
 						  	rdfs:label "representationHasPlace"@fr ,
 							  "representationHasPlace"@en ;
 						  	rdfs:comment "representationHasPlace"@fr ,
@@ -835,8 +835,10 @@ theatre-societe:workHasTitle rdf:type owl:ObjectProperty ;
 #    Classes
 #################################################################
 
+
 ###  http://www.knora.org/ontology/theatre-societe#Representation
-theatre-societe:Representation rdfs:subClassOf knora-base:Resource ,
+theatre-societe:Representation rdf:type owl:Class ;
+				rdfs:subClassOf knora-base:Resource ,
 										[ rdf:type owl:Restriction ;
 										  owl:onProperty theatre-societe:representationIsBasedOn ;
 										  owl:cardinality "1"^^xsd:nonNegativeInteger
