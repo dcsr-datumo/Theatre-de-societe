@@ -546,7 +546,7 @@ theatre-societe-biblio:Organization rdf:type owl:Class ;
 
 ###  http://www.knora.org/ontology/theatre-societe-biblio#Publisher
 theatre-societe-biblio:Publisher rdf:type owl:Class ;
-                    rdfs:subClassOf dcterms:publisher,
+                    rdfs:subClassOf knora-base:Resource, dcterms:publisher,
                     				[ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:hasName ;
                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
