@@ -436,8 +436,8 @@ theatre-societe-biblio:Document rdf:type owl:Class ;
                                       owl:onProperty theatre-societe-biblio:documentIsEditedValue ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ] ;
-                    rdfs:label "Document"@en ,
-                               "Document"@fr ;
+                    rdfs:label "Document*"@en ,
+                               "Document*"@fr ;
                     rdfs:comment "A resource representing a document"@en .
 
 
@@ -530,18 +530,18 @@ theatre-societe-biblio:Edition rdf:type owl:Class ;
                     rdfs:comment "A resource representing an edition"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe-biblio#Organization
-theatre-societe-biblio:Organization rdf:type owl:Class ;
-                   rdfs:subClassOf knora-base:Resource, foaf:organization,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty theatre-societe-biblio:hasName ;
-                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                        ] ;
-                    rdfs:label "Organisation"@de ,
-                               "Organization"@en ,
-                               "Organisation"@fr ,
-                               "organizzazione"@it ;
-                    rdfs:comment "A resource representing an organization"@en .
+####  http://www.knora.org/ontology/theatre-societe-biblio#Organization
+#theatre-societe-biblio:Organization rdf:type owl:Class ;
+#                   rdfs:subClassOf knora-base:Resource, foaf:organization,
+#                                        [ rdf:type owl:Restriction ;
+#                                          owl:onProperty theatre-societe-biblio:hasName ;
+#                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+#                                        ] ;
+#                    rdfs:label "Organisation"@de ,
+#                               "Organization"@en ,
+#                               "Organisation"@fr ,
+#                               "organizzazione"@it ;
+#                    rdfs:comment "A resource representing an organization"@en .
 
 
 ###  http://www.knora.org/ontology/theatre-societe-biblio#Publisher
