@@ -35,10 +35,10 @@ theatre-societe:agentHasAuthority rdf:type owl:ObjectProperty ;
                    	rdfs:subPropertyOf theatre-societe:hasAuthority ;
 	                knora-base:subjectClassConstraint theatre-societe:Agent ;
                     knora-base:objectClassConstraint knora-base:UriValue ;
-					rdfs:label "agentHasAuthority"@fr ,
-						"agentHasAuthority"@en ;
-					rdfs:comment "agentHasAuthority"@fr ,
-						"agentHasAuthority"@en ;
+					rdfs:label "Identifiant d'autorité (URI)"@fr ,
+						"Authority ID (URI)"@en ;
+					rdfs:comment "L'URI de la notice d'autorité"@fr ,
+						"Authority file URI"@en ;
 	                salsah-gui:guiOrder "5"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:SimpleText ;
 	                salsah-gui:guiAttribute "size=80" ,
@@ -50,10 +50,10 @@ theatre-societe:agentHasNotice rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf theatre-societe:hasNotice ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
 	                knora-base:subjectClassConstraint theatre-societe:Agent ;
-					rdfs:label "agentHasNotice"@fr ,
-						"agentHasNotice"@en ;
-					rdfs:comment "agentHasNotice"@fr ,
-						"agentHasNotice"@en ;
+					rdfs:label "Notice"@fr ,
+						"Notice"@en ;
+					rdfs:comment "Notice sur la personne"@fr ,
+						"Notice about the person"@en ;
 	                salsah-gui:guiOrder "6"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:Richtext ;
 				    salsah-gui:guiAttribute "width=95%" ,
@@ -66,10 +66,10 @@ theatre-societe:festivalHasDate rdf:type owl:ObjectProperty ;
                  	rdfs:subPropertyOf theatre-societe:hasDate ;
          		    knora-base:objectClassConstraint knora-base:DateValue ;
 	                knora-base:subjectClassConstraint theatre-societe:Festival ;
-					rdfs:label "festivalHasDate"@fr ,
-						"festivalHasDate"@en ;
-					rdfs:comment "festivalHasDate"@fr ,
-						"festivalHasDate"@en ;
+					rdfs:label "Date"@fr ,
+						"Date"@en ;
+					rdfs:comment "Début, fin ou période durant laquelle se déroule le festival"@fr ,
+						"Beginning, end or duration of the festival"@en ;
 	                salsah-gui:guiOrder "2"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:Date ;
 	            	salsah-gui:guiAttribute "size=16" ,
@@ -81,10 +81,10 @@ theatre-societe:festivalHasName rdf:type owl:ObjectProperty ;
                  	rdfs:subPropertyOf theatre-societe:hasName ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
 	             	knora-base:subjectClassConstraint theatre-societe:Festival ;
-					rdfs:label "festivalHasName"@fr ,
-						"festivalHasName"@en ;
-					rdfs:comment "festivalHasName"@fr ,
-						"festivalHasName"@en ;
+					rdfs:label "Nom du festival"@fr ,
+						"Festival name"@en ;
+					rdfs:comment "Le nom du festival dans laquelle s'inscrit cette représentation"@fr ,
+						"Name of the festival in which this performance takes place"@en ;
 	                salsah-gui:guiOrder "1"^^xsd:integer ;
 				 	salsah-gui:guiElement salsah-gui:SimpleText ;
 		         	salsah-gui:guiAttribute "size=30" ,
@@ -96,10 +96,10 @@ theatre-societe:festivalHasNotice rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                    	rdfs:subPropertyOf theatre-societe:hasNotice ;
 	                knora-base:subjectClassConstraint theatre-societe:Festival ;
-					rdfs:label "festivalHasNotice"@fr ,
-						"festivalHasNotice"@en ;
-					rdfs:comment "festivalHasNotice"@fr ,
-						"festivalHasNotice"@en ;
+					rdfs:label "Notice"@fr ,
+						"Notice"@en ;
+					rdfs:comment "Informations à propos de ce festival"@fr ,
+						"Informations about this festival"@en ;
 	                salsah-gui:guiOrder "3"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:Richtext ;
 				    salsah-gui:guiAttribute "width=95%" ,
@@ -112,10 +112,10 @@ theatre-societe:genreHasName rdf:type owl:ObjectProperty ;
               		rdfs:subPropertyOf theatre-societe:hasName ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
 	             	knora-base:subjectClassConstraint theatre-societe:Genre ;
-					rdfs:label "genreHasName"@fr ,
-								"genreHasName"@en ;
-					rdfs:comment "genreHasName"@fr ,
-								"genreHasName"@en ;
+					rdfs:label "Genre"@fr ,
+								"Genre"@en ;
+					rdfs:comment "Le nom du genre"@fr ,
+								"Genre name"@en ;
 	                salsah-gui:guiOrder "1"^^xsd:integer ;
 				 	salsah-gui:guiElement salsah-gui:SimpleText ;
 		         	salsah-gui:guiAttribute "size=30" ,
@@ -212,10 +212,10 @@ theatre-societe:hasBirthDate rdf:type owl:ObjectProperty ;
               	rdfs:subPropertyOf theatre-societe:hasDate ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
 				knora-base:subjectClassConstraint theatre-societe:Person ;
-				rdfs:label "hasBirthDate"@fr ,
-							"hasBirthDate"@en ;
-				rdfs:comment "hasBirthDate"@fr ,
-							"hasBirthDate"@en ;
+				rdfs:label "Date de naissance"@fr ,
+							"Birth date"@en ;
+				rdfs:comment "La date de naissance"@fr ,
+							"Birth date"@en ;
 	            salsah-gui:guiOrder "3"^^xsd:integer ;
 	            salsah-gui:guiElement salsah-gui:Date ;
 	            salsah-gui:guiAttribute "size=16" ,
@@ -237,10 +237,10 @@ theatre-societe:hasDeathDate rdf:type owl:ObjectProperty ;
               	rdfs:subPropertyOf theatre-societe:hasDate ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
               	knora-base:subjectClassConstraint theatre-societe:Person ;
-				rdfs:label "hasDeathDate"@fr ,
-							"hasDeathDate"@en ;
-				rdfs:comment "hasDeathDate"@fr ,
-							"hasDeathDate"@en ;
+				rdfs:label "Décès"@fr ,
+							"Death Date"@en ;
+				rdfs:comment "La date de décès"@fr ,
+							"Date of death"@en ;
 	            salsah-gui:guiOrder "4"^^xsd:integer ;
 	            salsah-gui:guiElement salsah-gui:Date ;
 	           	salsah-gui:guiAttribute "size=16" ,
@@ -276,10 +276,10 @@ theatre-societe:hasFamilyName rdf:type owl:ObjectProperty ;
                		rdfs:subPropertyOf knora-base:hasValue ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
 	             	knora-base:subjectClassConstraint theatre-societe:Person ;
-					rdfs:label "hasFamilyName"@fr ,
-								"hasFamilyName"@en ;
-					rdfs:comment "hasFamilyName"@fr ,
-								 "hasFamilyName"@en ;
+					rdfs:label "Nom de famille"@fr ,
+								"Family Name"@en ;
+					rdfs:comment "Le nom de famille de la personne"@fr ,
+								 "The person family name"@en ;
 	                salsah-gui:guiOrder "1"^^xsd:integer ;
 			       	salsah-gui:guiElement salsah-gui:SimpleText ;
 			       	salsah-gui:guiAttribute "size=30" ,
@@ -291,10 +291,10 @@ theatre-societe:hasGivenName rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf knora-base:hasValue ;
               knora-base:objectClassConstraint knora-base:TextValue ;
 	          knora-base:subjectClassConstraint theatre-societe:Person ;
-			  rdfs:label "hasGivenName"@fr ,
-						"hasGivenName"@en ;
-			  rdfs:comment "hasGivenName"@fr ,
-						"hasGivenName"@en ;
+			  rdfs:label "Prénom"@fr ,
+						"Given Name"@en ;
+			  rdfs:comment "Le prénom de la personne"@fr ,
+						"The person given name"@en ;
 	          salsah-gui:guiOrder "2"^^xsd:integer ;
 			  salsah-gui:guiElement salsah-gui:SimpleText ;
 			  salsah-gui:guiAttribute "size=30" ,
@@ -419,10 +419,10 @@ theatre-societe:placeHasCoordinates rdf:type owl:ObjectProperty ;
                      	rdfs:subPropertyOf knora-base:hasValue ;
                         knora-base:subjectClassConstraint theatre-societe:Place ;
             			knora-base:objectClassConstraint knora-base:TextValue ;
-			         	rdfs:label "placeHasCoordinates"@fr ,
-									"placeHasCoordinates"@en ;
-					 	rdfs:comment "placeHasCoordinates"@fr ,
-									"placeHasCoordinates"@en ;
+			         	rdfs:label "Coordonnées GPS"@fr ,
+									"GPS Coordinates"@en ;
+					 	rdfs:comment "Coordonnées GPS de l'endroit"@fr ,
+									"The place GPS coordinates"@en ;
 						salsah-gui:guiOrder "4"^^xsd:integer ;
 					 	salsah-gui:guiElement salsah-gui:SimpleText ;
 			         	salsah-gui:guiAttribute "size=30" ,
@@ -447,10 +447,10 @@ theatre-societe:placeHasName rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf theatre-societe:hasName ;
               knora-base:objectClassConstraint knora-base:TextValue ;
               knora-base:subjectClassConstraint theatre-societe:Place ;
-			  rdfs:label "placeHasName"@fr ,
-					 	"placeHasName"@en ;
-			  rdfs:comment "placeHasName"@fr ,
-						"placeHasName"@en ;
+			  rdfs:label "Nom"@fr ,
+					 	"Name"@en ;
+			  rdfs:comment "Nom du lieu"@fr ,
+						"Name of the place"@en ;
 	          salsah-gui:guiOrder "1"^^xsd:integer ;
 			  salsah-gui:guiElement salsah-gui:SimpleText ;
 		      salsah-gui:guiAttribute "size=30" ,
@@ -462,10 +462,10 @@ theatre-societe:placeHasNotice rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf theatre-societe:hasNotice ;
                 knora-base:objectClassConstraint knora-base:TextValue ;
                 knora-base:subjectClassConstraint theatre-societe:Place ;
-				rdfs:label "placeHasNotice"@fr ,
-					"placeHasNotice"@en ;
-				rdfs:comment "placeHasNotice"@fr ,
-					"placeHasNotice"@en ;
+				rdfs:label "Notice"@fr ,
+					"Notice"@en ;
+				rdfs:comment "Notice informative à propos de l'endroit"@fr ,
+					"Informations about the place"@en ;
 	            salsah-gui:guiOrder "2"^^xsd:integer ;
 	            salsah-gui:guiElement salsah-gui:Richtext ;
 				salsah-gui:guiAttribute "width=95%" ,
@@ -517,10 +517,10 @@ theatre-societe:hasQuote rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf knora-base:hasValue ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
 	                knora-base:objectClassConstraint knora-base:TextValue ;
-					rdfs:label "hasQuote"@fr ,
-								  "hasQuote"@en ;
-					rdfs:comment "hasQuote"@fr ,
-								  "hasQuote"@en ;	
+					rdfs:label "Citation"@fr ,
+								  "Quote"@en ;
+					rdfs:comment "La citation source"@fr ,
+								  "The source quote"@en ;	
 					salsah-gui:guiOrder "4"^^xsd:integer ;
 					salsah-gui:guiElement salsah-gui:Richtext ;
 					salsah-gui:guiAttribute "width=95%" ,
@@ -532,10 +532,10 @@ theatre-societe:quoteHasNumPage rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf knora-base:hasValue ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
 	                knora-base:objectClassConstraint knora-base:TextValue ;
-					rdfs:label "quoteHasNumPage"@fr ,
-								  "quoteHasNumPage"@en ;
-					rdfs:comment "quoteHasNumPage"@fr ,
-								  "quoteHasNumPage"@en ;	
+					rdfs:label "Page(s)"@fr ,
+								  "Page(s)"@en ;
+					rdfs:comment "Le ou les pages de la citation"@fr ,
+								  "The quoted text pages in source"@en ;	
 					salsah-gui:guiOrder "3"^^xsd:integer ;
 					salsah-gui:guiElement salsah-gui:SimpleText ;
 			        salsah-gui:guiAttribute "size=12" ,
@@ -546,10 +546,10 @@ theatre-societe:quoteHasVolume rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf knora-base:hasValue ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
 	                knora-base:objectClassConstraint knora-base:TextValue ;
-					rdfs:label "quoteHasVolume"@fr ,
-								  "quoteHasVolume"@en ;
-					rdfs:comment "quoteHasVolume"@fr ,
-								  "quoteHasVolume"@en ;	
+					rdfs:label "Volume/Tome de l'ouvrage"@fr ,
+								  "Source volume"@en ;
+					rdfs:comment "Le volume duquel est trié la citation"@fr ,
+								  "The quoted text volume in source"@en ;	
 					salsah-gui:guiOrder "2"^^xsd:integer ;
 					salsah-gui:guiElement salsah-gui:SimpleText ;
 			        salsah-gui:guiAttribute "size=12" ,
@@ -561,10 +561,10 @@ theatre-societe:quoteHasSource rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf knora-base:hasLinkTo ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
 	                knora-base:objectClassConstraint theatre-societe-biblio:Document ;
-					rdfs:label "quoteHasSource"@fr ,
-								  "quoteHasSource"@en ;
-					rdfs:comment "quoteHasSource"@fr ,
-								  "quoteHasSource"@en ;	
+					rdfs:label "Source bibliographique"@fr ,
+								  "Source"@en ;
+					rdfs:comment "L'ouvrage duquel est tiré la citation"@fr ,
+								  "Quoted text source"@en ;	
 					salsah-gui:guiElement salsah-gui:Searchbox ;
 					salsah-gui:guiOrder "1"^^xsd:integer .  
 
@@ -781,10 +781,10 @@ theatre-societe:workHasAuthor rdf:type owl:ObjectProperty ;
                       	rdfs:subPropertyOf knora-base:hasLinkTo ;
                       	knora-base:subjectClassConstraint theatre-societe:Work ;
                       	knora-base:objectClassConstraint theatre-societe:AuthorWork ;
-						rdfs:label "workHasAuthor"@fr ,
-									  "workHasAuthor"@en ;
-						rdfs:comment "workHasAuthor"@fr ,
-									  "workHasAuthor"@en ;	
+						rdfs:label "Auteur"@fr ,
+									  "Author"@en ;
+						rdfs:comment "L'auteur de la pièce"@fr ,
+									  "Author of the play"@en ;	
 						salsah-gui:guiElement salsah-gui:Searchbox ;
 						salsah-gui:guiOrder "3"^^xsd:integer .  	
 
@@ -805,11 +805,11 @@ theatre-societe:workHasAuthority rdf:type owl:ObjectProperty ;
                   	rdfs:subPropertyOf theatre-societe:hasAuthority ;
                     knora-base:objectClassConstraint knora-base:UriValue ;
                   	knora-base:subjectClassConstraint theatre-societe:Work ;
-					rdfs:label "workHasAuthority"@fr ,
-						"workHasAuthority"@en ;
-					rdfs:comment "workHasAuthority"@fr ,
-						"workHasAuthority"@en ;
-	                salsah-gui:guiOrder "2"^^xsd:integer ;
+					rdfs:label "Identifiant d'autorité (URI)"@fr ,
+						"Authority ID (URI)"@en ;
+					rdfs:comment "L'URI de la notice d'autorité"@fr ,
+						"Authority file URI"@en ;
+	                salsah-gui:guiOrder "3"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:SimpleText ;
 	                salsah-gui:guiAttribute "size=80" ,
                                			"maxlength=255" .
@@ -820,10 +820,10 @@ theatre-societe:workHasTitle rdf:type owl:ObjectProperty ;
               			rdfs:subPropertyOf theatre-societe:hasTitle ;
                         knora-base:objectClassConstraint knora-base:TextValue ;
               			knora-base:subjectClassConstraint theatre-societe:Work ;
-						rdfs:label "workHasTitle"@fr ,
-									 "workHasTitle"@en ;
-						rdfs:comment "workHasTitle"@fr ,
-									 "workHasTitle"@en ;
+						rdfs:label "Titre"@fr ,
+									 "Title"@en ;
+						rdfs:comment "Nom de la pièce"@fr ,
+									 "Name of the play"@en ;
 	                    salsah-gui:guiOrder "1"^^xsd:integer ;
 					 	salsah-gui:guiElement salsah-gui:SimpleText ;
 			         	salsah-gui:guiAttribute "size=80" ,
