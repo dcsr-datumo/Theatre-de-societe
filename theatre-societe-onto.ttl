@@ -1042,7 +1042,7 @@ theatre-societe:Person rdf:type owl:Class ;
 					  	  owl:onProperty theatre-societe:hasMembershipValue ;	
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
-        rdfs:label "Personne*"@fr , "Person*"@en ;
+        rdfs:label "Personne"@fr , "Person"@en ;
 		rdfs:comment "Personne"@fr , "Person"@en . 
 
 
