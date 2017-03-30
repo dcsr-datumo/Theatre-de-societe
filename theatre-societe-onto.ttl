@@ -585,11 +585,11 @@ theatre-societe:quoteHasSourceValue rdf:type owl:ObjectProperty ;
 theatre-societe:representationHasDate rdf:type owl:ObjectProperty ;
                        	rdfs:subPropertyOf theatre-societe:hasDate ;
          		        knora-base:objectClassConstraint knora-base:DateValue ;
-                       	knora-base:subjectClassConstraint theatre-societe:Group ;
-						rdfs:label "groupHasDate"@fr ,
-							"groupHasDate"@en ;
-						rdfs:comment "groupHasDate"@fr ,
-							"groupHasDate"@en ;
+                       	knora-base:subjectClassConstraint theatre-societe:Representation ;
+						rdfs:label "representationHasDate"@fr ,
+							"representationHasDate"@en ;
+						rdfs:comment "representationHasDate"@fr ,
+							"representationHasDate"@en ;
 	                	salsah-gui:guiOrder "2"^^xsd:integer ;
 		                salsah-gui:guiElement salsah-gui:Date ;
 		            	salsah-gui:guiAttribute "size=16" ,
