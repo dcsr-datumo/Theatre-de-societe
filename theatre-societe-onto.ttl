@@ -22,11 +22,11 @@ theatre-societe:actorHasRole rdf:type owl:ObjectProperty ;
               	rdfs:subPropertyOf knora-base:hasValue ;
                	knora-base:objectClassConstraint knora-base:TextValue ;
                 knora-base:subjectClassConstraint theatre-societe:Role ;
-				rdfs:label "actorHasRole"@fr ,
-					"actorHasRole"@en ;
-				rdfs:comment "actorHasRole"@fr ,
-					"actorHasRole"@en ;
-                salsah-gui:guiOrder "2"^^xsd:integer ;
+				rdfs:label "Nom du rôle (acteurs·trices uniquement)"@fr ,
+					"Part name (actors·tresses only)"@en ;
+				rdfs:comment "Le rôle joué dans la pièce, si la personne y tenait un rôle"@fr ,
+					"The part in the play, in case the person was an actor·tress"@en ;
+                salsah-gui:guiOrder "3"^^xsd:integer ;
                 salsah-gui:guiElement salsah-gui:SimpleText .
               
 
@@ -601,10 +601,10 @@ theatre-societe:representationHasGenre rdf:type owl:ObjectProperty ;
                               	rdfs:subPropertyOf knora-base:hasLinkTo ; 
                               	knora-base:subjectClassConstraint theatre-societe:Representation ;
 				                knora-base:objectClassConstraint theatre-societe:Genre ;
-								rdfs:label "representationHasGenre"@fr ,
-											  "representationHasGenre"@en ;
-								rdfs:comment "representationHasGenre"@fr ,
-											  "representationHasGenre"@en ;	
+								rdfs:label "Genre"@fr ,
+											  "Genre"@en ;
+								rdfs:comment "Le ou les genre·s de la pièce"@fr ,
+											  "Play genre·s"@en ;	
 								salsah-gui:guiElement salsah-gui:Searchbox ;
 								salsah-gui:guiOrder "4"^^xsd:integer .
 
@@ -744,10 +744,10 @@ theatre-societe:roleHasAgent rdf:type owl:ObjectProperty ;
              	rdfs:subPropertyOf knora-base:hasLinkTo ;
               	knora-base:subjectClassConstraint theatre-societe:Role ;
 				knora-base:objectClassConstraint theatre-societe:Agent ;
-				rdfs:label "roleHasAgent"@fr ,
-							"roleHasAgent"@en ;
-				rdfs:comment "roleHasAgent"@fr ,
-							"roleHasAgent"@en ;	
+				rdfs:label "Personne ou groupe"@fr ,
+							"Person or group"@en ;
+				rdfs:comment "La personne ou le groupe agissant dans le cadre de cette performance (public, propriétaire du lieu, acteurs·trices…)"@fr ,
+							"Person or entity that played a part in the performance (audience, place owner, actor·tress…)"@en ;	
 				salsah-gui:guiElement salsah-gui:Searchbox ;
 				salsah-gui:guiOrder "1"^^xsd:integer .
 
@@ -768,10 +768,10 @@ theatre-societe:roleHasType rdf:type owl:ObjectProperty ;
              		rdfs:subPropertyOf knora-base:hasValue ;
                  	knora-base:subjectClassConstraint theatre-societe:Role ;
 					knora-base:objectClassConstraint knora-base:ListValue ;
-					rdfs:label "roleHasType"@fr ,
-								"roleHasType"@en ;
-					rdfs:comment "roleHasType"@fr ,
-								"roleHasType"@en ;	
+					rdfs:label "Fonction"@fr ,
+								"Position"@en ;
+					rdfs:comment "La fonction de la personne dans le cadre de cette représentation"@fr ,
+								"The person position during this performance"@en ;	
 					salsah-gui:guiElement salsah-gui:Pulldown ;
 					salsah-gui:guiAttribute "hlist=<http://data.knora.org/lists/theatre-societe-flatlist-roleHasType>" ;
 					salsah-gui:guiOrder "2"^^xsd:integer .
