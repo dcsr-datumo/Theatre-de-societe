@@ -343,7 +343,7 @@ theatre-societe-biblio:isEditionOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.knora.org/ontology/theatre-societe-biblio#isEditionOfValue
 theatre-societe-biblio:isEditionOfValue rdf:type owl:ObjectProperty ;
-                    knora-base:objectClassConstraint theatre-societe-biblio:LinkValue ;
+                    knora-base:objectClassConstraint knora-base:LinkValue ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Edition ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf knora-base:hasLinkToValue .
@@ -359,7 +359,7 @@ theatre-societe-biblio:isReeditionOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.knora.org/ontology/theatre-societe-biblio#isReeditionOfValue
 theatre-societe-biblio:isReeditionOfValue rdf:type owl:ObjectProperty ;
-                    knora-base:objectClassConstraint theatre-societe-biblio:LinkValue ;
+                    knora-base:objectClassConstraint knora-base:LinkValue ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf knora-base:hasLinkToValue .
@@ -383,7 +383,7 @@ theatre-societe-biblio:hasDirector rdf:type owl:ObjectProperty ;
 
 ###  http://www.knora.org/ontology/theatre-societe-biblio#hasDirectorValue
 theatre-societe-biblio:hasDirectorValue rdf:type owl:ObjectProperty ;
-                    knora-base:objectClassConstraint theatre-societe:LinkValue ;
+                    knora-base:objectClassConstraint knora-base:LinkValue ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf knora-base:hasLinkToValue .
 
@@ -546,7 +546,7 @@ theatre-societe-biblio:Organization rdf:type owl:Class ;
 
 ###  http://www.knora.org/ontology/theatre-societe-biblio#Publisher
 theatre-societe-biblio:Publisher rdf:type owl:Class ;
-                    rdfs:subClassOf dcterms:publisher,
+                    rdfs:subClassOf knora-base:Resource, dcterms:publisher,
                     				[ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:hasName ;
                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
