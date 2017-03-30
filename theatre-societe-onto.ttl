@@ -585,14 +585,14 @@ theatre-societe:quoteHasSourceValue rdf:type owl:ObjectProperty ;
 theatre-societe:representationHasDate rdf:type owl:ObjectProperty ;
                        	rdfs:subPropertyOf theatre-societe:hasDate ;
          		        knora-base:objectClassConstraint knora-base:DateValue ;
-                       	knora-base:subjectClassConstraint theatre-societe:Representation ;
-						rdfs:label "representationHasDate"@fr ,
-							"representationHasDate"@en ;
-						rdfs:comment "representationHasDate"@fr ,
-							"representationHasDate"@en ;
+                    knora-base:subjectClassConstraint theatre-societe:Representation ;
+                    rdfs:label "Date"@fr ,
+							              "Date"@en ;
+						        rdfs:comment "Date de la représentation"@fr ,
+							                  "Representation date"@en ;
 	                	salsah-gui:guiOrder "2"^^xsd:integer ;
 		                salsah-gui:guiElement salsah-gui:Date ;
-		            	salsah-gui:guiAttribute "size=16" ,
+		            	  salsah-gui:guiAttribute "size=16" ,
 	                               			 "maxlength=32" .
 
 
@@ -624,10 +624,10 @@ theatre-societe:representationHasPlace rdf:type owl:ObjectProperty ;
                         	rdfs:subPropertyOf theatre-societe:hasPlace ;
           	                knora-base:objectClassConstraint theatre-societe:Place ;
                         	knora-base:subjectClassConstraint theatre-societe:Representation ;
-						  	rdfs:label "representationHasPlace"@fr ,
-							  "representationHasPlace"@en ;
-						  	rdfs:comment "representationHasPlace"@fr ,
-							  "representationHasPlace"@en ;
+						  	rdfs:label "Lieu"@fr ,
+							  "Place"@en ;
+						  	rdfs:comment "Lieu de la représentation"@fr ,
+							  "Place of performance"@en ;
 				          	salsah-gui:guiOrder "3"^^xsd:integer ;
 				          	salsah-gui:guiElement salsah-gui:Searchbox .  
 
@@ -648,10 +648,10 @@ theatre-societe:representationHasQuote rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf knora-base:hasLinkTo ;
                         knora-base:subjectClassConstraint theatre-societe:Representation ;
 		                knora-base:objectClassConstraint theatre-societe:Quote ;
-						rdfs:label "representationHasQuote"@fr ,
-									  "representationHasQuote"@en ;
-						rdfs:comment "representationHasQuote"@fr ,
-									  "representationHasQuote"@en ;	
+						rdfs:label "Sources"@fr ,
+									  "Sources"@en ;
+						rdfs:comment "Les sources qui documentent cette représentation"@fr ,
+									  "Sources about this performance"@en ;	
 						salsah-gui:guiElement salsah-gui:Searchbox ;
 						salsah-gui:guiOrder "7"^^xsd:integer .
 
@@ -672,10 +672,10 @@ theatre-societe:representationHasRole rdf:type owl:ObjectProperty ;
                        			rdfs:subPropertyOf knora-base:hasLinkTo ;
 		                      	knora-base:subjectClassConstraint theatre-societe:Representation ;
 				                knora-base:objectClassConstraint theatre-societe:Role ;
-								rdfs:label "representationHasRole"@fr ,
-											  "representationHasRole"@en ;
-								rdfs:comment "representationHasRole"@fr ,
-											  "representationHasRole"@en ;	
+								rdfs:label "Intervenant"@fr ,
+											  "Facilitator"@en ;
+								rdfs:comment "Couple personne/rôle dans cette représentation"@fr ,
+											  "A person/role doublet that do something in this representation"@en ;	
 								salsah-gui:guiElement salsah-gui:Searchbox ;
 								salsah-gui:guiOrder "5"^^xsd:integer .
 
@@ -696,10 +696,10 @@ theatre-societe:representationIsBasedOn rdf:type owl:ObjectProperty ;
                          	rdfs:subPropertyOf knora-base:hasLinkTo ;
                          	knora-base:subjectClassConstraint theatre-societe:Representation ;
 				         	knora-base:objectClassConstraint theatre-societe:Work ;
-							rdfs:label "representationIsBasedOn"@fr ,
-										"representationIsBasedOn"@en ;
-							rdfs:comment "representationIsBasedOn"@fr ,
-										"representationIsBasedOn"@en ;	
+							rdfs:label "Pièce jouée"@fr ,
+										"Play"@en ;
+							rdfs:comment "Pièce jouée lors de la représentation"@fr ,
+										"Performed play at this performance"@en ;	
 							salsah-gui:guiElement salsah-gui:Searchbox ;
 							salsah-gui:guiOrder "3"^^xsd:integer .
 
@@ -720,10 +720,10 @@ theatre-societe:representationIsPartOfFestival rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf knora-base:hasLinkTo ;
                             	knora-base:subjectClassConstraint theatre-societe:Representation ;
 				         		knora-base:objectClassConstraint theatre-societe:Festival ;
-								rdfs:label "representationIsPartOfFestival"@fr ,
-											"representationIsPartOfFestival"@en ;
-								rdfs:comment "representationIsPartOfFestival"@fr ,
-											"representationIsPartOfFestival"@en ;	
+								rdfs:label "Festival"@fr ,
+											"Festival"@en ;
+								rdfs:comment "La représentation fait-elle partie d'un festival ?"@fr ,
+											"Is the performance part of a festival ?"@en ;	
 								salsah-gui:guiElement salsah-gui:Searchbox ;
 								salsah-gui:guiOrder "6"^^xsd:integer .
 
@@ -861,11 +861,11 @@ theatre-societe:Representation rdf:type owl:Class ;
 										] ,
 										[ rdf:type owl:Restriction ;
 										  owl:onProperty theatre-societe:representationHasGenre ;	
-										  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+										  owl:minCardinality "0"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
 										  owl:onProperty theatre-societe:representationHasGenreValue ;	
-										  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+										  owl:minCardinality "0"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
 										  owl:onProperty theatre-societe:representationHasRole ;	
