@@ -672,9 +672,9 @@ theatre-societe:representationHasRole rdf:type owl:ObjectProperty ;
                        			rdfs:subPropertyOf knora-base:hasLinkTo ;
 		                      	knora-base:subjectClassConstraint theatre-societe:Representation ;
 				                knora-base:objectClassConstraint theatre-societe:Role ;
-								rdfs:label "Intervenant"@fr ,
-											  "Facilitator"@en ;
-								rdfs:comment "Couple personne/rôle dans cette représentation"@fr ,
+								rdfs:label "Intervenant·s"@fr ,
+											  "Facilitator·s"@en ;
+								rdfs:comment "Couples personne/rôle prenant part à cette représentation"@fr ,
 											  "A person/role doublet that do something in this representation"@en ;	
 								salsah-gui:guiElement salsah-gui:Searchbox ;
 								salsah-gui:guiOrder "5"^^xsd:integer .
