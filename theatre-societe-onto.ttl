@@ -1,4 +1,4 @@
-@prefix theatre-societe: <http://www.knora.org/ontology/theatre-societe#> .
+@prefix theatre-societe: <http://www.knora.org/ontology/0103#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -6,18 +6,18 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix knora-base: <http://www.knora.org/ontology/knora-base#> .
 @prefix salsah-gui: <http://www.knora.org/ontology/salsah-gui#> .
-@prefix theatre-societe-biblio: <http://www.knora.org/ontology/theatre-societe-biblio#> .
-@base <http://www.knora.org/ontology/theatre-societe> .
+@prefix theatre-societe-biblio: <http://www.knora.org/ontology/0102#> .
+@base <http://www.knora.org/ontology/0103> .
 
 
-<http://www.knora.org/ontology/theatre-societe> rdf:type owl:Ontology ;
+<http://www.knora.org/ontology/0103> rdf:type owl:Ontology ;
                                                  owl:imports <http://www.knora.org/ontology/knora-base> .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://www.knora.org/ontology/theatre-societe#actorHasRole
+###  http://www.knora.org/ontology/0103#actorHasRole
 theatre-societe:actorHasRole rdf:type owl:ObjectProperty ;
               	rdfs:subPropertyOf knora-base:hasValue ;
                	knora-base:objectClassConstraint knora-base:TextValue ;
@@ -28,9 +28,9 @@ theatre-societe:actorHasRole rdf:type owl:ObjectProperty ;
 					"The part in the play, in case the person was an actor·tress"@en ;
                 salsah-gui:guiOrder "3"^^xsd:integer ;
                 salsah-gui:guiElement salsah-gui:SimpleText .
-              
 
-###  http://www.knora.org/ontology/theatre-societe#agentHasAuthority
+
+###  http://www.knora.org/ontology/0103#agentHasAuthority
 theatre-societe:agentHasAuthority rdf:type owl:ObjectProperty ;
                    	rdfs:subPropertyOf theatre-societe:hasAuthority ;
 	                knora-base:subjectClassConstraint theatre-societe:Agent ;
@@ -45,7 +45,7 @@ theatre-societe:agentHasAuthority rdf:type owl:ObjectProperty ;
                                			"maxlength=255" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#agentHasNotice
+###  http://www.knora.org/ontology/0103#agentHasNotice
 theatre-societe:agentHasNotice rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf theatre-societe:hasNotice ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
@@ -61,7 +61,7 @@ theatre-societe:agentHasNotice rdf:type owl:ObjectProperty ;
 							               "wrap=soft" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#festivalHasDate
+###  http://www.knora.org/ontology/0103#festivalHasDate
 theatre-societe:festivalHasDate rdf:type owl:ObjectProperty ;
                  	rdfs:subPropertyOf theatre-societe:hasDate ;
          		    knora-base:objectClassConstraint knora-base:DateValue ;
@@ -76,7 +76,7 @@ theatre-societe:festivalHasDate rdf:type owl:ObjectProperty ;
                                			 "maxlength=32" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#festivalHasName
+###  http://www.knora.org/ontology/0103#festivalHasName
 theatre-societe:festivalHasName rdf:type owl:ObjectProperty ;
                  	rdfs:subPropertyOf theatre-societe:hasName ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
@@ -91,7 +91,7 @@ theatre-societe:festivalHasName rdf:type owl:ObjectProperty ;
 					                     "maxlength=80" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#festivalHasNotice
+###  http://www.knora.org/ontology/0103#festivalHasNotice
 theatre-societe:festivalHasNotice rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                    	rdfs:subPropertyOf theatre-societe:hasNotice ;
@@ -107,7 +107,7 @@ theatre-societe:festivalHasNotice rdf:type owl:ObjectProperty ;
 							               "wrap=soft" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#genreHasName
+###  http://www.knora.org/ontology/0103#genreHasName
 theatre-societe:genreHasName rdf:type owl:ObjectProperty ;
               		rdfs:subPropertyOf theatre-societe:hasName ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
@@ -122,7 +122,7 @@ theatre-societe:genreHasName rdf:type owl:ObjectProperty ;
 					                     "maxlength=80" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#genreHasComment
+###  http://www.knora.org/ontology/0103#genreHasComment
 theatre-societe:genreHasComment rdf:type owl:ObjectProperty ;
               		rdfs:subPropertyOf knora-base:HasValue ;
 	             	knora-base:subjectClassConstraint theatre-societe:Genre ;
@@ -138,7 +138,7 @@ theatre-societe:genreHasComment rdf:type owl:ObjectProperty ;
 							                "wrap=soft" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#groupHasDate
+###  http://www.knora.org/ontology/0103#groupHasDate
 theatre-societe:groupHasDate rdf:type owl:ObjectProperty ;
               		rdfs:subPropertyOf theatre-societe:hasDate ;
          		    knora-base:objectClassConstraint knora-base:DateValue ;
@@ -153,7 +153,7 @@ theatre-societe:groupHasDate rdf:type owl:ObjectProperty ;
                                			 "maxlength=32" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#groupHasName
+###  http://www.knora.org/ontology/0103#groupHasName
 theatre-societe:groupHasName rdf:type owl:ObjectProperty ;
               		rdfs:subPropertyOf theatre-societe:hasName ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
@@ -168,7 +168,7 @@ theatre-societe:groupHasName rdf:type owl:ObjectProperty ;
 					                     "maxlength=80" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#groupHasPlace
+###  http://www.knora.org/ontology/0103#groupHasPlace
 theatre-societe:groupHasPlace rdf:type owl:ObjectProperty ;
                			  rdfs:subPropertyOf theatre-societe:hasPlace ;
           	              knora-base:objectClassConstraint theatre-societe:Place ;
@@ -181,7 +181,7 @@ theatre-societe:groupHasPlace rdf:type owl:ObjectProperty ;
 				          salsah-gui:guiElement salsah-gui:Searchbox .
 
 
-###  http://www.knora.org/ontology/theatre-societe#groupHasPlaceValue
+###  http://www.knora.org/ontology/0103#groupHasPlaceValue
 theatre-societe:groupHasPlaceValue rdf:type owl:ObjectProperty ;
                     	  rdfs:subPropertyOf theatre-societe:hasPlaceValue ;
           	              knora-base:objectClassConstraint knora-base:LinkValue ;
@@ -192,12 +192,12 @@ theatre-societe:groupHasPlaceValue rdf:type owl:ObjectProperty ;
 							  "groupHasPlace"@en .
 
 
-####  http://www.knora.org/ontology/theatre-societe#groupHasType_suppr
+####  http://www.knora.org/ontology/0103#groupHasType_suppr
 #theatre-societe:groupHasType_suppr rdf:type owl:ObjectProperty ;
 #                    rdfs:subPropertyOf knora-base:hasValue .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasAuthority
+###  http://www.knora.org/ontology/0103#hasAuthority
 theatre-societe:hasAuthority rdf:type owl:ObjectProperty ;
               		rdfs:subPropertyOf knora-base:hasValue ;
                     knora-base:objectClassConstraint knora-base:UriValue ;
@@ -207,7 +207,7 @@ theatre-societe:hasAuthority rdf:type owl:ObjectProperty ;
 						"hasAuthority"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasBirthDate
+###  http://www.knora.org/ontology/0103#hasBirthDate
 theatre-societe:hasBirthDate rdf:type owl:ObjectProperty ;
               	rdfs:subPropertyOf theatre-societe:hasDate ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
@@ -222,7 +222,7 @@ theatre-societe:hasBirthDate rdf:type owl:ObjectProperty ;
                                			"maxlength=32" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasDate
+###  http://www.knora.org/ontology/0103#hasDate
 theatre-societe:hasDate rdf:type owl:ObjectProperty ;
          		rdfs:subPropertyOf knora-base:hasValue ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
@@ -232,7 +232,7 @@ theatre-societe:hasDate rdf:type owl:ObjectProperty ;
 							"hasDate"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasDeathDate
+###  http://www.knora.org/ontology/0103#hasDeathDate
 theatre-societe:hasDeathDate rdf:type owl:ObjectProperty ;
               	rdfs:subPropertyOf theatre-societe:hasDate ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
@@ -247,7 +247,7 @@ theatre-societe:hasDeathDate rdf:type owl:ObjectProperty ;
                                			 "maxlength=32" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasDirector
+###  http://www.knora.org/ontology/0103#hasDirector
 theatre-societe:hasDirector rdf:type owl:ObjectProperty ;
              	rdfs:subPropertyOf knora-base:hasLinkTo ;
              	knora-base:objectClassConstraint theatre-societe:Person ;
@@ -255,12 +255,12 @@ theatre-societe:hasDirector rdf:type owl:ObjectProperty ;
 				rdfs:label "hasDirector"@fr ,
 							  "hasDirector"@en ;
 				rdfs:comment "hasDirector"@fr ,
-							  "hasDirector"@en ;	
+							  "hasDirector"@en ;
 				salsah-gui:guiElement salsah-gui:Searchbox ;
-				salsah-gui:guiOrder "4"^^xsd:integer .  
+				salsah-gui:guiOrder "4"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasDirectorValue
+###  http://www.knora.org/ontology/0103#hasDirectorValue
 theatre-societe:hasDirectorValue rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf knora-base:hasLinkToValue ;
                 knora-base:objectClassConstraint knora-base:LinkValue ;
@@ -268,10 +268,10 @@ theatre-societe:hasDirectorValue rdf:type owl:ObjectProperty ;
 				rdfs:label "hasDirector"@fr ,
 							  "hasDirector"@en ;
 				rdfs:comment "hasDirector"@fr ,
-							  "hasDirector"@en .  
+							  "hasDirector"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasFamilyName
+###  http://www.knora.org/ontology/0103#hasFamilyName
 theatre-societe:hasFamilyName rdf:type owl:ObjectProperty ;
                		rdfs:subPropertyOf knora-base:hasValue ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
@@ -286,7 +286,7 @@ theatre-societe:hasFamilyName rdf:type owl:ObjectProperty ;
 			                               "maxlength=80" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasGivenName
+###  http://www.knora.org/ontology/0103#hasGivenName
 theatre-societe:hasGivenName rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf knora-base:hasValue ;
               knora-base:objectClassConstraint knora-base:TextValue ;
@@ -301,7 +301,7 @@ theatre-societe:hasGivenName rdf:type owl:ObjectProperty ;
 			                          "maxlength=80" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasName
+###  http://www.knora.org/ontology/0103#hasName
 theatre-societe:hasName rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf knora-base:hasValue ;
          knora-base:objectClassConstraint knora-base:TextValue ;
@@ -311,7 +311,7 @@ theatre-societe:hasName rdf:type owl:ObjectProperty ;
 					"hasGivenName"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasNotice
+###  http://www.knora.org/ontology/0103#hasNotice
 theatre-societe:hasNotice rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf knora-base:hasValue ;
            knora-base:objectClassConstraint knora-base:TextValue ;
@@ -321,7 +321,7 @@ theatre-societe:hasNotice rdf:type owl:ObjectProperty ;
 					"hasNotice"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasMembership
+###  http://www.knora.org/ontology/0103#hasMembership
 theatre-societe:hasMembership rdf:type owl:ObjectProperty ;
                   	rdfs:subPropertyOf knora-base:hasLinkTo ;
                   	knora-base:objectClassConstraint theatre-societe:Membership ;
@@ -329,12 +329,12 @@ theatre-societe:hasMembership rdf:type owl:ObjectProperty ;
 					rdfs:label "hasMembership"@fr ,
 								  "hasMembership"@en ;
 					rdfs:comment "hasMembership"@fr ,
-								  "hasMembership"@en ;	
+								  "hasMembership"@en ;
 					salsah-gui:guiElement salsah-gui:Searchbox ;
-					salsah-gui:guiOrder "7"^^xsd:integer . 
+					salsah-gui:guiOrder "7"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasMembershipValue
+###  http://www.knora.org/ontology/0103#hasMembershipValue
 theatre-societe:hasMembershipValue rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasLinkToValue ;
                     knora-base:objectClassConstraint knora-base:LinkValue ;
@@ -342,10 +342,10 @@ theatre-societe:hasMembershipValue rdf:type owl:ObjectProperty ;
 					rdfs:label "hasMembership"@fr ,
 								  "hasMembership"@en ;
 					rdfs:comment "hasMembership"@fr ,
-								  "hasMembership"@en .   
+								  "hasMembership"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#isMembershipIn
+###  http://www.knora.org/ontology/0103#isMembershipIn
 theatre-societe:isMembershipIn rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasLinkTo ;
                     knora-base:objectClassConstraint theatre-societe:Group ;
@@ -353,12 +353,12 @@ theatre-societe:isMembershipIn rdf:type owl:ObjectProperty ;
 					rdfs:label "isMembershipIn"@fr ,
 								  "isMembershipIn"@en ;
 					rdfs:comment "isMembershipIn"@fr ,
-								  "isMembershipIn"@en ;	
+								  "isMembershipIn"@en ;
 					salsah-gui:guiElement salsah-gui:Searchbox ;
-					salsah-gui:guiOrder "1"^^xsd:integer . 
+					salsah-gui:guiOrder "1"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#isMembershipInValue
+###  http://www.knora.org/ontology/0103#isMembershipInValue
 theatre-societe:isMembershipInValue rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasLinkToValue ;
                     knora-base:objectClassConstraint theatre-societe:Group ;
@@ -366,20 +366,20 @@ theatre-societe:isMembershipInValue rdf:type owl:ObjectProperty ;
 					rdfs:label "isMembershipIn"@fr ,
 								  "isMembershipIn"@en ;
 					rdfs:comment "isMembershipIn"@fr ,
-								  "isMembershipIn"@en . 
+								  "isMembershipIn"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasPlace
+###  http://www.knora.org/ontology/0103#hasPlace
 theatre-societe:hasPlace rdf:type owl:ObjectProperty ;
           	rdfs:subPropertyOf knora-base:hasLinkTo ;
           	knora-base:objectClassConstraint theatre-societe:Place ;
 		  	rdfs:label "hasPlace"@fr ,
 					"hasPlace"@en ;
 		  	rdfs:comment "hasPlace"@fr ,
-					"hasPlace"@en .  
+					"hasPlace"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasPlaceValue
+###  http://www.knora.org/ontology/0103#hasPlaceValue
 theatre-societe:hasPlaceValue rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf knora-base:hasLinkToValue ;
             knora-base:objectClassConstraint knora-base:LinkValue ;
@@ -389,7 +389,7 @@ theatre-societe:hasPlaceValue rdf:type owl:ObjectProperty ;
 					"hasPlace"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#hasTitle
+###  http://www.knora.org/ontology/0103#hasTitle
 theatre-societe:hasTitle rdf:type owl:ObjectProperty ;
           	rdfs:subPropertyOf knora-base:hasValue ;
             knora-base:objectClassConstraint knora-base:TextValue ;
@@ -399,7 +399,7 @@ theatre-societe:hasTitle rdf:type owl:ObjectProperty ;
 						"hasTitle"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#membershipHasDate
+###  http://www.knora.org/ontology/0103#membershipHasDate
 theatre-societe:membershipHasDate rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf theatre-societe:hasDate ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
@@ -414,7 +414,7 @@ theatre-societe:membershipHasDate rdf:type owl:ObjectProperty ;
                                			"maxlength=32" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#placeHasCoordinates
+###  http://www.knora.org/ontology/0103#placeHasCoordinates
 theatre-societe:placeHasCoordinates rdf:type owl:ObjectProperty ;
                      	rdfs:subPropertyOf knora-base:hasValue ;
                         knora-base:subjectClassConstraint theatre-societe:Place ;
@@ -429,7 +429,7 @@ theatre-societe:placeHasCoordinates rdf:type owl:ObjectProperty ;
 						                     "maxlength=80" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#placeHasGeonameID
+###  http://www.knora.org/ontology/0103#placeHasGeonameID
 theatre-societe:placeHasGeonameID rdf:type owl:ObjectProperty ;
                    	rdfs:subPropertyOf knora-base:hasValue ;
                    	knora-base:subjectClassConstraint theatre-societe:Place ;
@@ -442,7 +442,7 @@ theatre-societe:placeHasGeonameID rdf:type owl:ObjectProperty ;
 					salsah-gui:guiElement salsah-gui:Geonames .
 
 
-###  http://www.knora.org/ontology/theatre-societe#placeHasName
+###  http://www.knora.org/ontology/0103#placeHasName
 theatre-societe:placeHasName rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf theatre-societe:hasName ;
               knora-base:objectClassConstraint knora-base:TextValue ;
@@ -457,7 +457,7 @@ theatre-societe:placeHasName rdf:type owl:ObjectProperty ;
 					                 "maxlength=80" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#placeHasNotice
+###  http://www.knora.org/ontology/0103#placeHasNotice
 theatre-societe:placeHasNotice rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf theatre-societe:hasNotice ;
                 knora-base:objectClassConstraint knora-base:TextValue ;
@@ -473,7 +473,7 @@ theatre-societe:placeHasNotice rdf:type owl:ObjectProperty ;
 							            "wrap=soft" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#publicationHasAuthor
+###  http://www.knora.org/ontology/0103#publicationHasAuthor
 theatre-societe:publicationHasAuthor rdf:type owl:ObjectProperty ;
                       	rdfs:subPropertyOf knora-base:hasLinkTo ;
                       	knora-base:subjectClassConstraint theatre-societe:Publication ;
@@ -481,12 +481,12 @@ theatre-societe:publicationHasAuthor rdf:type owl:ObjectProperty ;
 						rdfs:label "publicationHasAuthor"@fr ,
 									  "publicationHasAuthor"@en ;
 						rdfs:comment "publicationHasAuthor"@fr ,
-									  "publicationHasAuthor"@en ;	
+									  "publicationHasAuthor"@en ;
 						salsah-gui:guiElement salsah-gui:Searchbox ;
-						salsah-gui:guiOrder "2"^^xsd:integer .  	
+						salsah-gui:guiOrder "2"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#publicationHasAuthorValue
+###  http://www.knora.org/ontology/0103#publicationHasAuthorValue
 theatre-societe:publicationHasAuthorValue rdf:type owl:ObjectProperty ;
                            	rdfs:subPropertyOf knora-base:hasLinkToValue ;
 	                        knora-base:subjectClassConstraint theatre-societe:Publication ;
@@ -494,10 +494,10 @@ theatre-societe:publicationHasAuthorValue rdf:type owl:ObjectProperty ;
 							rdfs:label "publicationHasAuthor"@fr ,
 										  "publicationHasAuthor"@en ;
 							rdfs:comment "publicationHasAuthor"@fr ,
-										  "publicationHasAuthor"@en .  
+										  "publicationHasAuthor"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#publicationHasTitle
+###  http://www.knora.org/ontology/0103#publicationHasTitle
 theatre-societe:publicationHasTitle rdf:type owl:ObjectProperty ;
 	                    rdfs:subPropertyOf theatre-societe:hasTitle ;
                         knora-base:objectClassConstraint knora-base:TextValue ;
@@ -512,7 +512,7 @@ theatre-societe:publicationHasTitle rdf:type owl:ObjectProperty ;
 			         						 	"rows=2" ,
 						                     	"maxlength=255" .
 
-###  http://www.knora.org/ontology/theatre-societe#hasQuote
+###  http://www.knora.org/ontology/0103#hasQuote
 theatre-societe:hasQuote rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf knora-base:hasValue ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
@@ -520,14 +520,14 @@ theatre-societe:hasQuote rdf:type owl:ObjectProperty ;
 					rdfs:label "Citation"@fr ,
 								  "Quote"@en ;
 					rdfs:comment "La citation source"@fr ,
-								  "The source quote"@en ;	
+								  "The source quote"@en ;
 					salsah-gui:guiOrder "4"^^xsd:integer ;
 					salsah-gui:guiElement salsah-gui:Richtext ;
 					salsah-gui:guiAttribute "width=95%" ,
 							            	"rows=10" ,
 							            	"wrap=soft" .
 
-###  http://www.knora.org/ontology/theatre-societe#quoteHasNumPage
+###  http://www.knora.org/ontology/0103#quoteHasNumPage
 theatre-societe:quoteHasNumPage rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf knora-base:hasValue ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
@@ -535,13 +535,13 @@ theatre-societe:quoteHasNumPage rdf:type owl:ObjectProperty ;
 					rdfs:label "Page(s)"@fr ,
 								  "Page(s)"@en ;
 					rdfs:comment "Le ou les pages de la citation"@fr ,
-								  "The quoted text pages in source"@en ;	
+								  "The quoted text pages in source"@en ;
 					salsah-gui:guiOrder "3"^^xsd:integer ;
 					salsah-gui:guiElement salsah-gui:SimpleText ;
 			        salsah-gui:guiAttribute "size=12" ,
 						                    "maxlength=20" .
 
-###  http://www.knora.org/ontology/theatre-societe#quoteHasVolume
+###  http://www.knora.org/ontology/0103#quoteHasVolume
 theatre-societe:quoteHasVolume rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf knora-base:hasValue ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
@@ -549,14 +549,14 @@ theatre-societe:quoteHasVolume rdf:type owl:ObjectProperty ;
 					rdfs:label "Volume/Tome de l'ouvrage"@fr ,
 								  "Source volume"@en ;
 					rdfs:comment "Le volume duquel est trié la citation"@fr ,
-								  "The quoted text volume in source"@en ;	
+								  "The quoted text volume in source"@en ;
 					salsah-gui:guiOrder "2"^^xsd:integer ;
 					salsah-gui:guiElement salsah-gui:SimpleText ;
 			        salsah-gui:guiAttribute "size=12" ,
-						                    "maxlength=20" .  
+						                    "maxlength=20" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#quoteHasSource
+###  http://www.knora.org/ontology/0103#quoteHasSource
 theatre-societe:quoteHasSource rdf:type owl:ObjectProperty ;
                 	rdfs:subPropertyOf knora-base:hasLinkTo ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
@@ -564,12 +564,12 @@ theatre-societe:quoteHasSource rdf:type owl:ObjectProperty ;
 					rdfs:label "Source bibliographique"@fr ,
 								  "Source"@en ;
 					rdfs:comment "L'ouvrage duquel est tiré la citation"@fr ,
-								  "Quoted text source"@en ;	
+								  "Quoted text source"@en ;
 					salsah-gui:guiElement salsah-gui:Searchbox ;
-					salsah-gui:guiOrder "1"^^xsd:integer .  
+					salsah-gui:guiOrder "1"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#quoteHasSourceValue
+###  http://www.knora.org/ontology/0103#quoteHasSourceValue
 theatre-societe:quoteHasSourceValue rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasLinkToValue ;
                 	knora-base:subjectClassConstraint theatre-societe:Quote ;
@@ -581,7 +581,7 @@ theatre-societe:quoteHasSourceValue rdf:type owl:ObjectProperty ;
 
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasDate
+###  http://www.knora.org/ontology/0103#representationHasDate
 theatre-societe:representationHasDate rdf:type owl:ObjectProperty ;
                        	rdfs:subPropertyOf theatre-societe:hasDate ;
          		        knora-base:objectClassConstraint knora-base:DateValue ;
@@ -596,21 +596,21 @@ theatre-societe:representationHasDate rdf:type owl:ObjectProperty ;
 	                               			 "maxlength=32" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasGenre
+###  http://www.knora.org/ontology/0103#representationHasGenre
 theatre-societe:representationHasGenre rdf:type owl:ObjectProperty ;
-                              	rdfs:subPropertyOf knora-base:hasLinkTo ; 
+                              	rdfs:subPropertyOf knora-base:hasLinkTo ;
                               	knora-base:subjectClassConstraint theatre-societe:Representation ;
 				                knora-base:objectClassConstraint theatre-societe:Genre ;
 								rdfs:label "Genre"@fr ,
 											  "Genre"@en ;
 								rdfs:comment "Le ou les genre·s de la pièce"@fr ,
-											  "Play genre·s"@en ;	
+											  "Play genre·s"@en ;
 								salsah-gui:guiElement salsah-gui:Searchbox ;
 								salsah-gui:guiOrder "4"^^xsd:integer .
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasGenreValue
+###  http://www.knora.org/ontology/0103#representationHasGenreValue
 theatre-societe:representationHasGenreValue rdf:type owl:ObjectProperty ;
-                              	rdfs:subPropertyOf knora-base:hasLinkToValue ; 
+                              	rdfs:subPropertyOf knora-base:hasLinkToValue ;
                               	knora-base:subjectClassConstraint theatre-societe:Representation ;
 				                knora-base:objectClassConstraint knora-base:LinkValue ;
 								rdfs:label "representationHasGenre"@fr ,
@@ -619,7 +619,7 @@ theatre-societe:representationHasGenreValue rdf:type owl:ObjectProperty ;
 											  "representationHasGenre"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasPlace
+###  http://www.knora.org/ontology/0103#representationHasPlace
 theatre-societe:representationHasPlace rdf:type owl:ObjectProperty ;
                         	rdfs:subPropertyOf theatre-societe:hasPlace ;
           	                knora-base:objectClassConstraint theatre-societe:Place ;
@@ -629,10 +629,10 @@ theatre-societe:representationHasPlace rdf:type owl:ObjectProperty ;
 						  	rdfs:comment "Lieu de la représentation"@fr ,
 							  "Place of performance"@en ;
 				          	salsah-gui:guiOrder "3"^^xsd:integer ;
-				          	salsah-gui:guiElement salsah-gui:Searchbox .  
+				          	salsah-gui:guiElement salsah-gui:Searchbox .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasPlaceValue
+###  http://www.knora.org/ontology/0103#representationHasPlaceValue
 theatre-societe:representationHasPlaceValue rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf theatre-societe:hasPlaceValue ;
           	                knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -640,10 +640,10 @@ theatre-societe:representationHasPlaceValue rdf:type owl:ObjectProperty ;
 						  	rdfs:label "representationHasPlace"@fr ,
 							  "representationHasPlace"@en ;
 						  	rdfs:comment "representationHasPlace"@fr ,
-							  "representationHasPlace"@en .  
+							  "representationHasPlace"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasQuote
+###  http://www.knora.org/ontology/0103#representationHasQuote
 theatre-societe:representationHasQuote rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf knora-base:hasLinkTo ;
                         knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -651,12 +651,12 @@ theatre-societe:representationHasQuote rdf:type owl:ObjectProperty ;
 						rdfs:label "Sources"@fr ,
 									  "Sources"@en ;
 						rdfs:comment "Les sources qui documentent cette représentation"@fr ,
-									  "Sources about this performance"@en ;	
+									  "Sources about this performance"@en ;
 						salsah-gui:guiElement salsah-gui:Searchbox ;
 						salsah-gui:guiOrder "7"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasQuoteValue
+###  http://www.knora.org/ontology/0103#representationHasQuoteValue
 theatre-societe:representationHasQuoteValue rdf:type owl:ObjectProperty ;
                              	rdfs:subPropertyOf knora-base:hasLinkToValue ;
 		                        knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -667,7 +667,7 @@ theatre-societe:representationHasQuoteValue rdf:type owl:ObjectProperty ;
 											  "representationHasQuote"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasRole
+###  http://www.knora.org/ontology/0103#representationHasRole
 theatre-societe:representationHasRole rdf:type owl:ObjectProperty ;
                        			rdfs:subPropertyOf knora-base:hasLinkTo ;
 		                      	knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -675,12 +675,12 @@ theatre-societe:representationHasRole rdf:type owl:ObjectProperty ;
 								rdfs:label "Intervenant·s"@fr ,
 											  "Facilitator·s"@en ;
 								rdfs:comment "Couples personne/rôle prenant part à cette représentation"@fr ,
-											  "A person/role doublet that do something in this representation"@en ;	
+											  "A person/role doublet that do something in this representation"@en ;
 								salsah-gui:guiElement salsah-gui:Searchbox ;
 								salsah-gui:guiOrder "5"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationHasRoleValue
+###  http://www.knora.org/ontology/0103#representationHasRoleValue
 theatre-societe:representationHasRoleValue rdf:type owl:ObjectProperty ;
                             	rdfs:subPropertyOf knora-base:hasLinkToValue ;
                             	knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -691,7 +691,7 @@ theatre-societe:representationHasRoleValue rdf:type owl:ObjectProperty ;
 											  "representationHasRole"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationIsBasedOn
+###  http://www.knora.org/ontology/0103#representationIsBasedOn
 theatre-societe:representationIsBasedOn rdf:type owl:ObjectProperty ;
                          	rdfs:subPropertyOf knora-base:hasLinkTo ;
                          	knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -699,12 +699,12 @@ theatre-societe:representationIsBasedOn rdf:type owl:ObjectProperty ;
 							rdfs:label "Pièce jouée"@fr ,
 										"Play"@en ;
 							rdfs:comment "Pièce jouée lors de la représentation"@fr ,
-										"Performed play at this performance"@en ;	
+										"Performed play at this performance"@en ;
 							salsah-gui:guiElement salsah-gui:Searchbox ;
 							salsah-gui:guiOrder "3"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationIsBasedOnValue
+###  http://www.knora.org/ontology/0103#representationIsBasedOnValue
 theatre-societe:representationIsBasedOnValue rdf:type owl:ObjectProperty ;
                               	rdfs:subPropertyOf knora-base:hasLinkToValue ;
                             	knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -715,7 +715,7 @@ theatre-societe:representationIsBasedOnValue rdf:type owl:ObjectProperty ;
 											"representationIsBasedOn"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationIsPartOfFestival
+###  http://www.knora.org/ontology/0103#representationIsPartOfFestival
 theatre-societe:representationIsPartOfFestival rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf knora-base:hasLinkTo ;
                             	knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -723,12 +723,12 @@ theatre-societe:representationIsPartOfFestival rdf:type owl:ObjectProperty ;
 								rdfs:label "Festival"@fr ,
 											"Festival"@en ;
 								rdfs:comment "La représentation fait-elle partie d'un festival ?"@fr ,
-											"Is the performance part of a festival ?"@en ;	
+											"Is the performance part of a festival ?"@en ;
 								salsah-gui:guiElement salsah-gui:Searchbox ;
 								salsah-gui:guiOrder "6"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#representationIsPartOfFestivalValue
+###  http://www.knora.org/ontology/0103#representationIsPartOfFestivalValue
 theatre-societe:representationIsPartOfFestivalValue rdf:type owl:ObjectProperty ;
 	                                rdfs:subPropertyOf knora-base:hasLinkToValue ;
 	                                knora-base:subjectClassConstraint theatre-societe:Representation ;
@@ -739,7 +739,7 @@ theatre-societe:representationIsPartOfFestivalValue rdf:type owl:ObjectProperty 
 												"representationIsPartOfFestival"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#roleHasAgent
+###  http://www.knora.org/ontology/0103#roleHasAgent
 theatre-societe:roleHasAgent rdf:type owl:ObjectProperty ;
              	rdfs:subPropertyOf knora-base:hasLinkTo ;
               	knora-base:subjectClassConstraint theatre-societe:Role ;
@@ -747,12 +747,12 @@ theatre-societe:roleHasAgent rdf:type owl:ObjectProperty ;
 				rdfs:label "Personne ou groupe"@fr ,
 							"Person or group"@en ;
 				rdfs:comment "La personne ou le groupe agissant dans le cadre de cette performance (public, propriétaire du lieu, acteurs·trices…)"@fr ,
-							"Person or entity that played a part in the performance (audience, place owner, actor·tress…)"@en ;	
+							"Person or entity that played a part in the performance (audience, place owner, actor·tress…)"@en ;
 				salsah-gui:guiElement salsah-gui:Searchbox ;
 				salsah-gui:guiOrder "1"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#roleHasAgentValue
+###  http://www.knora.org/ontology/0103#roleHasAgentValue
 theatre-societe:roleHasAgentValue rdf:type owl:ObjectProperty ;
                    	rdfs:subPropertyOf knora-base:hasLinkToValue ;
                    	knora-base:subjectClassConstraint theatre-societe:Role ;
@@ -763,7 +763,7 @@ theatre-societe:roleHasAgentValue rdf:type owl:ObjectProperty ;
 								"roleHasAgent"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#roleHasType
+###  http://www.knora.org/ontology/0103#roleHasType
 theatre-societe:roleHasType rdf:type owl:ObjectProperty ;
              		rdfs:subPropertyOf knora-base:hasValue ;
                  	knora-base:subjectClassConstraint theatre-societe:Role ;
@@ -771,12 +771,12 @@ theatre-societe:roleHasType rdf:type owl:ObjectProperty ;
 					rdfs:label "Fonction"@fr ,
 								"Position"@en ;
 					rdfs:comment "La fonction de la personne dans le cadre de cette représentation"@fr ,
-								"The person position during this performance"@en ;	
+								"The person position during this performance"@en ;
 					salsah-gui:guiElement salsah-gui:Pulldown ;
-					salsah-gui:guiAttribute "hlist=<http://data.knora.org/lists/theatre-societe-flatlist-roleHasType>" ;
+					salsah-gui:guiAttribute "hlist=<http://rdfh.ch/lists/theatre-societe-flatlist-roleHasType>" ;
 					salsah-gui:guiOrder "2"^^xsd:integer .
 
-###  http://www.knora.org/ontology/theatre-societe#workHasAuthor
+###  http://www.knora.org/ontology/0103#workHasAuthor
 theatre-societe:workHasAuthor rdf:type owl:ObjectProperty ;
                       	rdfs:subPropertyOf knora-base:hasLinkTo ;
                       	knora-base:subjectClassConstraint theatre-societe:Work ;
@@ -784,12 +784,12 @@ theatre-societe:workHasAuthor rdf:type owl:ObjectProperty ;
 						rdfs:label "Auteur"@fr ,
 									  "Author"@en ;
 						rdfs:comment "L'auteur de la pièce"@fr ,
-									  "Author of the play"@en ;	
+									  "Author of the play"@en ;
 						salsah-gui:guiElement salsah-gui:Searchbox ;
-						salsah-gui:guiOrder "3"^^xsd:integer .  	
+						salsah-gui:guiOrder "3"^^xsd:integer .
 
 
-###  http://www.knora.org/ontology/theatre-societe#workHasAuthorValue
+###  http://www.knora.org/ontology/0103#workHasAuthorValue
 theatre-societe:workHasAuthorValue rdf:type owl:ObjectProperty ;
                            	rdfs:subPropertyOf knora-base:hasLinkToValue ;
 	                        knora-base:subjectClassConstraint theatre-societe:Work ;
@@ -797,10 +797,10 @@ theatre-societe:workHasAuthorValue rdf:type owl:ObjectProperty ;
 							rdfs:label "workHasAuthor"@fr ,
 									  "workHasAuthor"@en ;
 							rdfs:comment "workHasAuthor"@fr ,
-									  "workHasAuthor"@en . 
-          
+									  "workHasAuthor"@en .
 
-###  http://www.knora.org/ontology/theatre-societe#workHasAuthority
+
+###  http://www.knora.org/ontology/0103#workHasAuthority
 theatre-societe:workHasAuthority rdf:type owl:ObjectProperty ;
                   	rdfs:subPropertyOf theatre-societe:hasAuthority ;
                     knora-base:objectClassConstraint knora-base:UriValue ;
@@ -815,7 +815,7 @@ theatre-societe:workHasAuthority rdf:type owl:ObjectProperty ;
                                			"maxlength=255" .
 
 
-###  http://www.knora.org/ontology/theatre-societe#workHasTitle
+###  http://www.knora.org/ontology/0103#workHasTitle
 theatre-societe:workHasTitle rdf:type owl:ObjectProperty ;
               			rdfs:subPropertyOf theatre-societe:hasTitle ;
                         knora-base:objectClassConstraint knora-base:TextValue ;
@@ -836,7 +836,7 @@ theatre-societe:workHasTitle rdf:type owl:ObjectProperty ;
 #################################################################
 
 
-###  http://www.knora.org/ontology/theatre-societe#Representation
+###  http://www.knora.org/ontology/0103#Representation
 theatre-societe:Representation rdf:type owl:Class ;
 				rdfs:subClassOf knora-base:Resource ,
 										[ rdf:type owl:Restriction ;
@@ -848,39 +848,39 @@ theatre-societe:Representation rdf:type owl:Class ;
 										  owl:cardinality "1"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationHasDate ;	
+										  owl:onProperty theatre-societe:representationHasDate ;
 										  owl:maxCardinality "1"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationHasPlace ;	
+										  owl:onProperty theatre-societe:representationHasPlace ;
 										  owl:maxCardinality "1"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationHasPlaceValue ;	
+										  owl:onProperty theatre-societe:representationHasPlaceValue ;
 										  owl:maxCardinality "1"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationHasGenre ;	
+										  owl:onProperty theatre-societe:representationHasGenre ;
 										  owl:minCardinality "0"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationHasGenreValue ;	
+										  owl:onProperty theatre-societe:representationHasGenreValue ;
 										  owl:minCardinality "0"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationHasRole ;	
+										  owl:onProperty theatre-societe:representationHasRole ;
 										  owl:minCardinality "0"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationHasRoleValue ;	
+										  owl:onProperty theatre-societe:representationHasRoleValue ;
 										  owl:minCardinality "0"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationIsPartOfFestival ;	
+										  owl:onProperty theatre-societe:representationIsPartOfFestival ;
 										  owl:maxCardinality "1"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
-										  owl:onProperty theatre-societe:representationIsPartOfFestivalValue ;	
+										  owl:onProperty theatre-societe:representationIsPartOfFestivalValue ;
 										  owl:maxCardinality "1"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
@@ -894,249 +894,249 @@ theatre-societe:Representation rdf:type owl:Class ;
 							rdfs:label "Représentation"@fr ,
              							"Representation"@en ;
 							rdfs:comment "Représentation"@fr ,
-									"Representation"@en . 
-										
+									"Representation"@en .
 
-###  http://www.knora.org/ontology/theatre-societe#Agent
+
+###  http://www.knora.org/ontology/0103#Agent
 theatre-societe:Agent rdf:type owl:Class ;
        	rdfs:subClassOf knora-base:Resource ,
        					[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:agentHasAuthority ;	
+					  	  owl:onProperty theatre-societe:agentHasAuthority ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:agentHasNotice ;	
+					  	  owl:onProperty theatre-societe:agentHasNotice ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
 		rdfs:label "Agent*"@fr ,
              		"Agent*"@en ;
 		rdfs:comment "Agent"@fr ,
-					"Agent"@en . 
+					"Agent"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#Author
+###  http://www.knora.org/ontology/0103#Author
 theatre-societe:Author rdf:type owl:Class ;
         rdfs:subClassOf theatre-societe:Person ;
         rdfs:label "Author*"@fr ,
              		"Author*"@en ;
 		rdfs:comment "Author"@fr ,
-					"Author"@en . 
+					"Author"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#AuthorBiblio
+###  http://www.knora.org/ontology/0103#AuthorBiblio
 theatre-societe:AuthorBiblio rdf:type owl:Class ;
               	rdfs:subClassOf theatre-societe:Author ;
               	rdfs:label "AuthorBiblio"@fr ,
              				"AuthorBiblio"@en ;
 				rdfs:comment "AuthorBiblio"@fr ,
-							"AuthorBiblio"@en . 
+							"AuthorBiblio"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#AuthorWork
+###  http://www.knora.org/ontology/0103#AuthorWork
 theatre-societe:AuthorWork rdf:type owl:Class ;
             rdfs:subClassOf theatre-societe:Author ;
             rdfs:label "AuthorWork"@fr ,
              			"AuthorWork"@en ;
 			rdfs:comment "AuthorWork"@fr ,
-						"AuthorWork"@en . 
+						"AuthorWork"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#Festival
+###  http://www.knora.org/ontology/0103#Festival
 theatre-societe:Festival rdf:type owl:Class ;
 	rdfs:subClassOf knora-base:Resource ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:festivalHasName ;	
+					  	  owl:onProperty theatre-societe:festivalHasName ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:festivalHasDate ;	
+					  	  owl:onProperty theatre-societe:festivalHasDate ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:festivalHasNotice ;	
+					  	  owl:onProperty theatre-societe:festivalHasNotice ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Festival"@fr , "Festival"@en ;
 		rdfs:comment "Festival"@fr , "Festival"@en .
 
-###  http://www.knora.org/ontology/theatre-societe#Genre
+###  http://www.knora.org/ontology/0103#Genre
 theatre-societe:Genre rdf:type owl:Class ;
        	rdfs:subClassOf knora-base:Resource ,
        					[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:genreHasName ;	
+					  	  owl:onProperty theatre-societe:genreHasName ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:genreHasComment ;	
+					  	  owl:onProperty theatre-societe:genreHasComment ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Genre"@fr , "Genre"@en ;
-		rdfs:comment "Genre"@fr , "Genre"@en . 
+		rdfs:comment "Genre"@fr , "Genre"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#Group
+###  http://www.knora.org/ontology/0103#Group
 theatre-societe:Group rdf:type owl:Class ;
        	rdfs:subClassOf theatre-societe:Agent ,
        					[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:groupHasName ;	
+					  	  owl:onProperty theatre-societe:groupHasName ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:groupHasDate ;	
+					  	  owl:onProperty theatre-societe:groupHasDate ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:groupHasPlace ;	
+					  	  owl:onProperty theatre-societe:groupHasPlace ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:groupHasPlaceValue ;	
+					  	  owl:onProperty theatre-societe:groupHasPlaceValue ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Groupe"@fr , "Group"@en ;
-		rdfs:comment "Groupe"@fr , "Group"@en . 
+		rdfs:comment "Groupe"@fr , "Group"@en .
 
-###  http://www.knora.org/ontology/theatre-societe#Membership
+###  http://www.knora.org/ontology/0103#Membership
 theatre-societe:Membership rdf:type owl:Class ;
                rdfs:subClassOf knora-base:Resource ,
                			[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:membershipHasDate ;	
+					  	  owl:onProperty theatre-societe:membershipHasDate ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:isMembershipIn ;	
+					  	  owl:onProperty theatre-societe:isMembershipIn ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:isMembershipInValue ;	
+					  	  owl:onProperty theatre-societe:isMembershipInValue ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Membre"@fr , "Membership"@en ;
-		rdfs:comment "Membre"@fr , "Membership"@en . 
+		rdfs:comment "Membre"@fr , "Membership"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#Person
+###  http://www.knora.org/ontology/0103#Person
 theatre-societe:Person rdf:type owl:Class ;
         rdfs:subClassOf theatre-societe:Agent ,
         				[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:hasFamilyName ;	
+					  	  owl:onProperty theatre-societe:hasFamilyName ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:hasGivenName ;	
+					  	  owl:onProperty theatre-societe:hasGivenName ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:hasBirthDate ;	
+					  	  owl:onProperty theatre-societe:hasBirthDate ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
         				[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:hasDeathDate ;	
+					  	  owl:onProperty theatre-societe:hasDeathDate ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:hasMembership ;	
+					  	  owl:onProperty theatre-societe:hasMembership ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:hasMembershipValue ;	
+					  	  owl:onProperty theatre-societe:hasMembershipValue ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Personne"@fr , "Person"@en ;
-		rdfs:comment "Personne"@fr , "Person"@en . 
+		rdfs:comment "Personne"@fr , "Person"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#Place
+###  http://www.knora.org/ontology/0103#Place
 theatre-societe:Place rdf:type owl:Class ;
        	rdfs:subClassOf knora-base:Resource ,
        					[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:placeHasName ;	
+					  	  owl:onProperty theatre-societe:placeHasName ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ,
 #						[ rdf:type owl:Restriction ;
-#					  	  owl:onProperty theatre-societe:placeHasGeonameID ;	
+#					  	  owl:onProperty theatre-societe:placeHasGeonameID ;
 #					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 #						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:placeHasCoordinates ;	
+					  	  owl:onProperty theatre-societe:placeHasCoordinates ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
         				[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:placeHasNotice ;	
+					  	  owl:onProperty theatre-societe:placeHasNotice ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Lieu"@fr , "Place"@en ;
-		rdfs:comment "Lieu"@fr , "Place"@en . 
+		rdfs:comment "Lieu"@fr , "Place"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#Quote
+###  http://www.knora.org/ontology/0103#Quote
 theatre-societe:Quote rdf:type owl:Class ;
        	rdfs:subClassOf knora-base:Resource ,
        					[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:hasQuote ;	
+					  	  owl:onProperty theatre-societe:hasQuote ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:quoteHasNumPage ;	
+					  	  owl:onProperty theatre-societe:quoteHasNumPage ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:quoteHasVolume ;	
+					  	  owl:onProperty theatre-societe:quoteHasVolume ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
         				[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:quoteHasSource ;	
+					  	  owl:onProperty theatre-societe:quoteHasSource ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:quoteHasSourceValue ;	
+					  	  owl:onProperty theatre-societe:quoteHasSourceValue ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Citation"@fr , "Quote"@en ;
-		rdfs:comment "Citation"@fr , "Quote"@en . 
+		rdfs:comment "Citation"@fr , "Quote"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#Role
+###  http://www.knora.org/ontology/0103#Role
 theatre-societe:Role rdf:type owl:Class ;
       	rdfs:subClassOf knora-base:Resource ,
       					[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:roleHasType ;	
+					  	  owl:onProperty theatre-societe:roleHasType ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:actorHasRole ;	
+					  	  owl:onProperty theatre-societe:actorHasRole ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:roleHasAgent ;	
+					  	  owl:onProperty theatre-societe:roleHasAgent ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
         				[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:roleHasAgentValue ;	
+					  	  owl:onProperty theatre-societe:roleHasAgentValue ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Rôle"@fr , "Role"@en ;
-		rdfs:comment "Rôle"@fr , "Role"@en . 
+		rdfs:comment "Rôle"@fr , "Role"@en .
 
 
-###  http://www.knora.org/ontology/theatre-societe#Work
+###  http://www.knora.org/ontology/0103#Work
 theatre-societe:Work rdf:type owl:Class ;
      	rdfs:subClassOf knora-base:Resource ,
      					[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:workHasTitle ;	
+					  	  owl:onProperty theatre-societe:workHasTitle ;
 					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:workHasAuthority ;	
+					  	  owl:onProperty theatre-societe:workHasAuthority ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
 						[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:workHasAuthor ;	
+					  	  owl:onProperty theatre-societe:workHasAuthor ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
         				[ rdf:type owl:Restriction ;
-					  	  owl:onProperty theatre-societe:workHasAuthorValue ;	
+					  	  owl:onProperty theatre-societe:workHasAuthorValue ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Oeuvre"@fr , "Work"@en ;
-		rdfs:comment "Oeuvre"@fr , "Work"@en . 
+		rdfs:comment "Oeuvre"@fr , "Work"@en .
