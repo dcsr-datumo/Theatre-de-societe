@@ -124,7 +124,7 @@ theatre-societe:genreHasName rdf:type owl:ObjectProperty ;
 
 ###  http://www.knora.org/ontology/0103#genreHasComment
 theatre-societe:genreHasComment rdf:type owl:ObjectProperty ;
-              		rdfs:subPropertyOf knora-base:HasValue ;
+              		rdfs:subPropertyOf knora-base:hasValue ;
 	             	knora-base:subjectClassConstraint theatre-societe:Genre ;
 	             	knora-base:objectClassConstraint knora-base:TextValue ;
 					rdfs:label "genreHasComment"@fr ,
@@ -908,8 +908,8 @@ theatre-societe:Agent rdf:type owl:Class ;
 					  	  owl:onProperty theatre-societe:agentHasNotice ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
-		rdfs:label "Agent*"@fr ,
-             		"Agent*"@en ;
+		rdfs:label "[Agent]"@fr ,
+             		"[Agent]"@en ;
 		rdfs:comment "Agent"@fr ,
 					"Agent"@en .
 
@@ -917,8 +917,8 @@ theatre-societe:Agent rdf:type owl:Class ;
 ###  http://www.knora.org/ontology/0103#Author
 theatre-societe:Author rdf:type owl:Class ;
         rdfs:subClassOf theatre-societe:Person ;
-        rdfs:label "Author*"@fr ,
-             		"Author*"@en ;
+        rdfs:label "[Author]"@fr ,
+             		"[Author]"@en ;
 		rdfs:comment "Author"@fr ,
 					"Author"@en .
 
