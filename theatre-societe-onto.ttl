@@ -885,11 +885,11 @@ theatre-societe:Representation rdf:type owl:Class ;
 										] ,
 										[ rdf:type owl:Restriction ;
 										  owl:onProperty theatre-societe:representationHasQuote ;
-										  owl:minCardinality "1"^^xsd:nonNegativeInteger
+										  owl:minCardinality "0"^^xsd:nonNegativeInteger
 										] ,
 										[ rdf:type owl:Restriction ;
 										  owl:onProperty theatre-societe:representationHasQuoteValue ;
-										  owl:minCardinality "1"^^xsd:nonNegativeInteger
+										  owl:minCardinality "0"^^xsd:nonNegativeInteger
 										] ;
 							rdfs:label "Représentation"@fr ,
              							"Representation"@en ;
