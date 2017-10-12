@@ -34,6 +34,7 @@ theatre-societe-biblio:documentHasTitle rdf:type owl:ObjectProperty ;
                     rdfs:comment """Represents a title of a document."""@en ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
+		salsah-gui:guiOrder "1"^^xsd:integer ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
                     rdfs:subPropertyOf knora-base:hasValue, dcterms:title.
 
@@ -41,7 +42,7 @@ theatre-societe-biblio:documentHasTitle rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0102#documentHasSubtitle
 theatre-societe-biblio:documentHasSubtitle rdf:type owl:ObjectProperty ;
                     rdfs:label "Untertitel"@de ,
-                               "sous-titre"@fr ,
+                               "Sous-titre"@fr ,
                                "sottotitolo"@it ,
                                "Subtitle"@en ;
                     rdfs:comment """Represents the subtitle of a document."""@en ;
@@ -60,6 +61,7 @@ theatre-societe-biblio:documentHasDate rdf:type owl:ObjectProperty ;
                     rdfs:comment """Represents a document Date."""@en ;
                     knora-base:objectClassConstraint knora-base:DateValue ;
                     salsah-gui:guiElement salsah-gui:Date ;
+			salsah-gui:guiOrder "8"^^xsd:integer ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
                     rdfs:subPropertyOf knora-base:hasValue, dcterms:issued .
 
@@ -114,6 +116,7 @@ theatre-societe-biblio:documentHasAuthor rdf:type owl:ObjectProperty ;
                     rdfs:comment """Represents the author of the document."""@en ;
                     knora-base:objectClassConstraint theatre-societe:AuthorBiblio ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
+		salsah-gui:guiOrder "2"^^xsd:integer ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
                     rdfs:subPropertyOf knora-base:hasLinkTo, dcterms:creator .
 
@@ -309,6 +312,7 @@ theatre-societe-biblio:manuscriptHasConservationPlace rdf:type owl:ObjectPropert
 							  "manuscriptHasConservationPlace"@en ;
 						  	rdfs:comment "manuscriptHasConservationPlace"@fr ,
 							  "manuscriptHasConservationPlace"@en ;
+salsah-gui:guiOrder "6"^^xsd:integer ;
 							salsah-gui:guiElement salsah-gui:SimpleText ;
 			         		salsah-gui:guiAttribute "size=80" ,
 						                     	"maxlength=255" .
@@ -316,7 +320,8 @@ theatre-societe-biblio:manuscriptHasConservationPlace rdf:type owl:ObjectPropert
 ###  http://www.knora.org/ontology/0102#numVolumes
 theatre-societe-biblio:numVolumes rdf:type owl:ObjectProperty ;
                     rdfs:label "Bändenzahl"@de ,
-                               "Number of volumes"@en ;
+                               "Number of volumes"@en,
+				"Nombre de volumes"@fr ;
                     rdfs:comment """Repräsentiert die Bändenzahl."""@de,
                                """Represents number of volumes."""@en ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
@@ -461,8 +466,9 @@ theatre-societe-biblio:Manuscript rdf:type owl:Class ;
                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                     ] ;
                     rdfs:label "Manuscript"@en ,
-                               "Manuscript"@fr ;
-                    rdfs:comment "A resource representing a manuscript"@en .
+                               "Manuscrit"@fr ;
+                    rdfs:comment "A resource representing a manuscript"@en,
+				"Un manuscrit"@en.
 
 
 ###  http://www.knora.org/ontology/0102#Publication
