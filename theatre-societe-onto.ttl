@@ -797,7 +797,8 @@ theatre-societe:workHasAuthorValue rdf:type owl:ObjectProperty ;
 							rdfs:label "workHasAuthor"@fr ,
 									  "workHasAuthor"@en ;
 							rdfs:comment "workHasAuthor"@fr ,
-									  "workHasAuthor"@en .
+									  "workHasAuthor"@en;
+				salsah-gui:guiOrder "2"^^xsd:integer .
 
 
 ###  http://www.knora.org/ontology/0103#workHasAuthority
