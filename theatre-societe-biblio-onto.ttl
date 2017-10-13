@@ -55,8 +55,8 @@ theatre-societe-biblio:documentHasSubtitle rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0102#documentHasDate
 theatre-societe-biblio:documentHasDate rdf:type owl:ObjectProperty ;
                     rdfs:label "Datum der Veröffentlichung "@de ,
-                            "Publication Date "@en,
-                            "date de publication"@fr ,
+                            "Date "@en,
+                            "Date"@fr ,
                             "data di pubblicazione"@it ;
                     rdfs:comment """Represents a document Date."""@en ;
                     knora-base:objectClassConstraint knora-base:DateValue ;
