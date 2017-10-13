@@ -441,8 +441,8 @@ theatre-societe-biblio:Document rdf:type owl:Class ;
                                       owl:onProperty theatre-societe-biblio:documentIsEditedValue ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ] ;
-                    rdfs:label "Document*"@en ,
-                               "Document*"@fr ;
+                    rdfs:label "[Document]"@en ,
+                               "[Document]"@fr ;
                     rdfs:comment "A resource representing a document"@en .
 
 
