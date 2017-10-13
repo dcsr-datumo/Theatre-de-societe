@@ -362,12 +362,12 @@ theatre-societe-biblio:isEditionOfValue rdf:type owl:ObjectProperty ;
 #                    salsah-gui:guiElement salsah-gui:Searchbox ;
 #                    rdfs:subPropertyOf knora-base:hasLinkTo .
 
-###  http://www.knora.org/ontology/0102#isReeditionOfValue
-theatre-societe-biblio:isReeditionOfValue rdf:type owl:ObjectProperty ;
-                    knora-base:objectClassConstraint knora-base:LinkValue ;
-                    knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
-                    salsah-gui:guiElement salsah-gui:Searchbox ;
-                    rdfs:subPropertyOf knora-base:hasLinkToValue .
+####  http://www.knora.org/ontology/0102#isReeditionOfValue
+#theatre-societe-biblio:isReeditionOfValue rdf:type owl:ObjectProperty ;
+#                    knora-base:objectClassConstraint knora-base:LinkValue ;
+#                    knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
+#                    salsah-gui:guiElement salsah-gui:Searchbox ;
+#                    rdfs:subPropertyOf knora-base:hasLinkToValue .
 
 ###  http://www.knora.org/ontology/0102#bookVolume
 theatre-societe-biblio:bookVolume rdf:type owl:ObjectProperty ;
@@ -429,10 +429,10 @@ theatre-societe-biblio:Document rdf:type owl:Class ;
                                       owl:onProperty theatre-societe-biblio:documentHasTitle ;
                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
                                     ],
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty theatre-societe-biblio:documentHasSubtitle ;
-                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                    ] ,
+#                                    [ rdf:type owl:Restriction ;
+#                                      owl:onProperty theatre-societe-biblio:documentHasSubtitle ;
+#                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+#                                    ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentIsEdited ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -482,14 +482,14 @@ theatre-societe-biblio:Publication rdf:type owl:Class ;
                                       owl:onProperty theatre-societe-biblio:publicationHasPublisherValue ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ],
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty theatre-societe-biblio:isReeditionOf ;
-                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                    ] ,
-                                	[ rdf:type owl:Restriction ;
-                                      owl:onProperty theatre-societe-biblio:isReeditionOfValue ;
-                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                    ] ,
+#                                    [ rdf:type owl:Restriction ;
+#                                      owl:onProperty theatre-societe-biblio:isReeditionOf ;
+#                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+#                                    ] ,
+#                                	[ rdf:type owl:Restriction ;
+#                                      owl:onProperty theatre-societe-biblio:isReeditionOfValue ;
+#                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+#                                    ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:publicationHasDOI ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -649,10 +649,10 @@ theatre-societe-biblio:Book rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:hasNumberInCollection;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty theatre-societe-biblio:numEdition ;
-                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+#                                    ] ,
+#                                    [ rdf:type owl:Restriction ;
+#                                      owl:onProperty theatre-societe-biblio:numEdition ;
+#                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                     ] ;
                     rdfs:label "Buch"@de ,
                                 "Book"@en ,
