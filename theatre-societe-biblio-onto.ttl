@@ -39,17 +39,17 @@ theatre-societe-biblio:documentHasTitle rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasValue, dcterms:title.
 
 
-###  http://www.knora.org/ontology/0102#documentHasSubtitle
-theatre-societe-biblio:documentHasSubtitle rdf:type owl:ObjectProperty ;
-                    rdfs:label "Untertitel"@de ,
-                               "Sous-titre"@fr ,
-                               "sottotitolo"@it ,
-                               "Subtitle"@en ;
-                    rdfs:comment """Represents the subtitle of a document."""@en ;
-                    knora-base:objectClassConstraint knora-base:TextValue ;
-                    salsah-gui:guiElement salsah-gui:SimpleText ;
-                    knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
-                    rdfs:subPropertyOf knora-base:hasValue .
+####  http://www.knora.org/ontology/0102#documentHasSubtitle
+#theatre-societe-biblio:documentHasSubtitle rdf:type owl:ObjectProperty ;
+#                    rdfs:label "Untertitel"@de ,
+#                               "sous-titre"@fr ,
+#                               "sottotitolo"@it ,
+#                               "Subtitle"@en ;
+#                    rdfs:comment """Represents the subtitle of a document."""@en ;
+#                    knora-base:objectClassConstraint knora-base:TextValue ;
+#                    salsah-gui:guiElement salsah-gui:SimpleText ;
+#                    knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
+#                    rdfs:subPropertyOf knora-base:hasValue .
 
 
 ###  http://www.knora.org/ontology/0102#documentHasDate
@@ -328,14 +328,14 @@ theatre-societe-biblio:numVolumes rdf:type owl:ObjectProperty ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
                     rdfs:subPropertyOf knora-base:hasValue , bibo:numVolumes .
 
-###  http://www.knora.org/ontology/0102#numEdition
-theatre-societe-biblio:numEdition rdf:type owl:ObjectProperty ;
-                    rdfs:label "Numéro de réédition"@fr ;
-                    rdfs:comment """Représente le numéro de réédition."""@fr ;
-                    knora-base:subjectClassConstraint knora-base:Book ;
-                    knora-base:objectClassConstraint knora-base:TextValue ;
-                    salsah-gui:guiElement salsah-gui:SimpleText ;
-                    rdfs:subPropertyOf knora-base:hasValue .
+####  http://www.knora.org/ontology/0102#numEdition
+#theatre-societe-biblio:numEdition rdf:type owl:ObjectProperty ;
+#                    rdfs:label "Numéro de réédition"@fr ;
+#                    rdfs:comment """Représente le numéro de réédition."""@fr ;
+#                    knora-base:subjectClassConstraint knora-base:Book ;
+#                    knora-base:objectClassConstraint knora-base:TextValue ;
+#                    salsah-gui:guiElement salsah-gui:SimpleText ;
+#                    rdfs:subPropertyOf knora-base:hasValue .
 
 ###  http://www.knora.org/ontology/0102#isEditionOf
 theatre-societe-biblio:isEditionOf rdf:type owl:ObjectProperty ;
@@ -353,14 +353,14 @@ theatre-societe-biblio:isEditionOfValue rdf:type owl:ObjectProperty ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf knora-base:hasLinkToValue .
 
-###  http://www.knora.org/ontology/0102#isReeditionOf
-theatre-societe-biblio:isReeditionOf rdf:type owl:ObjectProperty ;
-                    rdfs:label "Réédition de (publication)"@fr ;
-                    rdfs:comment """Représente la publication rééditée."""@fr ;
-                    knora-base:objectClassConstraint theatre-societe-biblio:Publication ;
-                    knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
-                    salsah-gui:guiElement salsah-gui:Searchbox ;
-                    rdfs:subPropertyOf knora-base:hasLinkTo .
+####  http://www.knora.org/ontology/0102#isReeditionOf
+#theatre-societe-biblio:isReeditionOf rdf:type owl:ObjectProperty ;
+#                    rdfs:label "Réédition de (publication)"@fr ;
+#                    rdfs:comment """Représente la publication rééditée."""@fr ;
+#                    knora-base:objectClassConstraint theatre-societe-biblio:Publication ;
+#                    knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
+#                    salsah-gui:guiElement salsah-gui:Searchbox ;
+#                    rdfs:subPropertyOf knora-base:hasLinkTo .
 
 ###  http://www.knora.org/ontology/0102#isReeditionOfValue
 theatre-societe-biblio:isReeditionOfValue rdf:type owl:ObjectProperty ;
