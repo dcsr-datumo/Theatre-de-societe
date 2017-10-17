@@ -308,9 +308,9 @@ theatre-societe-biblio:manuscriptHasConservationPlace rdf:type owl:ObjectPropert
                         	rdfs:subPropertyOf knora-base:hasValue ;
                         	knora-base:subjectClassConstraint theatre-societe-biblio:Manuscript ;
                         	knora-base:objectClassConstraint knora-base:TextValue ;
-						  	rdfs:label "manuscriptHasConservationPlace"@fr ,
+						  	rdfs:label "Fonds"@fr ,
 							  "manuscriptHasConservationPlace"@en ;
-						  	rdfs:comment "Fonds"@fr ,
+						  	rdfs:comment "Fonds dans lequel se trouve le manuscrit"@fr ,
 							  "manuscriptHasConservationPlace"@en ;
 salsah-gui:guiOrder "6"^^xsd:integer ;
 							salsah-gui:guiElement salsah-gui:SimpleText ;
