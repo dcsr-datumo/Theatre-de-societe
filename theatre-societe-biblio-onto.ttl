@@ -303,7 +303,7 @@ theatre-societe-biblio:journalIssue rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf knora-base:hasValue, bibo:issue .
 
 
-###  http://www.knora.org/ontology/0103#manuscriptHasConservationPlace
+###  http://www.knora.org/ontology/0102#manuscriptHasConservationPlace
 theatre-societe-biblio:manuscriptHasConservationPlace rdf:type owl:ObjectProperty ;
                         	rdfs:subPropertyOf knora-base:hasValue ;
                         	knora-base:subjectClassConstraint theatre-societe-biblio:Manuscript ;
@@ -704,6 +704,3 @@ theatre-societe-biblio:Collection rdf:type owl:Class ;
                                 "Série "@fr ,
                                 "serie"@it ;
                     rdfs:comment "A resource representing a collection "@en .
-
-
-
