@@ -780,7 +780,7 @@ theatre-societe:roleHasType rdf:type owl:ObjectProperty ;
 theatre-societe:workHasAuthor rdf:type owl:ObjectProperty ;
                       	rdfs:subPropertyOf knora-base:hasLinkTo ;
                       	knora-base:subjectClassConstraint theatre-societe:Work ;
-                      	knora-base:objectClassConstraint theatre-societe:AuthorWork ;
+                      	knora-base:objectClassConstraint theatre-societe:Person ;
 						rdfs:label "Auteur"@fr ,
 									  "Author"@en ;
 						rdfs:comment "L'auteur de la pièce"@fr ,
@@ -797,8 +797,7 @@ theatre-societe:workHasAuthorValue rdf:type owl:ObjectProperty ;
 							rdfs:label "Auteur"@fr ,
 									  "Author"@en ;
 							rdfs:comment "L'auteur de la pièce"@fr ,
-									  "Author of the play"@en ,
-				salsah-gui:guiOrder "2"^^xsd:integer .
+									  "Author of the play"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#workHasAuthority
@@ -915,31 +914,31 @@ theatre-societe:Agent rdf:type owl:Class ;
 					"Agent"@en .
 
 
-###  http://www.knora.org/ontology/0103/theatre-societe#Author
-theatre-societe:Author rdf:type owl:Class ;
-        rdfs:subClassOf theatre-societe:Person ;
-        rdfs:label "[Author]"@fr ,
-             		"[Author]"@en ;
-		rdfs:comment "Author"@fr ,
-					"Author"@en .
+####  http://www.knora.org/ontology/0103/theatre-societe#Author
+#theatre-societe:Author rdf:type owl:Class ;
+#        rdfs:subClassOf theatre-societe:Person ;
+#        rdfs:label "[Author]"@fr ,
+#             		"[Author]"@en ;
+#		rdfs:comment "Author"@fr ,
+#					"Author"@en .
 
 
-###  http://www.knora.org/ontology/0103/theatre-societe#AuthorBiblio
-theatre-societe:AuthorBiblio rdf:type owl:Class ;
-              	rdfs:subClassOf theatre-societe:Author ;
-              	rdfs:label "AuthorBiblio"@fr ,
-             				"AuthorBiblio"@en ;
-				rdfs:comment "AuthorBiblio"@fr ,
-							"AuthorBiblio"@en .
+####  http://www.knora.org/ontology/0103/theatre-societe#AuthorBiblio
+#theatre-societe:AuthorBiblio rdf:type owl:Class ;
+#              	rdfs:subClassOf theatre-societe:Author ;
+#              	rdfs:label "AuthorBiblio"@fr ,
+#             				"AuthorBiblio"@en ;
+#				rdfs:comment "AuthorBiblio"@fr ,
+#							"AuthorBiblio"@en .
 
 
-###  http://www.knora.org/ontology/0103/theatre-societe#AuthorWork
-theatre-societe:AuthorWork rdf:type owl:Class ;
-            rdfs:subClassOf theatre-societe:Author ;
-            rdfs:label "AuthorWork"@fr ,
-             			"AuthorWork"@en ;
-			rdfs:comment "AuthorWork"@fr ,
-						"AuthorWork"@en .
+####  http://www.knora.org/ontology/0103/theatre-societe#AuthorWork
+#theatre-societe:AuthorWork rdf:type owl:Class ;
+#            rdfs:subClassOf theatre-societe:Author ;
+#            rdfs:label "AuthorWork"@fr ,
+#             			"AuthorWork"@en ;
+#			rdfs:comment "AuthorWork"@fr ,
+#						"AuthorWork"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#Festival

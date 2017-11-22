@@ -114,7 +114,7 @@ theatre-societe-biblio:documentHasAuthor rdf:type owl:ObjectProperty ;
                             "Auteur"@fr ,
                             "Autore"@it ;
                     rdfs:comment """Represents the author of the document."""@en ;
-                    knora-base:objectClassConstraint theatre-societe:AuthorBiblio ;
+                    knora-base:objectClassConstraint theatre-societe:Person ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
 		salsah-gui:guiOrder "2"^^xsd:integer ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
@@ -303,7 +303,7 @@ theatre-societe-biblio:journalIssue rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf knora-base:hasValue, bibo:issue .
 
 
-###  http://www.knora.org/ontology/0103/theatre-societe-biblio#manuscriptHasConservationPlace
+###  http://www.knora.org/ontology/0103#manuscriptHasConservationPlace
 theatre-societe-biblio:manuscriptHasConservationPlace rdf:type owl:ObjectProperty ;
                         	rdfs:subPropertyOf knora-base:hasValue ;
                         	knora-base:subjectClassConstraint theatre-societe-biblio:Manuscript ;
@@ -382,7 +382,7 @@ theatre-societe-biblio:bookVolume rdf:type owl:ObjectProperty ;
 theatre-societe-biblio:hasDirector rdf:type owl:ObjectProperty ;
                     rdfs:label "Editeur scientifique"@fr ;
                     rdfs:comment """Représente l'éditeur scientifique d'une édition ou d'un ouvrage."""@fr ;
-                    knora-base:objectClassConstraint theatre-societe:AuthorBiblio ;
+                    knora-base:objectClassConstraint theatre-societe:Person ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf knora-base:hasLinkTo .
 
@@ -570,7 +570,7 @@ theatre-societe-biblio:Publisher rdf:type owl:Class ;
 
 
 
-###  http://www.knora.org/ontology/biblio#JournalArticle
+###  http://www.knora.org/ontology/0103/theatre-societe-biblio#JournalArticle
 theatre-societe-biblio:JournalArticle rdf:type owl:Class ;
                     rdfs:subClassOf theatre-societe-biblio:Publication,
                     				[ rdf:type owl:Restriction ;
