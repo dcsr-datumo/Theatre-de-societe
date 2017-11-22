@@ -570,7 +570,7 @@ theatre-societe-biblio:Publisher rdf:type owl:Class ;
 
 
 
-###  http://www.knora.org/ontology/biblio#JournalArticle
+###  http://www.knora.org/ontology/0103/theatre-societe-biblio#JournalArticle
 theatre-societe-biblio:JournalArticle rdf:type owl:Class ;
                     rdfs:subClassOf theatre-societe-biblio:Publication,
                     				[ rdf:type owl:Restriction ;
