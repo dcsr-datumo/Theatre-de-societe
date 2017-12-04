@@ -773,7 +773,7 @@ theatre-societe:roleHasType rdf:type owl:ObjectProperty ;
 					rdfs:comment "La fonction de la personne dans le cadre de cette représentation"@fr ,
 								"The person position during this performance"@en ;
 					salsah-gui:guiElement salsah-gui:Pulldown ;
-					salsah-gui:guiAttribute "hlist=<http://rdfh.ch/lists/theatre-societe-flatlist-roleHasType>" ;
+					salsah-gui:guiAttribute "hlist=<http://rdfh.ch/lists/0103/theatre-societe-flatlist-roleHasType>" ;
 					salsah-gui:guiOrder "2"^^xsd:integer .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#workHasAuthor
