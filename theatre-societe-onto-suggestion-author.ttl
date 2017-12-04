@@ -817,7 +817,7 @@ theatre-societe:workHasAuthority rdf:type owl:ObjectProperty ;
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#workHasTitle
 theatre-societe:workHasTitle rdf:type owl:ObjectProperty ;
-              			rdfs:subPropertyOf theatre-societe:hasTitle ;
+              			rdfs:subPropertyOf knora-base:hasValue ;
                         knora-base:objectClassConstraint knora-base:TextValue ;
               			knora-base:subjectClassConstraint theatre-societe:Work ;
 						rdfs:label "Titre"@fr ,
@@ -829,6 +829,34 @@ theatre-societe:workHasTitle rdf:type owl:ObjectProperty ;
 			         	salsah-gui:guiAttribute "size=80" ,
 			         						 	"rows=2" ,
 						                     	"maxlength=255" .
+
+
+###  http://www.knora.org/ontology/0103/theatre-societe#hasDoubtfulAttribution
+theatre-societe:hasDoubtfulAttribution rdf:type owl:ObjectProperty ;
+              			rdfs:subPropertyOf knora-base:hasValue ;
+                        knora-base:objectClassConstraint knora-base:BooleanValue ;
+              			knora-base:subjectClassConstraint theatre-societe:Role ;
+						rdfs:label "Attribution incertaine"@fr ,
+									 "Dubious attribution"@en ;
+						rdfs:comment "L'identification de la personne est incertaine"@fr ,
+									 "The person identification is dubious"@en ;
+	                    salsah-gui:guiOrder "1"^^xsd:integer ;
+	       		        salsah-gui:guiElement salsah-gui:Checkbox .
+
+###  http://www.knora.org/ontology/0103/theatre-societe#hasPseudonym
+theatre-societe:hasPseudonym rdf:type owl:ObjectProperty ;
+              			rdfs:subPropertyOf knora-base:hasValue ;
+                        knora-base:objectClassConstraint knora-base:TextValue ;
+              			knora-base:subjectClassConstraint theatre-societe:Person ;
+						rdfs:label "Pseudonyme"@fr ,
+									 "Nickname"@en ;
+						rdfs:comment "Le ou les pseudonyme(s) de la personne"@fr ,
+									 "Specify a person nickname(s)"@en ;
+	                    salsah-gui:guiOrder "1"^^xsd:integer ;
+	       		        	salsah-gui:guiElement salsah-gui:SimpleText ;
+			         	salsah-gui:guiAttribute "size=80" ,
+						                     	"maxlength=255" .
+
 
 
 #################################################################
@@ -1041,9 +1069,14 @@ theatre-societe:Person rdf:type owl:Class ;
 						[ rdf:type owl:Restriction ;
 					  	  owl:onProperty theatre-societe:hasMembershipValue ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
+						] ,
+						[ rdf:type owl:Restriction ;
+					  	  owl:onProperty theatre-societe:hasPseudonym ;
+					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Personne"@fr , "Person"@en ;
 		rdfs:comment "Personne"@fr , "Person"@en .
+
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#Place
@@ -1111,12 +1144,17 @@ theatre-societe:Role rdf:type owl:Class ;
 					  	  owl:onProperty theatre-societe:roleHasAgent ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
 						] ,
-        				[ rdf:type owl:Restriction ;
+        					[ rdf:type owl:Restriction ;
 					  	  owl:onProperty theatre-societe:roleHasAgentValue ;
 					  	  owl:minCardinality "0"^^xsd:nonNegativeInteger
+						] ,
+						[ rdf:type owl:Restriction ;
+					  	  owl:onProperty theatre-societe:hasDoubtfulAttribution ;
+					  	  owl:cardinality "1"^^xsd:nonNegativeInteger
 						] ;
         rdfs:label "Rôle"@fr , "Role"@en ;
 		rdfs:comment "Rôle"@fr , "Role"@en .
+
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#Work
