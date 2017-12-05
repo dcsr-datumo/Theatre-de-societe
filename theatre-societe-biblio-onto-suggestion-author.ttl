@@ -113,7 +113,8 @@ theatre-societe-biblio:documentHasAuthor rdf:type owl:ObjectProperty ;
                             "Author"@en ,
                             "Auteur / Éditeur (édition critique)"@fr ,
                             "Autore"@it ;
-                    rdfs:comment """Represents the author of the document."""@en ;
+                    rdfs:comment """Represents the author of the document."""@en ,
+		 	rdfs:comment """Auteur du document (livre, manuscrit, etc…) ou éditeur de l'édition critique."""@fr;
                     knora-base:objectClassConstraint theatre-societe:Person ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
 		salsah-gui:guiOrder "2"^^xsd:integer ;
@@ -163,10 +164,11 @@ theatre-societe-biblio:publisherHasLocation rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#isInLibrary
 theatre-societe-biblio:isInLibrary rdf:type owl:ObjectProperty ;
                     rdfs:label "isInLibrary"@de ,
-                            "isInLibrary"@en ,
+                            "Library"@en ,
                             "Bibliothèque"@fr ,
                             "isInLibrary"@it ;
-                    rdfs:comment """Représente une bibliothèque."""@fr ;
+                    rdfs:comment """Bibliothèque où le document est conservé"""@fr ,
+			"""Library where the document is stored"""@en;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
                     rdfs:subPropertyOf knora-base:hasValue .
@@ -188,11 +190,11 @@ theatre-societe-biblio:hasName rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#hasShelfNumber
 theatre-societe-biblio:hasShelfNumber rdf:type owl:ObjectProperty ;
                     rdfs:label "hasShelfNumber"@de ,
-                            "hasShelfNumber"@en ,
+                            "Shelf"@en ,
                             "Cote"@fr ,
                             "hasShelfNumber"@it ;
-                    rdfs:comment """Represents a ShelfNumber."""@en,
-                    			"""Représente une cote."""@en ;
+                    rdfs:comment """Document shelf number in library"""@en,
+                    			"""Cote du document"""@en ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
                     rdfs:subPropertyOf knora-base:hasValue .
@@ -204,7 +206,8 @@ theatre-societe-biblio:startPage rdf:type owl:ObjectProperty ;
                             "Starting Page"@en ,
                             "Première page"@fr ,
                             "pagina iniziale"@it ;
-                    rdfs:comment """Represents the starting page of published journal article."""@en ;
+                    rdfs:comment """Represents the starting page of published journal article."""@en , 
+			rdfs:comment """Première page"""@fr;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
                     rdfs:subPropertyOf knora-base:hasValue, bibo:startPage .
@@ -214,7 +217,7 @@ theatre-societe-biblio:startPage rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#endPage
 theatre-societe-biblio:endPage rdf:type owl:ObjectProperty ;
                     rdfs:label "letzte Seite"@de ,
-                            "last Page"@en ,
+                            "Last Page"@en ,
                             "Dernière page"@fr ,
                             "ultima pagina"@it ;
                     rdfs:comment """Represents the last page of published journal article."""@en ;
@@ -227,10 +230,11 @@ theatre-societe-biblio:endPage rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#ispartOfJournal
 theatre-societe-biblio:isPartOfJournal rdf:type owl:ObjectProperty ;
                     rdfs:label "ist Teil von"@de ,
-                               "is part of"@en ,
+                               "Journal"@en ,
                                "Revue/périodique"@fr ,
                                "fa parte di"@it ;
-                    rdfs:comment """Represents the journal the article is published in."""@en ;
+                    rdfs:comment """Represents the journal the article is published in."""@en ,
+			rdfs:comment """Journal dans lequel l'article parat"""@fr;
                     knora-base:objectClassConstraint theatre-societe-biblio:Journal ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf knora-base:hasLinkTo, dcterms:isPartOf .
@@ -244,7 +248,7 @@ theatre-societe-biblio:isPartOfJournalValue rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#ispartOfBook
 theatre-societe-biblio:isPartOfBook rdf:type owl:ObjectProperty ;
                     rdfs:label "ist Teil von"@de ,
-                               "is part of"@en ,
+                               "Book"@en ,
                                "Ouvrage"@fr ,
                                "fa parte di"@it ;
                     rdfs:comment """Represents the book a chapter is part of."""@en ,
@@ -262,10 +266,11 @@ theatre-societe-biblio:isPartOfBookValue rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#ispartOfCollection
 theatre-societe-biblio:isPartOfCollection rdf:type owl:ObjectProperty ;
                     rdfs:label "ist Teil von"@de ,
-                               "is part of"@en ,
-                               "Fait partie de"@fr ,
+                               "Collection"@en ,
+                               "Collection"@fr ,
                                "fa parte di"@it ;
-                    rdfs:comment """Represents the collection the article is published in."""@en ;
+                    rdfs:comment """Represents the collection the article is published in."""@en ,
+			rdfs:comment """La collection de l'ouvrage"""@fr;
                     knora-base:objectClassConstraint theatre-societe-biblio:Collection ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf knora-base:hasLinkTo, dcterms:isPartOf .
@@ -283,7 +288,8 @@ theatre-societe-biblio:journalVolume rdf:type owl:ObjectProperty ;
                                 "Issue"@en ,
                                 "Volume "@fr ,
                                 "edizione"@it ;
-                     rdfs:comment """Represents the journal volume."""@en ;
+                     rdfs:comment """Represents the journal volume."""@en ,
+			rdfs:comment """Volume du périodique"""@fr;
                      knora-base:objectClassConstraint knora-base:TextValue ;
                      salsah-gui:guiElement salsah-gui:SimpleText ;
                      knora-base:subjectClassConstraint theatre-societe-biblio:JournalArticle ;
@@ -309,9 +315,9 @@ theatre-societe-biblio:manuscriptHasConservationPlace rdf:type owl:ObjectPropert
                         	knora-base:subjectClassConstraint theatre-societe-biblio:Manuscript ;
                         	knora-base:objectClassConstraint knora-base:TextValue ;
 						  	rdfs:label "Fonds"@fr ,
-							  "manuscriptHasConservationPlace"@en ;
-						  	rdfs:comment "Fonds de conservation"@fr ,
-							  "manuscriptHasConservationPlace"@en ;
+							  "Archive"@en ;
+						  	rdfs:comment "Fonds d'archive"@fr ,
+							  "The archive the manuscript comes from"@en ;
 salsah-gui:guiOrder "6"^^xsd:integer ;
 							salsah-gui:guiElement salsah-gui:SimpleText ;
 			         		salsah-gui:guiAttribute "size=80" ,
@@ -323,7 +329,8 @@ theatre-societe-biblio:numVolumes rdf:type owl:ObjectProperty ;
 				"Nombre de volumes"@fr,
                                "Number of volumes"@en ;
                     rdfs:comment """Repräsentiert die Bändenzahl."""@de,
-                               """Represents number of volumes."""@en ;
+                               """Represents number of volumes."""@en ,
+				"""Indique le nombre de volumes"""@fr;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
                     rdfs:subPropertyOf knora-base:hasValue , bibo:numVolumes .
@@ -339,8 +346,10 @@ theatre-societe-biblio:numVolumes rdf:type owl:ObjectProperty ;
 
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#isEditionOf
 theatre-societe-biblio:isEditionOf rdf:type owl:ObjectProperty ;
-                    rdfs:label "Est une édition critique de…"@fr ;
-                    rdfs:comment """Représente l'édition (critique) d'un document."""@fr ;
+                    rdfs:label "Est une édition critique de…"@fr ,
+			 "Is a critical edition of…"@en ;
+                    rdfs:comment """Représente l'édition (critique) d'un document."""@fr ,
+			"The original document"@en ;
                     knora-base:objectClassConstraint theatre-societe-biblio:Document ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Edition ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
@@ -396,7 +405,8 @@ theatre-societe-biblio:hasDirectorValue rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#hasNumberInCollection
 theatre-societe-biblio:hasNumberInCollection rdf:type owl:ObjectProperty ;
                     rdfs:label "Numéro dans la collection" ;
-                    rdfs:comment """Représente le numéro d'un ouvrage dans une collection."""@en ;
+                    rdfs:comment """Représente le numéro d'un ouvrage dans une collection."""@fr ,
+			rdfs:comment """Volume number in collection"""@en;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
                     rdfs:subPropertyOf knora-base:hasValue .
