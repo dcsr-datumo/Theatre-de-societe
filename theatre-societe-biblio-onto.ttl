@@ -200,30 +200,17 @@ theatre-societe-biblio:hasShelfNumber rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasValue .
 
 
-###  http://www.knora.org/ontology/0103/theatre-societe-biblio#startPage
-theatre-societe-biblio:startPage rdf:type owl:ObjectProperty ;
-                    rdfs:label "Erste Seite"@de ,
-                            "Starting Page"@en ,
-                            "Première page"@fr ,
-                            "pagina iniziale"@it ;
-                    rdfs:comment """Represents the starting page of published journal article."""@en , 
-								"""Première page"""@fr ;
+
+###  http://www.knora.org/ontology/0103/theatre-societe-biblio#hasPages
+theatre-societe-biblio:hasPages rdf:type owl:ObjectProperty ;
+                    rdfs:label "Pages"@en ,
+                            "Pages"@fr ;
+                    rdfs:comment """Represents the pages of published journal article or book chapter."""@en ,
+                    				"""Numéros de pages d'un article de période ou d'un chapitre d'ouvrage."""@en;
                     knora-base:objectClassConstraint knora-base:TextValue ;
+                    knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
-                    rdfs:subPropertyOf knora-base:hasValue, bibo:startPage .
-
-
-
-###  http://www.knora.org/ontology/0103/theatre-societe-biblio#endPage
-theatre-societe-biblio:endPage rdf:type owl:ObjectProperty ;
-                    rdfs:label "letzte Seite"@de ,
-                            "Last Page"@en ,
-                            "Dernière page"@fr ,
-                            "ultima pagina"@it ;
-                    rdfs:comment """Represents the last page of published journal article."""@en ;
-                    knora-base:objectClassConstraint knora-base:TextValue ;
-                    salsah-gui:guiElement salsah-gui:SimpleText ;
-                    rdfs:subPropertyOf knora-base:hasValue, bibo:endPage .
+                    rdfs:subPropertyOf knora-base:hasValue .
 
 
 
@@ -504,10 +491,10 @@ theatre-societe-biblio:Publication rdf:type owl:Class ;
                                       owl:onProperty theatre-societe-biblio:publicationHasDOI ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ] ;
-                    rdfs:label "Publikation"@de ,
-                               "Publication"@en ,
-                               "Publication"@fr ,
-                               "Pubblicazione"@it ;
+                    rdfs:label "[Publikation]"@de ,
+                               "[Publication]"@en ,
+                               "[Publication]"@fr ,
+                               "[Pubblicazione]"@it ;
                     rdfs:comment "A resource representing a publication"@en .
 
 
@@ -584,11 +571,7 @@ theatre-societe-biblio:Publisher rdf:type owl:Class ;
 theatre-societe-biblio:JournalArticle rdf:type owl:Class ;
                     rdfs:subClassOf theatre-societe-biblio:Publication,
                     				[ rdf:type owl:Restriction ;
-                                      owl:onProperty theatre-societe-biblio:startPage ;
-                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                    ],
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty theatre-societe-biblio:endPage ;
+                                      owl:onProperty theatre-societe-biblio:hasPages ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ],
                                     [ rdf:type owl:Restriction ;
@@ -682,13 +665,9 @@ theatre-societe-biblio:BookChapter rdf:type owl:Class ;
                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ],
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty theatre-societe-biblio:startPage ;
+                                      owl:onProperty theatre-societe-biblio:hasPages ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ],
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty theatre-societe-biblio:endPage ;
-                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                    ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:bookVolume ;
                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
