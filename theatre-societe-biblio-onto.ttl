@@ -34,7 +34,7 @@ theatre-societe-biblio:documentHasTitle rdf:type owl:ObjectProperty ;
                     rdfs:comment """Represents a title of a document."""@en ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
-		salsah-gui:guiOrder "1"^^xsd:integer ;
+                    salsah-gui:guiOrder "2"^^xsd:integer ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
                     rdfs:subPropertyOf knora-base:hasValue, dcterms:title.
 
@@ -61,7 +61,7 @@ theatre-societe-biblio:documentHasDate rdf:type owl:ObjectProperty ;
                     rdfs:comment """Represents a document Date."""@en ;
                     knora-base:objectClassConstraint knora-base:DateValue ;
                     salsah-gui:guiElement salsah-gui:Date ;
-			salsah-gui:guiOrder "8"^^xsd:integer ;
+                    salsah-gui:guiOrder "4"^^xsd:integer ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
                     rdfs:subPropertyOf knora-base:hasValue, dcterms:issued .
 
@@ -75,6 +75,7 @@ theatre-societe-biblio:publicationHasPublisher rdf:type owl:ObjectProperty ;
                     rdfs:comment """Represents the publisher of the publication."""@en ;
                     knora-base:objectClassConstraint theatre-societe-biblio:Publisher ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
+                    salsah-gui:guiOrder "3"^^xsd:integer ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
                     rdfs:subPropertyOf knora-base:hasLinkTo , dcterms:publisher.
 
@@ -117,7 +118,7 @@ theatre-societe-biblio:documentHasAuthor rdf:type owl:ObjectProperty ;
 		 						"""Auteur du document (livre, manuscrit, etc…) ou éditeur de l'édition critique."""@fr ;
                     knora-base:objectClassConstraint theatre-societe:Person ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
-		salsah-gui:guiOrder "2"^^xsd:integer ;
+                    salsah-gui:guiOrder "1"^^xsd:integer ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
                     rdfs:subPropertyOf knora-base:hasLinkTo, dcterms:creator .
 
@@ -171,6 +172,7 @@ theatre-societe-biblio:isInLibrary rdf:type owl:ObjectProperty ;
 								"""Library where the document is stored"""@en ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
+                    salsah-gui:guiOrder "5"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasValue .
 
 
@@ -197,6 +199,7 @@ theatre-societe-biblio:hasShelfNumber rdf:type owl:ObjectProperty ;
                     				"""Cote du document"""@fr ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
+                    salsah-gui:guiOrder "8"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasValue .
 
 
@@ -210,6 +213,7 @@ theatre-societe-biblio:hasPages rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
+                    salsah-gui:guiOrder "5"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasValue .
 
 
@@ -224,6 +228,7 @@ theatre-societe-biblio:isPartOfJournal rdf:type owl:ObjectProperty ;
 								"""Journal dans lequel l'article parat"""@fr ;
                     knora-base:objectClassConstraint theatre-societe-biblio:Journal ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
+                    salsah-gui:guiOrder "3"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasLinkTo, dcterms:isPartOf .
 
 
@@ -242,6 +247,7 @@ theatre-societe-biblio:isPartOfBook rdf:type owl:ObjectProperty ;
                     			"""Représente l'ouvrage dont fait partie le chapitre."""@fr ;
                     knora-base:objectClassConstraint theatre-societe-biblio:Book ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
+                    salsah-gui:guiOrder "3"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasLinkTo, dcterms:isPartOf .
 
 
@@ -260,6 +266,7 @@ theatre-societe-biblio:isPartOfCollection rdf:type owl:ObjectProperty ;
 								"""La collection de l'ouvrage"""@fr ;
                     knora-base:objectClassConstraint theatre-societe-biblio:Collection ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
+                    salsah-gui:guiOrder "5"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasLinkTo, dcterms:isPartOf .
 
 
@@ -279,6 +286,7 @@ theatre-societe-biblio:journalVolume rdf:type owl:ObjectProperty ;
 								"""Volume du périodique"""@fr ;
                      knora-base:objectClassConstraint knora-base:TextValue ;
                      salsah-gui:guiElement salsah-gui:SimpleText ;
+                     salsah-gui:guiOrder "6"^^xsd:integer ;
                      knora-base:subjectClassConstraint theatre-societe-biblio:JournalArticle ;
                      rdfs:subPropertyOf knora-base:hasValue, bibo:volume .
 
@@ -301,13 +309,13 @@ theatre-societe-biblio:manuscriptHasConservationPlace rdf:type owl:ObjectPropert
                         	rdfs:subPropertyOf knora-base:hasValue ;
                         	knora-base:subjectClassConstraint theatre-societe-biblio:Manuscript ;
                         	knora-base:objectClassConstraint knora-base:TextValue ;
-						  	rdfs:label "Fonds"@fr ,
+						rdfs:label "Fonds"@fr ,
 							  "Archive"@en ;
-						  	rdfs:comment "Fonds d'archive"@fr ,
+						rdfs:comment "Fonds d'archive"@fr ,
 							  "The archive the manuscript comes from"@en ;
 						salsah-gui:guiOrder "6"^^xsd:integer ;
-							salsah-gui:guiElement salsah-gui:SimpleText ;
-			         		salsah-gui:guiAttribute "size=80" ,
+						salsah-gui:guiElement salsah-gui:SimpleText ;
+			         	salsah-gui:guiAttribute "size=80" ,
 						                     	"maxlength=255" .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#numVolumes
@@ -320,6 +328,7 @@ theatre-societe-biblio:numVolumes rdf:type owl:ObjectProperty ;
 								"""Indique le nombre de volumes"""@fr ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
+                    salsah-gui:guiOrder "7"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasValue , bibo:numVolumes .
 
 ####  http://www.knora.org/ontology/0103/theatre-societe-biblio#numEdition
@@ -340,6 +349,7 @@ theatre-societe-biblio:isEditionOf rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint theatre-societe-biblio:Document ;
                     knora-base:subjectClassConstraint theatre-societe-biblio:Edition ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
+                    salsah-gui:guiOrder "5"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasLinkTo .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#isEditionOfValue
@@ -372,7 +382,10 @@ theatre-societe-biblio:bookVolume rdf:type owl:ObjectProperty ;
                     rdfs:comment """Représente le volume de l'ouvrage."""@fr,
                                """Represents the book volume."""@en ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
-                    salsah-gui:guiElement salsah-gui:SimpleText .
+                    knora-base:subjectClassConstraint theatre-societe-biblio:BookChapter ;
+                    salsah-gui:guiElement salsah-gui:SimpleText ;
+                    salsah-gui:guiOrder "4"^^xsd:integer ;
+                    rdfs:subPropertyOf knora-base:hasValue .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#hasDirector
 theatre-societe-biblio:hasDirector rdf:type owl:ObjectProperty ;
@@ -396,6 +409,7 @@ theatre-societe-biblio:hasNumberInCollection rdf:type owl:ObjectProperty ;
 								"""Volume number in collection"""@en ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
                     salsah-gui:guiElement salsah-gui:SimpleText ;
+                    salsah-gui:guiOrder "6"^^xsd:integer ;
                     rdfs:subPropertyOf knora-base:hasValue .
 
 
@@ -413,7 +427,8 @@ theatre-societe-biblio:Document rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentHasAuthor ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                    ],
+                                    ], 
+                                    #salsah-gui:gui-order 1
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentHasAuthorValue ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -421,11 +436,13 @@ theatre-societe-biblio:Document rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentHasDate ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                    ],
+                                    ], 
+                                    #salsah-gui:gui-order 4
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentHasTitle ;
                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
                                     ],
+                                    #salsah-gui:gui-order 2
 #                                    [ rdf:type owl:Restriction ;
 #                                      owl:onProperty theatre-societe-biblio:documentHasSubtitle ;
 #                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -475,6 +492,7 @@ theatre-societe-biblio:Publication rdf:type owl:Class ;
                                       owl:onProperty theatre-societe-biblio:publicationHasPublisher ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ],
+                                    #salsah-gui:gui-order 3
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:publicationHasPublisherValue ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -519,11 +537,11 @@ theatre-societe-biblio:Edition rdf:type owl:Class ;
                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                         ],
                                         [ rdf:type owl:Restriction ;
-	                                       owl:onProperty theatre-societe-biblio:theatre-societe-biblio:hasDirector ;
+	                                       owl:onProperty theatre-societe-biblio:hasDirector ;
 	                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
 	                                    ],
 	                                    [ rdf:type owl:Restriction ;
-	                                       owl:onProperty theatre-societe-biblio:theatre-societe-biblio:hasDirectorValue ;
+	                                       owl:onProperty theatre-societe-biblio:hasDirectorValue ;
 	                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
 	                                    ];
                     rdfs:label "Edition"@de ,
@@ -624,11 +642,11 @@ theatre-societe-biblio:Book rdf:type owl:Class ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ],
                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty theatre-societe-biblio:theatre-societe-biblio:hasDirector ;
+                                       owl:onProperty theatre-societe-biblio:hasDirector ;
                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ],
                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty theatre-societe-biblio:theatre-societe-biblio:hasDirectorValue ;
+                                       owl:onProperty theatre-societe-biblio:hasDirectorValue ;
                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ],
                                     [ rdf:type owl:Restriction ;
