@@ -128,9 +128,9 @@ theatre-societe:genreHasComment rdf:type owl:ObjectProperty ;
 	             	knora-base:subjectClassConstraint theatre-societe:Genre ;
 	             	knora-base:objectClassConstraint knora-base:TextValue ;
 					rdfs:label "Notice"@fr ,
-								"genreHasComment"@en ;
+								"Comment on genre"@en ;
 					rdfs:comment "Notice du genre"@fr ,
-								"genreHasComment"@en ;
+								"A scientific comment about the genre"@en ;
 	                salsah-gui:guiOrder "2"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:Richtext ;
 				   	salsah-gui:guiAttribute "width=95%" ,
@@ -144,9 +144,9 @@ theatre-societe:groupHasDate rdf:type owl:ObjectProperty ;
          		    knora-base:objectClassConstraint knora-base:DateValue ;
 	                knora-base:subjectClassConstraint theatre-societe:Group ;
 					rdfs:label "Date d'existence"@fr ,
-						"groupHasDate"@en ;
+						"Date/Period of activity"@en ;
 					rdfs:comment "Date d'existence"@fr ,
-						"groupHasDate"@en ;
+						"The time during which the group was active"@en ;
 	                salsah-gui:guiOrder "2"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:Date ;
 	            	salsah-gui:guiAttribute "size=16" ,
@@ -159,9 +159,9 @@ theatre-societe:groupHasName rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint knora-base:TextValue ;
 	             	knora-base:subjectClassConstraint theatre-societe:Group ;
 					rdfs:label "Nom"@fr ,
-						"groupHasName"@en ;
+						"Name"@en ;
 					rdfs:comment "Nom du groupe"@fr ,
-						"groupHasName"@en ;
+						"The name of the group"@en ;
 	                salsah-gui:guiOrder "1"^^xsd:integer ;
 				 	salsah-gui:guiElement salsah-gui:SimpleText ;
 		         	salsah-gui:guiAttribute "size=30" ,
@@ -174,9 +174,9 @@ theatre-societe:groupHasPlace rdf:type owl:ObjectProperty ;
           	              knora-base:objectClassConstraint theatre-societe:Place ;
 			         	  knora-base:subjectClassConstraint theatre-societe:Group ;
 						  rdfs:label "Lieu d'activité"@fr ,
-							  "groupHasPlace"@en ;
+							  "Place"@en ;
 						  rdfs:comment "Lieu d'activité du groupe"@fr ,
-							  "groupHasPlace"@en ;
+							  "The place where the group was active"@en ;
 				          salsah-gui:guiOrder "3"^^xsd:integer ;
 				          salsah-gui:guiElement salsah-gui:Searchbox .
 
@@ -187,9 +187,9 @@ theatre-societe:groupHasPlaceValue rdf:type owl:ObjectProperty ;
           	              knora-base:objectClassConstraint knora-base:LinkValue ;
 			         	  knora-base:subjectClassConstraint theatre-societe:Group ;
 						  rdfs:label "Lieu d'activité"@fr ,
-							  "groupHasPlace"@en ;
+							  "Place"@en ;
 						  rdfs:comment "Lieu d'activité du groupe"@fr ,
-							  "groupHasPlace"@en .
+							  "The place where the group was active"@en .
 
 
 ####  http://www.knora.org/ontology/0103/theatre-societe#groupHasType_suppr
@@ -202,9 +202,9 @@ theatre-societe:hasAuthority rdf:type owl:ObjectProperty ;
               		rdfs:subPropertyOf knora-base:hasValue ;
                     knora-base:objectClassConstraint knora-base:UriValue ;
 					rdfs:label "Notice d'autorité (URI)"@fr ,
-						"hasAuthority"@en ;
+						"Authority ID (URI)"@en ;
 					rdfs:comment "Notice d'autorité (URI)"@fr ,
-						"hasAuthority"@en .
+						"Authority file URI"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasBirthDate
@@ -227,9 +227,9 @@ theatre-societe:hasDate rdf:type owl:ObjectProperty ;
          		rdfs:subPropertyOf knora-base:hasValue ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
          		rdfs:label "Date"@fr ,
-							"hasDate"@en ;
-				rdfs:comment "Date"@fr ,
-							"hasDate"@en .
+							"Date"@en ;
+				rdfs:comment "A date"@fr ,
+							"A date"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasDeathDate
@@ -306,9 +306,9 @@ theatre-societe:hasName rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf knora-base:hasValue ;
          knora-base:objectClassConstraint knora-base:TextValue ;
          rdfs:label "Prénom"@fr ,
-					"hasGivenName"@en ;
+					"Given Name"@en ;
 		 rdfs:comment "Prénom"@fr ,
-					"hasGivenName"@en .
+					"The person's given name"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasNotice
@@ -316,9 +316,9 @@ theatre-societe:hasNotice rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf knora-base:hasValue ;
            knora-base:objectClassConstraint knora-base:TextValue ;
 		   rdfs:label "Notice"@fr ,
-					"hasNotice"@en ;
+					"Entry"@en ;
 		   rdfs:comment "Notice"@fr ,
-					"hasNotice"@en .
+					"More informations about the person"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasMembership
@@ -327,9 +327,9 @@ theatre-societe:hasMembership rdf:type owl:ObjectProperty ;
                   	knora-base:objectClassConstraint theatre-societe:Membership ;
 			 		knora-base:subjectClassConstraint theatre-societe:Person ;
 					rdfs:label "Appartenance (groupe)"@fr ,
-								  "hasMembership"@en ;
+								  "Is a member of (group)"@en ;
 					rdfs:comment "L'appartenance à un ou plusieurs groupe(s)"@fr ,
-								  "hasMembership"@en ;
+								  "The person is a member of one or multiple group(s)"@en ;
 					salsah-gui:guiElement salsah-gui:Searchbox ;
 					salsah-gui:guiOrder "7"^^xsd:integer .
 
@@ -340,9 +340,9 @@ theatre-societe:hasMembershipValue rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint knora-base:LinkValue ;
 			 		knora-base:subjectClassConstraint theatre-societe:Person ;
 					rdfs:label "Appartenance"@fr ,
-								  "hasMembership"@en ;
+								  "Is a member of (group)"@en ;
 					rdfs:comment "L'appartenance à un ou plusieurs groupe(s)"@fr ,
-								  "hasMembership"@en .
+								  "The person is a member of one or multiple group(s)"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#isMembershipIn
@@ -351,9 +351,9 @@ theatre-societe:isMembershipIn rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint theatre-societe:Group ;
 			 		knora-base:subjectClassConstraint theatre-societe:Person ;
 					rdfs:label "Nom du groupe"@fr ,
-								  "isMembershipIn"@en ;
+								  "Group name"@en ;
 					rdfs:comment "Nom du groupe dont la personne est membre"@fr ,
-								  "isMembershipIn"@en ;
+								  "Name of the group the person is a member"@en ;
 					salsah-gui:guiElement salsah-gui:Searchbox ;
 					salsah-gui:guiOrder "1"^^xsd:integer .
 
@@ -364,9 +364,9 @@ theatre-societe:isMembershipInValue rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint theatre-societe:Group ;
 			 		knora-base:subjectClassConstraint theatre-societe:Membership ;
 					rdfs:label "Nom du groupe"@fr ,
-								  "isMembershipIn"@en ;
+								  "Group name"@en ;
 					rdfs:comment "Nom du groupe dont la personne est membre"@fr ,
-								  "isMembershipIn"@en .
+								  "Name of the group the person is a member"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasPlace
@@ -374,9 +374,9 @@ theatre-societe:hasPlace rdf:type owl:ObjectProperty ;
           	rdfs:subPropertyOf knora-base:hasLinkTo ;
           	knora-base:objectClassConstraint theatre-societe:Place ;
 		  	rdfs:label "Lieu"@fr ,
-					"hasPlace"@en ;
+					"Place"@en ;
 		  	rdfs:comment "Lieu"@fr ,
-					"hasPlace"@en .
+					"A place"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasPlaceValue
@@ -384,9 +384,9 @@ theatre-societe:hasPlaceValue rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf knora-base:hasLinkToValue ;
             knora-base:objectClassConstraint knora-base:LinkValue ;
 		  	rdfs:label "Lieu"@fr ,
-					"hasPlace"@en ;
+					"Place"@en ;
 		  	rdfs:comment "Lieu"@fr ,
-					"hasPlace"@en .
+					"A place"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasTitle
@@ -394,9 +394,9 @@ theatre-societe:hasTitle rdf:type owl:ObjectProperty ;
           	rdfs:subPropertyOf knora-base:hasValue ;
             knora-base:objectClassConstraint knora-base:TextValue ;
          	rdfs:label "Titre"@fr ,
-						"hasTitle"@en ;
+						"Title"@en ;
 		 	rdfs:comment "Titre"@fr ,
-						"hasTitle"@en .
+						"A title"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#membershipHasDate
@@ -405,9 +405,9 @@ theatre-societe:membershipHasDate rdf:type owl:ObjectProperty ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
                 knora-base:subjectClassConstraint knora-base:Membership ;
          		rdfs:label "Date(s) d'appartenance"@fr ,
-							"membershipHasDate"@en ;
+							"Dates"@en ;
 				rdfs:comment "Le ou les dates d'appartenance au groupe"@fr ,
-							"membershipHasDate"@en ;
+							"The date or a period describing the membership"@en ;
 				salsah-gui:guiOrder "2"^^xsd:integer ;
 	            salsah-gui:guiElement salsah-gui:Date ;
 	            salsah-gui:guiAttribute "size=16" ,
@@ -435,9 +435,9 @@ theatre-societe:placeHasGeonameID rdf:type owl:ObjectProperty ;
                    	knora-base:subjectClassConstraint theatre-societe:Place ;
             		knora-base:objectClassConstraint knora-base:GeonameValue ;
 			        rdfs:label "ID Geoname"@fr ,
-								"placeHasGeonameID"@en ;
+								"Geoname ID"@en ;
 					rdfs:comment "ID Geoname"@fr ,
-								"placeHasGeonameID"@en ;
+								"If the place has a geoname ID"@en ;
 					salsah-gui:guiOrder "3"^^xsd:integer ;
 					salsah-gui:guiElement salsah-gui:Geonames .
 
@@ -479,9 +479,9 @@ theatre-societe:publicationHasAuthor rdf:type owl:ObjectProperty ;
                       	knora-base:subjectClassConstraint theatre-societe:Publication ;
                       	knora-base:objectClassConstraint theatre-societe:AuthorBiblio ;
 						rdfs:label "Auteur"@fr ,
-									  "publicationHasAuthor"@en ;
+									  "Author"@en ;
 						rdfs:comment "Auteur"@fr ,
-									  "publicationHasAuthor"@en ;
+									  "The author of the publication"@en ;
 						salsah-gui:guiElement salsah-gui:Searchbox ;
 						salsah-gui:guiOrder "2"^^xsd:integer .
 
@@ -492,9 +492,9 @@ theatre-societe:publicationHasAuthorValue rdf:type owl:ObjectProperty ;
 	                        knora-base:subjectClassConstraint theatre-societe:Publication ;
 	                      	knora-base:objectClassConstraint knora-base:LinkValue ;
 							rdfs:label "Auteur"@fr ,
-										  "publicationHasAuthor"@en ;
+										  "Author"@en ;
 							rdfs:comment "Auteur"@fr ,
-										  "publicationHasAuthor"@en .
+										  "The author of the publication"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#publicationHasTitle
@@ -503,9 +503,9 @@ theatre-societe:publicationHasTitle rdf:type owl:ObjectProperty ;
                         knora-base:objectClassConstraint knora-base:TextValue ;
 	                    knora-base:subjectClassConstraint theatre-societe:Publication ;
 						rdfs:label "Titre"@fr ,
-									  "publicationHasTitle"@en ;
+									  "Title"@en ;
 						rdfs:comment "Titre"@fr ,
-									  "publicationHasTitle"@en ;
+									  "The publication has a title"@en ;
 	                    salsah-gui:guiOrder "1"^^xsd:integer ;
 					 	salsah-gui:guiElement salsah-gui:SimpleText ;
 			         	salsah-gui:guiAttribute "size=80" ,
