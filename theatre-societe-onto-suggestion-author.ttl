@@ -601,10 +601,10 @@ theatre-societe:representationHasGenre rdf:type owl:ObjectProperty ;
                               	rdfs:subPropertyOf knora-base:hasLinkTo ;
                               	knora-base:subjectClassConstraint theatre-societe:Representation ;
 				                knora-base:objectClassConstraint theatre-societe:Genre ;
-								rdfs:label "Genre"@fr ,
-											  "Genre"@en ;
-								rdfs:comment "Le ou les genre·s de la pièce"@fr ,
-											  "Play genre·s"@en ;
+								rdfs:label "Genre décrit"@fr ,
+											  "Described genre"@en ;
+								rdfs:comment "Le ou les genre·s attribué à la pièce dans les témoignages documentant cette représentation"@fr ,
+											  "Genre·s qualifying the play in witnesses texts"@en ;
 								salsah-gui:guiElement salsah-gui:Searchbox ;
 								salsah-gui:guiOrder "4"^^xsd:integer .
 
