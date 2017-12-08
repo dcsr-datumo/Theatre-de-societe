@@ -39,7 +39,7 @@ theatre-societe:agentHasAuthority rdf:type owl:ObjectProperty ;
 						"Authority ID (URI)"@en ;
 					rdfs:comment "L'URI de la notice d'autorité"@fr ,
 						"Authority file URI"@en ;
-	                salsah-gui:guiOrder "5"^^xsd:integer ;
+	                salsah-gui:guiOrder "7"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:SimpleText ;
 	                salsah-gui:guiAttribute "size=80" ,
                                			"maxlength=255" .
@@ -54,7 +54,7 @@ theatre-societe:agentHasNotice rdf:type owl:ObjectProperty ;
 						"Notice"@en ;
 					rdfs:comment "Notice sur la personne"@fr ,
 						"Notice about the person"@en ;
-	                salsah-gui:guiOrder "6"^^xsd:integer ;
+	                salsah-gui:guiOrder "8"^^xsd:integer ;
 	                salsah-gui:guiElement salsah-gui:Richtext ;
 				    salsah-gui:guiAttribute "width=95%" ,
 							               "rows=10" ,
@@ -216,7 +216,7 @@ theatre-societe:hasBirthDate rdf:type owl:ObjectProperty ;
 							"Birth date"@en ;
 				rdfs:comment "La date de naissance"@fr ,
 							"Birth date"@en ;
-	            salsah-gui:guiOrder "3"^^xsd:integer ;
+	            salsah-gui:guiOrder "4"^^xsd:integer ;
 	            salsah-gui:guiElement salsah-gui:Date ;
 	            salsah-gui:guiAttribute "size=16" ,
                                			"maxlength=32" .
@@ -241,7 +241,7 @@ theatre-societe:hasDeathDate rdf:type owl:ObjectProperty ;
 							"Death Date"@en ;
 				rdfs:comment "La date de décès"@fr ,
 							"Date of death"@en ;
-	            salsah-gui:guiOrder "4"^^xsd:integer ;
+	            salsah-gui:guiOrder "5"^^xsd:integer ;
 	            salsah-gui:guiElement salsah-gui:Date ;
 	           	salsah-gui:guiAttribute "size=16" ,
                                			 "maxlength=32" .
@@ -331,7 +331,7 @@ theatre-societe:hasMembership rdf:type owl:ObjectProperty ;
 					rdfs:comment "L'appartenance à un ou plusieurs groupe(s)"@fr ,
 								  "The person is a member of one or multiple group(s)"@en ;
 					salsah-gui:guiElement salsah-gui:Searchbox ;
-					salsah-gui:guiOrder "7"^^xsd:integer .
+					salsah-gui:guiOrder "6"^^xsd:integer .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasMembershipValue
@@ -423,7 +423,7 @@ theatre-societe:placeHasCoordinates rdf:type owl:ObjectProperty ;
 									"GPS Coordinates"@en ;
 					 	rdfs:comment "Coordonnées GPS de l'endroit"@fr ,
 									"The place GPS coordinates"@en ;
-						salsah-gui:guiOrder "4"^^xsd:integer ;
+						salsah-gui:guiOrder "2"^^xsd:integer ;
 					 	salsah-gui:guiElement salsah-gui:SimpleText ;
 			         	salsah-gui:guiAttribute "size=30" ,
 						                     "maxlength=80" .
@@ -466,35 +466,12 @@ theatre-societe:placeHasNotice rdf:type owl:ObjectProperty ;
 					"Notice"@en ;
 				rdfs:comment "Notice informative à propos de l'endroit"@fr ,
 					"Informations about the place"@en ;
-	            salsah-gui:guiOrder "2"^^xsd:integer ;
+	            salsah-gui:guiOrder "3"^^xsd:integer ;
 	            salsah-gui:guiElement salsah-gui:Richtext ;
 				salsah-gui:guiAttribute "width=95%" ,
 							            "rows=10" ,
 							            "wrap=soft" .
 
-
-###  http://www.knora.org/ontology/0103/theatre-societe#publicationHasAuthor
-theatre-societe:publicationHasAuthor rdf:type owl:ObjectProperty ;
-                      	rdfs:subPropertyOf knora-base:hasLinkTo ;
-                      	knora-base:subjectClassConstraint theatre-societe:Publication ;
-                      	knora-base:objectClassConstraint theatre-societe:AuthorBiblio ;
-						rdfs:label "Auteur"@fr ,
-									  "Author"@en ;
-						rdfs:comment "Auteur"@fr ,
-									  "The author of the publication"@en ;
-						salsah-gui:guiElement salsah-gui:Searchbox ;
-						salsah-gui:guiOrder "2"^^xsd:integer .
-
-
-###  http://www.knora.org/ontology/0103/theatre-societe#publicationHasAuthorValue
-theatre-societe:publicationHasAuthorValue rdf:type owl:ObjectProperty ;
-                           	rdfs:subPropertyOf knora-base:hasLinkToValue ;
-	                        knora-base:subjectClassConstraint theatre-societe:Publication ;
-	                      	knora-base:objectClassConstraint knora-base:LinkValue ;
-							rdfs:label "Auteur"@fr ,
-										  "Author"@en ;
-							rdfs:comment "Auteur"@fr ,
-										  "The author of the publication"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#publicationHasTitle
@@ -585,14 +562,14 @@ theatre-societe:quoteHasSourceValue rdf:type owl:ObjectProperty ;
 theatre-societe:representationHasDate rdf:type owl:ObjectProperty ;
                        	rdfs:subPropertyOf theatre-societe:hasDate ;
          		        knora-base:objectClassConstraint knora-base:DateValue ;
-                    knora-base:subjectClassConstraint theatre-societe:Representation ;
-                    rdfs:label "Date"@fr ,
+                    		knora-base:subjectClassConstraint theatre-societe:Representation ;
+                    		rdfs:label "Date"@fr ,
 							              "Date"@en ;
-						        rdfs:comment "Date de la représentation"@fr ,
+						rdfs:comment "Date de la représentation"@fr ,
 							                  "Representation date"@en ;
-	                	salsah-gui:guiOrder "2"^^xsd:integer ;
-		                salsah-gui:guiElement salsah-gui:Date ;
-		            	  salsah-gui:guiAttribute "size=16" ,
+	                		salsah-gui:guiOrder "1"^^xsd:integer ;
+	                		salsah-gui:guiElement salsah-gui:Date ;
+		            	  	salsah-gui:guiAttribute "size=16" ,
 	                               			 "maxlength=32" .
 
 
@@ -606,7 +583,7 @@ theatre-societe:representationHasGenre rdf:type owl:ObjectProperty ;
 								rdfs:comment "Le ou les genre·s attribué·s à la pièce dans les témoignages documentant cette représentation"@fr ,
 											  "Genre·s qualifying the play in witnesses texts"@en ;
 								salsah-gui:guiElement salsah-gui:Searchbox ;
-								salsah-gui:guiOrder "4"^^xsd:integer .
+								salsah-gui:guiOrder "5"^^xsd:integer .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#representationHasGenreValue
 theatre-societe:representationHasGenreValue rdf:type owl:ObjectProperty ;
@@ -677,7 +654,7 @@ theatre-societe:representationHasRole rdf:type owl:ObjectProperty ;
 								rdfs:comment "Couples personne/rôle prenant part à cette représentation"@fr ,
 											  "A person/role doublet that do something in this representation"@en ;
 								salsah-gui:guiElement salsah-gui:Searchbox ;
-								salsah-gui:guiOrder "5"^^xsd:integer .
+								salsah-gui:guiOrder "6"^^xsd:integer .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#representationHasRoleValue
@@ -701,7 +678,7 @@ theatre-societe:representationIsBasedOn rdf:type owl:ObjectProperty ;
 							rdfs:comment "Pièce jouée lors de la représentation"@fr ,
 										"Performed play at this performance"@en ;
 							salsah-gui:guiElement salsah-gui:Searchbox ;
-							salsah-gui:guiOrder "3"^^xsd:integer .
+							salsah-gui:guiOrder "2"^^xsd:integer .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#representationIsBasedOnValue
@@ -725,7 +702,7 @@ theatre-societe:representationIsPartOfFestival rdf:type owl:ObjectProperty ;
 								rdfs:comment "La représentation fait-elle partie d'un festival ?"@fr ,
 											"Is the performance part of a festival ?"@en ;
 								salsah-gui:guiElement salsah-gui:Searchbox ;
-								salsah-gui:guiOrder "6"^^xsd:integer .
+								salsah-gui:guiOrder "4"^^xsd:integer .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#representationIsPartOfFestivalValue
@@ -786,7 +763,7 @@ theatre-societe:workHasAuthor rdf:type owl:ObjectProperty ;
 						rdfs:comment "L'auteur de la pièce"@fr ,
 									  "Author of the play"@en ;
 						salsah-gui:guiElement salsah-gui:Searchbox ;
-						salsah-gui:guiOrder "3"^^xsd:integer .
+						salsah-gui:guiOrder "1"^^xsd:integer .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#workHasAuthorValue
@@ -824,7 +801,7 @@ theatre-societe:workHasTitle rdf:type owl:ObjectProperty ;
 									 "Title"@en ;
 						rdfs:comment "Nom de la pièce"@fr ,
 									 "Name of the play"@en ;
-	                    salsah-gui:guiOrder "1"^^xsd:integer ;
+	                    salsah-gui:guiOrder "2"^^xsd:integer ;
 					 	salsah-gui:guiElement salsah-gui:SimpleText ;
 			         	salsah-gui:guiAttribute "size=80" ,
 			         						 	"rows=2" ,
@@ -840,7 +817,7 @@ theatre-societe:hasDoubtfulAttribution rdf:type owl:ObjectProperty ;
 									 "Dubious attribution"@en ;
 						rdfs:comment "L'identification de la personne est incertaine"@fr ,
 									 "The person identification is dubious"@en ;
-	                    salsah-gui:guiOrder "1"^^xsd:integer ;
+	                    salsah-gui:guiOrder "4"^^xsd:integer ;
 	       		        salsah-gui:guiElement salsah-gui:Checkbox .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasPseudonym
@@ -852,7 +829,7 @@ theatre-societe:hasPseudonym rdf:type owl:ObjectProperty ;
 									 "Nickname"@en ;
 						rdfs:comment "Le ou les pseudonyme(s) de la personne"@fr ,
 									 "Specify a person nickname(s)"@en ;
-	                    salsah-gui:guiOrder "1"^^xsd:integer ;
+	                    salsah-gui:guiOrder "3"^^xsd:integer ;
 	       		        	salsah-gui:guiElement salsah-gui:SimpleText ;
 			         	salsah-gui:guiAttribute "size=80" ,
 						                     	"maxlength=255" .
