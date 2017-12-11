@@ -449,6 +449,22 @@ theatre-societe-biblio:hasNumberInCollection rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasValue .
 
 
+# ------------------- Essai
+
+###  http://www.knora.org/ontology/0103/theatre-societe-biblio#hasDirector2
+theatre-societe-biblio:hasDirector2 rdf:type owl:ObjectProperty ;
+                    rdfs:label "Editeur scientifique2"@fr ;
+                    rdfs:comment """Représente l'éditeur scientifique d'une édition ou d'un ouvrage."""@fr ;
+                    knora-base:objectClassConstraint theatre-societe:Person ;
+                    salsah-gui:guiElement salsah-gui:Searchbox ;
+                    rdfs:subPropertyOf theatre-societe-biblio:documentHasAuthor .
+
+###  http://www.knora.org/ontology/0103/theatre-societe-biblio#hasDirector2Value
+theatre-societe-biblio:hasDirector2Value rdf:type owl:ObjectProperty ;
+                    knora-base:objectClassConstraint knora-base:LinkValue ;
+                    salsah-gui:guiElement salsah-gui:Searchbox ;
+                    rdfs:subPropertyOf theatre-societe-biblio:documentHasAuthorValue .
+
 
 
 #################################################################
@@ -464,21 +480,18 @@ theatre-societe-biblio:Document rdf:type owl:Class ;
                                       owl:onProperty theatre-societe-biblio:documentHasAuthor ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ], 
-                                    #salsah-gui:gui-order 1
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentHasAuthorValue ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                    ],
+                                    ] ,
 #                                    [ rdf:type owl:Restriction ;
 #                                      owl:onProperty theatre-societe-biblio:documentHasDate ;
 #                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
 #                                    ],
-                                    #salsah-gui:gui-order 4
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentHasTitle ;
                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                    ],
-                                    #salsah-gui:gui-order 2
+                                    ] ,
 #                                    [ rdf:type owl:Restriction ;
 #                                      owl:onProperty theatre-societe-biblio:documentHasSubtitle ;
 #                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -572,11 +585,11 @@ theatre-societe-biblio:Edition rdf:type owl:Class ;
                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                         ],
                                         [ rdf:type owl:Restriction ;
-	                                       owl:onProperty theatre-societe-biblio:hasDirector ;
+	                                       owl:onProperty theatre-societe-biblio:hasDirector2 ;
 	                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
 	                                    ],
 	                                    [ rdf:type owl:Restriction ;
-	                                       owl:onProperty theatre-societe-biblio:hasDirectorValue ;
+	                                       owl:onProperty theatre-societe-biblio:hasDirector2Value ;
 	                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
 	                                    ];
                     rdfs:label "Edition"@de ,
