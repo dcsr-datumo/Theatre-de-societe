@@ -151,7 +151,7 @@ theatre-societe-biblio:documentHasAuthor rdf:type owl:ObjectProperty ;
                             "Auteur"@fr ,
                             "Autore"@it ;
                     rdfs:comment """Represents the author of the document."""@en ,
-		 						"""Auteur du document (livre, manuscrit, etc…) ou éditeur de l'édition critique."""@fr ;
+		 						"""Auteur du document (livre, manuscrit, chapitre d'ouvrage…)."""@fr ;
                     knora-base:objectClassConstraint theatre-societe:Person ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     salsah-gui:guiOrder "1"^^xsd:integer ;
