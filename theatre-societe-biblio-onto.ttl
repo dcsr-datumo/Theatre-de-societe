@@ -456,12 +456,14 @@ theatre-societe-biblio:hasNumberInCollection rdf:type owl:ObjectProperty ;
 theatre-societe-biblio:editionHasDirector rdf:type owl:ObjectProperty ;
                     rdfs:label "Editeur scientifique de l'édition"@fr ;
                     rdfs:comment """Représente l'éditeur scientifique d'une édition critique."""@fr ;
+                    knora-base:subjectClassConstraint theatre-societe-biblio:Edition ;
                     knora-base:objectClassConstraint theatre-societe:Person ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf theatre-societe-biblio:documentHasAuthor .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#editionHasDirectorValue
 theatre-societe-biblio:editionHasDirectorValue rdf:type owl:ObjectProperty ;
+					knora-base:subjectClassConstraint theatre-societe-biblio:Edition ;
                     knora-base:objectClassConstraint knora-base:LinkValue ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf theatre-societe-biblio:documentHasAuthorValue .
