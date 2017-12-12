@@ -3,10 +3,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix foaf:<http://xmlns.com/foaf/0.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
 @prefix knora-base: <http://www.knora.org/ontology/knora-base#> .
 @prefix salsah-gui: <http://www.knora.org/ontology/salsah-gui#> .
 @prefix theatre-societe: <http://www.knora.org/ontology/0103/theatre-societe#> .
@@ -176,7 +174,7 @@ theatre-societe-biblio:publisherHasLocation rdf:type owl:ObjectProperty ;
                      knora-base:objectClassConstraint knora-base:TextValue ;
                      salsah-gui:guiElement salsah-gui:SimpleText ;
                      knora-base:subjectClassConstraint theatre-societe-biblio:Publisher ;
-                     rdfs:subPropertyOf knora-base:hasValue, event:place .
+                     rdfs:subPropertyOf knora-base:hasValue .
 
 
 ####  http://www.knora.org/ontology/0103/theatre-societe-biblio#editionHasEditor
@@ -450,8 +448,6 @@ theatre-societe-biblio:hasNumberInCollection rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasValue .
 
 
-# ------------------- Essai
-
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#editionHasDirector
 theatre-societe-biblio:editionHasDirector rdf:type owl:ObjectProperty ;
                     rdfs:label "Editeur scientifique de l'édition"@fr ;
@@ -467,6 +463,7 @@ theatre-societe-biblio:editionHasDirectorValue rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint knora-base:LinkValue ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     rdfs:subPropertyOf theatre-societe-biblio:documentHasAuthorValue .
+
 
 
 
@@ -601,19 +598,6 @@ theatre-societe-biblio:Edition rdf:type owl:Class ;
                                "edizione"@it ;
                     rdfs:comment "A resource representing an edition"@en .
 
-
-####  http://www.knora.org/ontology/0103/theatre-societe-biblio#Organization
-#theatre-societe-biblio:Organization rdf:type owl:Class ;
-#                   rdfs:subClassOf knora-base:Resource, foaf:organization,
-#                                        [ rdf:type owl:Restriction ;
-#                                          owl:onProperty theatre-societe-biblio:hasName ;
-#                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
-#                                        ] ;
-#                    rdfs:label "Organisation"@de ,
-#                               "Organization"@en ,
-#                               "Organisation"@fr ,
-#                               "organizzazione"@it ;
-#                    rdfs:comment "A resource representing an organization"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#Publisher
