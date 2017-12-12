@@ -148,10 +148,10 @@ theatre-societe-biblio:hasPublisherValue rdf:type owl:ObjectProperty ;
 theatre-societe-biblio:documentHasAuthor rdf:type owl:ObjectProperty ;
                     rdfs:label "Autor"@de ,
                             "Author"@en ,
-                            "Auteur / Éditeur (édition critique)"@fr ,
+                            "Auteur"@fr ,
                             "Autore"@it ;
                     rdfs:comment """Represents the author of the document."""@en ,
-		 						"""Auteur du document (livre, manuscrit, etc…) ou éditeur de l'édition critique."""@fr ;
+		 						"""Auteur du document (livre, manuscrit, chapitre d'ouvrage…)."""@fr ;
                     knora-base:objectClassConstraint theatre-societe:Person ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
                     salsah-gui:guiOrder "1"^^xsd:integer ;
@@ -336,6 +336,7 @@ theatre-societe-biblio:journalIssue rdf:type owl:ObjectProperty ;
                      rdfs:comment """Represents the journal issue number."""@en ;
                      knora-base:objectClassConstraint knora-base:TextValue ;
                      salsah-gui:guiElement salsah-gui:SimpleText ;
+                     salsah-gui:guiOrder "7"^^xsd:integer ;
                      knora-base:subjectClassConstraint theatre-societe-biblio:JournalArticle ;
                      rdfs:subPropertyOf knora-base:hasValue, bibo:issue .
 
@@ -449,6 +450,24 @@ theatre-societe-biblio:hasNumberInCollection rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasValue .
 
 
+# ------------------- Essai
+
+###  http://www.knora.org/ontology/0103/theatre-societe-biblio#editionHasDirector
+theatre-societe-biblio:editionHasDirector rdf:type owl:ObjectProperty ;
+                    rdfs:label "Editeur scientifique de l'édition"@fr ;
+                    rdfs:comment """Représente l'éditeur scientifique d'une édition critique."""@fr ;
+                    knora-base:subjectClassConstraint theatre-societe-biblio:Edition ;
+                    knora-base:objectClassConstraint theatre-societe:Person ;
+                    salsah-gui:guiElement salsah-gui:Searchbox ;
+                    rdfs:subPropertyOf theatre-societe-biblio:documentHasAuthor .
+
+###  http://www.knora.org/ontology/0103/theatre-societe-biblio#editionHasDirectorValue
+theatre-societe-biblio:editionHasDirectorValue rdf:type owl:ObjectProperty ;
+					knora-base:subjectClassConstraint theatre-societe-biblio:Edition ;
+                    knora-base:objectClassConstraint knora-base:LinkValue ;
+                    salsah-gui:guiElement salsah-gui:Searchbox ;
+                    rdfs:subPropertyOf theatre-societe-biblio:documentHasAuthorValue .
+
 
 
 #################################################################
@@ -464,21 +483,18 @@ theatre-societe-biblio:Document rdf:type owl:Class ;
                                       owl:onProperty theatre-societe-biblio:documentHasAuthor ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ], 
-                                    #salsah-gui:gui-order 1
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentHasAuthorValue ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                    ],
+                                    ] ,
 #                                    [ rdf:type owl:Restriction ;
 #                                      owl:onProperty theatre-societe-biblio:documentHasDate ;
 #                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
 #                                    ],
-                                    #salsah-gui:gui-order 4
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:documentHasTitle ;
                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                    ],
-                                    #salsah-gui:gui-order 2
+                                    ] ,
 #                                    [ rdf:type owl:Restriction ;
 #                                      owl:onProperty theatre-societe-biblio:documentHasSubtitle ;
 #                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -558,27 +574,27 @@ theatre-societe-biblio:Edition rdf:type owl:Class ;
 #                    					[ rdf:type owl:Restriction ;
 #	                                      owl:onProperty theatre-societe-biblio:documentHasAuthor ;
 #	                                      owl:cardinality "0"^^xsd:nonNegativeInteger
-#	                                    ],
+#	                                    ] ,
 #	                                    [ rdf:type owl:Restriction ;
 #	                                      owl:onProperty theatre-societe-biblio:documentHasAuthorValue ;
 #	                                      owl:cardinality "0"^^xsd:nonNegativeInteger
-#	                                    ],
+#	                                    ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty theatre-societe-biblio:isEditionOf ;
                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                        ],
+                                        ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty theatre-societe-biblio:isEditionOfValue ;
                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                        ],
+                                        ] ,
                                         [ rdf:type owl:Restriction ;
-	                                       owl:onProperty theatre-societe-biblio:hasDirector ;
+	                                       owl:onProperty theatre-societe-biblio:editionHasDirector ;
 	                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
-	                                    ],
+	                                    ] ,
 	                                    [ rdf:type owl:Restriction ;
-	                                       owl:onProperty theatre-societe-biblio:hasDirectorValue ;
+	                                       owl:onProperty theatre-societe-biblio:editionHasDirectorValue ;
 	                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
-	                                    ];
+	                                    ] ;
                     rdfs:label "Edition"@de ,
                                "Edition"@en ,
                                "Edition (critique)"@fr ,
