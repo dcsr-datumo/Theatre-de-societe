@@ -527,6 +527,10 @@ theatre-societe-biblio:Manuscript rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:numVolumes ;
                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty theatre-societe-biblio:documentHasDate ;
+                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ] ;
                     rdfs:label "Manuscript"@en ,
                                "Manuscrit"@fr ;
@@ -576,6 +580,18 @@ theatre-societe-biblio:Edition rdf:type owl:Class ;
 #	                                      owl:onProperty theatre-societe-biblio:documentHasAuthorValue ;
 #	                                      owl:cardinality "0"^^xsd:nonNegativeInteger
 #	                                    ] ,
+	                                    [ rdf:type owl:Restriction ;
+	                                      owl:onProperty theatre-societe-biblio:publicationHasPublisher ;
+	                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+	                                    ] ,
+	                                    [ rdf:type owl:Restriction ;
+	                                      owl:onProperty theatre-societe-biblio:publicationHasPublisherValue ;
+	                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+	                                    ] ,
+	                                    [ rdf:type owl:Restriction ;
+                                     	 owl:onProperty theatre-societe-biblio:documentHasDate ;
+                                     	 owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                    		] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty theatre-societe-biblio:isEditionOf ;
                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
