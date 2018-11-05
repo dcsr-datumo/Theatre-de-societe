@@ -91,9 +91,9 @@ theatre-societe-biblio:journalHasPublisher rdf:type owl:ObjectProperty ;
                             "Maison d'édition (revue)"@fr ,
                             "casa editrice"@it ;
                     rdfs:comment """Represents the publisher of a journal."""@en ;
-                    knora-base:objectClassConstraint theatre-societe-biblio:Journal ;
+                    knora-base:objectClassConstraint theatre-societe-biblio:Publisher ;
                     salsah-gui:guiElement salsah-gui:Searchbox ;
-                    knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
+                    knora-base:subjectClassConstraint theatre-societe-biblio:Journal ;
                     rdfs:subPropertyOf theatre-societe-biblio:hasPublisher.
 
 
