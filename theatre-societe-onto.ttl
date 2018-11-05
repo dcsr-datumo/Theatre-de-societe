@@ -305,10 +305,10 @@ theatre-societe:hasGivenName rdf:type owl:ObjectProperty ;
 theatre-societe:hasName rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf knora-base:hasValue ;
          knora-base:objectClassConstraint knora-base:TextValue ;
-         rdfs:label "Prénom"@fr ,
-					"Given Name"@en ;
-		 rdfs:comment "Prénom"@fr ,
-					"The person's given name"@en .
+         rdfs:label "Nom"@fr ,
+					"Name"@en ;
+		 rdfs:comment "Nom d'un festival, d'un lieu, d'un genre, d'un groupe"@fr ,
+					"Name of a festival, a place, a genre or a group"@en .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasNotice
