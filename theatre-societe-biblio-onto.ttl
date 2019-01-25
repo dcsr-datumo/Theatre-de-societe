@@ -78,6 +78,28 @@ theatre-societe-biblio:publicationHasPublisher rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf theatre-societe-biblio:hasPublisher.
 
 
+
+### http://www.knora.org/ontology/0103/theatre-societe-biblio#publicationHasUrl
+
+theatre-societe-biblio:publicationHasUrl rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf knora-base:hasValue ;
+     rdfs:label """URL"""@fr ;
+     rdfs:comment """Lien vers une page internet"""@fr ;
+     knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
+     knora-base:objectClassConstraint knora-base:UriValue ;
+     salsah-gui:guiElement salsah-gui:SimpleText .
+
+### http://www.knora.org/ontology/0103/theatre-societe-biblio#publicationHasPID
+
+theatre-societe-biblio:publicationHasPID rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf knora-base:hasValue ;
+     rdfs:label """Identifiant pérenne"""@fr ;
+     rdfs:comment """Identifiant pérenne (DOI, Handle, ARK)"""@fr ;
+     knora-base:subjectClassConstraint theatre-societe-biblio:Publication ;
+     knora-base:objectClassConstraint knora-base:TextValue ;
+     salsah-gui:guiElement salsah-gui:SimpleText .
+
+
 ###  http://www.knora.org/ontology/0103/theatre-societe-biblio#publicationHasPublisherValue
 theatre-societe-biblio:publicationHasPublisherValue rdf:type owl:ObjectProperty ;
                     knora-base:objectClassConstraint knora-base:LinkValue ;
@@ -559,6 +581,10 @@ theatre-societe-biblio:Publication rdf:type owl:Class ;
 #                                    ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty theatre-societe-biblio:publicationHasDOI ;
+                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty theatre-societe-biblio:publicationHasUrl ;
                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                     ] ;
                     rdfs:label "[Publikation]"@de ,
