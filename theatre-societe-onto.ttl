@@ -792,7 +792,6 @@ theatre-societe:hasPseudonym rdf:type owl:ObjectProperty ;
 									 "Nickname"@en ;
 						rdfs:comment "Le ou les pseudonyme(s) de la personne"@fr ,
 									 "Specify a person nickname(s)"@en ;
-	                    salsah-gui:guiOrder "3"^^xsd:integer ;
 	       		        	salsah-gui:guiElement salsah-gui:SimpleText ;
 			         	salsah-gui:guiAttribute "size=80" ,
 						                     	"maxlength=255" .
