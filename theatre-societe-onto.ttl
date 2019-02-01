@@ -14,7 +14,7 @@
     rdfs:label "Ontologie de la bibliographie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
     dcterms:title "Ontologie de la bibliographie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
 	dcterms:description "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
-    knora-base:attachedToProject <http://rdfh.ch/projects/0114> .												 
+    knora-base:attachedToProject <http://rdfh.ch/projects/0103> .												 
 
 #################################################################
 #    Object Properties
@@ -55,10 +55,7 @@ theatre-societe:agentHasNotice rdf:type owl:ObjectProperty ;
 						"Notice"@en ;
 					rdfs:comment "Notice sur la personne"@fr ,
 						"Notice about the person"@en ;
-	                salsah-gui:guiElement salsah-gui:Richtext ;
-				    salsah-gui:guiAttribute "width=95%" ,
-							               "rows=10" ,
-							               "wrap=soft" .
+	                salsah-gui:guiElement salsah-gui:Richtext .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#festivalHasDate
@@ -70,9 +67,7 @@ theatre-societe:festivalHasDate rdf:type owl:ObjectProperty ;
 						"Date"@en ;
 					rdfs:comment "Début, fin ou période durant laquelle se déroule le festival"@fr ,
 						"Beginning, end or duration of the festival"@en ;
-	                salsah-gui:guiElement salsah-gui:Date ;
-	            	salsah-gui:guiAttribute "size=16" ,
-                               			 "maxlength=32" .
+	                salsah-gui:guiElement salsah-gui:Date .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#festivalHasName
@@ -98,10 +93,7 @@ theatre-societe:festivalHasNotice rdf:type owl:ObjectProperty ;
 						"Notice"@en ;
 					rdfs:comment "Informations à propos de ce festival"@fr ,
 						"Informations about this festival"@en ;
-	                salsah-gui:guiElement salsah-gui:Richtext ;
-				    salsah-gui:guiAttribute "width=95%" ,
-							               "rows=10" ,
-							               "wrap=soft" .
+	                salsah-gui:guiElement salsah-gui:Richtext .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#genreHasName
@@ -127,10 +119,7 @@ theatre-societe:genreHasComment rdf:type owl:ObjectProperty ;
 								"Comment on genre"@en ;
 					rdfs:comment "Notice du genre"@fr ,
 								"A scientific comment about the genre"@en ;
-	                salsah-gui:guiElement salsah-gui:Richtext ;
-				   	salsah-gui:guiAttribute "width=95%" ,
-							                "rows=3" ,
-							                "wrap=soft" .
+	                salsah-gui:guiElement salsah-gui:Richtext .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#groupHasDate
@@ -142,9 +131,7 @@ theatre-societe:groupHasDate rdf:type owl:ObjectProperty ;
 						"Date/Period of activity"@en ;
 					rdfs:comment "Date d'existence"@fr ,
 						"The time during which the group was active"@en ;
-	                salsah-gui:guiElement salsah-gui:Date ;
-	            	salsah-gui:guiAttribute "size=16" ,
-                               			 "maxlength=32" .
+	                salsah-gui:guiElement salsah-gui:Date .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#groupHasName
@@ -208,9 +195,7 @@ theatre-societe:hasBirthDate rdf:type owl:ObjectProperty ;
 							"Birth date"@en ;
 				rdfs:comment "La date de naissance"@fr ,
 							"Birth date"@en ;
-	            salsah-gui:guiElement salsah-gui:Date ;
-	            salsah-gui:guiAttribute "size=16" ,
-                               			"maxlength=32" .
+	            salsah-gui:guiElement salsah-gui:Date .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasDate
@@ -232,9 +217,7 @@ theatre-societe:hasDeathDate rdf:type owl:ObjectProperty ;
 							"Death Date"@en ;
 				rdfs:comment "La date de décès"@fr ,
 							"Date of death"@en ;
-	            salsah-gui:guiElement salsah-gui:Date ;
-	           	salsah-gui:guiAttribute "size=16" ,
-                               			 "maxlength=32" .
+	            salsah-gui:guiElement salsah-gui:Date .
 
 # 2019-01-25: propriété définie mais pas utilisée par les définitions de classe (MR).
 # ###  http://www.knora.org/ontology/0103/theatre-societe#hasDirector
@@ -335,7 +318,7 @@ theatre-societe:hasMembershipValue rdf:type owl:ObjectProperty ;
 theatre-societe:isMembershipIn rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasLinkTo ;
                     knora-base:objectClassConstraint theatre-societe:Group ;
-			 		knora-base:subjectClassConstraint theatre-societe:Person ;
+			 		knora-base:subjectClassConstraint theatre-societe:Membership ;
 					rdfs:label "Nom du groupe"@fr ,
 								  "Group name"@en ;
 					rdfs:comment "Nom du groupe dont la personne est membre"@fr ,
@@ -346,7 +329,7 @@ theatre-societe:isMembershipIn rdf:type owl:ObjectProperty ;
 ###  http://www.knora.org/ontology/0103/theatre-societe#isMembershipInValue
 theatre-societe:isMembershipInValue rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf knora-base:hasLinkToValue ;
-                    knora-base:objectClassConstraint theatre-societe:Group ;
+                    knora-base:objectClassConstraint knora-base:LinkValue ;
 			 		knora-base:subjectClassConstraint theatre-societe:Membership ;
 					rdfs:label "Nom du groupe"@fr ,
 								  "Group name"@en ;
@@ -388,14 +371,12 @@ theatre-societe:hasTitle rdf:type owl:ObjectProperty ;
 theatre-societe:membershipHasDate rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf theatre-societe:hasDate ;
          		knora-base:objectClassConstraint knora-base:DateValue ;
-                knora-base:subjectClassConstraint knora-base:Membership ;
+                knora-base:subjectClassConstraint theatre-societe:Membership ;
          		rdfs:label "Date(s) d'appartenance"@fr ,
 							"Dates"@en ;
 				rdfs:comment "Le ou les dates d'appartenance au groupe"@fr ,
 							"The date or a period describing the membership"@en ;
-	            salsah-gui:guiElement salsah-gui:Date ;
-	            salsah-gui:guiAttribute "size=16" ,
-                               			"maxlength=32" .
+	            salsah-gui:guiElement salsah-gui:Date .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#placeHasCoordinates
@@ -448,10 +429,7 @@ theatre-societe:placeHasNotice rdf:type owl:ObjectProperty ;
 					"Notice"@en ;
 				rdfs:comment "Notice informative à propos de l'endroit"@fr ,
 					"Informations about the place"@en ;
-	            salsah-gui:guiElement salsah-gui:Richtext ;
-				salsah-gui:guiAttribute "width=95%" ,
-							            "rows=10" ,
-							            "wrap=soft" .
+	            salsah-gui:guiElement salsah-gui:Richtext .
 
 
 # 2019-01-25: propriété définie mais pas utilisée par les définitions de classe (MR).
@@ -466,7 +444,6 @@ theatre-societe:placeHasNotice rdf:type owl:ObjectProperty ;
 # 									  "The publication has a title"@en ;
 # 					 	salsah-gui:guiElement salsah-gui:SimpleText ;
 # 			         	salsah-gui:guiAttribute "size=80" ,
-# 			         						 	"rows=2" ,
 # 						                     	"maxlength=255" .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#hasQuote
@@ -478,10 +455,7 @@ theatre-societe:hasQuote rdf:type owl:ObjectProperty ;
 								  "Quote"@en ;
 					rdfs:comment "La citation source"@fr ,
 								  "The source quote"@en ;
-					salsah-gui:guiElement salsah-gui:Richtext ;
-					salsah-gui:guiAttribute "width=95%" ,
-							            	"rows=10" ,
-							            	"wrap=soft" .
+					salsah-gui:guiElement salsah-gui:Richtext .
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#quoteHasNumPage
 theatre-societe:quoteHasNumPage rdf:type owl:ObjectProperty ;
@@ -543,9 +517,7 @@ theatre-societe:representationHasDate rdf:type owl:ObjectProperty ;
 							              "Date"@en ;
 						rdfs:comment "Date de la représentation"@fr ,
 							                  "Representation date"@en ;
-	                		salsah-gui:guiElement salsah-gui:Date ;
-		            	  	salsah-gui:guiAttribute "size=16" ,
-	                               			 "maxlength=32" .
+	                		salsah-gui:guiElement salsah-gui:Date .
 
 
 ###  http://www.knora.org/ontology/0103/theatre-societe#representationHasGenre
@@ -768,7 +740,6 @@ theatre-societe:workHasTitle rdf:type owl:ObjectProperty ;
 									 "Name of the play"@en ;
 					 	salsah-gui:guiElement salsah-gui:SimpleText ;
 			         	salsah-gui:guiAttribute "size=80" ,
-			         						 	"rows=2" ,
 						                     	"maxlength=255" .
 
 
