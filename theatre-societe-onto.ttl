@@ -11,10 +11,10 @@
 
 
 <http://www.knora.org/ontology/0103/theatre-societe> a owl:Ontology ;
-    rdfs:label "Ontologie de la bibliographie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
-    dcterms:title "Ontologie de la bibliographie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
-	  dcterms:description "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
-		dcterms:creator "Marion Rivoal"^^xsd:string ;
+    rdfs:label "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
+    dcterms:title "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
+	dcterms:description "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
+	dcterms:creator "Marion Rivoal"^^xsd:string ;
     dcterms:date "2019-01-15" ;
     dcterms:rights "CC BY SA 4.0"^^xsd:string ;
     dcterms:contributor "Christophe Schuwey"^^xsd:string , "Valentina Ponzetto"^^xsd:string ;
