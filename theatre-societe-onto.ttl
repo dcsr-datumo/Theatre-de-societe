@@ -1,49 +1,16 @@
-@prefix anything: <http://www.knora.org/ontology/0001/anything#> .
-@prefix atelier-fabula: <http://www.knora.org/ontology/0108/atelier-fabula#> .
-@prefix atelier-fabula-biblio: <http://www.knora.org/ontology/0108/atelier-fabula-biblio#> .
-@prefix beol: <http://www.knora.org/ontology/0801/beol#> .
-@prefix biblio: <http://www.knora.org/ontology/0801/biblio#> .
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix dc: <http://www.knora.org/ontology/dc#> .
-@prefix dokubib: <http://www.knora.org/ontology/0804/dokubib#> .
-@prefix drawings-gods: <http://www.knora.org/ontology/0105/drawings-gods#> .
-@prefix elites-cio: <http://www.knora.org/ontology/0114/elites-cio#> .
-@prefix elites-cio-biblio: <http://www.knora.org/ontology/0114/elites-cio-biblio#> .
-@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
-@prefix ex: <http://www.example.com/> .
-@prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix geo-ont: <http://www.geonames.org/ontology#> .
-@prefix images: <http://www.knora.org/ontology/00FF/images#> .
-@prefix incunabula: <http://www.knora.org/ontology/0803/incunabula#> .
-@prefix knora-admin: <http://www.knora.org/ontology/knora-admin#> .
 @prefix knora-base: <http://www.knora.org/ontology/knora-base#> .
-@prefix luc: <http://www.ontotext.com/owlim/lucene#> .
-@prefix lumieres-lausanne: <http://www.knora.org/ontology/0113/lumieres-lausanne#> .
-@prefix ns4: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix parole-religieuse: <http://www.knora.org/ontology/0101/parole-religieuse#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix reforme-geneve: <http://www.knora.org/ontology/0111/reforme-geneve#> .
-@prefix roud-oeuvres: <http://www.knora.org/ontology/0112/roud-oeuvres#> .
 @prefix salsah-gui: <http://www.knora.org/ontology/salsah-gui#> .
-@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
-@prefix something: <http://www.knora.org/ontology/0001/something> .
-@prefix standoff: <http://www.knora.org/ontology/standoff#> .
-@prefix stardom: <http://www.knora.org/ontology/0107/stardom#> .
 @prefix theatre-societe: <http://www.knora.org/ontology/0103/theatre-societe#> .
 @prefix theatre-societe-biblio: <http://www.knora.org/ontology/0103/theatre-societe-biblio#> .
-@prefix webern: <http://www.knora.org/ontology/08AE/webern#> .
-@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.knora.org/ontology/0103/theatre-societe> a owl:Ontology ;
     rdfs:label "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
-    ns4:description "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
-    ns4:title "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
+    dc:description "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
+    dc:title "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
     knora-base:attachedToProject <http://rdfh.ch/projects/0103> .
 
 theatre-societe:hasTitle a owl:ObjectProperty ;

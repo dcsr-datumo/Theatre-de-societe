@@ -1,49 +1,16 @@
-@prefix anything: <http://www.knora.org/ontology/0001/anything#> .
-@prefix atelier-fabula: <http://www.knora.org/ontology/0108/atelier-fabula#> .
-@prefix atelier-fabula-biblio: <http://www.knora.org/ontology/0108/atelier-fabula-biblio#> .
-@prefix beol: <http://www.knora.org/ontology/0801/beol#> .
-@prefix biblio: <http://www.knora.org/ontology/0801/biblio#> .
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix dc: <http://www.knora.org/ontology/dc#> .
-@prefix dokubib: <http://www.knora.org/ontology/0804/dokubib#> .
-@prefix drawings-gods: <http://www.knora.org/ontology/0105/drawings-gods#> .
-@prefix elites-cio: <http://www.knora.org/ontology/0114/elites-cio#> .
-@prefix elites-cio-biblio: <http://www.knora.org/ontology/0114/elites-cio-biblio#> .
-@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
-@prefix ex: <http://www.example.com/> .
-@prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix geo-ont: <http://www.geonames.org/ontology#> .
-@prefix images: <http://www.knora.org/ontology/00FF/images#> .
-@prefix incunabula: <http://www.knora.org/ontology/0803/incunabula#> .
-@prefix knora-admin: <http://www.knora.org/ontology/knora-admin#> .
 @prefix knora-base: <http://www.knora.org/ontology/knora-base#> .
-@prefix luc: <http://www.ontotext.com/owlim/lucene#> .
-@prefix lumieres-lausanne: <http://www.knora.org/ontology/0113/lumieres-lausanne#> .
-@prefix ns4: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix parole-religieuse: <http://www.knora.org/ontology/0101/parole-religieuse#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix reforme-geneve: <http://www.knora.org/ontology/0111/reforme-geneve#> .
-@prefix roud-oeuvres: <http://www.knora.org/ontology/0112/roud-oeuvres#> .
 @prefix salsah-gui: <http://www.knora.org/ontology/salsah-gui#> .
-@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
-@prefix something: <http://www.knora.org/ontology/0001/something> .
-@prefix standoff: <http://www.knora.org/ontology/standoff#> .
-@prefix stardom: <http://www.knora.org/ontology/0107/stardom#> .
 @prefix theatre-societe: <http://www.knora.org/ontology/0103/theatre-societe#> .
 @prefix theatre-societe-biblio: <http://www.knora.org/ontology/0103/theatre-societe-biblio#> .
-@prefix webern: <http://www.knora.org/ontology/08AE/webern#> .
-@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.knora.org/ontology/0103/theatre-societe-biblio> a owl:Ontology ;
     rdfs:label "Ontologie de la bibliographie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
-    ns4:description "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
-    ns4:title "Ontologie de la bibliographie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
+    dc:description "Ontologie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
+    dc:title "Ontologie de la bibliographie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
     knora-base:attachedToProject <http://rdfh.ch/projects/0103> .
 
 theatre-societe-biblio:Book a owl:Class ;
@@ -168,7 +135,7 @@ theatre-societe-biblio:documentHasTitle a owl:ObjectProperty ;
     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
     salsah-gui:guiElement salsah-gui:SimpleText ;
     rdfs:comment "Represents a title of a document."@en ;
-    rdfs:subPropertyOf ns4:title,
+    rdfs:subPropertyOf dc:title,
         knora-base:hasValue .
 
 theatre-societe-biblio:editionHasDirector a owl:ObjectProperty ;
@@ -260,7 +227,7 @@ theatre-societe-biblio:isPartOfBook a owl:ObjectProperty ;
     salsah-gui:guiElement salsah-gui:Searchbox ;
     rdfs:comment "Represents the book a chapter is part of."@en,
         "Représente l'ouvrage dont fait partie le chapitre."@fr ;
-    rdfs:subPropertyOf ns4:isPartOf,
+    rdfs:subPropertyOf dc:isPartOf,
         knora-base:hasLinkTo .
 
 theatre-societe-biblio:isPartOfBookValue a owl:ObjectProperty ;
@@ -282,7 +249,7 @@ theatre-societe-biblio:isPartOfCollection a owl:ObjectProperty ;
     salsah-gui:guiElement salsah-gui:Searchbox ;
     rdfs:comment "Represents the collection the article is published in."@en,
         "La collection de l'ouvrage"@fr ;
-    rdfs:subPropertyOf ns4:isPartOf,
+    rdfs:subPropertyOf dc:isPartOf,
         knora-base:hasLinkTo .
 
 theatre-societe-biblio:isPartOfCollectionValue a owl:ObjectProperty ;
@@ -304,7 +271,7 @@ theatre-societe-biblio:isPartOfJournal a owl:ObjectProperty ;
     salsah-gui:guiElement salsah-gui:Searchbox ;
     rdfs:comment "Represents the journal the article is published in."@en,
         "Journal dans lequel l'article parat"@fr ;
-    rdfs:subPropertyOf ns4:isPartOf,
+    rdfs:subPropertyOf dc:isPartOf,
         knora-base:hasLinkTo .
 
 theatre-societe-biblio:isPartOfJournalValue a owl:ObjectProperty ;
@@ -442,7 +409,7 @@ theatre-societe-biblio:documentHasAuthor a owl:ObjectProperty ;
     salsah-gui:guiElement salsah-gui:Searchbox ;
     rdfs:comment "Represents the author of the document."@en,
         "Auteur du document (livre, manuscrit, chapitre d'ouvrage…)."@fr ;
-    rdfs:subPropertyOf ns4:creator,
+    rdfs:subPropertyOf dc:creator,
         knora-base:hasLinkTo .
 
 theatre-societe-biblio:documentHasAuthorValue a owl:ObjectProperty ;
@@ -474,7 +441,7 @@ theatre-societe-biblio:hasPublisher a owl:ObjectProperty ;
     knora-base:objectClassConstraint theatre-societe-biblio:Publisher ;
     salsah-gui:guiElement salsah-gui:Searchbox ;
     rdfs:comment "Represents a publisher."@en ;
-    rdfs:subPropertyOf ns4:publisher,
+    rdfs:subPropertyOf dc:publisher,
         knora-base:hasLinkTo .
 
 theatre-societe-biblio:hasPublisherValue a owl:ObjectProperty ;
@@ -597,7 +564,7 @@ theatre-societe-biblio:Publisher a owl:Class ;
         [ a owl:Restriction ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:hasName ],
-        ns4:publisher,
+        dc:publisher,
         knora-base:Resource .
 
 theatre-societe-biblio:documentHasDate a owl:ObjectProperty ;
@@ -609,7 +576,7 @@ theatre-societe-biblio:documentHasDate a owl:ObjectProperty ;
     knora-base:subjectClassConstraint theatre-societe-biblio:Document ;
     salsah-gui:guiElement salsah-gui:Date ;
     rdfs:comment "Represents a document Date."@en ;
-    rdfs:subPropertyOf ns4:issued,
+    rdfs:subPropertyOf dc:issued,
         knora-base:hasValue .
 
 theatre-societe-biblio:Document a owl:Class ;
@@ -627,7 +594,7 @@ theatre-societe-biblio:Document a owl:Class ;
             salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:documentHasAuthor ],
-        ns4:BibliographicResource,
+        dc:BibliographicResource,
         knora-base:Resource .
 
 theatre-societe-biblio:Publication a owl:Class ;
