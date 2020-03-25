@@ -24,9 +24,11 @@ theatre-societe-biblio:Book a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:numVolumes ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 2 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:hasDirector ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 5 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:isPartOfCollectionValue ],
         [ a owl:Restriction ;
@@ -46,9 +48,11 @@ theatre-societe-biblio:Book a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:isPartOfCollection ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 2 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:hasDirectorValue ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 3 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:publicationHasPublisherValue ],
         bibo:book,
@@ -72,6 +76,7 @@ theatre-societe-biblio:BookChapter a owl:Class ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:bookVolume ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 3 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:isPartOfBookValue ],
         bibo:Chapter,
@@ -84,6 +89,7 @@ theatre-societe-biblio:Collection a owl:Class ;
         "serie"@it ;
     rdfs:comment "A resource representing a collection "@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:hasName ],
         bibo:Collection,
@@ -383,6 +389,7 @@ theatre-societe-biblio:JournalArticle a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:isPartOfJournal ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 3 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:isPartOfJournalValue ],
         [ a owl:Restriction ;
@@ -481,16 +488,19 @@ theatre-societe-biblio:Journal a owl:Class ;
         "Rivista"@it ;
     rdfs:comment "A resource representing a journal "@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            salsah-gui:guiOrder 7 ;
+            salsah-gui:guiOrder 3 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:numVolumes ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 2 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:journalHasPublisher ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:hasName ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 2 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:journalHasPublisherValue ],
         bibo:Journal,
@@ -526,16 +536,19 @@ theatre-societe-biblio:Edition a owl:Class ;
         "edizione"@it ;
     rdfs:comment "A resource representing an edition"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            salsah-gui:guiOrder 5 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:publicationHasPublisherValue ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:editionHasDirectorValue ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 6 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:isEditionOfValue ],
         [ a owl:Restriction ;
-            salsah-gui:guiOrder 5 ;
+            salsah-gui:guiOrder 6 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:isEditionOf ],
         [ a owl:Restriction ;
@@ -543,10 +556,11 @@ theatre-societe-biblio:Edition a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:documentHasDate ],
         [ a owl:Restriction ;
-            salsah-gui:guiOrder 3 ;
+            salsah-gui:guiOrder 5 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:publicationHasPublisher ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:editionHasDirector ],
         theatre-societe-biblio:Publication,
@@ -559,9 +573,11 @@ theatre-societe-biblio:Publisher a owl:Class ;
         "casa editrice"@it ;
     rdfs:comment "A resource representing a publisher"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            salsah-gui:guiOrder 2 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:publisherHasLocation ],
         [ a owl:Restriction ;
+            salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:hasName ],
         dc:publisher,
@@ -584,6 +600,7 @@ theatre-societe-biblio:Document a owl:Class ;
         "[Document]"@fr ;
     rdfs:comment "A resource representing a document"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe-biblio:documentHasAuthorValue ],
         [ a owl:Restriction ;

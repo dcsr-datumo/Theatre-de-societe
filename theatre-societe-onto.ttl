@@ -622,6 +622,7 @@ theatre-societe:Membership a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:membershipHasDate ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 1 ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:isMembershipInValue ],
         [ a owl:Restriction ;
@@ -667,6 +668,7 @@ theatre-societe:Group a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:groupHasDate ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 3 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:groupHasPlaceValue ],
         [ a owl:Restriction ;
@@ -681,6 +683,7 @@ theatre-societe:Work a owl:Class ;
     rdfs:comment "Work"@en,
         "Oeuvre"@fr ;
     rdfs:subClassOf [ a owl:Restriction ;
+			salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:workHasAuthorValue ],
         [ a owl:Restriction ;
@@ -734,6 +737,7 @@ theatre-societe:Quote a owl:Class ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:hasQuote ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 1 ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:quoteHasSourceValue ],
         [ a owl:Restriction ;
@@ -748,6 +752,7 @@ theatre-societe:Role a owl:Class ;
     rdfs:comment "Role"@en,
         "Rôle"@fr ;
     rdfs:subClassOf [ a owl:Restriction ;
+			salsah-gui:guiOrder 1 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:roleHasAgentValue ],
         [ a owl:Restriction ;
@@ -802,6 +807,7 @@ theatre-societe:Person a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:hasPseudonym ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 6 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:hasMembershipValue ],
         [ a owl:Restriction ;
@@ -820,9 +826,11 @@ theatre-societe:Representation a owl:Class ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationIsBasedOn ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 5 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationHasGenreValue ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 6 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationHasRoleValue ],
         [ a owl:Restriction ;
@@ -830,6 +838,7 @@ theatre-societe:Representation a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationHasGenre ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 3 ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationHasPlaceValue ],
         [ a owl:Restriction ;
@@ -845,12 +854,15 @@ theatre-societe:Representation a owl:Class ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationHasQuote ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 7 ;
             owl:minCardinality "0"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationHasQuoteValue ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 4 ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationIsPartOfFestivalValue ],
         [ a owl:Restriction ;
+			salsah-gui:guiOrder 2 ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty theatre-societe:representationIsBasedOnValue ],
         [ a owl:Restriction ;
