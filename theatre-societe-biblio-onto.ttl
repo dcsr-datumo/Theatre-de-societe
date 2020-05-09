@@ -6,6 +6,7 @@
 @prefix theatre-societe: <http://www.knora.org/ontology/0103/theatre-societe#> .
 @prefix theatre-societe-biblio: <http://www.knora.org/ontology/0103/theatre-societe-biblio#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 
 <http://www.knora.org/ontology/0103/theatre-societe-biblio> a owl:Ontology ;
     rdfs:label "Ontologie de la bibliographie du projet \"Théâtres de société. Entre Lumières et Second Empire\"."@fr ;
