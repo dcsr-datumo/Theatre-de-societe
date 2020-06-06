@@ -875,3 +875,37 @@ theatre-societe:Representation a owl:Class ;
             owl:onProperty theatre-societe:representationHasPlace ],
         knora-base:Resource .
 
+theatre-societe:cacheCalendarYearHasYear a owl:ObjectProperty ;
+    rdfs:label "Year"@en,
+        "Année"@fr ;
+    rdfs:comment "Year"@en,
+        "Année"@fr ;
+    knora-base:subjectClassConstraint theatre-societe:CacheCalendarYear ;
+    knora-base:objectClassConstraint knora-base:IntValue ;
+    salsah-gui:guiElement salsah-gui:Spinbox ;
+    rdfs:subPropertyOf knora-base:hasValue .
+
+theatre-societe:cacheCalendarYearHasRepresentations a owl:ObjectProperty ;
+    rdfs:label "Representations"@en,
+        "Représentations"@fr ;
+    rdfs:comment "Number of representations that took place that year"@en,
+        "nombre de représentations qui ont eu lieu cett année là"@fr ;
+    knora-base:subjectClassConstraint theatre-societe:CacheCalendarYear ;
+    knora-base:objectClassConstraint knora-base:IntValue ;
+    salsah-gui:guiElement salsah-gui:Spinbox ;
+    rdfs:subPropertyOf knora-base:hasValue .
+
+theatre-societe:CacheCalendarYear a owl:Class ;
+    rdfs:label "Cache Calendar Year"@en,
+        "Cache Année de Calendrier"@fr ;
+    rdfs:comment "Cache Calendar Year"@en,
+        "Cache Année de Calendrier"@fr ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            salsah-gui:guiOrder 1 ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty theatre-societe:cacheCalendarYearHasYear ],
+        [ a owl:Restriction ;
+			salsah-gui:guiOrder 2 ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty theatre-societe:cacheCalendarYearHasRepresentations ],
+        knora-base:Resource .
