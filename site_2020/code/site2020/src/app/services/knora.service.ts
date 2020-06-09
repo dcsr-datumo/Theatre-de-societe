@@ -4,7 +4,7 @@ import {
   KnoraApiConnection,
   ApiResponseError,
   ReadResourceSequence,
-} from "@knora/api";
+} from "@dasch-swiss/dsp-js";
 import { Observable, config } from "rxjs";
 import { environment } from "src/environments/environment";
 

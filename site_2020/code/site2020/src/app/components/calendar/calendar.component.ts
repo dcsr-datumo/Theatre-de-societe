@@ -4,7 +4,7 @@ import {
   ReadResource,
   ReadResourceSequence,
   ApiResponseError,
-} from "@knora/api";
+} from "@dasch-swiss/dsp-js";
 
 import { map } from "rxjs/operators";
 
