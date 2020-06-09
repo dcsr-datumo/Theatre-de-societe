@@ -896,8 +896,8 @@ theatre-societe:cacheCalendarYearHasRepresentations a owl:ObjectProperty ;
     rdfs:subPropertyOf knora-base:hasValue .
 
 theatre-societe:CacheCalendarYear a owl:Class ;
-    rdfs:label "Cache Calendar Year"@en,
-        "Cache Année de Calendrier"@fr ;
+    rdfs:label "{Cache Calendar Year}"@en,
+        "{Cache Année de Calendrier}"@fr ;
     rdfs:comment "Cache Calendar Year"@en,
         "Cache Année de Calendrier"@fr ;
     rdfs:subClassOf [ a owl:Restriction ;

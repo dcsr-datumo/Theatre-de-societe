@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  knoraApiProtocol: "http",
+  knoraApiHost: "api-test2.unil.ch",
+  knoraApiPort: 23333,
 };
 
 /*
