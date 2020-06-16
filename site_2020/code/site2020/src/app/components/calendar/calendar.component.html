@@ -1,8 +1,8 @@
 <p>calendrier</p>
 
-<ul>
-  <li *ngFor="let year of years">
+<ul *ngIf="years | async as yearspaged">
+  <li *ngFor="let year of yearspaged">
     {{ year.label }}
-    <br />
+    {{ year.representations }}
   </li>
 </ul>

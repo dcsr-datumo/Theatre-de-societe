@@ -6,7 +6,9 @@ import {
   ApiResponseError,
 } from "@dasch-swiss/dsp-js";
 
+import { Observable, config } from "rxjs";
 import { map } from "rxjs/operators";
+import { CacheCalendarYear } from 'src/app/models/cache-calendar-year.model';
 
 @Component({
   selector: "tds-calendar",
@@ -14,17 +16,12 @@ import { map } from "rxjs/operators";
   styleUrls: ["./calendar.component.scss"],
 })
 export class CalendarComponent implements OnInit {
-  years: ReadResource[];
+  years: Observable<CacheCalendarYear[]>;
 
-  constructor(private knoraService: KnoraService) {}
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
-    this.knoraService.getCalendarCache().subscribe(
-      (res: ReadResourceSequence) => {
-        console.log(res);
-        this.years = res.resources;
-      },
-      (error: ApiResponseError) => console.log("error: " + error)
-    );
+    this.years = this.knoraService.getAllCalendarCache();
   }
+
 }
