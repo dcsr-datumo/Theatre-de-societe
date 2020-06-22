@@ -2,7 +2,9 @@
 
 <ul *ngIf="years | async as yearspaged">
   <li *ngFor="let year of yearspaged">
-    {{ year.label }}
+    <a routerLink="/year/{{year.label}}">
+      {{ year.label }}
+    </a>
     {{ year.representations }}
   </li>
 </ul>
