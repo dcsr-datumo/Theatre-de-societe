@@ -61,6 +61,7 @@ CONSTRUCT {
   ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
   ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
 }
+ORDER BY ?year
 OFFSET ${page}`;
     console.log(gravsearchQuery);
     return this.knoraApiConnection.v2.search.doExtendedSearch(gravsearchQuery)
