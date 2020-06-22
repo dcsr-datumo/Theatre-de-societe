@@ -1,1 +1,11 @@
-<p>calendar-page works!</p>
+<p>année {{ year }}</p>
+
+<ul *ngIf="representations | async as rep">
+  <li *ngFor="let representation of rep">
+    <a
+       routerLink="/year/{{representation.label}}">
+      {{ representation.label }}
+    </a>
+    {{ representation.date }}
+  </li>
+</ul>

@@ -9,6 +9,7 @@ import {
 import { Observable, config } from "rxjs";
 import { environment } from "src/environments/environment";
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
+import { Representation } from '../models/representation.model';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -17,6 +18,7 @@ import { map } from 'rxjs/operators';
 export class KnoraService {
   knoraApiConnection: KnoraApiConnection;
   config: KnoraApiConfig;
+  cachedCalendar: CacheCalendarYear[];
 
   constructor() {
     this.config = new KnoraApiConfig(
@@ -117,4 +119,55 @@ OFFSET ${page}`;
 
     return new Observable(agregtedPage);
   }
+
+
+  // representations per year
+  getRepresentationsPage(year: number, page: number): Observable<Representation[]> {
+    const query = `
+   PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+   PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+   CONSTRUCT {
+     ?representation knora-api:isMainResource true .
+     ?representation theatre-societe:representationHasDate ?date .
+   } WHERE {
+     ?representation a knora-api:Resource .
+     ?representation a theatre-societe:Representation .
+     ?representation theatre-societe:representationHasDate ?date .
+     FILTER(knora-api:toSimpleDate(?date) = "GREGORIAN:${year}-1-1:${year}-12-31"^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)
+    }
+   ORDER BY ?date
+   OFFSET ${page}
+   `;
+    console.log(query);
+    return this.knoraApiConnection.v2.search.doExtendedSearch(query)
+      .pipe(
+        map((response: ReadResourceSequence) => response.resources.map(
+          (resource: ReadResource) => new Representation(resource)
+        ))
+      );
+  }
+
+
+  getRepresentations(year: number): Observable<Representation[]> {
+    const service = this;
+    let index = 0;
+    let representations: Representation[] = [];
+    function agregtedPage(observer) {
+      console.log("call getRepresentations for page: " + index);
+      service.getRepresentationsPage(year, index).subscribe(
+        (page: Representation[]) => {
+          if (page.length > 0) {
+            representations = representations.concat(page).sort((a, b) => Number(a.label) - Number(b.label));
+            observer.next(representations);
+            index = index + 1;
+            agregtedPage(observer);
+          } else {
+            observer.complete();
+          }
+        }
+      );
+    }
+    return new Observable(agregtedPage);
+  }
+
 }
