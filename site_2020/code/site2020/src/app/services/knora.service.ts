@@ -106,7 +106,7 @@ OFFSET ${page}`;
       service.getCalendarCache(page).subscribe(
         (years: CacheCalendarYear[]) => {
           if (years.length > 0) {
-            allYears = allYears.concat(years).sort((a, b) => Number(a.label) - Number(b.label));
+            allYears = allYears.concat(years);
             observer.next(allYears);
             page = page + 1;
             agregtedPage(observer);
