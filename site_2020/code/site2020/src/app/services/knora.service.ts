@@ -101,6 +101,16 @@ OFFSET ${page}`;
     const service = this;
     let page = 0;
     let allYears: CacheCalendarYear[] = [];
+    if (this.cachedCalendar) {
+      const cachedCalendar = this.cachedCalendar;
+      return new Observable(
+        (observer) => {
+          observer.next(cachedCalendar);
+          observer.complete();
+        }
+      );
+    }
+
     function agregtedPage(observer) {
       console.log("call getCalendarCache for page: " + page);
       service.getCalendarCache(page).subscribe(
@@ -111,6 +121,7 @@ OFFSET ${page}`;
             page = page + 1;
             agregtedPage(observer);
           } else {
+            service.cachedCalendar = allYears;
             observer.complete();
           }
         }
