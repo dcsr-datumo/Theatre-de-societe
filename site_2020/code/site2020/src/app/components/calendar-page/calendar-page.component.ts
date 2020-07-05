@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable, config } from "rxjs";
 
-import { KnoraService } from "src/app/services/knora.service";
-import { Representation } from 'src/app/models/representation.model';
+import { KnoraService } from "../../services/knora.service";
+import { Representation } from '../../models/representation.model';
 
 @Component({
   selector: 'tds-calendar-page',

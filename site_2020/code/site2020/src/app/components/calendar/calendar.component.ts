@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { KnoraService } from "src/app/services/knora.service";
+import { KnoraService } from "../../services/knora.service";
 import {
   ReadResource,
   ReadResourceSequence,
