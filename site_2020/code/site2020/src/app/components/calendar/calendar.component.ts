@@ -8,7 +8,7 @@ import {
 
 import { Observable, config } from "rxjs";
 import { map } from "rxjs/operators";
-import { CacheCalendarYear } from 'src/app/models/cache-calendar-year.model';
+import { CacheCalendarYear } from '../../models/cache-calendar-year.model';
 
 @Component({
   selector: "tds-calendar",

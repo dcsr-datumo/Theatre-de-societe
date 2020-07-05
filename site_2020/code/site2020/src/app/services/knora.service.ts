@@ -7,7 +7,7 @@ import {
   ReadResource,
 } from "@dasch-swiss/dsp-js";
 import { Observable, config } from "rxjs";
-import { environment } from "src/environments/environment";
+import { environment } from "../../environments/environment";
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
 import { Representation } from '../models/representation.model';
 import { map } from 'rxjs/operators';

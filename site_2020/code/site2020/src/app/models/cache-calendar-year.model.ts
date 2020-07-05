@@ -1,6 +1,6 @@
 import { ReadResource } from '@dasch-swiss/dsp-js';
 import { Resource } from './resource.model';
-import { environment } from "src/environments/environment";
+import { environment } from "../../environments/environment";
 
 export class CacheCalendarYear extends Resource {
   constructor(protected readResource: ReadResource) {
