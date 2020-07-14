@@ -100,10 +100,10 @@ class Graphdb(Store):
     def __init__(self, user: str, password: str, server: str, repo: str, knora: Store):
         Store.__init__(self, user, password, server)
         self.knora = knora
+        self.repo = repo
 
     def post(self, query, qu):
-        # TODO:+ make repoId parametrable
-        url = "{}/repositories/knora-test".format(self.server)
+        url = "{}/repositories/{}".format(self.server, self.repo)
         if (qu == "update"):
             url = url + "/statements"
         response = requests.post(
