@@ -111,7 +111,7 @@ OFFSET ${page}`;
       );
     }
 
-    function agregtedPage(observer) {
+    function aggregatedPage(observer) {
       console.log("call getCalendarCache for page: " + page);
       service.getCalendarCache(page).subscribe(
         (years: CacheCalendarYear[]) => {
@@ -119,7 +119,7 @@ OFFSET ${page}`;
             allYears = allYears.concat(years);
             observer.next(allYears);
             page = page + 1;
-            agregtedPage(observer);
+            aggregatedPage(observer);
           } else {
             service.cachedCalendar = allYears;
             observer.complete();
@@ -128,7 +128,7 @@ OFFSET ${page}`;
       );
     }
 
-    return new Observable(agregtedPage);
+    return new Observable(aggregatedPage);
   }
 
 
@@ -163,7 +163,7 @@ OFFSET ${page}`;
     const service = this;
     let index = 0;
     let representations: Representation[] = [];
-    function agregtedPage(observer) {
+    function aggregatedPage(observer) {
       console.log("call getRepresentations for page: " + index);
       service.getRepresentationsPage(year, index).subscribe(
         (page: Representation[]) => {
@@ -171,14 +171,14 @@ OFFSET ${page}`;
             representations = representations.concat(page).sort((a, b) => Number(a.label) - Number(b.label));
             observer.next(representations);
             index = index + 1;
-            agregtedPage(observer);
+            aggregatedPage(observer);
           } else {
             observer.complete();
           }
         }
       );
     }
-    return new Observable(agregtedPage);
+    return new Observable(aggregatedPage);
   }
 
 }
