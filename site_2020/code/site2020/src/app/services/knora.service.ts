@@ -6,7 +6,7 @@ import {
   ReadResourceSequence,
   ReadResource,
 } from "@dasch-swiss/dsp-js";
-import { Observable, config } from "rxjs";
+import { Observable, config, of } from "rxjs";
 import { environment } from "../../environments/environment";
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
 import { Representation } from '../models/representation.model';
@@ -102,13 +102,7 @@ OFFSET ${page}`;
     let page = 0;
     let allYears: CacheCalendarYear[] = [];
     if (this.cachedCalendar) {
-      const cachedCalendar = this.cachedCalendar;
-      return new Observable(
-        (observer) => {
-          observer.next(cachedCalendar);
-          observer.complete();
-        }
-      );
+      return of(this.cachedCalendar);
     }
 
     function aggregatedPage(observer) {
