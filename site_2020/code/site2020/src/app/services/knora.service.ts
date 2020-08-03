@@ -98,9 +98,14 @@ OFFSET ${page}`;
 
   // chain paged results
   getAllCalendarCache(): Observable<CacheCalendarYear[]> {
+    // survive variable scope change (`this` might not always be this)
     const service = this;
+    // page counter for recursion
     let page = 0;
+    // result set (recursively build up)
     let allYears: CacheCalendarYear[] = [];
+
+    // if we already have the final result set, send it straight away
     if (this.cachedCalendar) {
       return of(this.cachedCalendar);
     }
