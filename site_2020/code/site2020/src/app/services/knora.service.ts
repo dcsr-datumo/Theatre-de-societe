@@ -167,7 +167,9 @@ OFFSET ${page}`;
       service.getRepresentationsPage(year, index).subscribe(
         (page: Representation[]) => {
           if (page.length > 0) {
-            representations = representations.concat(page).sort((a, b) => Number(a.label) - Number(b.label));
+            representations = representations.concat(page);
+            // if needed sort in the request
+            //.sort((a, b) => Number(a.label) - Number(b.label));
             observer.next(representations);
             index = index + 1;
             aggregatedPage(observer);
