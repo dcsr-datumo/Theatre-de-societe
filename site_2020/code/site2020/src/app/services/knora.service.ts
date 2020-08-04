@@ -1,19 +1,19 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   KnoraApiConfig,
   KnoraApiConnection,
   ApiResponseError,
   ReadResourceSequence,
   ReadResource,
-} from "@dasch-swiss/dsp-js";
-import { Observable, config, of } from "rxjs";
-import { environment } from "../../environments/environment";
+} from '@dasch-swiss/dsp-js';
+import { Observable, config, of } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
 import { Representation } from '../models/representation.model';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class KnoraService {
   knoraApiConnection: KnoraApiConnection;
@@ -22,7 +22,7 @@ export class KnoraService {
 
   constructor() {
     this.config = new KnoraApiConfig(
-      environment.knoraApiProtocol as "http" | "https",
+      environment.knoraApiProtocol as 'http' | 'https',
       environment.knoraApiHost,
       environment.knoraApiPort,
       undefined,
@@ -79,7 +79,7 @@ OFFSET ${page}`;
     const service = this;
     let page = 0;
     function multiPage(observer) {
-      console.log("call getCalendarCache for page: " + page);
+      console.log('call getCalendarCache for page: ' + page);
       service.getCalendarCache(page).subscribe(
         (years: CacheCalendarYear[]) => {
           if (years.length > 0) {
@@ -111,7 +111,7 @@ OFFSET ${page}`;
     }
 
     function aggregatedPage(observer) {
-      console.log("call getCalendarCache for page: " + page);
+      console.log('call getCalendarCache for page: ' + page);
       service.getCalendarCache(page).subscribe(
         (years: CacheCalendarYear[]) => {
           if (years.length > 0) {
@@ -143,7 +143,7 @@ OFFSET ${page}`;
      ?representation a knora-api:Resource .
      ?representation a theatre-societe:Representation .
      ?representation theatre-societe:representationHasDate ?date .
-     FILTER(knora-api:toSimpleDate(?date) = "GREGORIAN:${year}-1-1:${year}-12-31"^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)
+     FILTER(knora-api:toSimpleDate(?date) = 'GREGORIAN:${year}-1-1:${year}-12-31'^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)
     }
    ORDER BY ?date
    OFFSET ${page}
@@ -163,13 +163,13 @@ OFFSET ${page}`;
     let index = 0;
     let representations: Representation[] = [];
     function aggregatedPage(observer) {
-      console.log("call getRepresentations for page: " + index);
+      console.log('call getRepresentations for page: ' + index);
       service.getRepresentationsPage(year, index).subscribe(
         (page: Representation[]) => {
           if (page.length > 0) {
             representations = representations.concat(page);
             // if needed sort in the request
-            //.sort((a, b) => Number(a.label) - Number(b.label));
+            // .sort((a, b) => Number(a.label) - Number(b.label));
             observer.next(representations);
             index = index + 1;
             aggregatedPage(observer);
