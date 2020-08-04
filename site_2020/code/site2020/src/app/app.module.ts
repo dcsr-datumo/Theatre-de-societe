@@ -13,9 +13,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { ProjetComponent } from './components/projet/projet.component';
+import { AgendaComponent } from './components/agenda/agenda.component';
+import { BiblioComponent } from './components/biblio/biblio.component';
+import { PartenairesComponent } from './components/partenaires/partenaires.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { EquipeComponent } from './components/equipe/equipe.component';
 
 @NgModule({
-  declarations: [AppComponent, CalendarComponent, CalendarPageComponent, HeaderComponent],
+  declarations: [AppComponent, CalendarComponent, CalendarPageComponent, HeaderComponent, ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule],
   providers: [],
   bootstrap: [AppComponent],

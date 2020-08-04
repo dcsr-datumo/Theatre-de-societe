@@ -1,3 +1,13 @@
+.mat-drawer-content {
+  background-image: url('/assets/img/marbeuf.jpg');
+  background-repeat:no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .header-spacer {
   flex: 1 1 auto;
 }
@@ -8,6 +18,7 @@
 
 .selected {
   text-decoration: underline;
+  color: #1976d2;
 }
 
 .sidenav-container {
