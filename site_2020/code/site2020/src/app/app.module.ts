@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatBadgeModule } from '@angular/material/badge';
 import { ProjetComponent } from './components/projet/projet.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { BiblioComponent } from './components/biblio/biblio.component';
@@ -21,8 +22,14 @@ import { ContactComponent } from './components/contact/contact.component';
 import { EquipeComponent } from './components/equipe/equipe.component';
 
 @NgModule({
-  declarations: [AppComponent, CalendarComponent, CalendarPageComponent, HeaderComponent, ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule],
+  declarations: [
+    AppComponent, HeaderComponent,
+    CalendarComponent, CalendarPageComponent,
+    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent],
+  imports: [
+    BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
+    MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
