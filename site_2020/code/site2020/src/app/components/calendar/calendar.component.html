@@ -1,5 +1,3 @@
-<p>calendrier</p>
-
 <ul *ngIf="years | async as yearspaged">
   <li *ngFor="let year of yearspaged">
     <a routerLink="/year/{{year.label}}">

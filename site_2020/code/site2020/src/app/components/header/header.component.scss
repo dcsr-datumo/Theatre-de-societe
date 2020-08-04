@@ -1,3 +1,15 @@
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.header-item {
+  margin-left: 1rem;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
 .sidenav-container {
   height: 100%;
 }
@@ -14,4 +26,13 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  color: rgba(224, 33, 33, 0.5);
+}
+
+.mat-primary {
+  color: rgba(224, 33, 33, 0.5);
+}
+
+.mat-sitenav-content {
+  background-color: rgba(224, 33, 33, 0.5);
 }

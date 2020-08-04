@@ -2,7 +2,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+      [opened]="false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
@@ -11,17 +11,35 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>site2020</span>
+    <mat-toolbar>
+
+      <mat-toolbar-row>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span><a [routerLink]="'/'">{{site.title | uppercase}}</a></span>
+        <span class="header-spacer"></span>
+        <span class="header-item" *ngFor="let item of Object.keys(site.menu)" [ngClass]="{'selected': site.selectedMenuItem === item}" (click)="site.selectedMenuItem=item">{{item | uppercase}}</span>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row>
+        <span class="header-spacer"></span>
+        <div *ngFor="let row of Object.keys(site.menu)">
+          <span class="header-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</span>
+        </div>
+      </mat-toolbar-row>
+
+        <span><a [routerLink]="'/calendar'"></a></span>
     </mat-toolbar>
     <!-- Add Content Here -->
+
+
+    <router-outlet></router-outlet>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
+

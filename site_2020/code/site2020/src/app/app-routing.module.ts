@@ -4,7 +4,7 @@ import { CalendarComponent } from "./components/calendar/calendar.component";
 import { CalendarPageComponent } from './components/calendar-page/calendar-page.component';
 
 const routes: Routes = [
-  { path: "calendar", component: CalendarComponent },
+  { path: "calendrier", component: CalendarComponent },
   { path: "year/:year", component: CalendarPageComponent }
 ];
 
