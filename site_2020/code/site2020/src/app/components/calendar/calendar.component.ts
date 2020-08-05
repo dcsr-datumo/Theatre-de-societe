@@ -21,7 +21,7 @@ export class CalendarComponent implements OnInit {
   constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
-    this.years = this.knoraService.getAllCalendarCache();
+    this.years = this.knoraService.getAllCalendarCacheExtended();
   }
 
 }

@@ -19,6 +19,7 @@ export class KnoraService {
   knoraApiConnection: KnoraApiConnection;
   config: KnoraApiConfig;
   cachedCalendar: CacheCalendarYear[];
+  cachedCalendarExtended: CacheCalendarYear[];
 
   constructor() {
     this.config = new KnoraApiConfig(
@@ -128,6 +129,90 @@ OFFSET ${page}`;
     }
 
     return new Observable(aggregatedPage);
+  }
+
+  getAllCalendarCacheExtended(): Observable<CacheCalendarYear[]> {
+    // survive variable scope change (`this` might not always be this)
+    const service = this;
+    // page counter for recursion
+    let page = 0;
+    const first = 1700;
+    let lastProcessed = first;
+    const last = 1899;
+    let lastYear: CacheCalendarYear;
+
+    // result set (recursively build up)
+    let allYearsExtended: CacheCalendarYear[] = [];
+
+    // if we already have the final result set, send it straight away
+    if (this.cachedCalendarExtended) {
+      return of(this.cachedCalendarExtended);
+    }
+
+    function aggregateExtendPage(observer) {
+      console.log('call getCalendarCache for page: ' + page);
+      service.getCalendarCache(page).subscribe(
+        (years: CacheCalendarYear[]) => {
+          if (years.length > 0) {
+            let countRepresentations = 0;
+            // process years
+            years.forEach(year => {
+              // aggregate representations for years before the first one
+              if (+year.label < first) {
+                countRepresentations += +year.representations;
+                return;
+              }
+              if (+year.label === first) {
+                if (countRepresentations > 0) {
+                  year.representations = (countRepresentations + +year.representations).toString();
+                }
+                allYearsExtended.push(year);
+                return;
+              }
+              // for regular years, fill the blanks if needed
+              if (+year.label > (lastProcessed + 1)) {
+                for (let i = lastProcessed + 1; i < Math.min(last, +year.label); i++) {
+                  const missingYear = new CacheCalendarYear(new ReadResource());
+                  missingYear.label = i.toString();
+                  missingYear.representations = '0';
+                  allYearsExtended.push(missingYear);
+                }
+              }
+              if (+year.label < last) {
+                allYearsExtended.push(year);
+                lastProcessed = +year.label;
+                return;
+              }
+              // aggregate representations for years after the last one
+              if (+year.label === last) {
+                lastYear = year;
+                return;
+              }
+              if (+year.label > last) {
+                if (!lastYear) {
+                  lastYear = new CacheCalendarYear(new ReadResource());
+                  lastYear.label = last.toString();
+                  lastYear.representations = '0';
+                }
+                lastYear.representations = (+lastYear.representations + +year.representations).toString();
+                return;
+              }
+            });
+            observer.next(allYearsExtended);
+            page = page + 1;
+            aggregateExtendPage(observer);
+          } else {
+            if (lastYear) {
+              allYearsExtended.push(lastYear);
+            }
+            service.cachedCalendarExtended = allYearsExtended;
+            observer.complete();
+          }
+        }
+      );
+    }
+
+    return new Observable(aggregateExtendPage);
   }
 
 

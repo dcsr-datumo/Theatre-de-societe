@@ -1,9 +1,13 @@
+<h1>
+  Recherche de représentation(s) par année
+</h1>
+
 <ul *ngIf="years | async as yearspaged">
-  <li *ngFor="let year of yearspaged">
-    <a *ngIf="year.representations" routerLink="/year/{{year.label}}">
+  <li *ngFor="let year of yearspaged" [ngClass]='{"century-spacer": (year.label >= "1800" && year.label <= "1809")}'>
+    <a *ngIf="year.representations > '0'" routerLink="/year/{{year.label}}">
       {{ year.label }}
     </a>
-    <span *ngIf="!year.representations">{{ year.label }}</span>
-    <button *ngIf="year.representations" color="accent" matBadge="{{year.representations}}"></button>
+    <span *ngIf="year.representations <= '0'">{{ year.label }}</span>
+    <button *ngIf="year.representations > '0'" color="accent" matBadge="{{year.representations}}"></button>
   </li>
 </ul>
