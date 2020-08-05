@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'biblio', component: BiblioComponent },
   { path: 'partenaires', component: PartenairesComponent },
   { path: 'contact', component: ContactComponent },
+  { path: '',   redirectTo: '/projet', pathMatch: 'full' }
 ];
 
 @NgModule({
