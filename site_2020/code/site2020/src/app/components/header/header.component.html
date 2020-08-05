@@ -14,22 +14,23 @@
     <mat-toolbar>
 
       <mat-toolbar-row>
-        <button
+        <!-- add it later? -->
+        <!--button
           type="button"
           aria-label="Toggle sidenav"
           mat-icon-button
           (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
+        </button-->
         <span><a [routerLink]="'/'">{{site.title | uppercase}}</a></span>
         <span class="header-spacer"></span>
         <span class="header-item" *ngFor="let item of Object.keys(site.menu)" [ngClass]="{'selected': site.selectedMenuItem === item}" (click)="site.selectedMenuItem=item">{{item | uppercase}}</span>
       </mat-toolbar-row>
 
-      <mat-toolbar-row>
+      <mat-toolbar-row class="second-level-row">
         <span class="header-spacer"></span>
         <div *ngFor="let row of Object.keys(site.menu)">
-          <span class="header-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</span>
+          <span class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</span>
         </div>
       </mat-toolbar-row>
 
