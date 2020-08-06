@@ -22,8 +22,13 @@
           (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button-->
-        <span><a [routerLink]="'/'" (click)="site.selectedMenuItem='à propos'; site.selectedMenuSubItem='projet';">{{site.title | uppercase}}</a></span>
+        <span><a class="title"
+          [routerLink]="'/'"
+          (click)="site.selectedMenuItem='à propos'; site.selectedMenuSubItem='projet';">
+          {{site.title | uppercase}}
+        </a></span>
         <span class="header-spacer"></span>
+        <span>
         <span
           class="header-item"
           *ngFor="let item of Object.keys(site.menu)"
@@ -32,13 +37,12 @@
           [routerLink]="site.menu[item][0]">
             {{item | uppercase}}
         </span>
+        </span>
       </mat-toolbar-row>
 
-      <mat-toolbar-row class="second-level-row">
+      <mat-toolbar-row class="second-level-row" *ngFor="let row of Object.keys(site.menu)">
         <span class="header-spacer"></span>
-        <div *ngFor="let row of Object.keys(site.menu)">
-          <span class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</span>
-        </div>
+        <span class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</span>
       </mat-toolbar-row>
     </mat-toolbar>
     <!-- Add Content Here -->

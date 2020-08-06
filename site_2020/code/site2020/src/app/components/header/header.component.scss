@@ -1,11 +1,26 @@
 .mat-drawer-content {
-  background-image: url('/Theatre-de-societe/assets/img/marbeuf.jpg');
+  background-image: url('/assets/img/marbeuf.jpg');
   background-repeat:no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+mat-toolbar {
+  background-color: rgba(245, 245, 245, .7);
+}
+
+mat-toolbar-row {
+  flex-wrap: wrap;
+  justify-content: right;
+  height: auto;
+}
+
+.title {
+  color: black;
+  min-width: 50%;
 }
 
 .header-spacer {
@@ -18,8 +33,9 @@
 
 .second-level-row {
   margin: 0;
-  //padding: 0;
+  flex-wrap: wrap;
 }
+
 .second-level-item {
   font-size: medium;
 }
@@ -35,27 +51,4 @@
 
 .sidenav {
   width: 200px;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-
-.mat-toolbar {
-  background-color: rgba(245, 245, 245, .7);
-}
-
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  color: rgba(224, 33, 33, 0.5);
-}
-
-.mat-primary {
-  color: rgba(224, 33, 33, 0.5);
-}
-
-.mat-sitenav-content {
-  background-color: rgba(224, 33, 33, 0.5);
 }
