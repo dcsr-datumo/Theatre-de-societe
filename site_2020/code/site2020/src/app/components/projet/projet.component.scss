@@ -1,15 +1,18 @@
 * {
   color: black;
-  font: initial;
-  font-size: x-large;
-  font-weight: bolder;
-  text-align: center;
-  padding: 1rem;
-  margin: 10rem;
   line-height: initial;
+  font: initial;
+  text-align: center;
+}
+
+h1 {
+  font: initial;
+  font-size: xx-large;
 }
 
 div {
+  padding: 2rem;
+  margin: 2rem;
   margin-top: 10rem;
   display: flex;
   flex-direction: column;
@@ -17,6 +20,6 @@ div {
   background-color: rgba(white, .7);
 }
 
-.larger {
-  font-size: xx-large;
+p {
+  font-size: large;
 }
