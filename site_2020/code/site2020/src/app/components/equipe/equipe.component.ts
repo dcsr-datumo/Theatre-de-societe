@@ -8,7 +8,12 @@ import { SiteService } from 'src/app/services/site.service';
 })
 export class EquipeComponent implements OnInit {
   site: SiteService;
-  panelOpenState: boolean;
+  panelValentinaOpenState: boolean;
+  panelAlineOpenState: boolean;
+  panelJennOpenState: boolean;
+  panelChrisOpenState: boolean;
+  panelPaulOpenState: boolean;
+  panelFionaOpenState: boolean;
 
   constructor(private siteService: SiteService) {
     this.site = siteService;
