@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SiteService } from 'src/app/services/site.service';
 
 @Component({
   selector: 'tds-agenda',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agenda.component.scss']
 })
 export class AgendaComponent implements OnInit {
+  site: SiteService;
 
-  constructor() { }
+  constructor(private siteService: SiteService) {
+    this.site = siteService;
+  }
 
   ngOnInit(): void {
   }
