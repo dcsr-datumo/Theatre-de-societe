@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  knoraApiProtocol: "http",
-  knoraApiHost: "api-test2.unil.ch",
-  knoraApiPort: 23333,
+  knoraApiProtocol: "https",
+  knoraApiHost: "knora.unil.ch",
+  knoraApiPort: 443,
 };
 
 /*

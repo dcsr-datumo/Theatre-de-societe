@@ -1,7 +1,3 @@
-* {
-  //font-size: .8rem;
-}
-
 div {
   padding: 1rem;
   margin: 2rem;
@@ -10,6 +6,7 @@ div {
   justify-content: center;
   flex-wrap: wrap;
   background-color: rgba(white, .7);
+  font: initial;
 }
 
 .photoid {
