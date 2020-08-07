@@ -1,0 +1,49 @@
+* {
+  //font-size: .8rem;
+}
+
+div {
+  padding: 1rem;
+  margin: 2rem;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgba(white, .7);
+}
+
+.photoid {
+  width: 50%;
+}
+
+mat-content {
+  flex-wrap: wrap;
+}
+
+mat-card {
+  margin: 1rem;
+  width: 30%;
+  min-width: 9rem;
+}
+
+mat-panel-title {
+//   justify-content: start;
+//   min-width: 50%;
+}
+
+mat-panel-description {
+  min-width: 9rem;
+}
+
+mat-expansion-panel-header {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.auto-height {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: auto;
+}

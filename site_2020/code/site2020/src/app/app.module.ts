@@ -14,6 +14,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatCardModule } from '@angular/material/card';
+//import { MatDialog } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { ProjetComponent } from './components/projet/projet.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { BiblioComponent } from './components/biblio/biblio.component';
@@ -28,7 +31,9 @@ import { EquipeComponent } from './components/equipe/equipe.component';
     ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
-    MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule
+    MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule,
+    //MatDialog,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],
