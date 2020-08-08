@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SiteService } from 'src/app/services/site.service';
 
 @Component({
   selector: 'tds-biblio',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./biblio.component.scss']
 })
 export class BiblioComponent implements OnInit {
+  site: SiteService;
 
-  constructor() { }
+  constructor(private siteService: SiteService) {
+    this.site = siteService;
+  }
 
   ngOnInit(): void {
   }

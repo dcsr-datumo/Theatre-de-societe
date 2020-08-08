@@ -1,1 +1,13 @@
-<p>partenaires à venir!</p>
+<div>
+  <h1>Partenaires</h1>
+
+  <ul>
+    <li *ngFor="let partner of Object.values(partners)">
+      <img src="{{site.urlPre}}/assets/img/partners/{{partner['img']}}" alt="{{partner['name']}}">
+      <p>
+        {{partner['name']}}
+      </p>
+    </li>
+  </ul>
+
+</div>

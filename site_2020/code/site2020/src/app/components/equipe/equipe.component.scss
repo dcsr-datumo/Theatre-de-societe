@@ -1,45 +1,28 @@
-div {
-  padding: 1rem;
-  margin: 2rem;
-  margin-top: 4rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: rgba(white, .7);
-  font: initial;
-}
+@import '../../local.scss';
 
-.mat-form-field + .mat-form-field {
-  margin-left: 8px;
+div {
+  // align card in rows with wrap (default is column)
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .photoid {
   width: 50%;
 }
 
-mat-content {
-  flex-wrap: wrap;
-}
-
 mat-card {
   margin: 1rem;
-  width: 30%;
+  // don't cut names
   min-width: 22rem;
+  // with space, make 3 cards per line
+  width: 30%;
+}
+
+mat-pannel-title {
+  font-weight: bolder;
 }
 
 mat-panel-description {
-  min-width: 9rem;
-}
-
-mat-expansion-panel-header {
-  display: flex;
-  flex-wrap: wrap;
-  height: auto;
-}
-
-.auto-height {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  height: auto;
+  text-align: left;
+  color: dimgray;
 }
