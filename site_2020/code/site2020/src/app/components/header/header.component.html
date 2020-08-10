@@ -29,20 +29,20 @@
         </a></span>
         <span class="header-spacer"></span>
         <span>
-        <span
+        <a
           class="header-item"
           *ngFor="let item of Object.keys(site.menu)"
           [ngClass]="{'selected': site.selectedMenuItem === item}"
           (click)="site.selectedMenuItem=item; site.selectedMenuSubItem=site.menu[item][0];"
           [routerLink]="site.menu[item][0]">
             {{item | uppercase}}
-        </span>
+        </a>
         </span>
       </mat-toolbar-row>
 
       <mat-toolbar-row class="second-level-row" *ngFor="let row of Object.keys(site.menu)">
         <span class="header-spacer"></span>
-        <span class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</span>
+        <a class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</a>
       </mat-toolbar-row>
     </mat-toolbar>
     <!-- Add Content Here -->
