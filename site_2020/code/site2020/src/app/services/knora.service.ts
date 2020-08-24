@@ -215,9 +215,19 @@ OFFSET ${page}`;
     return new Observable(aggregateExtendPage);
   }
 
+  getQueryFilter(year: number): string {
+    if (year === 1700) {
+      return "FILTER(knora-api:toSimpleDate(?date) < 'GREGORIAN:1701-1-1' ^^ <http://api.knora.org/ontology/knora-api/simple/v2#Date>)";
+    }
+    if (year === 1899) {
+      return "FILTER(knora-api:toSimpleDate(?date) > 'GREGORIAN:1898-12-31' ^^ <http://api.knora.org/ontology/knora-api/simple/v2#Date>)";
+    }
+    return `FILTER(knora-api:toSimpleDate(?date) = 'GREGORIAN:${year}-1-1:${year}-12-31'^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)`;
+  }
 
   // representations per year
   getRepresentationsPage(year: number, page: number): Observable<Representation[]> {
+    const filter = this.getQueryFilter(year);
     const query = `
    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
    PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
@@ -228,7 +238,7 @@ OFFSET ${page}`;
      ?representation a knora-api:Resource .
      ?representation a theatre-societe:Representation .
      ?representation theatre-societe:representationHasDate ?date .
-     FILTER(knora-api:toSimpleDate(?date) = 'GREGORIAN:${year}-1-1:${year}-12-31'^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)
+     ${filter}
     }
    ORDER BY ?date
    OFFSET ${page}

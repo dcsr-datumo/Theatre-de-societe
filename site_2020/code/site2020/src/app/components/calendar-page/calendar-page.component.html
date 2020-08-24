@@ -1,11 +1,16 @@
-<p>année {{ year }}</p>
+<div>
+
+<h1>année {{ year }}</h1>
 
 <ul *ngIf="representations | async as rep">
   <li *ngFor="let representation of rep">
     <a
        routerLink="/year/{{representation.label}}">
-      {{ representation.label }}
+      {{ representation.work }}
     </a>
+    {{ representation.place }}
     {{ representation.date }}
   </li>
 </ul>
+
+</div>
