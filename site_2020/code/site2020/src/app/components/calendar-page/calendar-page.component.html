@@ -4,12 +4,7 @@
 
 <ul *ngIf="representations | async as rep">
   <li *ngFor="let representation of rep">
-    <a
-       routerLink="/year/{{representation.label}}">
-      {{ representation.work }}
-    </a>
-    {{ representation.place }}
-    {{ representation.date }}
+    <tds-representation-line [iri]="representation.id"></tds-representation-line>
   </li>
 </ul>
 

@@ -1,11 +1,23 @@
 // stolen from @gfoo
 import { ReadResource } from '@dasch-swiss/dsp-js';
+import { environment } from '../../environments/environment';
 
 export class Resource {
   constructor(protected readResource: ReadResource) {}
 
   get id(): string {
     return this.readResource.id;
+  }
+
+  // get reference : a version of the IRI that is understood by this system
+  // take the ID of the IRI
+  // IRI: http://rdfh.ch/0103/sB04T1_lRMqJIHQw2atDxA
+  get ref(): string {
+    return this.id.split('/').pop();
+  }
+
+  getIriOf(property: string): string {
+    return this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}${property}`);
   }
 
   get ark(): string {

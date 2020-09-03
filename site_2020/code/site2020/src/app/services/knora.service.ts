@@ -9,7 +9,13 @@ import {
 import { Observable, config, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
+import { RepresentationMatch } from '../models/representationmatch.model';
 import { Representation } from '../models/representation.model';
+import { Place } from '../models/place.model';
+import { Work } from '../models/work.model';
+import { Genre } from '../models/genre.model';
+import { Quote } from '../models/quote.model';
+import { Festival } from '../models/festival.model';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -226,7 +232,7 @@ OFFSET ${page}`;
   }
 
   // representations per year
-  getRepresentationsPage(year: number, page: number): Observable<Representation[]> {
+  getRepresentationsPage(year: number, page: number): Observable<RepresentationMatch[]> {
     const filter = this.getQueryFilter(year);
     const query = `
    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
@@ -247,20 +253,20 @@ OFFSET ${page}`;
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
-          (resource: ReadResource) => new Representation(resource)
+          (resource: ReadResource) => new RepresentationMatch(resource)
         ))
       );
   }
 
 
-  getRepresentations(year: number): Observable<Representation[]> {
+  getRepresentations(year: number): Observable<RepresentationMatch[]> {
     const service = this;
     let index = 0;
-    let representations: Representation[] = [];
+    let representations: RepresentationMatch[] = [];
     function aggregatedPage(observer) {
       console.log('call getRepresentations for page: ' + index);
       service.getRepresentationsPage(year, index).subscribe(
-        (page: Representation[]) => {
+        (page: RepresentationMatch[]) => {
           if (page.length > 0) {
             representations = representations.concat(page);
             // if needed sort in the request
@@ -277,4 +283,44 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
+  getRepresentation(iri: string): Observable<Representation> {
+    const service = this;
+    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
+      map((response: ReadResource) => new Representation(response))
+    );
+  }
+
+  getPlace(iri: string): Observable<Place> {
+    const service = this;
+    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
+      map((response: ReadResource) => new Place(response))
+    );
+  }
+
+  getGenre(iri: string): Observable<Genre> {
+    const service = this;
+    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
+      map((response: ReadResource) => new Genre(response))
+    );
+  }
+  getQuote(iri: string): Observable<Quote> {
+    const service = this;
+    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
+      map((response: ReadResource) => new Quote(response))
+    );
+  }
+
+  getFestival(iri: string): Observable<Festival> {
+    const service = this;
+    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
+      map((response: ReadResource) => new Festival(response))
+    );
+  }
+
+  getWork(iri: string): Observable<Work> {
+    const service = this;
+    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
+      map((response: ReadResource) => new Work(response))
+    );
+  }
 }

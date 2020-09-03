@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { Observable, config } from "rxjs";
 
 import { KnoraService } from "../../services/knora.service";
-import { Representation } from '../../models/representation.model';
+import { RepresentationMatch } from '../../models/representationmatch.model';
 
 @Component({
   selector: 'tds-calendar-page',
@@ -13,7 +13,7 @@ import { Representation } from '../../models/representation.model';
 })
 export class CalendarPageComponent implements OnInit {
   year: number;
-  representations: Observable<Representation[]>;
+  representations: Observable<RepresentationMatch[]>;
 
   constructor(
     private route: ActivatedRoute,

@@ -23,12 +23,21 @@ import { BiblioComponent } from './components/biblio/biblio.component';
 import { PartenairesComponent } from './components/partenaires/partenaires.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EquipeComponent } from './components/equipe/equipe.component';
+import { RepresentationLineComponent } from './components/representation-line/representation-line.component';
+import { WorkComponent } from './components/work/work.component';
+import { PlaceComponent } from './components/place/place.component';
+import { QuoteComponent } from './components/quote/quote.component';
+import { RoleComponent } from './components/role/role.component';
+import { FestivalComponent } from './components/festival/festival.component';
 
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent,
     CalendarComponent, CalendarPageComponent,
-    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent],
+    RepresentationLineComponent,
+    WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
+    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent
+  ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
     MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule,
