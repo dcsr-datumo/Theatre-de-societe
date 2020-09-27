@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Role } from 'src/app/models/role.model';
+import { KnoraService } from 'src/app/services/knora.service';
 
 @Component({
   selector: 'tds-role',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./role.component.scss']
 })
 export class RoleComponent implements OnInit {
+  @Input()
+  iri: string;
 
-  constructor() { }
+  role: Observable<Role>;
+
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
+    this.role = this.knoraService.getRole(this.iri);
   }
 
 }

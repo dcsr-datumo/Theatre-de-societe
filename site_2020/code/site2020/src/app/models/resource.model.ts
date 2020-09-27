@@ -29,12 +29,14 @@ export class Resource {
   }
 
   getFirstValueAsStringOrNullOfProperty(property: string) {
-    console.log(this.readResource);
-    console.log(property);
+    const values: string[] = this.getValues(property);
+    return values && values.length >= 1 ? values[0] : null;
+  }
+
+  getValues(property: string) {
     const values: string[] = this.readResource
       ? this.readResource.getValuesAsStringArray(property)
       : null;
-    console.log(values);
-    return values && values.length >= 1 ? values[0] : null;
+    return values && values.length >= 1 ? values : null;
   }
 }

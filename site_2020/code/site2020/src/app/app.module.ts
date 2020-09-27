@@ -29,6 +29,9 @@ import { PlaceComponent } from './components/place/place.component';
 import { QuoteComponent } from './components/quote/quote.component';
 import { RoleComponent } from './components/role/role.component';
 import { FestivalComponent } from './components/festival/festival.component';
+import { RepresentationComponent } from './components/representation/representation.component';
+import { GenreComponent } from './components/genre/genre.component';
+import { YearComponent } from './components/year/year.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { FestivalComponent } from './components/festival/festival.component';
     CalendarComponent, CalendarPageComponent,
     RepresentationLineComponent,
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
-    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent
+    GenreComponent,
+    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,

@@ -9,10 +9,12 @@ import { AgendaComponent } from './components/agenda/agenda.component';
 import { BiblioComponent } from './components/biblio/biblio.component';
 import { PartenairesComponent } from './components/partenaires/partenaires.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { RepresentationComponent } from './components/representation/representation.component';
 
 const routes: Routes = [
   { path: 'calendrier', component: CalendarComponent },
   { path: 'year/:year', component: CalendarPageComponent },
+  { path: 'representation/:id', component: RepresentationComponent },
   { path: 'projet', component: ProjetComponent },
   { path: 'equipe', component: EquipeComponent },
   { path: 'agenda', component: AgendaComponent },

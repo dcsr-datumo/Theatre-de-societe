@@ -1,0 +1,29 @@
+<div>
+
+  <span *ngIf="representation | async as rep">
+    <ul>
+      <li>
+        Pièce:  <tds-work [iri]="rep.work"></tds-work>
+      </li>
+      <li>
+        Lieu: <tds-place [iri]="rep.place"></tds-place>
+      </li>
+      <li>
+        Date: <a routerLink="/year/{{ rep.scaledYear }}">{{ rep.dateShort }}</a>
+      </li>
+      <li *ngIf="rep.festival">
+        Festival: <tds-festival [iri]="rep.festival"></tds-festival>
+      </li>
+      <li *ngIf="rep.quote">
+        Quote: <tds-quote [iri]="rep.quote"></tds-quote>
+      </li>
+      <li *ngIf="rep.role">
+        Role: <tds-role [iri]="rep.role"></tds-role>
+      </li>
+      <li *ngIf="rep.genre">
+        Genre: <tds-genre [iri]="rep.genre"></tds-genre>
+      </li>
+    </ul>
+        <a href="{{rep.ark}}">perma-lien</a>
+  </span>
+</div>

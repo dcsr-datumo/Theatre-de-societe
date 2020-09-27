@@ -1,0 +1,7 @@
+    <a *ngIf="year.representations > '0'" routerLink="/year/{{year.label}}">
+      <span *ngIf="year.label == '1700'"><</span>
+      <span *ngIf="year.label == '1899'">></span>
+      {{ year.label }}
+    </a>
+    <span *ngIf="year.representations <= '0'">{{ year.label }}</span>
+    <button *ngIf="year.representations > '0'" color="accent" matBadge="{{year.representations}}"></button>

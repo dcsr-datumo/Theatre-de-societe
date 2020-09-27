@@ -36,6 +36,20 @@ export class Representation extends Resource {
     return result;
   }
 
+  get year(): number {
+    const property = `${environment.baseOntology}representationHasDate`;
+    let dateValues = this.readResource.getValues(property);
+    let date = dateValues[0]['date']; // [0] -> no check: date is mandatory
+    return date['year']
+  }
+
+  get scaledYear(): number {
+    let year = this.year;
+    if (year < 1700) return 1700;
+    if (year > 1899) return 1899;
+    return year;
+  }
+
   get work(): string {
     return this.getIriOf('representationIsBasedOnValue');
   }
@@ -54,6 +68,10 @@ export class Representation extends Resource {
 
   get festival(): string {
     return this.getIriOf('representationIsPartOfFestivalValue');
+  }
+
+  get genre(): string {
+    return this.getIriOf('representationHasGenreValue');
   }
 
 }

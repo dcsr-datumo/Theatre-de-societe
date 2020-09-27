@@ -1,1 +1,3 @@
-<p>role works!</p>
+<span *ngIf="role | async as r">
+  {{r.label}}
+</span>
