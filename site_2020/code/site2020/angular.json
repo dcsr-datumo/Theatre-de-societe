@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "site2020"
+  "defaultProject": "site2020",
+  "cli": {
+    "analytics": "6ddd0141-0ba0-4798-8eac-8a02bb3edba5"
+  }
 }
