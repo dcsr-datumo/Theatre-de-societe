@@ -58,20 +58,20 @@ export class Representation extends Resource {
     return this.getIriOf('representationHasPlaceValue');
   }
 
-  get quote(): string {
-    return this.getIriOf('representationHasQuoteValue');
+  get quote(): string[] {
+    return this.getIrisOf('representationHasQuoteValue');
   }
 
-  get role(): string {
-    return this.getIriOf('representationHasRoleValue');
+  get role(): string[] {
+    return this.getIrisOf('representationHasRoleValue');
   }
 
   get festival(): string {
     return this.getIriOf('representationIsPartOfFestivalValue');
   }
 
-  get genre(): string {
-    return this.getIriOf('representationHasGenreValue');
+  get genre(): string[] {
+    return this.getIrisOf('representationHasGenreValue');
   }
 
 }

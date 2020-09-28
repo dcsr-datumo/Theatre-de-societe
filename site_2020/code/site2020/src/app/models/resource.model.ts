@@ -20,6 +20,10 @@ export class Resource {
     return this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}${property}`);
   }
 
+  getIrisOf(property: string): string[] {
+    return this.getValues(`${environment.baseOntology}${property}`);
+  }
+
   get ark(): string {
     return this.readResource.arkUrl;
   }
