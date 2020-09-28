@@ -18,6 +18,7 @@ import { Quote } from '../models/quote.model';
 import { Festival } from '../models/festival.model';
 import { map, share, shareReplay } from 'rxjs/operators';
 import { Role } from '../models/role.model';
+import { Resource } from '../models/resource.model';
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +30,7 @@ export class KnoraService {
   cachedCalendarExtended: CacheCalendarYear[];
   cachedRepresentation: Map<string, Representation> = new Map<string, Representation>();
   cachedYears: Map<number, RepresentationMatch[]> = new Map<number, RepresentationMatch[]>();
+  cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
 
   constructor() {
     this.config = new KnoraApiConfig(
@@ -290,59 +292,64 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getRepresentation(iri: string): Observable<Representation> {
+  getResource<T extends Resource>(iri: string, cname: string, ctor: Function): Observable<T> {
     const service = this;
-    if (service.cachedRepresentation.has(iri)) {
-       return of(service.cachedRepresentation.get(iri))
+
+    // get the cache
+    let cache;
+    if (!service.cache.has(cname)) {
+      cache = new Map<string, T>();
+      service.cache.set(cname, cache);
+    } else {
+      cache = service.cache.get(cname);
+    }
+
+    // check the cache
+    if (cache.has(iri)) {
+       return of(cache.get(iri))
     };
 
+    // send the request
     return service.knoraApiConnection.v2.res.getResource(iri).pipe(
       map((response: ReadResource) => {
-        const rep = new Representation(response);
-        service.cachedRepresentation.set(iri, rep);
+        const rep = ctor(response);
+        cache.set(iri, rep);
         return rep;
       })
     );
   }
 
+  getRepresentation(iri: string): Observable<Representation> {
+    const service = this;
+    return service.getResource(iri, "representation", (resource: ReadResource) => new Representation(resource));
+  }
+
   getPlace(iri: string): Observable<Place> {
     const service = this;
-    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
-      map((response: ReadResource) => new Place(response))
-    );
+    return service.getResource(iri, "place", (resource: ReadResource) => new Place(resource));
   }
 
   getGenre(iri: string): Observable<Genre> {
     const service = this;
-    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
-      map((response: ReadResource) => new Genre(response))
-    );
+    return service.getResource(iri, "genre", (resource: ReadResource) => new Genre(resource));
   }
   getQuote(iri: string): Observable<Quote> {
     const service = this;
-    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
-      map((response: ReadResource) => new Quote(response))
-    );
+    return service.getResource(iri, "quote", (resource: ReadResource) => new Quote(resource));
   }
 
   getFestival(iri: string): Observable<Festival> {
     const service = this;
-    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
-      map((response: ReadResource) => new Festival(response))
-    );
+    return service.getResource(iri, "festival", (resource: ReadResource) => new Festival(resource));
   }
 
   getWork(iri: string): Observable<Work> {
     const service = this;
-    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
-      map((response: ReadResource) => new Work(response))
-    );
+    return service.getResource(iri, "work", (resource: ReadResource) => new Work(resource));
   }
 
   getRole(iri: string): Observable<Role> {
     const service = this;
-    return service.knoraApiConnection.v2.res.getResource(iri).pipe(
-      map((response: ReadResource) => new Role(response))
-    );
+    return service.getResource(iri, "Role", (resource: ReadResource) => new Role(resource));
   }
 }
