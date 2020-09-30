@@ -32,6 +32,8 @@ import { FestivalComponent } from './components/festival/festival.component';
 import { RepresentationComponent } from './components/representation/representation.component';
 import { GenreComponent } from './components/genre/genre.component';
 import { YearComponent } from './components/year/year.component';
+import { MapComponent } from './components/map/map.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -40,13 +42,14 @@ import { YearComponent } from './components/year/year.component';
     RepresentationLineComponent,
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
-    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent
+    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
     MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule,
     //MatDialog,
-    MatExpansionModule
+    MatExpansionModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent],
