@@ -19,6 +19,7 @@ import { Festival } from '../models/festival.model';
 import { map, share, shareReplay } from 'rxjs/operators';
 import { Role } from '../models/role.model';
 import { Resource } from '../models/resource.model';
+import { PlaceMatch } from '../models/placematch.model';
 
 @Injectable({
   providedIn: 'root',
@@ -30,6 +31,7 @@ export class KnoraService {
   cachedCalendarExtended: CacheCalendarYear[];
   cachedRepresentation: Map<string, Representation> = new Map<string, Representation>();
   cachedYears: Map<number, RepresentationMatch[]> = new Map<number, RepresentationMatch[]>();
+  cachedPlaces: PlaceMatch[];
   cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
 
   constructor() {
@@ -352,4 +354,62 @@ OFFSET ${page}`;
     const service = this;
     return service.getResource(iri, "Role", (resource: ReadResource) => new Role(resource));
   }
+
+
+  // representations per year
+  getPlacePage(page: number): Observable<PlaceMatch[]> {
+    const query = `
+    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+    PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+
+    CONSTRUCT {
+      ?place knora-api:isMainResource true .
+      ?place tds:placeHasName ?name .
+      ?place tds:placeHasCoordinates ?coord .
+    } WHERE {
+      ?place a knora-api:Resource .
+      ?place a tds:Place .
+      ?place tds:placeHasName ?name .
+      ?place tds:placeHasCoordinates ?coord .
+    }
+    OFFSET ${page}
+    `;
+    console.log('query places:');
+    console.log(query);
+    return this.knoraApiConnection.v2.search.doExtendedSearch(query)
+      .pipe(
+        map((response: ReadResourceSequence) => response.resources.map(
+          (resource: ReadResource) => new PlaceMatch(resource)
+        ))
+      );
+  }
+
+  getPlaces(): Observable<PlaceMatch[]> {
+    const service = this;
+    if (service.cachedPlaces) {
+      return of(service.cachedPlaces);
+    }
+    let index = 0;
+    let matches: PlaceMatch[] = [];
+    function aggregatedPage(observer) {
+      console.log('call getPlace for page: ' + index);
+      service.getPlacePage(index).subscribe(
+        (page: PlaceMatch[]) => {
+          if (page.length > 0) {
+            matches = matches.concat(page);
+            // if needed sort in the request
+            // .sort((a, b) => Number(a.label) - Number(b.label));
+            observer.next(matches);
+            index = index + 1;
+            aggregatedPage(observer);
+          } else {
+            service.cachedPlaces = matches;
+            observer.complete();
+          }
+        }
+      );
+    }
+    return new Observable(aggregatedPage);
+  }
+
 }
