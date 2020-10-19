@@ -1,5 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Map, Control, DomUtil, ZoomAnimEvent , Layer, MapOptions, tileLayer, latLng } from 'leaflet';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Map, Control, DomUtil, ZoomAnimEvent , Layer, MapOptions, tileLayer, latLng, marker, Marker, LatLng, LatLngExpression, icon } from 'leaflet';
+import { map } from 'rxjs/operators';
+import { PlaceMatch } from 'src/app/models/placematch.model';
+import { KnoraService } from 'src/app/services/knora.service';
 
 @Component({
   selector: 'tds-map',
@@ -8,28 +12,37 @@ import { Map, Control, DomUtil, ZoomAnimEvent , Layer, MapOptions, tileLayer, la
 })
 export class MapComponent implements OnInit {
   @Output() map$: EventEmitter<Map> = new EventEmitter;
+  @Input() layers = [
+    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      opacity: 0.7,
+      maxZoom: 19,
+      detectRetina: true,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    })
+  ];
   @Input() options: MapOptions= {
-                      layers:[tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        opacity: 0.7,
-                        maxZoom: 19,
-                        detectRetina: true,
-                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                      })],
-                      zoom:1,
-                      center:latLng(0,0)
+    layers: this.layers,
+    zoom:5,
+    center:latLng(47,0)
   };
+
   public map: Map;
 
-  constructor() { }
+  places: PlaceMatch[];
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private knoraService: KnoraService,
+  ) {
+   }
 
   ngOnInit(): void {
-    this.options = {
-    	layers: [
-    		tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
-    	],
-    	zoom: 5,
-    	center: latLng(47, 0)
-    };
+    let layers: [Layer];
+    layers = [
+        tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
+    ];
+
   }
 
   ngOnDestroy() {
@@ -37,10 +50,40 @@ export class MapComponent implements OnInit {
     this.map.remove();
   };
 
-  onMapReady(map: Map) {
-    this.map = map;
-    this.map$.emit(map);
-    // this.zoom = map.getZoom();
-    // this.zoom$.emit(this.zoom);
+  onMapReady(geomap: Map) {
+    this.map = geomap;
+    this.map$.emit(geomap);
+    //let this_icon = icon({iconUrl: '/assets/img/marker-icon.png', shadowUrl: '/assets/img/marker-shadow.png'});
+    let this_icon = icon({iconUrl: '/assets/img/marker-icon.png'});
+
+    let tv = this.knoraService.getPlaces().pipe(
+      map(
+        (matches: PlaceMatch[]) => matches.filter(
+          (place: PlaceMatch) => {
+            return !(place.latLong.length == 0 || isNaN(place.latLong[0]));
+          }
+        ).map(
+          (place: PlaceMatch) => {
+            return marker(
+              [place.latLong[0], place.latLong[1]],
+              {icon: this_icon}
+            ).bindTooltip(
+              place.name,
+              {
+                permanent: false,
+                opacity: 1,
+                direction: 'top'
+              }
+            )
+            //.on('click', () => { this.router.navigate(['calendrier']) } )
+          }
+        )
+      )
+    ).subscribe(
+      (places: Marker[]) => {
+        places.forEach((place: Marker) => geomap.addLayer(place));
+      }
+    );
   }
+
 }
