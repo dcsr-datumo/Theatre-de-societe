@@ -1,0 +1,28 @@
+@import '../../local.scss';
+
+div {
+  // align card in rows with wrap (default is column)
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.photoid {
+  width: 50%;
+}
+
+mat-card {
+  margin: 1rem;
+  // don't cut names
+  min-width: 22rem;
+  // with space, make 3 cards per line
+  width: 30%;
+}
+
+mat-pannel-title {
+  font-weight: bolder;
+}
+
+mat-panel-description {
+  text-align: left;
+  color: dimgray;
+}

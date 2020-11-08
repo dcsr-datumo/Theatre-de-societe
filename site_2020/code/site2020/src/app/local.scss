@@ -1,0 +1,39 @@
+* {
+  color: black;
+  line-height: initial;
+  text-align: center;
+}
+
+div {
+  padding: 2rem;
+  margin: 2rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(white, .8);
+}
+
+
+h1 {
+  font: initial;
+  font-size: xx-large;
+  width: 100%;
+  border-bottom: thin solid black;
+}
+
+h2 {
+  font: initial;
+  font-size: x-large;
+  font-weight: bolder;
+  margin-top: 3rem;
+}
+
+p {
+  font: initial;
+  font-size: large;
+}
+
+a {
+  color: #1976d2;
+}

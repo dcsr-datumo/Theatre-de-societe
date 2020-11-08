@@ -1,0 +1,9 @@
+<h1>
+  Recherche de représentation(s) par année
+</h1>
+
+<ul *ngIf="years | async as yearspaged">
+  <li *ngFor="let year of yearspaged" [ngClass]='{"century-spacer": (year.label >= "1800" && year.label <= "1809")}'>
+    <tds-year [year]=year></tds-year>
+  </li>
+</ul>

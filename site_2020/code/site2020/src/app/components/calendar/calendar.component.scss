@@ -1,0 +1,31 @@
+* {
+  color: black;
+  font: initial;
+  text-align: center;
+  line-height: initial;
+}
+
+ul {
+  list-style-type: none;
+  margin: 1rem;
+  padding: 0;
+  background-color: rgba(white, .7);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  border: 1px solid black;
+  padding: 0.5rem;
+  flex: 1 0 10%;
+  text-align: left;
+}
+
+h1 {
+  margin: 1rem;
+  padding: 2rem;
+  background-color: rgba(white, .7);
+}
+.century-spacer {
+  margin-top: 2rem;
+}

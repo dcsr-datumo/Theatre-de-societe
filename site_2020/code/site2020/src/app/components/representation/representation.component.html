@@ -1,0 +1,63 @@
+<div>
+
+  <span *ngIf="representation | async as rep">
+    <ul>
+      <li>
+        Pièce:  <tds-work [iri]="rep.work"></tds-work>
+      </li>
+      <li>
+        Lieu: <tds-place [iri]="rep.place"></tds-place>
+      </li>
+      <li>
+        Date: <a routerLink="/year/{{ rep.scaledYear }}">{{ rep.dateShort }}</a>
+      </li>
+      <li *ngIf="rep.festival">
+        Festival: <tds-festival [iri]="rep.festival"></tds-festival>
+      </li>
+      <li *ngIf="rep.quote && rep.quote.length>0">
+        <span *ngIf="rep.quote.length == 1">
+          Source:
+          <tds-quote [iri]="rep.quote[0]"></tds-quote>
+        </span>
+        <span *ngIf="rep.quote.length > 1">
+          Sources:
+          <ul>
+            <li *ngFor="let quote of rep.quote">
+              <tds-quote [iri]="quote"></tds-quote>
+            </li>
+          </ul>
+        </span>
+      </li>
+      <li *ngIf="rep.role && rep.role.length>0">
+        <span *ngIf="rep.role.length == 1">
+          Role:
+          <tds-role [iri]="rep.role[0]"></tds-role>
+        </span>
+        <span *ngIf="rep.role.length > 1">
+          Roles:
+          <ul>
+            <li *ngFor="let role of rep.role">
+              <tds-role [iri]="role"></tds-role>
+            </li>
+          </ul>
+        </span>
+      </li>
+      <li *ngIf="rep.genre && rep.genre.length>0">
+        <span *ngIf="rep.genre.length == 1">
+          Genre: <tds-genre [iri]="rep.genre"></tds-genre>
+        </span>
+        <span *ngIf="rep.genre.length > 1">
+          Genres:
+          <ul>
+            <li *ngFor="let genre of rep.genre">
+              <tds-genre [iri]="genre"></tds-genre>
+            </li>
+          </ul>
+        </span>
+      </li>
+      <li>
+        <a href="{{rep.ark}}">perma-lien de cette représentation</a>
+      </li>
+    </ul>
+  </span>
+</div>

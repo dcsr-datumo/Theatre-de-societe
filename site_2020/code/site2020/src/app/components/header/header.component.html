@@ -1,0 +1,55 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+
+      <mat-toolbar-row>
+        <!-- add it later? -->
+        <!--button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button-->
+        <span><a class="title"
+          [routerLink]="'/'"
+          (click)="site.selectedMenuItem='à propos'; site.selectedMenuSubItem='projet';">
+          {{site.title | uppercase}}
+        </a></span>
+        <span class="header-spacer"></span>
+        <span>
+        <a
+          class="header-item"
+          *ngFor="let item of Object.keys(site.menu)"
+          [ngClass]="{'selected': site.selectedMenuItem === item}"
+          (click)="site.selectedMenuItem=item; site.selectedMenuSubItem=site.menu[item][0];"
+          [routerLink]="site.menu[item][0]">
+            {{item | uppercase}}
+        </a>
+        </span>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row class="second-level-row" *ngFor="let row of Object.keys(site.menu)">
+        <span class="header-spacer"></span>
+        <a class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</a>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

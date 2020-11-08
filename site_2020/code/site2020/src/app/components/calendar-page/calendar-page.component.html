@@ -1,0 +1,11 @@
+<div>
+
+<h1>année {{ year }}</h1>
+
+<ul *ngIf="representations | async as rep">
+  <li *ngFor="let representation of rep">
+    <tds-representation-line [iri]="representation.id"></tds-representation-line>
+  </li>
+</ul>
+
+</div>

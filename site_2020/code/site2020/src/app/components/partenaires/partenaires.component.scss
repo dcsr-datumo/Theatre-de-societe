@@ -1,0 +1,19 @@
+@import '../../local.scss';
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
+}
+
+li {
+  flex: 1 0 30%;
+  max-width: 30%;
+  margin-bottom: 3rem;
+}
+
+img {
+  width: 100%;
+}
