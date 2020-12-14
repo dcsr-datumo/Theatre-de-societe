@@ -7,7 +7,7 @@ export class SiteService {
   title = 'Théâtres de société';
   menu = {
     'représentations': [
-      'calendrier', 'carte', 'recherche'
+      'calendrier', 'carte', 'auteurs', 'pièces'
     ],
     'à propos': [
       'projet', 'equipe', 'agenda', 'biblio', 'partenaires', 'contact'
