@@ -412,4 +412,56 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
+
+  getWorkPage(page: number): Observable<Work[]> {
+    const query = `
+    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+    PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+
+    CONSTRUCT {
+      ?work knora-api:isMainResource true .
+    } WHERE {
+      ?work a knora-api:Resource .
+      ?work a tds:Work .
+      ?work tds:workHasTitle ?title .
+    }
+    ORDER BY ?title
+    OFFSET ${page}
+    `;
+    console.log('query works:');
+    console.log(query);
+    return this.knoraApiConnection.v2.search.doExtendedSearch(query)
+      .pipe(
+        map((response: ReadResourceSequence) => response.resources.map(
+          (resource: ReadResource) => new Work(resource)
+        ))
+      );
+  }
+
+  getWorks(): Observable<Work[]> {
+    const service = this;
+    if (service.cachedWorks) {
+      return of(service.cachedWorks);
+    }
+    let index = 0;
+    let works: Work[] = [];
+    function aggregatedPage(observer) {
+      console.log('call getWorks for page: ' + index);
+      service.getWorkPage(index).subscribe(
+        (page: Work[]) => {
+          if (page.length > 0) {
+            works = works.concat(page);
+            observer.next(works);
+            index = index + 1;
+            aggregatedPage(observer);
+          } else {
+            service.cachedWorks = works;
+            observer.complete();
+          }
+        }
+      );
+    }
+    return new Observable(aggregatedPage);
+  }
+
 }

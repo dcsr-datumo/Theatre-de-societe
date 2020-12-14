@@ -1,0 +1,11 @@
+<div>
+
+  <h1>Pièces</h1>
+
+  <ul *ngIf="works | async as wks">
+    <li *ngFor="let work of wks">
+      <tds-work-line [iri]="work.id"></tds-work-line>
+    </li>
+  </ul>
+
+  </div>

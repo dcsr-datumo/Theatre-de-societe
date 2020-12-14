@@ -34,6 +34,10 @@ import { GenreComponent } from './components/genre/genre.component';
 import { YearComponent } from './components/year/year.component';
 import { MapComponent } from './components/map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { AuteursComponent } from './components/auteurs/auteurs.component';
+import { PiecesComponent } from './components/pieces/pieces.component';
+import { NoAccentPipe } from './no-accent.pipe';
+import { WorkLineComponent } from './components/work-line/work-line.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     RepresentationLineComponent,
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
-    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent
+    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
+    PiecesComponent, WorkLineComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
