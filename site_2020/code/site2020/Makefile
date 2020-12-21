@@ -28,7 +28,7 @@ login: ## docker hub login
 
 .PHONY: push
 push: ## push the image to docker hub
-	docker push ${ACCOUNT}/${CONTAINER}
+	docker push ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 
 .PHONY: help
