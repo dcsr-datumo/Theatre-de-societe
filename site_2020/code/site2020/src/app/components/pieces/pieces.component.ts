@@ -15,8 +15,8 @@ export class PiecesComponent implements OnInit {
   id: string;
   allWorks: Work[];
   works: Observable<Work[]>;
-  loading: Observable<boolean> = of(true);
-  counter: Observable<number> = of(0);
+  loading: Observable<boolean>;
+  counter: Observable<number>;
   @Input()
   searchText: string = "";
 
@@ -32,6 +32,8 @@ export class PiecesComponent implements OnInit {
     let us = this;
 
     function readPage(observer) {
+      us.loading = of(true);
+      us.counter = of(0);
       // read pages on first load
       us.knoraService.getWorks().subscribe(
         data => {
@@ -74,7 +76,6 @@ export class PiecesComponent implements OnInit {
       );
     }
     this.works = new Observable(readPage);
-    this.counter = new Observable();
   }
 
   // called by the template when a text is entered
