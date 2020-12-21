@@ -23,11 +23,11 @@ rmi: ## remove the build image
 	docker rmi ${CONTAINER}:${VERSION}
 
 .PHONY: login
-login: ## remove the build image
+login: ## docker hub login
 	docker login -u ${ACCOUNT}
 
 .PHONY: push
-login: ## remove the build image
+push: ## push the image to docker hub
 	docker push ${ACCOUNT}/${CONTAINER}
 
 
