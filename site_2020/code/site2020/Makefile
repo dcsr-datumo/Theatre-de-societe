@@ -8,7 +8,7 @@ build: ## builds the web-app container
 
 .PHONY: runlocal
 runlocal: ## run the freshly built container
-	docker run -p 80:80 --name tds ${CONTAINER}:${VERSION}
+	docker run -p 80:80 --name tds ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .PHONY: stop
 stop: ## stop the docker instance
