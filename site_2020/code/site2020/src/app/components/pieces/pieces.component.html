@@ -29,11 +29,13 @@
           <mat-expansion-panel (opened)="panel[work.id] = true">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                  {{work.label}}
+                  <span class="truncate">
+                    {{work.title}}
+                  </span>
                 </mat-panel-title>
-                <!-- mat-panel-description>
-                  {{work.title}}
-                </mat-panel-description -->
+                <mat-panel-description>
+                  {{work.author}}
+                </mat-panel-description>
             </mat-expansion-panel-header>
             <span *ngIf="panel[work.id]">
               <tds-work [iri]="work.id"></tds-work>

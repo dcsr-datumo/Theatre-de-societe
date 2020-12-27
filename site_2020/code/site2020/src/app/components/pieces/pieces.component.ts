@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { KnoraService } from 'src/app/services/knora.service';
 import { Work } from 'src/app/models/work.model';
 import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
+import { WorkMatch } from 'src/app/models/workmatch.model';
 
 @Component({
   selector: 'tds-pieces',
@@ -13,8 +14,8 @@ import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs
 })
 export class PiecesComponent implements OnInit {
   id: string;
-  allWorks: Work[];
-  works: Observable<Work[]>;
+  allWorks: WorkMatch[];
+  works: Observable<WorkMatch[]>;
   loading: Observable<boolean>;
   counter: Observable<number>;
   panel: Map<string, boolean> = new Map<string, boolean>();

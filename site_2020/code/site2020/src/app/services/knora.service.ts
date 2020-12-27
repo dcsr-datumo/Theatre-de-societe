@@ -21,6 +21,7 @@ import { Role } from '../models/role.model';
 import { Resource } from '../models/resource.model';
 import { PlaceMatch } from '../models/placematch.model';
 import { Person } from '../models/person.model';
+import { WorkMatch } from '../models/workmatch.model';
 
 @Injectable({
   providedIn: 'root',
@@ -35,6 +36,7 @@ export class KnoraService {
   cachedPlaces: PlaceMatch[];
   cachedAuthors: Person[];
   cachedWorks: Work[];
+  cachedWorkMatches: WorkMatch[];
   cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
 
   constructor() {
@@ -482,17 +484,22 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getWorkPage(page: number): Observable<Work[]> {
+  getWorksPage(page: number): Observable<WorkMatch[]> {
     const query = `
     PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
     PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
 
     CONSTRUCT {
       ?work knora-api:isMainResource true .
+      ?work tds:workHasTitle ?title .
+      ?work tds:workHasAuthor ?author .
+      ?author tds:hasFamilyName ?name
     } WHERE {
       ?work a knora-api:Resource .
       ?work a tds:Work .
       ?work tds:workHasTitle ?title .
+      ?work tds:workHasAuthor ?author .
+      ?author tds:hasFamilyName ?name
     }
     ORDER BY ?title
     OFFSET ${page}
@@ -502,25 +509,25 @@ OFFSET ${page}`;
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
-          (resource: ReadResource) => new Work(resource)
+          (resource: ReadResource) => new WorkMatch(resource)
         ))
       );
   }
 
-  getWorks(): Observable<Work[]> {
+  getWorks(): Observable<WorkMatch[]> {
     const service = this;
     if (service.cachedWorks) {
-      return of(service.cachedWorks);
+      return of(service.cachedWorkMatches);
     }
     let index = 0;
-    let works: Work[] = [];
+    let works: WorkMatch[] = [];
     function aggregatedPage(observer) {
       console.log('call getWorks for page: ' + index);
-      service.getWorkPage(index).subscribe(
-        (page: Work[]) => {
+      service.getWorksPage(index).subscribe(
+        (page: WorkMatch[]) => {
           // // note loic: for debug
           // if( index > 5 ) {
-          //   service.cachedWorks = works;
+          //   service.cachedWorkMatches = works;
           //   observer.complete();
           // };
 
@@ -530,7 +537,7 @@ OFFSET ${page}`;
             index = index + 1;
             aggregatedPage(observer);
           } else {
-            service.cachedWorks = works;
+            service.cachedWorkMatches = works;
             observer.complete();
           }
         }
