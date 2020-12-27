@@ -41,6 +41,7 @@ import { NoAccentPipe } from './pipes/no-accent.pipe';
 import { WorkLineComponent } from './components/work-line/work-line.component';
 import { FilterWorkTitlePipe } from './pipes/filter-work-title.pipe';
 import { FormsModule } from '@angular/forms';
+import { PersonComponent } from './components/person/person.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { FormsModule } from '@angular/forms';
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,

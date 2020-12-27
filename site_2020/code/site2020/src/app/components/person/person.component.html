@@ -1,0 +1,48 @@
+<span *ngIf="person | async as p">
+  <span *ngIf="(p.familyName.length > 1); then family_multi else family_single"></span>
+
+  <ng-template #family_single>
+    {{p.familyName[0]}}
+
+    <span *ngIf="p.givenName && (p.givenName.length > 0)">
+      <span *ngFor="let n of p.givenName">
+        , {{n}}
+      </span>
+    </span>
+
+  </ng-template>
+
+  <ng-template #family_multi>
+    <div>
+      Noms:
+      <div>
+        <ul>
+          <li *ngFor="let n of p.familyName">
+            {{n}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div *ngIf="p.givenName && (p.givenName.length > 0)">
+
+      <span *ngIf="(p.givenName.length > 1);then given_multi else given_single"></span>
+
+      <ng-template #given_single>
+        Prénom: {{p.givenName[0]}}
+      </ng-template>
+
+      <ng-template #given_multi>
+        Prénoms:
+        <ul>
+          <li *ngFor="let n of p.givenName">
+            {{n}}
+          </li>
+        </ul>
+      </ng-template>
+
+    </div>
+
+  </ng-template>
+</span>
+
