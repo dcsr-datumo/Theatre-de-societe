@@ -1,4 +1,12 @@
 <span *ngIf="work | async as w">
-  {{ w.title }}
+  <p>
+    Titre: {{ w.title }}
+  </p>
+  <p>
+    <span *ngIf="w.author">
+      Auteur: <tds-person [iri]="w.author"></tds-person>
+    </span>
+  </p>
+  {{ w.authority }}
 </span>
 
