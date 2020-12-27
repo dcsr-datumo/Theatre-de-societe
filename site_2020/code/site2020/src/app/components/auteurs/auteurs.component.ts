@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Author } from 'src/app/models/author.model';
+import { Person } from 'src/app/models/person.model';
 
 import { KnoraService } from "../../services/knora.service";
 
@@ -10,7 +10,7 @@ import { KnoraService } from "../../services/knora.service";
   styleUrls: ['./auteurs.component.scss']
 })
 export class AuteursComponent implements OnInit {
-  authors: Observable<Author[]>;
+  authors: Observable<Person[]>;
   constructor(
     private knoraService: KnoraService
   ) { }

@@ -20,7 +20,7 @@ import { map, share, shareReplay } from 'rxjs/operators';
 import { Role } from '../models/role.model';
 import { Resource } from '../models/resource.model';
 import { PlaceMatch } from '../models/placematch.model';
-import { Author } from '../models/author.model';
+import { Person } from '../models/person.model';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +33,7 @@ export class KnoraService {
   cachedRepresentation: Map<string, Representation> = new Map<string, Representation>();
   cachedYears: Map<number, RepresentationMatch[]> = new Map<number, RepresentationMatch[]>();
   cachedPlaces: PlaceMatch[];
-  cachedAuthors: Author[];
+  cachedAuthors: Person[];
   cachedWorks: Work[];
   cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
 
@@ -249,10 +249,18 @@ OFFSET ${page}`;
    PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
    CONSTRUCT {
      ?representation knora-api:isMainResource true .
+     ?representation theatre-societe:representationIsBasedOn ?work .
+     ?work theatre-societe:workHasTitle ?playTitle .
+     ?representation theatre-societe:representationHasPlace ?place .
+     ?place theatre-societe:placeHasName ?placeName .
      ?representation theatre-societe:representationHasDate ?date .
    } WHERE {
      ?representation a knora-api:Resource .
      ?representation a theatre-societe:Representation .
+     ?representation theatre-societe:representationIsBasedOn ?work .
+     ?work theatre-societe:workHasTitle ?playTitle .
+     ?representation theatre-societe:representationHasPlace ?place .
+     ?place theatre-societe:placeHasName ?placeName .
      ?representation theatre-societe:representationHasDate ?date .
      ${filter}
     }
@@ -358,6 +366,10 @@ OFFSET ${page}`;
     return service.getResource(iri, "Role", (resource: ReadResource) => new Role(resource));
   }
 
+  getPerson(iri: string): Observable<Person> {
+    const service = this;
+    return service.getResource(iri, "Person", (resource: ReadResource) => new Person(resource));
+  }
 
   // representations per year
   getPlacePage(page: number): Observable<PlaceMatch[]> {
@@ -415,7 +427,7 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getAuthorPage(page: number): Observable<Author[]> {
+  getAuthorPage(page: number): Observable<Person[]> {
     const query = `
     PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
     PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
@@ -439,22 +451,22 @@ OFFSET ${page}`;
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
-          (resource: ReadResource) => new Author(resource)
+          (resource: ReadResource) => new Person(resource)
         ))
       );
   }
 
-  getAuthors(): Observable<Author[]> {
+  getAuthors(): Observable<Person[]> {
     const service = this;
     if (service.cachedAuthors) {
       return of(service.cachedAuthors);
     }
     let index = 0;
-    let authors: Author[] = [];
+    let authors: Person[] = [];
     function aggregatedPage(observer) {
       console.log('call getAuthors for page: ' + index);
       service.getAuthorPage(index).subscribe(
-        (page: Author[]) => {
+        (page: Person[]) => {
           if (page.length > 0) {
             authors = authors.concat(page);
             observer.next(authors);
