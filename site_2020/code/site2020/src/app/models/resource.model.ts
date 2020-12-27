@@ -43,4 +43,26 @@ export class Resource {
       : null;
     return values && values.length >= 1 ? values : null;
   }
+
+  getLinkedValue(linkedProperty: string, valueProperty: string): string {
+    const linkedValues = this.readResource.properties[linkedProperty];
+    if (!(linkedValues && linkedValues.length >0)) return null;
+    const linkedValue = linkedValues[0];
+    const value = linkedValue["linkedResource"].properties[valueProperty][0].text;
+    return String(value);
+  }
+
+  getDateShort(property: string): string {
+    let dateValues = this.readResource.getValues(property);
+    let date = dateValues[0]['date']; // [0] -> no check: date is mandatory
+    let result = String(date['year']);
+    if (date['month']) {
+      result = String(date['month']) + '/' + result;
+    }
+    if (date['day']) {
+      result = String(date['day']) + '/' + result;
+    }
+    return result;
+  }
+
 }

@@ -7,17 +7,15 @@ export class RepresentationMatch extends Resource {
     super(readResource);
   }
 
+  tds = `http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#`;
+
   get dateRaw(): string {
-    const dateProp = `http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#representationHasDate`;
-    return this.getFirstValueAsStringOrNullOfProperty(
-      `http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#representationHasDate`
-    );
+    return this.getFirstValueAsStringOrNullOfProperty(`${this.tds}representationHasDate`);
   }
 
   get dateShort(): string {
-    const dateProp = `http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#representationHasDate`;
-    const dateValues = this.readResource.getValues(dateProp);
-    const firstDate = dateValues.pop();
+    const dateValues = this.readResource.getValues(`${this.tds}representationHasDate`);
+    const firstDate = dateValues[0];
     const date = firstDate["date"];
     let result = String(date['year']);
     if (date['month']) {
@@ -29,4 +27,11 @@ export class RepresentationMatch extends Resource {
     return result;
   }
 
+  get workTitle(): string {
+    return this.getLinkedValue(`${this.tds}representationIsBasedOnValue`, `${this.tds}workHasTitle`);
+  }
+
+  get placeName(): string {
+    return this.getLinkedValue(`${this.tds}representationHasPlaceValue`, `${this.tds}placeHasName`);
+  }
 }

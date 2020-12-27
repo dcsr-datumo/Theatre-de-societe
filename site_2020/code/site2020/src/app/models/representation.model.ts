@@ -24,16 +24,7 @@ export class Representation extends Resource {
 
   get dateShort(): string {
     const property = `${environment.baseOntology}representationHasDate`;
-    let dateValues = this.readResource.getValues(property);
-    let date = dateValues[0]['date']; // [0] -> no check: date is mandatory
-    let result = String(date['year']);
-    if (date['month']) {
-      result = String(date['month']) + '/' + result;
-    }
-    if (date['day']) {
-      result = String(date['day']) + '/' + result;
-    }
-    return result;
+    return this.getDateShort(property);
   }
 
   get year(): number {
