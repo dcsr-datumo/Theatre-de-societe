@@ -17,6 +17,7 @@ export class PiecesComponent implements OnInit {
   works: Observable<Work[]>;
   loading: Observable<boolean>;
   counter: Observable<number>;
+  panel: Map<string, boolean> = new Map<string, boolean>();
   @Input()
   searchText: string = "";
 

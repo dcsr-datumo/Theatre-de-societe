@@ -21,12 +21,27 @@
     <!--span *ngIf="counter | async as c">pièces: {{c}}</span-->
     <span>pièces: {{counter | async}}</span>
 
-    <ul class="left-list">
-      <li *ngFor="let work of works | async">
-        {{work.label}}
+    <!--ul class="left-list"-->
+      <mat-list-item *ngFor="let work of works | async">
+        <!-- {{work.label}} -->
         <!--tds-work-line [iri]="work.id"></tds-work-line-->
-      </li>
-    </ul>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panel[work.id] = true">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{work.label}}
+                </mat-panel-title>
+                <!-- mat-panel-description>
+                  {{work.title}}
+                </mat-panel-description -->
+            </mat-expansion-panel-header>
+            <span *ngIf="panel[work.id]">
+              <tds-work [iri]="work.id"></tds-work>
+            </span>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-list-item>
+    <!--/ul-->
   </div>
 
   </div>
