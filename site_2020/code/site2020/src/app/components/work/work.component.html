@@ -1,12 +1,28 @@
 <span *ngIf="work | async as w">
+
   <p>
     Titre: {{ w.title }}
   </p>
-  <p>
-    <span *ngIf="w.author">
-      Auteur: <tds-person [iri]="w.author"></tds-person>
-    </span>
+
+  <p *ngIf="w.authors && w.authors.length > 0">
+
+    <span *ngIf="w.authors.length > 1; then multi else single"></span>
+
+    <ng-template #single>
+      Auteur: <tds-person [iri]="w.authors[0]"></tds-person>
+    </ng-template>
+
+    <ng-template #multi>
+      Auteurs:
+      <ul>
+        <li *ngFor="let a of w.authors">
+          <tds-person [iri]="a"></tds-person>
+        </li>
+      </ul>
+    </ng-template>
   </p>
+
   {{ w.authority }}
+
 </span>
 

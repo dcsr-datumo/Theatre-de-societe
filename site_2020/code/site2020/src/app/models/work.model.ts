@@ -7,8 +7,8 @@ export class Work extends Resource {
     super(readResource);
   }
 
-  get author(): string {
-    return this.getIriOf('workHasAuthorValue');
+  get authors(): string[] {
+    return this.getIrisOf('workHasAuthorValue');
   }
 
   get title(): string {
