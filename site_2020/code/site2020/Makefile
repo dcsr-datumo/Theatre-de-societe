@@ -1,6 +1,6 @@
 ACCOUNT=platec
 CONTAINER=tds
-VERSION=v0.1
+VERSION=v0.4.0
 
 .PHONY: build
 build: ## builds the web-app container
@@ -8,7 +8,7 @@ build: ## builds the web-app container
 
 .PHONY: runlocal
 runlocal: ## run the freshly built container
-	docker run -p 80:80 --name tds ${CONTAINER}:${VERSION}
+	docker run -p 80:80 --name tds ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .PHONY: stop
 stop: ## stop the docker instance
@@ -23,12 +23,12 @@ rmi: ## remove the build image
 	docker rmi ${CONTAINER}:${VERSION}
 
 .PHONY: login
-login: ## remove the build image
+login: ## docker hub login
 	docker login -u ${ACCOUNT}
 
 .PHONY: push
-login: ## remove the build image
-	docker push ${ACCOUNT}/${CONTAINER}
+push: ## push the image to docker hub
+	docker push ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 
 .PHONY: help

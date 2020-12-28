@@ -1,0 +1,95 @@
+<div class="outer">
+
+  <span *ngIf="person | async as p">
+
+    <!-- name -->
+    <span *ngIf="(p.familyName && p.familyName.length > 1); then family_multi else family_single"></span>
+
+    <ng-template #family_single>
+      <span *ngIf="p.familyName">
+        {{p.familyName[0]}}
+      </span>
+
+      <span *ngIf="p.givenName && (p.givenName.length > 0)">
+        <span *ngFor="let n of p.givenName">
+          , {{n}}
+        </span>
+      </span>
+
+    </ng-template>
+
+    <ng-template #family_multi>
+      <div>
+        Noms:
+        <div>
+          <ul>
+            <li *ngFor="let n of p.familyName">
+              {{n}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div *ngIf="p.givenName && (p.givenName.length > 0)">
+
+        <span *ngIf="(p.givenName.length > 1);then given_multi else given_single"></span>
+
+        <ng-template #given_single>
+          Prénom: {{p.givenName[0]}}
+        </ng-template>
+
+        <ng-template #given_multi>
+          Prénoms:
+          <ul>
+            <li *ngFor="let n of p.givenName">
+              {{n}}
+            </li>
+          </ul>
+        </ng-template>
+
+      </div>
+
+    </ng-template>
+
+    <!-- name -->
+
+    <!-- pseudo -->
+    <div *ngIf="p.pseudonym">
+      dit {{p.pseudonym[0]}}
+      <span *ngFor="let pseudo of p.pseudonym.slice(1)">
+        , {{pseudo}}
+      </span>
+    </div>
+    <!-- pseudo -->
+
+    <!-- birth and death -->
+    <div>
+      <span *ngIf="p.birthDate;then birthknown else birthunknown"></span>
+      <ng-template #birthknown>{{p.birthDate}}</ng-template>
+      <ng-template #birthunknown>?</ng-template>
+
+      -
+
+      <span *ngIf="p.deathDate;then deathknown else deathunknown"></span>
+      <ng-template #deathknown>{{p.deathDate}}</ng-template>
+      <ng-template #deathunknown>?</ng-template>
+
+    </div>
+    <!-- birth and death -->
+
+    <!-- membership -->
+    <div>
+      <span *ngIf="p.membership">
+        membre de: <tds-membership-line [iri]="p.membership[0]"></tds-membership-line>
+         <!-- {{p.membership[0]}} -->
+        <span *ngFor="let membre of p.membership.slice(1)">
+          <tds-membership-line [iri]="membre"></tds-membership-line>
+          <!-- , {{membre}} -->
+        </span>
+      </span>
+    </div>
+    <!-- membership -->
+
+  </span>
+
+</div>

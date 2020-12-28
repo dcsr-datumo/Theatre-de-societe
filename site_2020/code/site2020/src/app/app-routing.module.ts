@@ -11,6 +11,8 @@ import { PartenairesComponent } from './components/partenaires/partenaires.compo
 import { ContactComponent } from './components/contact/contact.component';
 import { RepresentationComponent } from './components/representation/representation.component';
 import { MapComponent } from './components/map/map.component';
+import { AuteursComponent } from './components/auteurs/auteurs.component';
+import { PiecesComponent } from './components/pieces/pieces.component';
 
 const routes: Routes = [
   { path: 'calendrier', component: CalendarComponent },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'biblio', component: BiblioComponent },
   { path: 'partenaires', component: PartenairesComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'auteurs', component: AuteursComponent },
+  { path: 'pieces', component: PiecesComponent },
   { path: '',   redirectTo: '/projet', pathMatch: 'full' }
 ];
 

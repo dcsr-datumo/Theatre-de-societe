@@ -1,6 +1,7 @@
 <div>
-
   <span *ngIf="representation | async as rep">
+    <h1>Représentation</h1>
+
     <ul>
       <li>
         Pièce:  <tds-work [iri]="rep.work"></tds-work>

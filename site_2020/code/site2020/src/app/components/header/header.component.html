@@ -42,7 +42,7 @@
 
       <mat-toolbar-row class="second-level-row" *ngFor="let row of Object.keys(site.menu)">
         <span class="header-spacer"></span>
-        <a class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</a>
+        <a class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item | noAccent" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</a>
       </mat-toolbar-row>
     </mat-toolbar>
     <!-- Add Content Here -->

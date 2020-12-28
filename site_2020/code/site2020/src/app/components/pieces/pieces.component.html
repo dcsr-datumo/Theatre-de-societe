@@ -1,0 +1,49 @@
+<div>
+
+  <h1>Pièces</h1>
+
+  <div>
+    <!-- <div class="filter-wrap">
+      <input [(ngModel)]="searchText" placeholder="Filter Works" class="filter-input">
+      <span class="filter-clear" *ngIf="searchText.length>0" (click)="clearFilter()">X</span>
+    </div> -->
+
+    <input #searchBox id="search-box" placeholder="entrer un critère de recherche..." (input)="search(searchBox.value)" [disabled]="loading|async" />
+
+    <mat-progress-bar
+      *ngIf="loading | async"
+      mode="indeterminate"
+      color="warn"
+      style="position: absolute; top: 0; z-index: 100;"
+    >
+    </mat-progress-bar>
+
+    <!--span *ngIf="counter | async as c">pièces: {{c}}</span-->
+    <span>pièces: {{counter | async}}</span>
+
+    <!--ul class="left-list"-->
+      <mat-list-item *ngFor="let work of works | async">
+        <!-- {{work.label}} -->
+        <!--tds-work-line [iri]="work.id"></tds-work-line-->
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panel[work.id] = true">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="truncate">
+                    {{work.title}}
+                  </span>
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{work.author}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <span *ngIf="panel[work.id]">
+              <tds-work [iri]="work.id"></tds-work>
+            </span>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-list-item>
+    <!--/ul-->
+  </div>
+
+  </div>
