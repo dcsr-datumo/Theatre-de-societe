@@ -53,6 +53,15 @@
 
     <!-- name -->
 
+    <!-- pseudo -->
+    <div *ngIf="p.pseudonym">
+      dit {{p.pseudonym[0]}}
+      <span *ngFor="let pseudo of p.pseudonym.slice(1)">
+        , {{pseudo}}
+      </span>
+    </div>
+    <!-- pseudo -->
+
     <!-- birth and death -->
     <div>
       <span *ngIf="p.birthDate;then birthknown else birthunknown"></span>
@@ -68,6 +77,19 @@
     </div>
     <!-- birth and death -->
 
-    </span>
+    <!-- membership -->
+    <div>
+      <span *ngIf="p.membership">
+        membre de: <tds-membership-line [iri]="p.membership[0]"></tds-membership-line>
+         <!-- {{p.membership[0]}} -->
+        <span *ngFor="let membre of p.membership.slice(1)">
+          <tds-membership-line [iri]="membre"></tds-membership-line>
+          <!-- , {{membre}} -->
+        </span>
+      </span>
+    </div>
+    <!-- membership -->
+
+  </span>
 
 </div>

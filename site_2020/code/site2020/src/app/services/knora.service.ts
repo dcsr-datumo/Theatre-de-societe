@@ -22,6 +22,7 @@ import { Resource } from '../models/resource.model';
 import { PlaceMatch } from '../models/placematch.model';
 import { Person } from '../models/person.model';
 import { WorkMatch } from '../models/workmatch.model';
+import { PersonMatchAuthor } from '../models/personmatchauthor.model';
 import { Group } from '../models/group.model';
 import { Membership } from '../models/membership.model';
 
@@ -36,7 +37,7 @@ export class KnoraService {
   cachedRepresentation: Map<string, Representation> = new Map<string, Representation>();
   cachedYears: Map<number, RepresentationMatch[]> = new Map<number, RepresentationMatch[]>();
   cachedPlaces: PlaceMatch[];
-  cachedAuthors: Person[];
+  cachedAuthors: PersonMatchAuthor[];
   cachedWorks: Work[];
   cachedWorkMatches: WorkMatch[];
   cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
@@ -441,7 +442,7 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getAuthorPage(page: number): Observable<Person[]> {
+  getAuthorPage(page: number): Observable<PersonMatchAuthor[]> {
     const query = `
     PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
     PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
@@ -453,10 +454,18 @@ OFFSET ${page}`;
       ?author tds:hasGivenName ?given .
     } WHERE {
       ?author a knora-api:Resource .
-      ?author a tds:Author .
-      ?author tds:hasPseudonym ?pseudo .
-      ?author tds:hasFamilyName ?family .
-      ?author tds:hasGivenName ?given .
+      ?author a tds:Person .
+      OPTIONAL {
+        ?author tds:hasPseudonym ?pseudo .
+      }
+      OPTIONAL {
+        ?author tds:hasFamilyName ?family .
+      }
+      OPTIONAL {
+        ?author tds:hasGivenName ?given .
+      }
+      ?work a tds:Work .
+      ?work tds:workHasAuthor ?author
     }
     OFFSET ${page}
     `;
@@ -465,22 +474,22 @@ OFFSET ${page}`;
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
-          (resource: ReadResource) => new Person(resource)
+          (resource: ReadResource) => new PersonMatchAuthor(resource)
         ))
       );
   }
 
-  getAuthors(): Observable<Person[]> {
+  getAuthors(): Observable<PersonMatchAuthor[]> {
     const service = this;
     if (service.cachedAuthors) {
       return of(service.cachedAuthors);
     }
     let index = 0;
-    let authors: Person[] = [];
+    let authors: PersonMatchAuthor[] = [];
     function aggregatedPage(observer) {
       console.log('call getAuthors for page: ' + index);
       service.getAuthorPage(index).subscribe(
-        (page: Person[]) => {
+        (page: PersonMatchAuthor[]) => {
           if (page.length > 0) {
             authors = authors.concat(page);
             observer.next(authors);
@@ -509,9 +518,13 @@ OFFSET ${page}`;
     } WHERE {
       ?work a knora-api:Resource .
       ?work a tds:Work .
-      ?work tds:workHasTitle ?title .
-      ?work tds:workHasAuthor ?author .
-      ?author tds:hasFamilyName ?name
+      OPTIONAL {
+        ?work tds:workHasTitle ?title .
+      }
+      OPTIONAL {
+        ?work tds:workHasAuthor ?author .
+        ?author tds:hasFamilyName ?name
+      }
     }
     ORDER BY ?title
     OFFSET ${page}
@@ -528,7 +541,7 @@ OFFSET ${page}`;
 
   getWorks(): Observable<WorkMatch[]> {
     const service = this;
-    if (service.cachedWorks) {
+    if (service.cachedWorkMatches) {
       return of(service.cachedWorkMatches);
     }
     let index = 0;

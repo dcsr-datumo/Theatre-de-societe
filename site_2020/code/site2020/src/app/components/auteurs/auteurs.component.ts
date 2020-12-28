@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Person } from 'src/app/models/person.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable, of, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { PersonMatchAuthor } from 'src/app/models/personmatchauthor.model';
 
 import { KnoraService } from "../../services/knora.service";
 
@@ -10,13 +11,72 @@ import { KnoraService } from "../../services/knora.service";
   styleUrls: ['./auteurs.component.scss']
 })
 export class AuteursComponent implements OnInit {
-  authors: Observable<Person[]>;
+  allAuthors: PersonMatchAuthor[];
+  authors: Observable<PersonMatchAuthor[]>;
+  loading: Observable<boolean>;
+  panel: Map<string, boolean> = new Map<string, boolean>();
+  @Input()
+  searchText: string = "";
+  private searchTerms = new Subject<string>();
+
+
   constructor(
     private knoraService: KnoraService
   ) { }
 
   ngOnInit(): void {
-    this.authors = this.knoraService.getAuthors();
+    let us = this;
+
+    function readPage(observer) {
+      us.loading = of(true);
+
+      us.knoraService.getAuthors().subscribe(
+        data => {
+          observer.next(data);
+          us.allAuthors = data;
+        },
+        error => console.log(error),
+        () => {
+          us.loading = of(false);
+          us.searchTerms.pipe(
+            // temporise, don't over react
+            debounceTime(100),
+            // go to next stage only if needed
+            distinctUntilChanged()
+          ).subscribe(
+            term => {
+              if (!term.trim()) {
+                // if not search term, return the complete set of works
+                observer.next(us.allAuthors);
+                //us.counter = of(us.allAuthors.length);
+              }
+              term = term.toLowerCase();
+              let matches = us.allAuthors.filter(author =>
+                  {
+                    return (
+                      (author.label && author.label.toLowerCase().includes(term))
+                      ||
+                      (author.familyName && author.familyName.toLowerCase().includes(term))
+                      ||
+                      (author.givenName && author.givenName.toLowerCase().includes(term))
+                      ||
+                      (author.pseudonym && author.pseudonym.toLowerCase().includes(term))
+                    );
+                  }
+                );
+              observer.next(matches);
+            }
+          );
+        }
+      );
+    }
+    this.authors = new Observable(readPage);
+  }
+
+  // called by the template when a text is entered
+  search(term: string): void {
+    console.log("search adding: "+ term);
+    this.searchTerms.next(term);
   }
 
 }
