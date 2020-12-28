@@ -54,7 +54,10 @@ export class Resource {
 
   getDateShort(property: string): string {
     let dateValues = this.readResource.getValues(property);
-    let date = dateValues[0]['date']; // [0] -> no check: date is mandatory
+    let dateVal = dateValues[0];
+    if (!dateVal) return null;
+    let date = dateVal['date'];
+    if (!date) return null;
     let result = String(date['year']);
     if (date['month']) {
       result = String(date['month']) + '/' + result;
