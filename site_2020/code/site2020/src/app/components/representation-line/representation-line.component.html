@@ -1,7 +1,11 @@
-    <span *ngIf="representation | async as rep">
-      <a routerLink="/representation/{{rep.ref}}">
-        <tds-work [iri]="rep.work"></tds-work>
-        <tds-place [iri]="rep.place"></tds-place>
-        - {{ rep.dateShort }}
-      </a>
-    </span>
+<div>
+  <span *ngIf="representation | async as rep">
+    <a routerLink="/representation/{{rep.ref}}">
+      <tds-work [iri]="rep.work"></tds-work>
+      Lieu: <tds-place [iri]="rep.place"></tds-place>
+      <p>
+        Date: {{ rep.dateShort }}
+      </p>
+    </a>
+  </span>
+</div>

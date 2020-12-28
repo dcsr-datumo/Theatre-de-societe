@@ -1,0 +1,49 @@
+<div>
+
+  <h1>Auteurs</h1>
+
+  <div>
+      <input #searchBox id="search-box" placeholder="entrer un critère de recherche..." (input)="search(searchBox.value)" [disabled]="loading|async" />
+
+      <mat-progress-bar
+        *ngIf="loading | async"
+        mode="indeterminate"
+        color="warn"
+        style="position: absolute; top: 0; z-index: 100;"
+      >
+      </mat-progress-bar>
+
+      <span *ngIf="authors | async as authors">
+
+        <span>auteurs: {{authors.length}}</span>
+
+        <!--ul class="left-list"-->
+        <mat-list-item *ngFor="let author of authors">
+          <!-- {{work.label}} -->
+          <!--tds-work-line [iri]="work.id"></tds-work-line-->
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panel[author.id] = true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="truncate">
+                    {{author.familyName}}
+                    <span *ngIf="author.givenName">
+                      , {{author.givenName}}
+                    </span>
+                  </span>
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{author.pseudonym}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <span *ngIf="panel[author.id]">
+                <tds-person [iri]="author.id"></tds-person>
+              </span>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-list-item>
+        <!--/ul-->
+      </span>
+    </div>
+
+  </div>

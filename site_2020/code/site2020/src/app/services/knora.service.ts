@@ -20,6 +20,11 @@ import { map, share, shareReplay } from 'rxjs/operators';
 import { Role } from '../models/role.model';
 import { Resource } from '../models/resource.model';
 import { PlaceMatch } from '../models/placematch.model';
+import { Person } from '../models/person.model';
+import { WorkMatch } from '../models/workmatch.model';
+import { PersonMatchAuthor } from '../models/personmatchauthor.model';
+import { Group } from '../models/group.model';
+import { Membership } from '../models/membership.model';
 
 @Injectable({
   providedIn: 'root',
@@ -32,6 +37,9 @@ export class KnoraService {
   cachedRepresentation: Map<string, Representation> = new Map<string, Representation>();
   cachedYears: Map<number, RepresentationMatch[]> = new Map<number, RepresentationMatch[]>();
   cachedPlaces: PlaceMatch[];
+  cachedAuthors: PersonMatchAuthor[];
+  cachedWorks: Work[];
+  cachedWorkMatches: WorkMatch[];
   cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
 
   constructor() {
@@ -246,10 +254,18 @@ OFFSET ${page}`;
    PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
    CONSTRUCT {
      ?representation knora-api:isMainResource true .
+     ?representation theatre-societe:representationIsBasedOn ?work .
+     ?work theatre-societe:workHasTitle ?playTitle .
+     ?representation theatre-societe:representationHasPlace ?place .
+     ?place theatre-societe:placeHasName ?placeName .
      ?representation theatre-societe:representationHasDate ?date .
    } WHERE {
      ?representation a knora-api:Resource .
      ?representation a theatre-societe:Representation .
+     ?representation theatre-societe:representationIsBasedOn ?work .
+     ?work theatre-societe:workHasTitle ?playTitle .
+     ?representation theatre-societe:representationHasPlace ?place .
+     ?place theatre-societe:placeHasName ?placeName .
      ?representation theatre-societe:representationHasDate ?date .
      ${filter}
     }
@@ -355,6 +371,20 @@ OFFSET ${page}`;
     return service.getResource(iri, "Role", (resource: ReadResource) => new Role(resource));
   }
 
+  getPerson(iri: string): Observable<Person> {
+    const service = this;
+    return service.getResource(iri, "Person", (resource: ReadResource) => new Person(resource));
+  }
+
+  getGroup(iri: string): Observable<Group> {
+    const service = this;
+    return service.getResource(iri, "Group", (resource: ReadResource) => new Group(resource));
+  }
+
+  getMembership(iri: string): Observable<Membership> {
+    const service = this;
+    return service.getResource(iri, "Membership", (resource: ReadResource) => new Membership(resource));
+  }
 
   // representations per year
   getPlacePage(page: number): Observable<PlaceMatch[]> {
@@ -404,6 +434,135 @@ OFFSET ${page}`;
             aggregatedPage(observer);
           } else {
             service.cachedPlaces = matches;
+            observer.complete();
+          }
+        }
+      );
+    }
+    return new Observable(aggregatedPage);
+  }
+
+  getAuthorPage(page: number): Observable<PersonMatchAuthor[]> {
+    const query = `
+    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+    PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+
+    CONSTRUCT {
+      ?author knora-api:isMainResource true .
+      ?author tds:hasPseudonym ?pseudo .
+      ?author tds:hasFamilyName ?family .
+      ?author tds:hasGivenName ?given .
+    } WHERE {
+      ?author a knora-api:Resource .
+      ?author a tds:Person .
+      OPTIONAL {
+        ?author tds:hasPseudonym ?pseudo .
+      }
+      OPTIONAL {
+        ?author tds:hasFamilyName ?family .
+      }
+      OPTIONAL {
+        ?author tds:hasGivenName ?given .
+      }
+      ?work a tds:Work .
+      ?work tds:workHasAuthor ?author
+    }
+    OFFSET ${page}
+    `;
+    console.log('query authors:');
+    console.log(query);
+    return this.knoraApiConnection.v2.search.doExtendedSearch(query)
+      .pipe(
+        map((response: ReadResourceSequence) => response.resources.map(
+          (resource: ReadResource) => new PersonMatchAuthor(resource)
+        ))
+      );
+  }
+
+  getAuthors(): Observable<PersonMatchAuthor[]> {
+    const service = this;
+    if (service.cachedAuthors) {
+      return of(service.cachedAuthors);
+    }
+    let index = 0;
+    let authors: PersonMatchAuthor[] = [];
+    function aggregatedPage(observer) {
+      console.log('call getAuthors for page: ' + index);
+      service.getAuthorPage(index).subscribe(
+        (page: PersonMatchAuthor[]) => {
+          if (page.length > 0) {
+            authors = authors.concat(page);
+            observer.next(authors);
+            index = index + 1;
+            aggregatedPage(observer);
+          } else {
+            service.cachedAuthors = authors;
+            observer.complete();
+          }
+        }
+      );
+    }
+    return new Observable(aggregatedPage);
+  }
+
+  getWorksPage(page: number): Observable<WorkMatch[]> {
+    const query = `
+    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+    PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+
+    CONSTRUCT {
+      ?work knora-api:isMainResource true .
+      ?work tds:workHasTitle ?title .
+      ?work tds:workHasAuthor ?author .
+      ?author tds:hasFamilyName ?name
+    } WHERE {
+      ?work a knora-api:Resource .
+      ?work a tds:Work .
+      OPTIONAL {
+        ?work tds:workHasTitle ?title .
+      }
+      OPTIONAL {
+        ?work tds:workHasAuthor ?author .
+        ?author tds:hasFamilyName ?name
+      }
+    }
+    ORDER BY ?title
+    OFFSET ${page}
+    `;
+    console.log('query works:');
+    console.log(query);
+    return this.knoraApiConnection.v2.search.doExtendedSearch(query)
+      .pipe(
+        map((response: ReadResourceSequence) => response.resources.map(
+          (resource: ReadResource) => new WorkMatch(resource)
+        ))
+      );
+  }
+
+  getWorks(): Observable<WorkMatch[]> {
+    const service = this;
+    if (service.cachedWorkMatches) {
+      return of(service.cachedWorkMatches);
+    }
+    let index = 0;
+    let works: WorkMatch[] = [];
+    function aggregatedPage(observer) {
+      console.log('call getWorks for page: ' + index);
+      service.getWorksPage(index).subscribe(
+        (page: WorkMatch[]) => {
+          // // note loic: for debug
+          // if( index > 5 ) {
+          //   service.cachedWorkMatches = works;
+          //   observer.complete();
+          // };
+
+          if (page.length > 0) {
+            works = works.concat(page);
+            observer.next(works);
+            index = index + 1;
+            aggregatedPage(observer);
+          } else {
+            service.cachedWorkMatches = works;
             observer.complete();
           }
         }

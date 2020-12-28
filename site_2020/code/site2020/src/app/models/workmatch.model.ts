@@ -2,13 +2,18 @@ import { ReadResource, ReadValue } from '@dasch-swiss/dsp-js';
 import { Resource } from './resource.model';
 import { environment } from '../../environments/environment';
 
-export class Work extends Resource {
+/**
+ * Result of a Work search
+ */
+export class WorkMatch extends Resource {
   constructor(protected readResource: ReadResource) {
     super(readResource);
   }
 
-  get authors(): string[] {
-    return this.getIrisOf('workHasAuthorValue');
+  get author(): string {
+    const authorProperty = `${environment.baseOntology}workHasAuthorValue`;
+    const nameProperty = `${environment.baseOntology}hasFamilyName`
+    return this.getLinkedValue(authorProperty, nameProperty);
   }
 
   get title(): string {
@@ -16,8 +21,4 @@ export class Work extends Resource {
     return this.getFirstValueAsStringOrNullOfProperty(property);
   }
 
-  get authority(): string {
-    const property = `${environment.baseOntology}workHasAuthority`;
-    return this.getFirstValueAsStringOrNullOfProperty(property);
-  }
 }
