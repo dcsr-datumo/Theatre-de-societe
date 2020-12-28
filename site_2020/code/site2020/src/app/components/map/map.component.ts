@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Map, Control, DomUtil, ZoomAnimEvent , Layer, MapOptions, tileLayer, latLng, marker, Marker, LatLng, LatLngExpression, icon } from 'leaflet';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PlaceMatch } from 'src/app/models/placematch.model';
 import { KnoraService } from 'src/app/services/knora.service';
@@ -26,6 +27,8 @@ export class MapComponent implements OnInit {
     center:latLng(47,0)
   };
 
+  loading: Observable<boolean>;
+
   public map: Map;
 
   places: PlaceMatch[];
@@ -38,6 +41,7 @@ export class MapComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.loading = of(true);
     let layers: [Layer];
     layers = [
         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
@@ -82,6 +86,10 @@ export class MapComponent implements OnInit {
     ).subscribe(
       (places: Marker[]) => {
         places.forEach((place: Marker) => geomap.addLayer(place));
+      },
+      error => console.log(error),
+      () => {
+        this.loading = of(false);
       }
     );
   }
