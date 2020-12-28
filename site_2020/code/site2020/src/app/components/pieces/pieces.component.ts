@@ -65,9 +65,11 @@ export class PiecesComponent implements OnInit {
               term = term.toLowerCase();
               let matches = us.allWorks.filter(work =>
                   {
-                    // TODO: note loic: check why title is not know
-                    // for now filter on label
-                    return work.label && work.label.toLowerCase().includes(term);
+                    return (
+                      (work.label && work.label.toLowerCase().includes(term))
+                      ||
+                      (work.title && work.title.toLowerCase().includes(term))
+                    );
                   }
                 );
               observer.next(matches);
