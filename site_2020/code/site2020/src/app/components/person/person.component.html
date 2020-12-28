@@ -1,48 +1,73 @@
-<span *ngIf="person | async as p">
-  <span *ngIf="(p.familyName.length > 1); then family_multi else family_single"></span>
+<div class="outer">
 
-  <ng-template #family_single>
-    {{p.familyName[0]}}
+  <span *ngIf="person | async as p">
 
-    <span *ngIf="p.givenName && (p.givenName.length > 0)">
-      <span *ngFor="let n of p.givenName">
-        , {{n}}
+    <!-- name -->
+    <span *ngIf="(p.familyName && p.familyName.length > 1); then family_multi else family_single"></span>
+
+    <ng-template #family_single>
+      <span *ngIf="p.familyName">
+        {{p.familyName[0]}}
       </span>
+
+      <span *ngIf="p.givenName && (p.givenName.length > 0)">
+        <span *ngFor="let n of p.givenName">
+          , {{n}}
+        </span>
+      </span>
+
+    </ng-template>
+
+    <ng-template #family_multi>
+      <div>
+        Noms:
+        <div>
+          <ul>
+            <li *ngFor="let n of p.familyName">
+              {{n}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div *ngIf="p.givenName && (p.givenName.length > 0)">
+
+        <span *ngIf="(p.givenName.length > 1);then given_multi else given_single"></span>
+
+        <ng-template #given_single>
+          Prénom: {{p.givenName[0]}}
+        </ng-template>
+
+        <ng-template #given_multi>
+          Prénoms:
+          <ul>
+            <li *ngFor="let n of p.givenName">
+              {{n}}
+            </li>
+          </ul>
+        </ng-template>
+
+      </div>
+
+    </ng-template>
+
+    <!-- name -->
+
+    <!-- birth and death -->
+    <div>
+      <span *ngIf="p.birthDate;then birthknown else birthunknown"></span>
+      <ng-template #birthknown>{{p.birthDate}}</ng-template>
+      <ng-template #birthunknown>?</ng-template>
+
+      -
+
+      <span *ngIf="p.deathDate;then deathknown else deathunknown"></span>
+      <ng-template #deathknown>{{p.deathDate}}</ng-template>
+      <ng-template #deathunknown>?</ng-template>
+
+    </div>
+    <!-- birth and death -->
+
     </span>
 
-  </ng-template>
-
-  <ng-template #family_multi>
-    <div>
-      Noms:
-      <div>
-        <ul>
-          <li *ngFor="let n of p.familyName">
-            {{n}}
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div *ngIf="p.givenName && (p.givenName.length > 0)">
-
-      <span *ngIf="(p.givenName.length > 1);then given_multi else given_single"></span>
-
-      <ng-template #given_single>
-        Prénom: {{p.givenName[0]}}
-      </ng-template>
-
-      <ng-template #given_multi>
-        Prénoms:
-        <ul>
-          <li *ngFor="let n of p.givenName">
-            {{n}}
-          </li>
-        </ul>
-      </ng-template>
-
-    </div>
-
-  </ng-template>
-</span>
-
+</div>
