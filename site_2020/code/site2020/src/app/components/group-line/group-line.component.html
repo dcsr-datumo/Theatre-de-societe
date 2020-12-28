@@ -1,0 +1,15 @@
+<span *ngIf="group | async as g">
+  {{g.name}}
+
+  <div *ngIf="g.date">
+    {{g.date}}
+  </div>
+
+  <div *ngIf="g.places">
+    <tds-place [iri]="g.places[0]"></tds-place>
+    <span *ngIf="g.places.length>0">
+      <span *ngFor="let item of g.places.slice(1)">, {{item}}</span>
+    </span>
+  </div>
+
+</span>

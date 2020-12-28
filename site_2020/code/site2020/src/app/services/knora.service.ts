@@ -22,6 +22,8 @@ import { Resource } from '../models/resource.model';
 import { PlaceMatch } from '../models/placematch.model';
 import { Person } from '../models/person.model';
 import { WorkMatch } from '../models/workmatch.model';
+import { Group } from '../models/group.model';
+import { Membership } from '../models/membership.model';
 
 @Injectable({
   providedIn: 'root',
@@ -371,6 +373,16 @@ OFFSET ${page}`;
   getPerson(iri: string): Observable<Person> {
     const service = this;
     return service.getResource(iri, "Person", (resource: ReadResource) => new Person(resource));
+  }
+
+  getGroup(iri: string): Observable<Group> {
+    const service = this;
+    return service.getResource(iri, "Group", (resource: ReadResource) => new Group(resource));
+  }
+
+  getMembership(iri: string): Observable<Membership> {
+    const service = this;
+    return service.getResource(iri, "Membership", (resource: ReadResource) => new Membership(resource));
   }
 
   // representations per year

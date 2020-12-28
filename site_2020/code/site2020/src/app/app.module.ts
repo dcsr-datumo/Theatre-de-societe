@@ -42,6 +42,8 @@ import { WorkLineComponent } from './components/work-line/work-line.component';
 import { FilterWorkTitlePipe } from './pipes/filter-work-title.pipe';
 import { FormsModule } from '@angular/forms';
 import { PersonComponent } from './components/person/person.component';
+import { GroupLineComponent } from './components/group-line/group-line.component';
+import { MembershipLineComponent } from './components/membership-line/membership-line.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,7 @@ import { PersonComponent } from './components/person/person.component';
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonComponent
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonComponent, GroupLineComponent, MembershipLineComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,

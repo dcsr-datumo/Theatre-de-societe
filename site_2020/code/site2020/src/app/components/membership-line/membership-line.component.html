@@ -1,0 +1,6 @@
+<span *ngIf="membership | async as m">
+  <span *ngIf="m.date">{{m.date}}</span>
+  <span *ngIf="m.group">
+    <tds-group-line [iri]="m.group"></tds-group-line>
+  </span>
+</span>
