@@ -396,11 +396,15 @@ OFFSET ${page}`;
       ?place knora-api:isMainResource true .
       ?place tds:placeHasName ?name .
       ?place tds:placeHasCoordinates ?coord .
+      ?place tds:placeHasNotice ?notice .
     } WHERE {
       ?place a knora-api:Resource .
       ?place a tds:Place .
       ?place tds:placeHasName ?name .
       ?place tds:placeHasCoordinates ?coord .
+      OPTIONAL {
+        ?place tds:placeHasNotice ?notice .
+      }
     }
     OFFSET ${page}
     `;
