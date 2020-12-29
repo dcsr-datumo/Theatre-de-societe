@@ -72,14 +72,21 @@ export class MapComponent implements OnInit {
               [place.latLong[0], place.latLong[1]],
               {icon: this_icon}
             ).bindTooltip(
-              place.name,
+              // adding '...' to tell that there is a pop-up content
+              place.name + (place.notice?" ...":""),
               {
                 permanent: false,
                 opacity: 1,
                 direction: 'top'
               }
+            ).bindPopup(
+              // could be an angular component
+              // or a call to a service that a component is listening to
+              // missing the incoming links (groups and representations)
+              `<a href=/place/${place.ref}>${place.name}</a>
+              <div style="overflow: auto; max-height: 30em">${place.notice}</div>
+              `
             )
-            //.on('click', () => { this.router.navigate(['calendrier']) } )
           }
         )
       )
