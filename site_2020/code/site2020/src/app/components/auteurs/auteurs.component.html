@@ -15,7 +15,11 @@
 
       <span *ngIf="authors | async as authors">
 
-        <span>auteurs: {{authors.length}}</span>
+        <span>auteurs: {{authors.length}}
+          <span *ngIf="authorsCount | async as c">
+            / {{c}}
+          </span>
+        </span>
 
         <!--ul class="left-list"-->
         <mat-list-item *ngFor="let author of authors">

@@ -19,7 +19,11 @@
     </mat-progress-bar>
 
     <!--span *ngIf="counter | async as c">pièces: {{c}}</span-->
-    <span>pièces: {{counter | async}}</span>
+    <span>pièces: {{counter | async}}
+      <span *ngIf="worksCount | async as c">
+        / {{c}}
+      </span>
+    </span>
 
     <!--ul class="left-list"-->
       <mat-list-item *ngFor="let work of works | async">

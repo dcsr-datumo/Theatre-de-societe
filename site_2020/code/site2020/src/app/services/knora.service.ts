@@ -5,6 +5,7 @@ import {
   ApiResponseError,
   ReadResourceSequence,
   ReadResource,
+  CountQueryResponse,
 } from '@dasch-swiss/dsp-js';
 import { Observable, config, of } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -42,7 +43,9 @@ export class KnoraService {
   cachedWorkMatches: WorkMatch[];
   cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
 
-  constructor() {
+  calendarCacheRequest: string;
+  authorsRequest: string;
+  worksRequest: string;
     this.config = new KnoraApiConfig(
       environment.knoraApiProtocol as 'http' | 'https',
       environment.knoraApiHost,
@@ -54,26 +57,11 @@ export class KnoraService {
     this.knoraApiConnection = new KnoraApiConnection(this.config);
   }
 
-  // get a page of results
-  getCalendarCache(page: number): Observable<CacheCalendarYear[]> {
-    const gravsearchQuery1 = `
+  getCalendarCacheRequest() {
+    if(!this.calendarCacheRequest) {
+      this.calendarCacheRequest =
+      `
 PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
-PREFIX theatre-societe: <${environment.knoraApiProtocol}://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
-
-CONSTRUCT {
-    ?calendarYear knora-api:isMainResource true .
-    ?calendarYear theatre-societe:cacheCalendarYearHasYear ?year .
-    ?calendarYear theatre-societe:cacheCalendarYearHasRepresentations ?representations .
-} WHERE {
-	?calendarYear a knora-api:Resource .
-    ?calendarYear a theatre-societe:CacheCalendarYear .
-    ?calendarYear theatre-societe:cacheCalendarYearHasYear ?year .
-    ?calendarYear theatre-societe:cacheCalendarYearHasRepresentations ?representations .
-}
-ORDER BY ?year
-OFFSET 0`;
-    const gravsearchQuery = `
-    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
 PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
 CONSTRUCT {
   ?calendar knora-api:isMainResource true .
@@ -85,6 +73,15 @@ CONSTRUCT {
   ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
   ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
 }
+      `;
+    }
+    return this.calendarCacheRequest;
+  }
+
+  // get a page of results
+  getCalendarCache(page: number): Observable<CacheCalendarYear[]> {
+    const gravsearchQuery =
+    `${this.getCalendarCacheRequest()}
 ORDER BY ?year
 OFFSET ${page}`;
     console.log(gravsearchQuery);
@@ -246,10 +243,8 @@ OFFSET ${page}`;
     return `FILTER(knora-api:toSimpleDate(?date) = 'GREGORIAN:${year}-1-1:${year}-12-31'^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)`;
   }
 
-  // representations per year
-  getRepresentationsPage(year: number, page: number): Observable<RepresentationMatch[]> {
-    const filter = this.getQueryFilter(year);
-    const query = `
+  getRepresentationRequest(year: number): string {
+    return `
    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
    PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
    CONSTRUCT {
@@ -267,8 +262,20 @@ OFFSET ${page}`;
      ?representation theatre-societe:representationHasPlace ?place .
      ?place theatre-societe:placeHasName ?placeName .
      ?representation theatre-societe:representationHasDate ?date .
-     ${filter}
+      ${this.getQueryFilter(year)}
     }
+    `;
+  }
+
+  getRepresentationsCount(year: number): Observable<ApiResponseError | CountQueryResponse> {
+    let query = this.getRepresentationRequest(year);
+    return this.knoraApiConnection.v2.search.doExtendedSearchCountQuery(query);
+  }
+
+  // representations per year
+  getRepresentationsPage(year: number, page: number): Observable<RepresentationMatch[]> {
+    let query = `
+     ${this.getRepresentationRequest(year)}
    ORDER BY ?date
    OFFSET ${page}
    `;
@@ -446,8 +453,10 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getAuthorPage(page: number): Observable<PersonMatchAuthor[]> {
-    const query = `
+  getAuthorsQuery(): string {
+    if (!this.authorsRequest) {
+      this.authorsRequest =
+      `
     PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
     PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
 
@@ -471,6 +480,21 @@ OFFSET ${page}`;
       ?work a tds:Work .
       ?work tds:workHasAuthor ?author
     }
+      `;
+    }
+    return this.authorsRequest;
+  }
+
+  getAuthorsCount(): Observable<ApiResponseError | CountQueryResponse> {
+    return this.knoraApiConnection.v2.search.doExtendedSearchCountQuery(
+      this.getAuthorsQuery()
+    );
+  }
+
+  getAuthorsPage(page: number): Observable<PersonMatchAuthor[]> {
+    const query =
+    `
+      ${this.getAuthorsQuery()}
     OFFSET ${page}
     `;
     console.log('query authors:');
@@ -492,7 +516,7 @@ OFFSET ${page}`;
     let authors: PersonMatchAuthor[] = [];
     function aggregatedPage(observer) {
       console.log('call getAuthors for page: ' + index);
-      service.getAuthorPage(index).subscribe(
+      service.getAuthorsPage(index).subscribe(
         (page: PersonMatchAuthor[]) => {
           if (page.length > 0) {
             authors = authors.concat(page);
@@ -509,8 +533,9 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getWorksPage(page: number): Observable<WorkMatch[]> {
-    const query = `
+  getWorksRequest(): string {
+    if (!this.worksRequest) {
+      this.worksRequest = `
     PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
     PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
 
@@ -530,6 +555,21 @@ OFFSET ${page}`;
         ?author tds:hasFamilyName ?name
       }
     }
+      `;
+    }
+    return this.worksRequest;
+  }
+
+  getWorksCount(): Observable<ApiResponseError | CountQueryResponse> {
+    return this.knoraApiConnection.v2.search.doExtendedSearchCountQuery(
+      this.getWorksRequest()
+    );
+  }
+
+
+  getWorksPage(page: number): Observable<WorkMatch[]> {
+    const query = `
+    ${this.getWorksRequest()}
     ORDER BY ?title
     OFFSET ${page}
     `;
