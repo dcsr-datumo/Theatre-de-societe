@@ -46,6 +46,8 @@ export class KnoraService {
   calendarCacheRequest: string;
   authorsRequest: string;
   worksRequest: string;
+
+  constructor() {
     this.config = new KnoraApiConfig(
       environment.knoraApiProtocol as 'http' | 'https',
       environment.knoraApiHost,
@@ -61,18 +63,18 @@ export class KnoraService {
     if(!this.calendarCacheRequest) {
       this.calendarCacheRequest =
       `
-PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
-PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
-CONSTRUCT {
-  ?calendar knora-api:isMainResource true .
-  ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
-  ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
-} WHERE {
-  ?calendar a knora-api:Resource .
-  ?calendar a theatre-societe:CacheCalendarYear .
-  ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
-  ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
-}
+      PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+      PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+      CONSTRUCT {
+        ?calendar knora-api:isMainResource true .
+        ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
+        ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
+      } WHERE {
+        ?calendar a knora-api:Resource .
+        ?calendar a theatre-societe:CacheCalendarYear .
+        ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
+        ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
+      }
       `;
     }
     return this.calendarCacheRequest;
@@ -82,8 +84,8 @@ CONSTRUCT {
   getCalendarCache(page: number): Observable<CacheCalendarYear[]> {
     const gravsearchQuery =
     `${this.getCalendarCacheRequest()}
-ORDER BY ?year
-OFFSET ${page}`;
+     ORDER BY ?year
+     OFFSET ${page}`;
     console.log(gravsearchQuery);
     return this.knoraApiConnection.v2.search.doExtendedSearch(gravsearchQuery)
       .pipe(
@@ -246,25 +248,25 @@ OFFSET ${page}`;
 
   getRepresentationRequest(year: number): string {
     return `
-   PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
-   PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
-   CONSTRUCT {
-     ?representation knora-api:isMainResource true .
-     ?representation theatre-societe:representationIsBasedOn ?work .
-     ?work theatre-societe:workHasTitle ?playTitle .
-     ?representation theatre-societe:representationHasPlace ?place .
-     ?place theatre-societe:placeHasName ?placeName .
-     ?representation theatre-societe:representationHasDate ?date .
-   } WHERE {
-     ?representation a knora-api:Resource .
-     ?representation a theatre-societe:Representation .
-     ?representation theatre-societe:representationIsBasedOn ?work .
-     ?work theatre-societe:workHasTitle ?playTitle .
-     ?representation theatre-societe:representationHasPlace ?place .
-     ?place theatre-societe:placeHasName ?placeName .
-     ?representation theatre-societe:representationHasDate ?date .
+      PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+      PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+      CONSTRUCT {
+      ?representation knora-api:isMainResource true .
+      ?representation theatre-societe:representationIsBasedOn ?work .
+      ?work theatre-societe:workHasTitle ?playTitle .
+      ?representation theatre-societe:representationHasPlace ?place .
+      ?place theatre-societe:placeHasName ?placeName .
+      ?representation theatre-societe:representationHasDate ?date .
+      } WHERE {
+      ?representation a knora-api:Resource .
+      ?representation a theatre-societe:Representation .
+      ?representation theatre-societe:representationIsBasedOn ?work .
+      ?work theatre-societe:workHasTitle ?playTitle .
+      ?representation theatre-societe:representationHasPlace ?place .
+      ?place theatre-societe:placeHasName ?placeName .
+      ?representation theatre-societe:representationHasDate ?date .
       ${this.getQueryFilter(year)}
-    }
+      }
     `;
   }
 
@@ -277,9 +279,9 @@ OFFSET ${page}`;
   getRepresentationsPage(year: number, page: number): Observable<RepresentationMatch[]> {
     let query = `
      ${this.getRepresentationRequest(year)}
-   ORDER BY ?date
-   OFFSET ${page}
-   `;
+     ORDER BY ?date
+     OFFSET ${page}
+    `;
     console.log(query);
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
@@ -496,7 +498,7 @@ OFFSET ${page}`;
     const query =
     `
       ${this.getAuthorsQuery()}
-    OFFSET ${page}
+      OFFSET ${page}
     `;
     console.log('query authors:');
     console.log(query);
@@ -537,25 +539,25 @@ OFFSET ${page}`;
   getWorksRequest(): string {
     if (!this.worksRequest) {
       this.worksRequest = `
-    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
-    PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+      PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+      PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
 
-    CONSTRUCT {
-      ?work knora-api:isMainResource true .
-      ?work tds:workHasTitle ?title .
-      ?work tds:workHasAuthor ?author .
-      ?author tds:hasFamilyName ?name
-    } WHERE {
-      ?work a knora-api:Resource .
-      ?work a tds:Work .
-      OPTIONAL {
+      CONSTRUCT {
+        ?work knora-api:isMainResource true .
         ?work tds:workHasTitle ?title .
-      }
-      OPTIONAL {
         ?work tds:workHasAuthor ?author .
         ?author tds:hasFamilyName ?name
+      } WHERE {
+        ?work a knora-api:Resource .
+        ?work a tds:Work .
+        OPTIONAL {
+          ?work tds:workHasTitle ?title .
+        }
+        OPTIONAL {
+          ?work tds:workHasAuthor ?author .
+          ?author tds:hasFamilyName ?name
+        }
       }
-    }
       `;
     }
     return this.worksRequest;
