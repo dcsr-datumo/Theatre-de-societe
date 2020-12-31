@@ -22,7 +22,9 @@
     </ng-template>
   </p>
 
-  {{ w.authority }}
+  <p *ngIf="w.authority">
+    Identifiant d'autorité: <a href="{{w.authority}}">{{ w.authority }}</a>
+  </p>
 
 </span>
 
