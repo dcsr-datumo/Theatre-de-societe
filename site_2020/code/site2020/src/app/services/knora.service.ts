@@ -5,6 +5,7 @@ import {
   ApiResponseError,
   ReadResourceSequence,
   ReadResource,
+  CountQueryResponse,
 } from '@dasch-swiss/dsp-js';
 import { Observable, config, of } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -35,12 +36,17 @@ export class KnoraService {
   cachedCalendar: CacheCalendarYear[];
   cachedCalendarExtended: CacheCalendarYear[];
   cachedRepresentation: Map<string, Representation> = new Map<string, Representation>();
-  cachedYears: Map<number, RepresentationMatch[]> = new Map<number, RepresentationMatch[]>();
+  cachedRepresentationMatches: Map<string, RepresentationMatch[]> = new Map<string, RepresentationMatch[]>();
   cachedPlaces: PlaceMatch[];
   cachedAuthors: PersonMatchAuthor[];
   cachedWorks: Work[];
   cachedWorkMatches: WorkMatch[];
   cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
+
+  calendarCacheRequest: string;
+  authorsRequest: string;
+  worksRequest: string;
+  representationsBaseRequest: string;
 
   constructor() {
     this.config = new KnoraApiConfig(
@@ -54,39 +60,33 @@ export class KnoraService {
     this.knoraApiConnection = new KnoraApiConnection(this.config);
   }
 
+  getCalendarCacheRequest() {
+    if(!this.calendarCacheRequest) {
+      this.calendarCacheRequest =
+      `
+      PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+      PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+      CONSTRUCT {
+        ?calendar knora-api:isMainResource true .
+        ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
+        ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
+      } WHERE {
+        ?calendar a knora-api:Resource .
+        ?calendar a theatre-societe:CacheCalendarYear .
+        ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
+        ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
+      }
+      `;
+    }
+    return this.calendarCacheRequest;
+  }
+
   // get a page of results
   getCalendarCache(page: number): Observable<CacheCalendarYear[]> {
-    const gravsearchQuery1 = `
-PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
-PREFIX theatre-societe: <${environment.knoraApiProtocol}://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
-
-CONSTRUCT {
-    ?calendarYear knora-api:isMainResource true .
-    ?calendarYear theatre-societe:cacheCalendarYearHasYear ?year .
-    ?calendarYear theatre-societe:cacheCalendarYearHasRepresentations ?representations .
-} WHERE {
-	?calendarYear a knora-api:Resource .
-    ?calendarYear a theatre-societe:CacheCalendarYear .
-    ?calendarYear theatre-societe:cacheCalendarYearHasYear ?year .
-    ?calendarYear theatre-societe:cacheCalendarYearHasRepresentations ?representations .
-}
-ORDER BY ?year
-OFFSET 0`;
-    const gravsearchQuery = `
-    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
-PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
-CONSTRUCT {
-  ?calendar knora-api:isMainResource true .
-  ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
-  ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
-} WHERE {
-  ?calendar a knora-api:Resource .
-  ?calendar a theatre-societe:CacheCalendarYear .
-  ?calendar theatre-societe:cacheCalendarYearHasYear ?year .
-  ?calendar theatre-societe:cacheCalendarYearHasRepresentations ?representations .
-}
-ORDER BY ?year
-OFFSET ${page}`;
+    const gravsearchQuery =
+    `${this.getCalendarCacheRequest()}
+     ORDER BY ?year
+     OFFSET ${page}`;
     console.log(gravsearchQuery);
     return this.knoraApiConnection.v2.search.doExtendedSearch(gravsearchQuery)
       .pipe(
@@ -152,7 +152,7 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getAllCalendarCacheExtended(): Observable<CacheCalendarYear[]> {
+  getAllCalendarCacheExtended(endCallback): Observable<CacheCalendarYear[]> {
     // survive variable scope change (`this` might not always be this)
     const service = this;
     // page counter for recursion
@@ -228,6 +228,7 @@ OFFSET ${page}`;
             }
             service.cachedCalendarExtended = allYearsExtended;
             observer.complete();
+            endCallback();
           }
         }
       );
@@ -246,32 +247,45 @@ OFFSET ${page}`;
     return `FILTER(knora-api:toSimpleDate(?date) = 'GREGORIAN:${year}-1-1:${year}-12-31'^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)`;
   }
 
-  // representations per year
-  getRepresentationsPage(year: number, page: number): Observable<RepresentationMatch[]> {
-    const filter = this.getQueryFilter(year);
-    const query = `
-   PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
-   PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
-   CONSTRUCT {
-     ?representation knora-api:isMainResource true .
-     ?representation theatre-societe:representationIsBasedOn ?work .
-     ?work theatre-societe:workHasTitle ?playTitle .
-     ?representation theatre-societe:representationHasPlace ?place .
-     ?place theatre-societe:placeHasName ?placeName .
-     ?representation theatre-societe:representationHasDate ?date .
-   } WHERE {
-     ?representation a knora-api:Resource .
-     ?representation a theatre-societe:Representation .
-     ?representation theatre-societe:representationIsBasedOn ?work .
-     ?work theatre-societe:workHasTitle ?playTitle .
-     ?representation theatre-societe:representationHasPlace ?place .
-     ?place theatre-societe:placeHasName ?placeName .
-     ?representation theatre-societe:representationHasDate ?date .
-     ${filter}
+  /**
+   * misses the trailing '}'
+   */
+  getRepresentationBaseRequest(): string {
+    if (!this.representationsBaseRequest) {
+      this.representationsBaseRequest = `
+      PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+      PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+      CONSTRUCT {
+        ?representation knora-api:isMainResource true .
+        ?representation theatre-societe:representationIsBasedOn ?work .
+        ?work theatre-societe:workHasTitle ?playTitle .
+        ?representation theatre-societe:representationHasPlace ?place .
+        ?place theatre-societe:placeHasName ?placeName .
+        ?representation theatre-societe:representationHasDate ?date .
+      } WHERE {
+        ?representation a knora-api:Resource .
+        ?representation a theatre-societe:Representation .
+        ?representation theatre-societe:representationIsBasedOn ?work .
+        ?work theatre-societe:workHasTitle ?playTitle .
+        ?representation theatre-societe:representationHasPlace ?place .
+        ?place theatre-societe:placeHasName ?placeName .
+        ?representation theatre-societe:representationHasDate ?date .
+        `;
     }
-   ORDER BY ?date
-   OFFSET ${page}
-   `;
+    return this.representationsBaseRequest;
+  }
+
+  getSearchCount(request: string): Observable<ApiResponseError | CountQueryResponse> {
+    return this.knoraApiConnection.v2.search.doExtendedSearchCountQuery(request);
+  }
+
+  // representations per year
+  getRepresentationsPage(request: string, page: number): Observable<RepresentationMatch[]> {
+    let query = `
+     ${request}
+     ORDER BY ?date
+     OFFSET ${page}
+    `;
     console.log(query);
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
@@ -282,16 +296,16 @@ OFFSET ${page}`;
   }
 
 
-  getRepresentations(year: number): Observable<RepresentationMatch[]> {
+  getRepresentations(request: string, cacheKey: string): Observable<RepresentationMatch[]> {
     const service = this;
-    if (service.cachedYears.has(year)) {
-      return of(service.cachedYears.get(year));
+    if (service.cachedRepresentationMatches.has(cacheKey)) {
+      return of(service.cachedRepresentationMatches.get(cacheKey));
     }
     let index = 0;
     let representations: RepresentationMatch[] = [];
     function aggregatedPage(observer) {
       console.log('call getRepresentations for page: ' + index);
-      service.getRepresentationsPage(year, index).subscribe(
+      service.getRepresentationsPage(request, index).subscribe(
         (page: RepresentationMatch[]) => {
           if (page.length > 0) {
             representations = representations.concat(page);
@@ -301,13 +315,68 @@ OFFSET ${page}`;
             index = index + 1;
             aggregatedPage(observer);
           } else {
-            service.cachedYears.set(year, representations);
+            service.cachedRepresentationMatches.set(cacheKey, representations);
             observer.complete();
           }
         }
       );
     }
     return new Observable(aggregatedPage);
+  }
+
+  /**
+   * Representations by data:
+   * - getRepresentationsByYearRequest
+   * - getRepresentationsByYearCount
+   * - getRepresentationsByYear
+   */
+
+  getRepresentationsByYearRequest(year: number): string {
+    return `
+        ${this.getRepresentationBaseRequest()}
+        ${this.getQueryFilter(year)}
+      }
+    `;
+  }
+
+  getRepresentationsByYearCount(year: number): Observable<ApiResponseError | CountQueryResponse> {
+    let request = this.getRepresentationsByYearRequest(year);
+    return this.getSearchCount(request);
+  }
+
+  getRepresentationsByYear(year: number): Observable<RepresentationMatch[]> {
+    let request = this.getRepresentationsByYearRequest(year);
+    let cacheKey = year.toString();
+    return this.getRepresentations(request, cacheKey);
+  }
+
+  /**
+   * Representations linked to a place:
+   * - getRepresentationsByLinkRequest
+   * - getRepresentationsByLinkCount
+   * - getRepresentationsByLink
+   */
+
+  getRepresentationsByLinkRequest(iri: string): string {
+    return `
+        ${this.getRepresentationBaseRequest()}
+      }
+    `.replace(
+      '} WHERE {',
+      `} WHERE {
+        BIND(<${iri}> AS ?place)
+      `);
+  }
+
+  getRepresentationsByLinkCount(iri: string): Observable<ApiResponseError | CountQueryResponse> {
+    let request = this.getRepresentationsByLinkRequest(iri);
+    return this.getSearchCount(request);
+  }
+
+  getRepresentationsByLink(iri: string): Observable<RepresentationMatch[]> {
+    let request = this.getRepresentationsByLinkRequest(iri);
+    let cacheKey = iri.toString();
+    return this.getRepresentations(request, cacheKey);
   }
 
   getResource<T extends Resource>(iri: string, cname: string, ctor: Function): Observable<T> {
@@ -396,11 +465,15 @@ OFFSET ${page}`;
       ?place knora-api:isMainResource true .
       ?place tds:placeHasName ?name .
       ?place tds:placeHasCoordinates ?coord .
+      ?place tds:placeHasNotice ?notice .
     } WHERE {
       ?place a knora-api:Resource .
       ?place a tds:Place .
       ?place tds:placeHasName ?name .
       ?place tds:placeHasCoordinates ?coord .
+      OPTIONAL {
+        ?place tds:placeHasNotice ?notice .
+      }
     }
     OFFSET ${page}
     `;
@@ -442,8 +515,10 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getAuthorPage(page: number): Observable<PersonMatchAuthor[]> {
-    const query = `
+  getAuthorsQuery(): string {
+    if (!this.authorsRequest) {
+      this.authorsRequest =
+      `
     PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
     PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
 
@@ -467,7 +542,22 @@ OFFSET ${page}`;
       ?work a tds:Work .
       ?work tds:workHasAuthor ?author
     }
-    OFFSET ${page}
+      `;
+    }
+    return this.authorsRequest;
+  }
+
+  getAuthorsCount(): Observable<ApiResponseError | CountQueryResponse> {
+    return this.knoraApiConnection.v2.search.doExtendedSearchCountQuery(
+      this.getAuthorsQuery()
+    );
+  }
+
+  getAuthorsPage(page: number): Observable<PersonMatchAuthor[]> {
+    const query =
+    `
+      ${this.getAuthorsQuery()}
+      OFFSET ${page}
     `;
     console.log('query authors:');
     console.log(query);
@@ -488,7 +578,7 @@ OFFSET ${page}`;
     let authors: PersonMatchAuthor[] = [];
     function aggregatedPage(observer) {
       console.log('call getAuthors for page: ' + index);
-      service.getAuthorPage(index).subscribe(
+      service.getAuthorsPage(index).subscribe(
         (page: PersonMatchAuthor[]) => {
           if (page.length > 0) {
             authors = authors.concat(page);
@@ -505,27 +595,43 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getWorksPage(page: number): Observable<WorkMatch[]> {
-    const query = `
-    PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
-    PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+  getWorksRequest(): string {
+    if (!this.worksRequest) {
+      this.worksRequest = `
+      PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+      PREFIX tds: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
 
-    CONSTRUCT {
-      ?work knora-api:isMainResource true .
-      ?work tds:workHasTitle ?title .
-      ?work tds:workHasAuthor ?author .
-      ?author tds:hasFamilyName ?name
-    } WHERE {
-      ?work a knora-api:Resource .
-      ?work a tds:Work .
-      OPTIONAL {
+      CONSTRUCT {
+        ?work knora-api:isMainResource true .
         ?work tds:workHasTitle ?title .
-      }
-      OPTIONAL {
         ?work tds:workHasAuthor ?author .
         ?author tds:hasFamilyName ?name
+      } WHERE {
+        ?work a knora-api:Resource .
+        ?work a tds:Work .
+        OPTIONAL {
+          ?work tds:workHasTitle ?title .
+        }
+        OPTIONAL {
+          ?work tds:workHasAuthor ?author .
+          ?author tds:hasFamilyName ?name
+        }
       }
+      `;
     }
+    return this.worksRequest;
+  }
+
+  getWorksCount(): Observable<ApiResponseError | CountQueryResponse> {
+    return this.knoraApiConnection.v2.search.doExtendedSearchCountQuery(
+      this.getWorksRequest()
+    );
+  }
+
+
+  getWorksPage(page: number): Observable<WorkMatch[]> {
+    const query = `
+    ${this.getWorksRequest()}
     ORDER BY ?title
     OFFSET ${page}
     `;
@@ -571,4 +677,35 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
+  getLinkedPlaces(): Observable<WorkMatch[]> {
+    const service = this;
+    if (service.cachedWorkMatches) {
+      return of(service.cachedWorkMatches);
+    }
+    let index = 0;
+    let works: WorkMatch[] = [];
+    function aggregatedPage(observer) {
+      console.log('call getWorks for page: ' + index);
+      service.getWorksPage(index).subscribe(
+        (page: WorkMatch[]) => {
+          // // note loic: for debug
+          // if( index > 5 ) {
+          //   service.cachedWorkMatches = works;
+          //   observer.complete();
+          // };
+
+          if (page.length > 0) {
+            works = works.concat(page);
+            observer.next(works);
+            index = index + 1;
+            aggregatedPage(observer);
+          } else {
+            service.cachedWorkMatches = works;
+            observer.complete();
+          }
+        }
+      );
+    }
+    return new Observable(aggregatedPage);
+  }
 }

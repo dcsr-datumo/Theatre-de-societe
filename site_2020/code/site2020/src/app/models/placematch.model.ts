@@ -1,17 +1,20 @@
 import { ReadResource, ReadValue } from '@dasch-swiss/dsp-js';
 import { Resource } from './resource.model';
 import { environment } from '../../environments/environment';
-import { map } from 'rxjs/operators';
+import { KnoraService } from '../services/knora.service';
+import { ConvertStandofPipe } from '../pipes/convert-standof.pipe';
+import { retry } from 'rxjs/operators';
+import { convertPropertyBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 
 export class PlaceMatch extends Resource {
+  private converter = new ConvertStandofPipe();
+
   constructor(protected readResource: ReadResource) {
     super(readResource);
   }
 
   get place(): string {
-    return this.getFirstValueAsStringOrNullOfProperty(
-      `http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#placeHasCoordinates`
-    );
+    return this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}placeHasCoordinates`);
   }
 
   get latLong(): number[] {
@@ -25,8 +28,12 @@ export class PlaceMatch extends Resource {
   }
 
   get name(): string {
-    return this.getFirstValueAsStringOrNullOfProperty(
-      `http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#placeHasName`
-    );
+    return this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}placeHasName`);
+  }
+
+  get notice(): string {
+    // arbitrarily grab the first value
+    let notice =  this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}placeHasNotice`);
+    return this.converter.transform(notice);
   }
 }

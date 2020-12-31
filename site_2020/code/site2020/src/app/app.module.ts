@@ -16,6 +16,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
 //import { MatDialog } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ProjetComponent } from './components/projet/projet.component';
@@ -35,6 +36,8 @@ import { GenreComponent } from './components/genre/genre.component';
 import { YearComponent } from './components/year/year.component';
 import { MapComponent } from './components/map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+// import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
+//import { LeafletMarkerClusterOptions } from '@asymmetrik/ngx-leaflet-markercluster';
 import { AuteursComponent } from './components/auteurs/auteurs.component';
 import { PiecesComponent } from './components/pieces/pieces.component';
 import { NoAccentPipe } from './pipes/no-accent.pipe';
@@ -44,6 +47,9 @@ import { FormsModule } from '@angular/forms';
 import { PersonComponent } from './components/person/person.component';
 import { GroupLineComponent } from './components/group-line/group-line.component';
 import { MembershipLineComponent } from './components/membership-line/membership-line.component';
+import { PlaceLineComponent } from './components/place-line/place-line.component';
+import { ConvertStandofPipe } from './pipes/convert-standof.pipe';
+import { RepresentationsListComponent } from './components/representations-list/representations-list.component';
 
 @NgModule({
   declarations: [
@@ -53,17 +59,18 @@ import { MembershipLineComponent } from './components/membership-line/membership
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonComponent, GroupLineComponent, MembershipLineComponent
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
     MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule, MatProgressBarModule,
     //MatDialog,
-    MatExpansionModule,
+    MatExpansionModule, MatMenuModule,
     LeafletModule,
+    // LeafletMarkerClusterModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ConvertStandofPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

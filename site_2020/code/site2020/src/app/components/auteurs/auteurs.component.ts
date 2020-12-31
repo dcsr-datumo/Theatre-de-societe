@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ApiResponseError, CountQueryResponse } from '@dasch-swiss/dsp-js';
 import { Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { PersonMatchAuthor } from 'src/app/models/personmatchauthor.model';
@@ -13,6 +14,7 @@ import { KnoraService } from "../../services/knora.service";
 export class AuteursComponent implements OnInit {
   allAuthors: PersonMatchAuthor[];
   authors: Observable<PersonMatchAuthor[]>;
+  authorsCount: Observable<string>;
   loading: Observable<boolean>;
   panel: Map<string, boolean> = new Map<string, boolean>();
   @Input()
@@ -25,6 +27,18 @@ export class AuteursComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // get the count
+    this.knoraService.getAuthorsCount().subscribe(
+      (response: CountQueryResponse) => {
+        this.authorsCount = of(response.numberOfResults.toString());
+      },
+      (error: ApiResponseError) => {
+        this.authorsCount = of('unknown');
+        console.error(error);
+      }
+    );
+
+    // get the list of authors
     let us = this;
 
     function readPage(observer) {

@@ -6,6 +6,7 @@ import { KnoraService } from 'src/app/services/knora.service';
 import { Work } from 'src/app/models/work.model';
 import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
 import { WorkMatch } from 'src/app/models/workmatch.model';
+import { ApiResponseError, CountQueryResponse } from '@dasch-swiss/dsp-js';
 
 @Component({
   selector: 'tds-pieces',
@@ -16,6 +17,7 @@ export class PiecesComponent implements OnInit {
   id: string;
   allWorks: WorkMatch[];
   works: Observable<WorkMatch[]>;
+  worksCount: Observable<string>;
   loading: Observable<boolean>;
   counter: Observable<number>;
   panel: Map<string, boolean> = new Map<string, boolean>();
@@ -31,6 +33,17 @@ export class PiecesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // get the count
+    this.knoraService.getWorksCount().subscribe(
+      (response: CountQueryResponse) => {
+        this.worksCount = of(response.numberOfResults.toString());
+      },
+      (error: ApiResponseError) => {
+        this.worksCount = of('unknown');
+        console.error(error);
+      }
+    );
+
     let us = this;
 
     function readPage(observer) {

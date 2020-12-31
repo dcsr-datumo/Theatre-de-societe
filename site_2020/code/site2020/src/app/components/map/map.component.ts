@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Map, Control, DomUtil, ZoomAnimEvent , Layer, MapOptions, tileLayer, latLng, marker, Marker, LatLng, LatLngExpression, icon } from 'leaflet';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PlaceMatch } from 'src/app/models/placematch.model';
 import { KnoraService } from 'src/app/services/knora.service';
@@ -26,6 +27,8 @@ export class MapComponent implements OnInit {
     center:latLng(47,0)
   };
 
+  loading: Observable<boolean>;
+
   public map: Map;
 
   places: PlaceMatch[];
@@ -38,6 +41,7 @@ export class MapComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.loading = of(true);
     let layers: [Layer];
     layers = [
         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
@@ -68,20 +72,31 @@ export class MapComponent implements OnInit {
               [place.latLong[0], place.latLong[1]],
               {icon: this_icon}
             ).bindTooltip(
-              place.name,
+              // adding '...' to tell that there is a pop-up content
+              place.name + (place.notice?" ...":""),
               {
                 permanent: false,
                 opacity: 1,
                 direction: 'top'
               }
+            ).bindPopup(
+              // could be an angular component
+              // or a call to a service that a component is listening to
+              // missing the incoming links (groups and representations)
+              `<a href=/place/${place.ref}>${place.name}</a>
+              <div style="overflow: auto; max-height: 30em">${place.notice}</div>
+              `
             )
-            //.on('click', () => { this.router.navigate(['calendrier']) } )
           }
         )
       )
     ).subscribe(
       (places: Marker[]) => {
         places.forEach((place: Marker) => geomap.addLayer(place));
+      },
+      error => console.log(error),
+      () => {
+        this.loading = of(false);
       }
     );
   }

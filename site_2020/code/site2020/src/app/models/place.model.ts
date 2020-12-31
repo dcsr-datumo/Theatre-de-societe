@@ -1,8 +1,11 @@
 import { ReadResource, ReadValue } from '@dasch-swiss/dsp-js';
 import { Resource } from './resource.model';
 import { environment } from '../../environments/environment';
+import { ConvertStandofPipe } from '../pipes/convert-standof.pipe';
 
 export class Place extends Resource {
+  private converter = new ConvertStandofPipe();
+
   constructor(protected readResource: ReadResource) {
     super(readResource);
   }
@@ -17,8 +20,15 @@ export class Place extends Resource {
     return this.getFirstValueAsStringOrNullOfProperty(property);
   }
 
-  get notice(): string {
+  get notices(): string[] {
     const property = `${environment.baseOntology}placeHasNotice`;
-    return this.getFirstValueAsStringOrNullOfProperty(property);
+    let values = this.getValues(property);
+    if (!values) return null;
+    return values.map( notice => this.converter.transform(notice));
+  }
+
+  get links() {
+    // TODO: is empty :(
+    return this.readResource.incomingReferences;
   }
 }

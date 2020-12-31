@@ -3,6 +3,8 @@ import { Observable, config } from "rxjs";
 
 import { KnoraService } from "../../services/knora.service";
 import { Place } from '../../models/place.model';
+import { ActivatedRoute } from '@angular/router';
+import { RepresentationMatch } from 'src/app/models/representationmatch.model';
 
 
 @Component({
@@ -11,13 +13,21 @@ import { Place } from '../../models/place.model';
   styleUrls: ['./place.component.scss']
 })
 export class PlaceComponent implements OnInit {
-  @Input() iri : string;
+  id : string;
   place : Observable<Place>;
+  representations : Observable<RepresentationMatch[]>;
+  title=true;
 
-  constructor(private knoraService: KnoraService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private knoraService: KnoraService
+  ) { }
 
   ngOnInit(): void {
-    this.place = this.knoraService.getPlace(this.iri);
+    this.id = this.route.snapshot.paramMap.get('place');
+    let iri = `http://rdfh.ch/0103/${this.id}`;
+    this.place = this.knoraService.getPlace(iri);
+    this.representations = this.knoraService.getRepresentationsByLink(iri);
   }
 
 }
