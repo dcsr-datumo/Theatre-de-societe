@@ -1,33 +1,6 @@
 <div>
 
   <h1>Représentations de l'année {{ year }}</h1>
-
-  <mat-list-item *ngFor="let representation of representations | async">
-    <mat-accordion>
-      <mat-expansion-panel (opened)="panel[representation.id] = true">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-
-              <span class="truncate">
-                {{representation.workTitle}}
-              </span>
-
-            </mat-panel-title>
-            <mat-panel-description>
-              <span class="truncate">
-                {{representation.placeName}}
-              </span>
-              <span class="spacer"></span>
-              <span class="truncate">
-                {{representation.dateShort}}
-              </span>
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-        <span *ngIf="panel[representation.id]">
-          <tds-representation-line [iri]="representation.id"></tds-representation-line>
-        </span>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </mat-list-item>
+  <tds-representations-list [representations]="representations" [title]="title"></tds-representations-list>
 
 </div>
