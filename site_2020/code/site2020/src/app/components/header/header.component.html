@@ -29,21 +29,29 @@
         </a></span>
         <span class="header-spacer"></span>
         <span>
-        <a
-          class="header-item"
-          *ngFor="let item of Object.keys(site.menu)"
-          [ngClass]="{'selected': site.selectedMenuItem === item}"
-          (click)="site.selectedMenuItem=item; site.selectedMenuSubItem=site.menu[item][0];"
-          [routerLink]="site.menu[item][0]">
-            {{item | uppercase}}
-        </a>
+
+          <span *ngFor="let item of Object.keys(site.menu)">
+            <button mat-button [matMenuTriggerFor]="menu" class="header-item">{{item | uppercase}}</button>
+            <mat-menu #menu="matMenu" yPosition="below">
+              <button *ngFor="let subitem of site.menu[item]" mat-menu-item [routerLink]="subitem | noAccent">{{subitem}}</button>
+            </mat-menu>
+          </span>
+
+          <!-- <a
+            class="header-item"
+            *ngFor="let item of Object.keys(site.menu)"
+            [ngClass]="{'selected': site.selectedMenuItem === item}"
+            (click)="site.selectedMenuItem=item; site.selectedMenuSubItem=site.menu[item][0];"
+            [routerLink]="site.menu[item][0]">
+              {{item | uppercase}}
+          </a> -->
         </span>
       </mat-toolbar-row>
 
-      <mat-toolbar-row class="second-level-row" *ngFor="let row of Object.keys(site.menu)">
+      <!-- <mat-toolbar-row class="second-level-row" *ngFor="let row of Object.keys(site.menu)">
         <span class="header-spacer"></span>
         <a class="header-item second-level-item" *ngFor="let item of site.menu[row]" [routerLink]="item | noAccent" [ngClass]="{'selected': site.selectedMenuSubItem === item}" [hidden]="site.selectedMenuItem !== row" (click)="site.selectedMenuSubItem=item">{{item | uppercase}}</a>
-      </mat-toolbar-row>
+      </mat-toolbar-row> -->
     </mat-toolbar>
     <!-- Add Content Here -->
 
