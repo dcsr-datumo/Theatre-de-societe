@@ -6,7 +6,7 @@ import {
   ApiResponseError,
 } from "@dasch-swiss/dsp-js";
 
-import { Observable, config } from "rxjs";
+import { Observable, config, of } from "rxjs";
 import { map } from "rxjs/operators";
 import { CacheCalendarYear } from '../../models/cache-calendar-year.model';
 
@@ -17,11 +17,13 @@ import { CacheCalendarYear } from '../../models/cache-calendar-year.model';
 })
 export class CalendarComponent implements OnInit {
   years: Observable<CacheCalendarYear[]>;
+  loading: Observable<boolean>;
 
   constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
-    this.years = this.knoraService.getAllCalendarCacheExtended();
+    this.loading = of(true);
+    this.years = this.knoraService.getAllCalendarCacheExtended(() => this.loading = of(false));
   }
 
 }

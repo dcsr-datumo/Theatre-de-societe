@@ -149,7 +149,7 @@ OFFSET ${page}`;
     return new Observable(aggregatedPage);
   }
 
-  getAllCalendarCacheExtended(): Observable<CacheCalendarYear[]> {
+  getAllCalendarCacheExtended(endCallback): Observable<CacheCalendarYear[]> {
     // survive variable scope change (`this` might not always be this)
     const service = this;
     // page counter for recursion
@@ -225,6 +225,7 @@ OFFSET ${page}`;
             }
             service.cachedCalendarExtended = allYearsExtended;
             observer.complete();
+            endCallback();
           }
         }
       );
