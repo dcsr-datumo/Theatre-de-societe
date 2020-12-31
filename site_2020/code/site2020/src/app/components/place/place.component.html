@@ -1,3 +1,30 @@
-<span *ngIf="place | async as place$">
-  {{ place$.name }}
-</span>
+<div>
+
+  <span *ngIf="place | async as p">
+    <h2>Lieu:</h2>
+
+    <h1>{{ p.name }}</h1>
+
+    <span *ngIf="p.notices && p.notices.length>0">
+      <span *ngIf="p.notices.length>1;then multi else single"></span>
+      <ng-template #single>
+        <div class="scroll, wide" [innerHTML]="p.notices[0]"></div>
+      </ng-template>
+      <ng-template #multi>
+        <div>
+          Notices:
+          <div *ngFor="let n of p.notices" [innerHTML]="n"></div>
+        </div>
+      </ng-template>
+
+      <span *ngIf="p.links && p.links.length>0">
+        Liens:
+        <ul>
+          <li *ngFor="let l of p.links">{{l}}</li>
+        </ul>
+      </span>
+    </span>
+
+  </span>
+
+</div>
