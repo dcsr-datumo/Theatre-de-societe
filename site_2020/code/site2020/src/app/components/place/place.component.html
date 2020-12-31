@@ -16,15 +16,14 @@
           <div *ngFor="let n of p.notices" [innerHTML]="n"></div>
         </div>
       </ng-template>
-
-      <span *ngIf="p.links && p.links.length>0">
-        Liens:
-        <ul>
-          <li *ngFor="let l of p.links">{{l}}</li>
-        </ul>
-      </span>
     </span>
 
+        <tds-representations-list
+          [representations]="representations"
+          [title]="title"
+        >
+        </tds-representations-list>
   </span>
+
 
 </div>

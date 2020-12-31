@@ -256,22 +256,22 @@ export class KnoraService {
       PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
       PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
       CONSTRUCT {
-      ?representation knora-api:isMainResource true .
-      ?representation theatre-societe:representationIsBasedOn ?work .
-      ?work theatre-societe:workHasTitle ?playTitle .
-      ?representation theatre-societe:representationHasPlace ?place .
-      ?place theatre-societe:placeHasName ?placeName .
-      ?representation theatre-societe:representationHasDate ?date .
+        ?representation knora-api:isMainResource true .
+        ?representation theatre-societe:representationIsBasedOn ?work .
+        ?work theatre-societe:workHasTitle ?playTitle .
+        ?representation theatre-societe:representationHasPlace ?place .
+        ?place theatre-societe:placeHasName ?placeName .
+        ?representation theatre-societe:representationHasDate ?date .
       } WHERE {
-      ?representation a knora-api:Resource .
-      ?representation a theatre-societe:Representation .
-      ?representation theatre-societe:representationIsBasedOn ?work .
-      ?work theatre-societe:workHasTitle ?playTitle .
-      ?representation theatre-societe:representationHasPlace ?place .
-      ?place theatre-societe:placeHasName ?placeName .
-      ?representation theatre-societe:representationHasDate ?date .
-    `;
-  }
+        ?representation a knora-api:Resource .
+        ?representation a theatre-societe:Representation .
+        ?representation theatre-societe:representationIsBasedOn ?work .
+        ?work theatre-societe:workHasTitle ?playTitle .
+        ?representation theatre-societe:representationHasPlace ?place .
+        ?place theatre-societe:placeHasName ?placeName .
+        ?representation theatre-societe:representationHasDate ?date .
+        `;
+    }
     return this.representationsBaseRequest;
   }
 
@@ -347,6 +347,35 @@ export class KnoraService {
   getRepresentationsByYear(year: number): Observable<RepresentationMatch[]> {
     let request = this.getRepresentationsByYearRequest(year);
     let cacheKey = year.toString();
+    return this.getRepresentations(request, cacheKey);
+  }
+
+  /**
+   * Representations linked to a place:
+   * - getRepresentationsByLinkRequest
+   * - getRepresentationsByLinkCount
+   * - getRepresentationsByLink
+   */
+
+  getRepresentationsByLinkRequest(iri: string): string {
+    return `
+        ${this.getRepresentationBaseRequest()}
+      }
+    `.replace(
+      '} WHERE {',
+      `} WHERE {
+        BIND(<${iri}> AS ?place)
+      `);
+  }
+
+  getRepresentationsByLinkCount(iri: string): Observable<ApiResponseError | CountQueryResponse> {
+    let request = this.getRepresentationsByLinkRequest(iri);
+    return this.getSearchCount(request);
+  }
+
+  getRepresentationsByLink(iri: string): Observable<RepresentationMatch[]> {
+    let request = this.getRepresentationsByLinkRequest(iri);
+    let cacheKey = iri.toString();
     return this.getRepresentations(request, cacheKey);
   }
 
@@ -648,4 +677,35 @@ export class KnoraService {
     return new Observable(aggregatedPage);
   }
 
+  getLinkedPlaces(): Observable<WorkMatch[]> {
+    const service = this;
+    if (service.cachedWorkMatches) {
+      return of(service.cachedWorkMatches);
+    }
+    let index = 0;
+    let works: WorkMatch[] = [];
+    function aggregatedPage(observer) {
+      console.log('call getWorks for page: ' + index);
+      service.getWorksPage(index).subscribe(
+        (page: WorkMatch[]) => {
+          // // note loic: for debug
+          // if( index > 5 ) {
+          //   service.cachedWorkMatches = works;
+          //   observer.complete();
+          // };
+
+          if (page.length > 0) {
+            works = works.concat(page);
+            observer.next(works);
+            index = index + 1;
+            aggregatedPage(observer);
+          } else {
+            service.cachedWorkMatches = works;
+            observer.complete();
+          }
+        }
+      );
+    }
+    return new Observable(aggregatedPage);
+  }
 }
