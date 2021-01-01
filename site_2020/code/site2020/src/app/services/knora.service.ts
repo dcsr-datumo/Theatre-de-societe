@@ -167,6 +167,7 @@ export class KnoraService {
 
     // if we already have the final result set, send it straight away
     if (this.cachedCalendarExtended) {
+      endCallback();
       return of(this.cachedCalendarExtended);
     }
 
@@ -488,10 +489,10 @@ export class KnoraService {
   }
 
   getPlaces(): Observable<PlaceMatch[]> {
-    const service = this;
-    if (service.cachedPlaces) {
-      return of(service.cachedPlaces);
+    if (this.cachedPlaces) {
+      return of(this.cachedPlaces);
     }
+    const service = this;
     let index = 0;
     let matches: PlaceMatch[] = [];
     function aggregatedPage(observer) {
