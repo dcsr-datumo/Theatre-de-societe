@@ -7,7 +7,7 @@ import {
   ReadResource,
   CountQueryResponse,
 } from '@dasch-swiss/dsp-js';
-import { Observable, config, of } from 'rxjs';
+import { Observable, config, of, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
 import { RepresentationMatch } from '../models/representationmatch.model';
@@ -17,7 +17,7 @@ import { Work } from '../models/work.model';
 import { Genre } from '../models/genre.model';
 import { Quote } from '../models/quote.model';
 import { Festival } from '../models/festival.model';
-import { map, share, shareReplay } from 'rxjs/operators';
+import { map, share, shareReplay, switchMap } from 'rxjs/operators';
 import { Role } from '../models/role.model';
 import { Resource } from '../models/resource.model';
 import { PlaceMatch } from '../models/placematch.model';
@@ -47,6 +47,9 @@ export class KnoraService {
   authorsRequest: string;
   worksRequest: string;
   representationsBaseRequest: string;
+
+  public placeDetails = new Subject<string>();
+
 
   constructor() {
     this.config = new KnoraApiConfig(
@@ -489,10 +492,10 @@ export class KnoraService {
   }
 
   getPlaces(): Observable<PlaceMatch[]> {
-    if (this.cachedPlaces) {
-      return of(this.cachedPlaces);
-    }
     const service = this;
+    if (service.cachedPlaces) {
+      return of(service.cachedPlaces);
+    }
     let index = 0;
     let matches: PlaceMatch[] = [];
     function aggregatedPage(observer) {
@@ -708,5 +711,27 @@ export class KnoraService {
       );
     }
     return new Observable(aggregatedPage);
+  }
+
+  getPlaceDetails(): Observable<Place> {
+    let us = this;
+    function switchIriForPlace(observer) {
+      // TODO: note loic: make it configurable
+      let initialIri = 'http://rdfh.ch/0103/4eHAX522RRaoBRFarcAoLQ'
+      us.getPlace(initialIri).subscribe(
+        (place: Place) => observer.next(place),
+        (error) => console.log(error),
+        () => {
+          us.placeDetails.subscribe(
+          (iri: string) => {
+            us.getPlace(iri).subscribe(
+              (place: Place) => observer.next(place)
+            )
+          }
+        );
+        }
+      )
+    };
+    return new Observable<Place>(switchIriForPlace);
   }
 }

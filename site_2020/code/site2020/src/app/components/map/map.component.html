@@ -6,11 +6,20 @@ style="position: absolute; top: 0; z-index: 100;"
 >
 </mat-progress-bar>
 
+<div class="float-container">
 
-<div style="height: 80%;"
-     leaflet
-     (leafletMapReady)="onMapReady($event)"
-     [leafletOptions]="options"
-     [leafletLayers]="layers">
+  <div class="float-map">
+  <div style="height: 40rem;"
+    leaflet
+    (leafletMapReady)="onMapReady($event)"
+    [leafletOptions]="options"
+    [leafletLayers]="layers">
+  </div>
+  </div>
+
+  <div class="float-side">
+    <tds-place-details></tds-place-details>
+  </div>
 
 </div>
+
