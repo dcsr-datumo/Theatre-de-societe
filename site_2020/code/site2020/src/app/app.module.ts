@@ -50,6 +50,8 @@ import { MembershipLineComponent } from './components/membership-line/membership
 import { PlaceLineComponent } from './components/place-line/place-line.component';
 import { ConvertStandofPipe } from './pipes/convert-standof.pipe';
 import { RepresentationsListComponent } from './components/representations-list/representations-list.component';
+import { PopupLinkComponent } from './components/popup-link/popup-link.component';
+import { PlaceDetailsComponent } from './components/place-details/place-details.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,7 @@ import { RepresentationsListComponent } from './components/representations-list/
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,

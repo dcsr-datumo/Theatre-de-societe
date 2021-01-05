@@ -1,0 +1,28 @@
+<div style="width:100%">
+
+  <div *ngIf="place | async as p">
+    <h2>Lieu:</h2>
+
+    <h1><a [routerLink]="['/place/', p.ref]">{{ p.name }}</a></h1>
+
+    <span *ngIf="p.notices && p.notices.length>0">
+      <span *ngIf="p.notices.length>1;then multi else single"></span>
+      <ng-template #single>
+        <div class="scroll, wide" [innerHTML]="p.notices[0]"></div>
+      </ng-template>
+      <ng-template #multi>
+        <div>
+          Notices:
+          <div *ngFor="let n of p.notices" [innerHTML]="n"></div>
+        </div>
+      </ng-template>
+    </span>
+
+    <tds-representations-list
+    [representations]="representations"
+    [title]="title"
+    >
+  </tds-representations-list>
+</div>
+
+</div>
