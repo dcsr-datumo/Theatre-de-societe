@@ -546,6 +546,7 @@ export class KnoraService {
       ?work a tds:Work .
       ?work tds:workHasAuthor ?author
     }
+    order by ?family ?given
       `;
     }
     return this.authorsRequest;
