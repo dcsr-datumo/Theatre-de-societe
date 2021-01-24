@@ -8,15 +8,29 @@
       <span class="filter-clear" *ngIf="searchText.length>0" (click)="clearFilter()">X</span>
     </div> -->
 
-    <input #searchBox id="search-box" placeholder="entrer un critère de recherche..." (input)="search(searchBox.value)" [disabled]="loading|async" />
 
-    <mat-progress-bar
-      *ngIf="loading | async"
+    <span *ngIf="loading | async as progress; then inprogress else ready"></span>
+
+    <ng-template #inprogress>
+      <div class="input">
+        <div class="dot-flashing"></div>
+      </div>
+
+      <mat-progress-bar
       mode="indeterminate"
       color="warn"
       style="position: absolute; top: 0; z-index: 100;"
-    >
-    </mat-progress-bar>
+      >
+      <!-- *ngIf="loading | async" -->
+      </mat-progress-bar>
+    </ng-template>
+
+    <ng-template #ready>
+      <input #searchBox id="search-box"
+        class="input ready"
+        placeholder="entrer un critère de recherche..."
+        (input)="search(searchBox.value)"/>
+    </ng-template>
 
     <!--span *ngIf="counter | async as c">pièces: {{c}}</span-->
     <span>pièces: {{counter | async}}
