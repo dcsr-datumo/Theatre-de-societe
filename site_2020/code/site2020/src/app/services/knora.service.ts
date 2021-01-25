@@ -714,7 +714,11 @@ export class KnoraService {
     return new Observable(aggregatedPage);
   }
 
-  getPlaceDetails(): Observable<Place> {
+  /**
+   * use if a default init place should be displayed
+   * until a selected iri comes through the observer placeDetails
+   */
+  getPlaceDetailsWithDefault(): Observable<Place> {
     let us = this;
     function switchIriForPlace(observer) {
       // TODO: note loic: make it configurable
@@ -732,6 +736,20 @@ export class KnoraService {
         );
         }
       )
+    };
+    return new Observable<Place>(switchIriForPlace);
+  }
+
+  getPlaceDetails(): Observable<Place> {
+    let us = this;
+    function switchIriForPlace(observer) {
+      us.placeDetails.subscribe(
+        (iri: string) => {
+          us.getPlace(iri).subscribe(
+            (place: Place) => observer.next(place)
+          )
+        }
+      );
     };
     return new Observable<Place>(switchIriForPlace);
   }

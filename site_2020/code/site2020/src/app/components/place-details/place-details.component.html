@@ -1,6 +1,6 @@
-<div style="width:100%">
+<div style="width:100%; height: 40rem;">
 
-  <div *ngIf="place | async as p">
+  <div *ngIf="place | async as p; else invite">
     <h2>Lieu:</h2>
 
     <h1><a [routerLink]="['/place/', p.ref]">{{ p.name }}</a></h1>
@@ -24,5 +24,11 @@
     >
   </tds-representations-list>
 </div>
+
+<ng-template #invite>
+  <div style="margin-top: 25%;">
+      Sélectionner un lieu sur la carte
+  </div>
+</ng-template>
 
 </div>
