@@ -1,4 +1,4 @@
-<div>
+<div class="external">
 
   <span *ngIf="place | async as p">
     <h2>Lieu:</h2>
@@ -13,7 +13,7 @@
       <ng-template #multi>
         <div>
           Notices:
-          <div *ngFor="let n of p.notices" [innerHTML]="n"></div>
+          <div class="scroll, wide" *ngFor="let n of p.notices" [innerHTML]="n"></div>
         </div>
       </ng-template>
     </span>
