@@ -55,8 +55,15 @@ export class MapComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.map.clearAllEventListeners;
-    this.map.remove();
+    // TODO: note loic: find out the source of the exception
+    // for now: sweeping them under the carpet
+    try {
+      this.map.clearAllEventListeners();
+      this.map.off();
+      this.map.remove();
+    } catch(error) {
+      console.log(error);
+    }
   };
 
   onMapReady(geomap: Map) {

@@ -9,9 +9,6 @@
 div {
   color: black;
 
-  padding: 2rem 20%;
-  margin: 2rem;
-  margin-top: 4rem;
   //display: flex;
   //flex-direction: column;
   //justify-content: center;
@@ -28,6 +25,12 @@ div {
 // ul {
 //   text-align: left;
 // }
+
+.external {
+  padding: 2rem 20%;
+  margin: 2rem;
+  margin-top: 4rem;
+}
 
 .wide {
   margin: 0;
