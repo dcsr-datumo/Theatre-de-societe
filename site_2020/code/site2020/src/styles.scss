@@ -1,4 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  //background-image: url('/Theatre-de-societe/assets/img/marbeuf.jpg');
+  background: url('/assets/img/marbeuf.jpg') no-repeat center center fixed;
+//  background-repeat:no-repeat;
+//  background-position: center center;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
+  background-size: cover;
+}
 
 * {
   //color: #616161;
