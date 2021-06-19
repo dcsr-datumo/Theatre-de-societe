@@ -1,7 +1,7 @@
 <span *ngIf="work | async as w">
   <p>
     <span *ngIf="w.authors && w.authors.length>0">
-      Auteur: <tds-person [iri]="w.authors"></tds-person>
+      Auteur: <tds-person-line [iri]="w.authors"></tds-person-line>
     </span>
   </p>
 

@@ -4,11 +4,11 @@ import { Person } from 'src/app/models/person.model';
 import { KnoraService } from 'src/app/services/knora.service';
 
 @Component({
-  selector: 'tds-person',
-  templateUrl: './person.component.html',
-  styleUrls: ['./person.component.scss']
+  selector: 'tds-person-line',
+  templateUrl: './person-line.component.html',
+  styleUrls: ['./person-line.component.scss']
 })
-export class PersonComponent implements OnInit {
+export class PersonLineComponent implements OnInit {
   @Input() iri : string;
   person: Observable<Person>;
 

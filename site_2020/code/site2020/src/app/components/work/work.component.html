@@ -9,14 +9,14 @@
     <span *ngIf="w.authors.length > 1; then multi else single"></span>
 
     <ng-template #single>
-      Auteur: <tds-person [iri]="w.authors[0]"></tds-person>
+      Auteur: <tds-person-line [iri]="w.authors[0]"></tds-person-line>
     </ng-template>
 
     <ng-template #multi>
       Auteurs:
       <ul>
         <li *ngFor="let a of w.authors">
-          <tds-person [iri]="a"></tds-person>
+          <tds-person-line [iri]="a"></tds-person-line>
         </li>
       </ul>
     </ng-template>
