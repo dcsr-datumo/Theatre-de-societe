@@ -12,7 +12,9 @@ export class RepresentationsListComponent implements OnInit {
   @Input()
   representations: Observable<RepresentationMatch[]>;
   @Input()
-  title: boolean;
+  header: boolean;
+  @Input()
+  titles: boolean;
   panelledRepresentations: Observable<RepresentationMatch[]>;
   panel: Map<string, boolean> = new Map<string, boolean>();
 

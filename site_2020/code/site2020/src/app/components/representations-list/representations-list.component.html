@@ -1,7 +1,7 @@
 <span *ngIf="panelledRepresentations | async as reps">
 
   <span *ngIf="reps.length>0">
-    <span *ngIf="title">
+    <span *ngIf="header">
       <span *ngIf="reps.length>1;then multi else single"></span>
       <ng-template #single>Représentation</ng-template>
       <ng-template #multi>Représentations</ng-template>
@@ -11,7 +11,7 @@
       <mat-accordion>
         <mat-expansion-panel (opened)="panel[representation.id] = true">
           <mat-expansion-panel-header>
-            <mat-panel-title>
+            <mat-panel-title *ngIf="titles">
 
               <span class="truncate">
                 {{representation.workTitle}}
