@@ -7,7 +7,7 @@ import {
   ReadResource,
   CountQueryResponse,
 } from '@dasch-swiss/dsp-js';
-import { Observable, config, of, Subject } from 'rxjs';
+import { Observable, config, of, Subject, ReplaySubject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
 import { RepresentationMatch } from '../models/representationmatch.model';
@@ -48,8 +48,7 @@ export class KnoraService {
   worksRequest: string;
   representationsBaseRequest: string;
 
-  public placeDetails = new Subject<string>();
-
+  public placeDetails = new ReplaySubject<string>(1);
 
   constructor() {
     this.config = new KnoraApiConfig(
