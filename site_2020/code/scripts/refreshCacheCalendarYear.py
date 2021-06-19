@@ -112,6 +112,8 @@ class Graphdb(Store):
             auth=(self.user, self.password),
             data="{}={}".format(qu, query)
         )
+        if (not response.ok):
+            print("error: {}".format(response.text))
         response.raise_for_status()
         return response.text
        

@@ -1,0 +1,7 @@
+KNORA_USER=example_loic.jaouen@unil.ch
+KNORA_PSWD=example_user_password
+KNORA_HOST=example_http://knora-test.unil.ch
+GRAPHDB_USER=example_graphdb_admin_user
+GRAPHDB_PSWD=example_graphdb_admin_password
+GRAPHDB_HOST=example_http://knora-db.unil.ch:7200
+REPO=example_knora-test
