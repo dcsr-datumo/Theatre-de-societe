@@ -3,9 +3,15 @@
   <span *ngIf="reps.length>0">
     <span *ngIf="header">
       <span *ngIf="reps.length>1;then multi else single"></span>
-      <ng-template #single>Représentation</ng-template>
-      <ng-template #multi>Représentations</ng-template>
+      <ng-template #single>Représentation:</ng-template>
+      <ng-template #multi>Représentations:</ng-template>
     </span>
+
+    <div class="list-item-header list-item-container">
+      <div  *ngIf="titles" class="list-item-header">Titre</div>
+      <div class="list-item-header">Lieu</div>
+      <div class="list-item-header">Date</div>
+    </div>
 
     <mat-list-item *ngFor="let representation of reps">
       <mat-accordion>
