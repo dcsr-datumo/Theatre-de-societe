@@ -501,8 +501,10 @@ export class KnoraService {
       console.log('call getPlace for page: ' + index);
       service.getPlacePage(index).subscribe(
         (page: PlaceMatch[]) => {
+          // for debug, don't load the whole place list
+          // if (page.length > 0 && index < 2) {
           if (page.length > 0) {
-            matches = matches.concat(page);
+              matches = matches.concat(page);
             // if needed sort in the request
             // .sort((a, b) => Number(a.label) - Number(b.label));
             observer.next(matches);
