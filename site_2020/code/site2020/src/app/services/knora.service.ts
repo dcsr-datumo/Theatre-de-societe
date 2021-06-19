@@ -360,24 +360,24 @@ export class KnoraService {
    * - getRepresentationsByLink
    */
 
-  getRepresentationsByLinkRequest(iri: string): string {
+  getRepresentationsByLinkRequest(iri: string, link: string): string {
     return `
         ${this.getRepresentationBaseRequest()}
       }
     `.replace(
       '} WHERE {',
       `} WHERE {
-        BIND(<${iri}> AS ?place)
+        BIND(<${iri}> AS ?${link})
       `);
   }
 
-  getRepresentationsByLinkCount(iri: string): Observable<ApiResponseError | CountQueryResponse> {
-    let request = this.getRepresentationsByLinkRequest(iri);
+  getRepresentationsByLinkCount(iri: string, link: string): Observable<ApiResponseError | CountQueryResponse> {
+    let request = this.getRepresentationsByLinkRequest(iri, link);
     return this.getSearchCount(request);
   }
 
-  getRepresentationsByLink(iri: string): Observable<RepresentationMatch[]> {
-    let request = this.getRepresentationsByLinkRequest(iri);
+  getRepresentationsByLink(iri: string, link: string): Observable<RepresentationMatch[]> {
+    let request = this.getRepresentationsByLinkRequest(iri, link);
     let cacheKey = iri.toString();
     return this.getRepresentations(request, cacheKey);
   }

@@ -27,7 +27,7 @@ export class PlaceComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('place');
     let iri = `http://rdfh.ch/0103/${this.id}`;
     this.place = this.knoraService.getPlace(iri);
-    this.representations = this.knoraService.getRepresentationsByLink(iri);
+    this.representations = this.knoraService.getRepresentationsByLink(iri, "place");
   }
 
 }

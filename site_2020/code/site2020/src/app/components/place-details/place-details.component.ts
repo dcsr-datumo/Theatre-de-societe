@@ -35,7 +35,7 @@ export class PlaceDetailsComponent implements OnInit {
       switchMap((iri: string) => { return this.knoraService.getPlace(iri) } )
     )
     this.representations = this.knoraService.placeDetails.pipe(
-      switchMap((iri: string) => { return this.knoraService.getRepresentationsByLink(iri) } )
+      switchMap((iri: string) => { return this.knoraService.getRepresentationsByLink(iri, "place") } )
     )
   }
 }
