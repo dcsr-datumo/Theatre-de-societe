@@ -1,9 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { Place } from 'src/app/models/place.model';
 import { RepresentationMatch } from 'src/app/models/representationmatch.model';
 import { KnoraService } from 'src/app/services/knora.service';
+
+
+/**
+ * Place details:
+ * right pannel of the map
+ * it shows the details of a place
+ * differs from the place component in the way it gets the place to display
+ */
 
 @Component({
   selector: 'tds-place-details',
@@ -22,11 +31,11 @@ export class PlaceDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.id = this.route.snapshot.paramMap.get('place');
-    // let iri = `http://rdfh.ch/0103/${this.id}`;
-    let us = this;
-    this.place = this.knoraService.getPlaceDetails();
-    //this.representations = this.knoraService.getRepresentationsByLink(iri);
+    this.place = this.knoraService.placeDetails.pipe(
+      switchMap((iri: string) => { return this.knoraService.getPlace(iri) } )
+    )
+    this.representations = this.knoraService.placeDetails.pipe(
+      switchMap((iri: string) => { return this.knoraService.getRepresentationsByLink(iri) } )
+    )
   }
-
 }
