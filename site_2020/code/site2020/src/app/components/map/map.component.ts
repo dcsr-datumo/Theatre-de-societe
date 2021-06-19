@@ -116,30 +116,12 @@ export class MapComponent implements OnInit {
             // ref: https://stackoverflow.com/questions/43460579/angular-2-leaflet-map-how-to-link-to-a-component-from-marker-popup-rout
             //this.popupLinkService.register(m, place.ref, place.name);
 
-            // m.bindPopup(
-            //   // could be an angular component
-            //   // or a call to a service that a component is listening to
-            //   // missing the incoming links (groups and representations)
-            //   `<button id="${place.ref}">${place.name}</button>
-            //   <div style="overflow: auto; max-height: 30em">${place.notice}</div>
-            //   `
-            // );
-
-
-            // also fails:
-            // let pu = m.getPopup();
-            // pu.addEventListener('click', (e : any)=> {
-            //   this.ngZone.run(() => {
-            //     this.router.navigate([`/place/${place.ref}`])
-            //   })
-            // });
-
-            // m.on('popupopen' , () => {
-            //   this.linkPopup(place.ref);
-            // });
-
             m.on('click' , () => {
-              this.linkPopup2(place);
+              this.ngZone.run(() => {
+                console.log("map to placeDetail: " + place.id + " : "+ place.name);
+                this.knoraService.placeDetails.next(place.id);
+              });
+
             });
 
             return m;
@@ -156,27 +138,4 @@ export class MapComponent implements OnInit {
       }
     );
   }
-
-  linkPopup(ref: string) {
-    this.elementRef.nativeElement.querySelector(`#${ref}`)
-    .addEventListener('click', (e : any)=> {
-      this.ngZone.run(() => {
-        this.map.off();
-        this.map.remove();
-        this.router.navigate(["/place/", ref]);
-      })
-    });
-  }
-
-
-  linkPopup2(place: PlaceMatch) {
-    this.elementRef.nativeElement.addEventListener(
-      'click', (e : any)=> {
-        this.ngZone.run(() => {
-          this.knoraService.placeDetails.next(place.id);
-        })
-      }
-    );
-  }
-
 }
