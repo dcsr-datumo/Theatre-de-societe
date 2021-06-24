@@ -310,6 +310,8 @@ export class KnoraService {
       console.log('call getRepresentations for page: ' + index);
       service.getRepresentationsPage(request, index).subscribe(
         (page: RepresentationMatch[]) => {
+          // for debug purposes
+          // if (page.length > 0 && index < 2) {
           if (page.length > 0) {
             representations = representations.concat(page);
             // if needed sort in the request
