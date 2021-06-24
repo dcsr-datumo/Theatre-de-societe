@@ -44,7 +44,7 @@ import { NoAccentPipe } from './pipes/no-accent.pipe';
 import { WorkLineComponent } from './components/work-line/work-line.component';
 import { FilterWorkTitlePipe } from './pipes/filter-work-title.pipe';
 import { FormsModule } from '@angular/forms';
-import { PersonComponent } from './components/person/person.component';
+import { PersonLineComponent } from './components/person-line/person-line.component';
 import { GroupLineComponent } from './components/group-line/group-line.component';
 import { MembershipLineComponent } from './components/membership-line/membership-line.component';
 import { PlaceLineComponent } from './components/place-line/place-line.component';
@@ -61,7 +61,7 @@ import { PlaceDetailsComponent } from './components/place-details/place-details.
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
