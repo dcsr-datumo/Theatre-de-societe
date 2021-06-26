@@ -4,9 +4,9 @@ import { map } from 'rxjs/operators';
 import { RepresentationMatch } from 'src/app/models/representationmatch.model';
 
 @Component({
-  selector: 'tds-representations-list',
-  templateUrl: './representations-list.component.html',
-  styleUrls: ['./representations-list.component.scss']
+  selector: "tds-representations-list",
+  templateUrl: "./representations-list.component.html",
+  styleUrls: ["./representations-list.component.scss"],
 })
 export class RepresentationsListComponent implements OnInit {
   @Input()
@@ -15,23 +15,18 @@ export class RepresentationsListComponent implements OnInit {
   header: boolean;
   @Input()
   titles: boolean;
-  panelledRepresentations: Observable<RepresentationMatch[]>;
   panel: Map<string, boolean> = new Map<string, boolean>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.panelledRepresentations = this.representations
-      .pipe(
-        map( (representations: RepresentationMatch[]) =>
-          representations.map( (representation: RepresentationMatch) =>
-            {
-              this.panel[representation.id] = false;
-              return representation;
-            }
-          )
-        )
-      );
+    this.representations.pipe(
+      map((representations: RepresentationMatch[]) =>
+        representations.map((representation: RepresentationMatch) => {
+          // by default, fold in the elements
+          this.panel[representation.id] = false;
+        })
+      )
+    );
   }
-
 }
