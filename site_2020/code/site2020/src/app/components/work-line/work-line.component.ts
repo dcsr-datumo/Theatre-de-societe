@@ -22,7 +22,7 @@ export class WorkLineComponent implements OnInit {
     this.work = this.knoraService.getWork(this.iri);
   }
 
-  getRepresentations(iri: string): Observable<RepresentationMatch[]> {
+  getRepresentations(): Observable<RepresentationMatch[]> {
     return this.knoraService.getRepresentationsByLink(this.iri, "work");
   }
 }
