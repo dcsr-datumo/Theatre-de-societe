@@ -22,7 +22,6 @@ import { KnoraService } from 'src/app/services/knora.service';
 export class PlaceDetailsComponent implements OnInit {
   id : string;
   place : Observable<Place>;
-  representations : Observable<RepresentationMatch[]>;
   title=true;
 
   constructor(
@@ -34,8 +33,9 @@ export class PlaceDetailsComponent implements OnInit {
     this.place = this.knoraService.placeDetails.pipe(
       switchMap((iri: string) => { return this.knoraService.getPlace(iri) } )
     )
-    this.representations = this.knoraService.placeDetails.pipe(
-      switchMap((iri: string) => { return this.knoraService.getRepresentationsByLink(iri, "place") } )
-    )
+  }
+
+  getRepresentations(iri: string) {
+    return this.knoraService.getRepresentationsByLink(iri, "place");
   }
 }

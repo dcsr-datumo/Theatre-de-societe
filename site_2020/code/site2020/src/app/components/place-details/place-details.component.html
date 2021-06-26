@@ -19,8 +19,8 @@
     </span>
 
     <tds-representations-list
-    [representations]="representations"
-    [title]="title"
+    [representations]="getRepresentations(p.id)"
+    [titles]=true
     >
   </tds-representations-list>
 </div>
