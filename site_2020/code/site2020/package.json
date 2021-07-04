@@ -27,8 +27,10 @@
     "angular-material": "^1.1.24",
     "leaflet": "^1.7.1",
     "material-design-icons": "^3.0.1",
+    "ng2-pdf-viewer": "^6.4.1",
     "rxjs": "^6.5.5",
     "tslib": "^1.10.0",
+    "worker-loader": "^3.0.8",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

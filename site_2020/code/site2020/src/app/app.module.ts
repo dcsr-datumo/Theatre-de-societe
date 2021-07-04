@@ -21,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ProjetComponent } from './components/projet/projet.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
+import { PublicationsComponent } from './components/publications/publications.component';
 import { BiblioComponent } from './components/biblio/biblio.component';
 import { PartenairesComponent } from './components/partenaires/partenaires.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -52,6 +53,7 @@ import { ConvertStandofPipe } from './pipes/convert-standof.pipe';
 import { RepresentationsListComponent } from './components/representations-list/representations-list.component';
 import { PopupLinkComponent } from './components/popup-link/popup-link.component';
 import { PlaceDetailsComponent } from './components/place-details/place-details.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,7 @@ import { PlaceDetailsComponent } from './components/place-details/place-details.
     RepresentationLineComponent,
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
-    ProjetComponent, AgendaComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
+    ProjetComponent, AgendaComponent, PublicationsComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
     PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent
   ],
   imports: [
@@ -70,7 +72,8 @@ import { PlaceDetailsComponent } from './components/place-details/place-details.
     MatExpansionModule, MatMenuModule,
     LeafletModule,
     // LeafletMarkerClusterModule,
-    FormsModule
+    FormsModule,
+    PdfViewerModule
   ],
   providers: [ConvertStandofPipe],
   bootstrap: [AppComponent],

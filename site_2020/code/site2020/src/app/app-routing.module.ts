@@ -6,6 +6,7 @@ import { CalendarPageComponent } from './components/calendar-page/calendar-page.
 import { ProjetComponent } from './components/projet/projet.component';
 import { EquipeComponent } from './components/equipe/equipe.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
+import { PublicationsComponent } from './components/publications/publications.component';
 import { BiblioComponent } from './components/biblio/biblio.component';
 import { PartenairesComponent } from './components/partenaires/partenaires.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'projet', component: ProjetComponent },
   { path: 'equipe', component: EquipeComponent },
   { path: 'agenda', component: AgendaComponent },
+  { path: 'publications', component: PublicationsComponent },
   { path: 'biblio', component: BiblioComponent },
   { path: 'partenaires', component: PartenairesComponent },
   { path: 'contact', component: ContactComponent },

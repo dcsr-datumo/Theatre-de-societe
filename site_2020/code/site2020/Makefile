@@ -1,6 +1,6 @@
 ACCOUNT=platec
 CONTAINER=tds
-VERSION=v0.6.2-fix
+VERSION=v0.6.3
 
 .PHONY: build
 build: ## builds the web-app container
@@ -20,7 +20,7 @@ rm: ## remove the container
 
 .PHONY: rmi
 rmi: ## remove the build image
-	docker rmi ${CONTAINER}:${VERSION}
+	docker rmi ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .PHONY: login
 login: ## docker hub login

@@ -10,7 +10,7 @@ export class SiteService {
       'carte', 'calendrier', 'auteurs', 'pièces'
     ],
     'à propos': [
-      'projet', 'equipe', 'agenda', 'biblio', 'partenaires', 'contact'
+      'projet', 'equipe', 'agenda', 'publications', 'biblio', 'partenaires', 'contact'
     ]
   };
   selectedMenuItem = 'à propos';
