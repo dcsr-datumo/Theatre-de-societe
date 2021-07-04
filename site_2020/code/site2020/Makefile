@@ -20,7 +20,7 @@ rm: ## remove the container
 
 .PHONY: rmi
 rmi: ## remove the build image
-	docker rmi ${CONTAINER}:${VERSION}
+	docker rmi ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .PHONY: login
 login: ## docker hub login
