@@ -52,6 +52,7 @@ import { ConvertStandofPipe } from './pipes/convert-standof.pipe';
 import { RepresentationsListComponent } from './components/representations-list/representations-list.component';
 import { PopupLinkComponent } from './components/popup-link/popup-link.component';
 import { PlaceDetailsComponent } from './components/place-details/place-details.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { PlaceDetailsComponent } from './components/place-details/place-details.
     MatExpansionModule, MatMenuModule,
     LeafletModule,
     // LeafletMarkerClusterModule,
-    FormsModule
+    FormsModule,
+    PdfViewerModule
   ],
   providers: [ConvertStandofPipe],
   bootstrap: [AppComponent],
