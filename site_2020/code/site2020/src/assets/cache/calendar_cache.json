@@ -1,0 +1,590 @@
+[
+  {
+    "year": "0001",
+    "representations": "61"
+  },
+  {
+    "year": "1619",
+    "representations": "1"
+  },
+  {
+    "year": "1635",
+    "representations": "1"
+  },
+  {
+    "year": "1659",
+    "representations": "1"
+  },
+  {
+    "year": "1664",
+    "representations": "1"
+  },
+  {
+    "year": "1669",
+    "representations": "1"
+  },
+  {
+    "year": "1683",
+    "representations": "1"
+  },
+  {
+    "year": "1688",
+    "representations": "1"
+  },
+  {
+    "year": "1694",
+    "representations": "1"
+  },
+  {
+    "year": "1699",
+    "representations": "1"
+  },
+  {
+    "year": "1700",
+    "representations": "1"
+  },
+  {
+    "year": "1701",
+    "representations": "2"
+  },
+  {
+    "year": "1702",
+    "representations": "2"
+  },
+  {
+    "year": "1705",
+    "representations": "1"
+  },
+  {
+    "year": "1706",
+    "representations": "3"
+  },
+  {
+    "year": "1707",
+    "representations": "1"
+  },
+  {
+    "year": "1708",
+    "representations": "1"
+  },
+  {
+    "year": "1712",
+    "representations": "1"
+  },
+  {
+    "year": "1713",
+    "representations": "2"
+  },
+  {
+    "year": "1714",
+    "representations": "5"
+  },
+  {
+    "year": "1716",
+    "representations": "3"
+  },
+  {
+    "year": "1718",
+    "representations": "1"
+  },
+  {
+    "year": "1719",
+    "representations": "2"
+  },
+  {
+    "year": "1720",
+    "representations": "1"
+  },
+  {
+    "year": "1721",
+    "representations": "3"
+  },
+  {
+    "year": "1722",
+    "representations": "7"
+  },
+  {
+    "year": "1725",
+    "representations": "3"
+  },
+  {
+    "year": "1726",
+    "representations": "1"
+  },
+  {
+    "year": "1727",
+    "representations": "1"
+  },
+  {
+    "year": "1729",
+    "representations": "2"
+  },
+  {
+    "year": "1730",
+    "representations": "2"
+  },
+  {
+    "year": "1731",
+    "representations": "6"
+  },
+  {
+    "year": "1732",
+    "representations": "15"
+  },
+  {
+    "year": "1733",
+    "representations": "6"
+  },
+  {
+    "year": "1734",
+    "representations": "5"
+  },
+  {
+    "year": "1735",
+    "representations": "1"
+  },
+  {
+    "year": "1736",
+    "representations": "7"
+  },
+  {
+    "year": "1737",
+    "representations": "5"
+  },
+  {
+    "year": "1738",
+    "representations": "2"
+  },
+  {
+    "year": "1739",
+    "representations": "7"
+  },
+  {
+    "year": "1740",
+    "representations": "3"
+  },
+  {
+    "year": "1741",
+    "representations": "5"
+  },
+  {
+    "year": "1742",
+    "representations": "2"
+  },
+  {
+    "year": "1743",
+    "representations": "1"
+  },
+  {
+    "year": "1744",
+    "representations": "3"
+  },
+  {
+    "year": "1745",
+    "representations": "9"
+  },
+  {
+    "year": "1746",
+    "representations": "2"
+  },
+  {
+    "year": "1747",
+    "representations": "32"
+  },
+  {
+    "year": "1748",
+    "representations": "30"
+  },
+  {
+    "year": "1749",
+    "representations": "35"
+  },
+  {
+    "year": "1750",
+    "representations": "58"
+  },
+  {
+    "year": "1751",
+    "representations": "27"
+  },
+  {
+    "year": "1752",
+    "representations": "18"
+  },
+  {
+    "year": "1753",
+    "representations": "9"
+  },
+  {
+    "year": "1754",
+    "representations": "29"
+  },
+  {
+    "year": "1755",
+    "representations": "23"
+  },
+  {
+    "year": "1756",
+    "representations": "1"
+  },
+  {
+    "year": "1757",
+    "representations": "23"
+  },
+  {
+    "year": "1758",
+    "representations": "12"
+  },
+  {
+    "year": "1759",
+    "representations": "14"
+  },
+  {
+    "year": "1760",
+    "representations": "30"
+  },
+  {
+    "year": "1761",
+    "representations": "13"
+  },
+  {
+    "year": "1762",
+    "representations": "33"
+  },
+  {
+    "year": "1763",
+    "representations": "24"
+  },
+  {
+    "year": "1764",
+    "representations": "8"
+  },
+  {
+    "year": "1765",
+    "representations": "11"
+  },
+  {
+    "year": "1766",
+    "representations": "15"
+  },
+  {
+    "year": "1767",
+    "representations": "25"
+  },
+  {
+    "year": "1768",
+    "representations": "20"
+  },
+  {
+    "year": "1769",
+    "representations": "20"
+  },
+  {
+    "year": "1770",
+    "representations": "17"
+  },
+  {
+    "year": "1771",
+    "representations": "5"
+  },
+  {
+    "year": "1772",
+    "representations": "12"
+  },
+  {
+    "year": "1773",
+    "representations": "6"
+  },
+  {
+    "year": "1774",
+    "representations": "2"
+  },
+  {
+    "year": "1775",
+    "representations": "12"
+  },
+  {
+    "year": "1776",
+    "representations": "8"
+  },
+  {
+    "year": "1777",
+    "representations": "11"
+  },
+  {
+    "year": "1778",
+    "representations": "12"
+  },
+  {
+    "year": "1779",
+    "representations": "12"
+  },
+  {
+    "year": "1780",
+    "representations": "9"
+  },
+  {
+    "year": "1781",
+    "representations": "18"
+  },
+  {
+    "year": "1782",
+    "representations": "12"
+  },
+  {
+    "year": "1783",
+    "representations": "7"
+  },
+  {
+    "year": "1784",
+    "representations": "17"
+  },
+  {
+    "year": "1785",
+    "representations": "18"
+  },
+  {
+    "year": "1786",
+    "representations": "8"
+  },
+  {
+    "year": "1787",
+    "representations": "2"
+  },
+  {
+    "year": "1788",
+    "representations": "7"
+  },
+  {
+    "year": "1789",
+    "representations": "18"
+  },
+  {
+    "year": "1790",
+    "representations": "3"
+  },
+  {
+    "year": "1791",
+    "representations": "4"
+  },
+  {
+    "year": "1792",
+    "representations": "7"
+  },
+  {
+    "year": "1793",
+    "representations": "1"
+  },
+  {
+    "year": "1794",
+    "representations": "1"
+  },
+  {
+    "year": "1798",
+    "representations": "1"
+  },
+  {
+    "year": "1799",
+    "representations": "6"
+  },
+  {
+    "year": "1805",
+    "representations": "3"
+  },
+  {
+    "year": "1806",
+    "representations": "13"
+  },
+  {
+    "year": "1807",
+    "representations": "7"
+  },
+  {
+    "year": "1808",
+    "representations": "3"
+  },
+  {
+    "year": "1809",
+    "representations": "1"
+  },
+  {
+    "year": "1811",
+    "representations": "9"
+  },
+  {
+    "year": "1817",
+    "representations": "1"
+  },
+  {
+    "year": "1835",
+    "representations": "2"
+  },
+  {
+    "year": "1836",
+    "representations": "14"
+  },
+  {
+    "year": "1837",
+    "representations": "13"
+  },
+  {
+    "year": "1839",
+    "representations": "4"
+  },
+  {
+    "year": "1840",
+    "representations": "5"
+  },
+  {
+    "year": "1841",
+    "representations": "5"
+  },
+  {
+    "year": "1842",
+    "representations": "2"
+  },
+  {
+    "year": "1844",
+    "representations": "2"
+  },
+  {
+    "year": "1846",
+    "representations": "11"
+  },
+  {
+    "year": "1847",
+    "representations": "20"
+  },
+  {
+    "year": "1848",
+    "representations": "2"
+  },
+  {
+    "year": "1849",
+    "representations": "22"
+  },
+  {
+    "year": "1850",
+    "representations": "33"
+  },
+  {
+    "year": "1851",
+    "representations": "22"
+  },
+  {
+    "year": "1852",
+    "representations": "10"
+  },
+  {
+    "year": "1853",
+    "representations": "6"
+  },
+  {
+    "year": "1854",
+    "representations": "3"
+  },
+  {
+    "year": "1855",
+    "representations": "1"
+  },
+  {
+    "year": "1856",
+    "representations": "28"
+  },
+  {
+    "year": "1857",
+    "representations": "18"
+  },
+  {
+    "year": "1858",
+    "representations": "5"
+  },
+  {
+    "year": "1859",
+    "representations": "5"
+  },
+  {
+    "year": "1860",
+    "representations": "9"
+  },
+  {
+    "year": "1861",
+    "representations": "15"
+  },
+  {
+    "year": "1862",
+    "representations": "5"
+  },
+  {
+    "year": "1863",
+    "representations": "9"
+  },
+  {
+    "year": "1865",
+    "representations": "2"
+  },
+  {
+    "year": "1866",
+    "representations": "1"
+  },
+  {
+    "year": "1867",
+    "representations": "5"
+  },
+  {
+    "year": "1868",
+    "representations": "2"
+  },
+  {
+    "year": "1869",
+    "representations": "1"
+  },
+  {
+    "year": "1871",
+    "representations": "2"
+  },
+  {
+    "year": "1874",
+    "representations": "5"
+  },
+  {
+    "year": "1875",
+    "representations": "5"
+  },
+  {
+    "year": "1876",
+    "representations": "1"
+  },
+  {
+    "year": "1877",
+    "representations": "1"
+  },
+  {
+    "year": "1879",
+    "representations": "1"
+  },
+  {
+    "year": "1883",
+    "representations": "6"
+  },
+  {
+    "year": "1884",
+    "representations": "1"
+  },
+  {
+    "year": "1886",
+    "representations": "1"
+  },
+  {
+    "year": "1892",
+    "representations": "1"
+  },
+  {
+    "year": "1893",
+    "representations": "2"
+  },
+  {
+    "year": "2018",
+    "representations": "1"
+  }
+]

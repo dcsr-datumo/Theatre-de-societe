@@ -1,17 +1,15 @@
-<mat-progress-bar
-*ngIf="loading | async"
-mode="indeterminate"
-color="warn"
-style="position: absolute; top: 0; z-index: 100;"
->
-</mat-progress-bar>
-
 <h1>
   Recherche de représentation(s) par année
 </h1>
 
-<ul *ngIf="years | async as yearspaged">
-  <li *ngFor="let year of yearspaged" [ngClass]='{"century-spacer": (year.label >= "1800" && year.label <= "1809")}'>
-    <tds-year [year]=year></tds-year>
+<span *ngIf="outliers">
+  <div>
+    <tds-year [year]=1 [representations]=outliers></tds-year>
+  </div>
+</span>
+
+<ul *ngIf="yearsQC">
+  <li *ngFor="let representations of yearsQC; let i = index;" [ngClass]='{"century-spacer": (i+1700 >= 1800 && i+1700 <= 1809)}'>
+    <tds-year [year]=i+1700 [representations]=representations></tds-year>
   </li>
 </ul>
