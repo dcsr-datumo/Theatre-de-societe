@@ -29,7 +29,8 @@
                 {{representation.placeName}}
               </span>
               <span class="spacer"></span>
-              <span class="truncate">
+
+              <span *ngIf="representation.dateShort !== '1'" class="truncate">
                 {{representation.dateShort}}
               </span>
             </mat-panel-description>
