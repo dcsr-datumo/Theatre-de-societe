@@ -12,4 +12,7 @@
   <h1>Représentations de l'année {{ year }}</h1>
   <tds-representations-list [representations]="representations" [titles]="true" [header]="false"></tds-representations-list>
 
+  <a routerLink="/calendrier" title="retour vers le calendrier">
+    <mat-icon aria-hidden="false" aria-label="calendrier">date_range</mat-icon>
+  </a>
 </div>
