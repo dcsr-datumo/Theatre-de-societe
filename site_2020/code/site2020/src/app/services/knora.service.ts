@@ -27,7 +27,9 @@ import { PersonMatchAuthor } from '../models/personmatchauthor.model';
 import { Group } from '../models/group.model';
 import { Membership } from '../models/membership.model';
 import CacheCalendarJson from '../../assets/cache/calendar_cache.json';
+import CacheAuthorsJson from '../../assets/cache/authors_cache.json';
 import { allowedNodeEnvironmentFlags } from 'process';
+import { PersonCache } from '../models/personCache.model';
 
 @Injectable({
   providedIn: 'root',
@@ -300,6 +302,13 @@ export class KnoraService {
     }
 
     return all;
+  }
+
+  /**
+   * reads a cache file
+   */
+  getAuthorsQuickCache(): PersonCache[] {
+    return CacheAuthorsJson;
   }
 
   getQueryFilter(year: number): string {

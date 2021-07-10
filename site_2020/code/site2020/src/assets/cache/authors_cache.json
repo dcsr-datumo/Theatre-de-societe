@@ -1,0 +1,2000 @@
+[
+  {
+    "id": "http://rdfh.ch/0103/-en0dWJHRqKznwncfzQEWg",
+    "familyName": null,
+    "givenName": null,
+    "pseudonym": "Le Gros"
+  },
+  {
+    "id": "http://rdfh.ch/0103/o9tWpF9ySlWkgm8QHn_AQg",
+    "familyName": null,
+    "givenName": null,
+    "pseudonym": "Mlle Rosalie"
+  },
+  {
+    "id": "http://rdfh.ch/0103/tBgYPCZOQFu4NCQeaTmAsg",
+    "familyName": "Abrantès, Junot, duchesse de",
+    "givenName": "Laure Adélaïde Constance",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/beNElLHxRxWdW91kYUx32w",
+    "familyName": "Achères (d')",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/amEvHEsDQNCqzpSzquSmxw",
+    "familyName": "Albergati Capacelli",
+    "givenName": "Francesco",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/jYGJiN4HTWykDFC_AVXo-Q",
+    "familyName": "Alfieri",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/FfMJp68zQSGCyLVF4nw7RA",
+    "familyName": "Allainval (d')",
+    "givenName": "Léonor-Jean-Christine Soulas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/7Gb_TX3qQF29yfahMJ4Y6Q",
+    "familyName": "Ancelot",
+    "givenName": "François",
+    "pseudonym": "Ernest"
+  },
+  {
+    "id": "http://rdfh.ch/0103/AqVvcl04R_CHXsTlwxtj9Q",
+    "familyName": "Anezague",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/UiBVuTavRzWF0p6USZ15gg",
+    "familyName": "Anseaume",
+    "givenName": "Louis",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ZijOB_zoSXir1AWOTV_AMg",
+    "familyName": "Audinot",
+    "givenName": "Nicolas-Médard",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/orAYIkFxTUSDqI18kw-otA",
+    "familyName": "Baculard d'Arnaud",
+    "givenName": "François-Thomas-Marie de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/qlGgMlVVSI6XRkI3NerlMA",
+    "familyName": "Balisson de Rougemont",
+    "givenName": "Michel-Nicolas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/DabiohsrQ9-1mDl-uD9q7Q",
+    "familyName": "Baret",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/VT6iVsyTQfyvShUgEzw5oA",
+    "familyName": "Baron",
+    "givenName": "Michel",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/VgroA9neTk2MVJicDEXUKA",
+    "familyName": "Barthe",
+    "givenName": "Nicolas-Thomas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/qju_T3HNRaKc3PW55DugtA",
+    "familyName": "Battu",
+    "givenName": "Léon",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/K2Z7Qr_TSryYodlz4se4Jg",
+    "familyName": "Beaumarchais (Caron de)",
+    "givenName": "Pierre-Augustin",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/zdJtjpnlQ9uGS6MnT8gqYQ",
+    "familyName": "Belloy (de)",
+    "givenName": "Pierre Laurent",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/CPkhXqZRQN-cdCHSh-npOA",
+    "familyName": "Benoist",
+    "givenName": "Françoise-Albine",
+    "pseudonym": "Madame Benoît"
+  },
+  {
+    "id": "http://rdfh.ch/0103/GTgAA3JBQDSRVCc0bYQb0g",
+    "familyName": "Berr de Turique",
+    "givenName": "Arthur ",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/o2KsJN7vTV2x4Yoh_vX1UA",
+    "familyName": "Biancolelli",
+    "givenName": "Pierre-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/_vSZ9OhdSl24IKp41Qoj7A",
+    "familyName": "Billard du Monceau",
+    "givenName": "Edme",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/_vSZ9OhdSl24IKp41Qoj7A",
+    "familyName": "Billard-Dumonceau",
+    "givenName": "Edme",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/3yJL2CqpTOeNLlCJkh9cdw",
+    "familyName": "Blavet",
+    "givenName": "Michel",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Ni4CFP9_RDSUOG4QN7vR_A",
+    "familyName": "Bocage",
+    "givenName": "Paul",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/wutsuyHJSeSpQtp4pxsnLA",
+    "familyName": "Boissy",
+    "givenName": "Louis de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/oBrkyb3tQgmJzqme-F5DLg",
+    "familyName": "Bonnet de La Verdière",
+    "givenName": "Jean-Baptiste-Olivier",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/a8UirgpLRN-KEEX0C65frQ",
+    "familyName": "Bonvallet des Brosses",
+    "givenName": " Abbé Paul-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/wtFC8tDpScG_hl8KiC__OA",
+    "familyName": "Bordelon",
+    "givenName": "Laurent",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/5aP5BiLFT7aZxIqv9JbKsQ",
+    "familyName": "Boudin",
+    "givenName": "Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/h9_W01uVTCaemHnUbkJZRA",
+    "familyName": "Bouillerie",
+    "givenName": "M. de la",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/x2Lig4THQ16hz9ciBKN-kg",
+    "familyName": "Bouillé",
+    "givenName": "Madeleine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/u372rFV-Q9i_4EgvfXDLsw",
+    "familyName": "Boulogne",
+    "givenName": "Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/a_8rrv2vQsK8YfchCMZ29g",
+    "familyName": "Bourbon-Condé, comte de Clermont",
+    "givenName": "Louis de",
+    "pseudonym": "Comte de Clermont"
+  },
+  {
+    "id": "http://rdfh.ch/0103/pkPYBvVOTBKipanny1cfBw",
+    "familyName": "Bourgeois",
+    "givenName": "Anicet",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/oZbgK6n2TTSwhu8eHeibbA",
+    "familyName": "Boursault",
+    "givenName": "Edmé",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/XIsSkKp1Saadf3u9FE8vsg",
+    "familyName": "Boutet de Monvel",
+    "givenName": "Jacques-Marie",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/CxvBevSQQwuUc6vXwzi7gw",
+    "familyName": "Brancas, duc de",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ivKJ2wVjQ2K5Xl_5x1yauQ",
+    "familyName": "Brazier",
+    "givenName": "Nicolas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/o86r8RxOQ12sTRZ6nipKag",
+    "familyName": "Brazier",
+    "givenName": "Nicolas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/qhr-hqGgSDO0_hgV5G3uEg",
+    "familyName": "Brizard",
+    "givenName": "Gabriel",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/PtoP3pqqRJyMnR5AGu9Zew",
+    "familyName": "Brohan",
+    "givenName": "Augustine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/OFmbiaoqQJmv6SwSX0XMqQ",
+    "familyName": "Brueys (de)",
+    "givenName": "David Augustin",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/sL8ogthFQuK37t0qdTtZlw",
+    "familyName": "Bury (de)",
+    "givenName": "Bernard",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/n6K_wpLNTqy3WN6OJCUGiw",
+    "familyName": "Béraud de La Haie de Riou, Marquise de Montesson",
+    "givenName": "Charlotte-Jeanne",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/YeZ8_op4QSawfzSiyMo9YQ",
+    "familyName": "Cadol",
+    "givenName": "Edouard",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Y0-roJMrSECGMXI3ozFpvA",
+    "familyName": "Cahusac",
+    "givenName": "Louis de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/pZEnsej2RvK55T_fRzzjzw",
+    "familyName": "Cailleau",
+    "givenName": "André-Charles",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/r8YswuxETkq7a0Hh7LSYKw",
+    "familyName": "Calderón de la Barca",
+    "givenName": "Pedro",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/bt7Vj-g_REmZ230AuovyUQ",
+    "familyName": "Callot",
+    "givenName": "François-Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/pWFxOqpuSEawkArtA-05Pg",
+    "familyName": "Campra",
+    "givenName": "André",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Xo5BtlNqSiKTfe3WjFblnA",
+    "familyName": "Camus (le)",
+    "givenName": "Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/XOiT7yJISM2IXui3YFpG-g",
+    "familyName": "Camus (le)",
+    "givenName": "Louis-Florent",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/JNBWXN8KTRWzMSVM4ss7XA",
+    "familyName": "Camus de Mézières (le)",
+    "givenName": "Nicolas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/EGQoq0dUQImRVF1e-0xvVg",
+    "familyName": "Caraman",
+    "givenName": "Mme de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/5hPVEhVDSjKPlWM7bgihow",
+    "familyName": "Carlet de Chamblain de Marivaux",
+    "givenName": "Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/HZNl4VRWQYq2r8Jqy_XjeA",
+    "familyName": "Carmontelle",
+    "givenName": "Louis",
+    "pseudonym": "Carmontelle"
+  },
+  {
+    "id": "http://rdfh.ch/0103/ujY0JKSLSV-uNVZZgyzGZA",
+    "familyName": "Carmouche",
+    "givenName": "Pierre-Frédéric-Adolphe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/11-e3rMeR-ixws9tTJ_f3g",
+    "familyName": "Carolet",
+    "givenName": "Denis",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/plXdDiqMS2KYJl2Y6Ci33A",
+    "familyName": "Carpentras, archevêque, évêque",
+    "givenName": "Monseigneur Malachie d'Inguimbert",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/a7DCWxzNTniAWJep6a3O7A",
+    "familyName": "Carrelet de Marron",
+    "givenName": "Marie-Anne",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/HZNl4VRWQYq2r8Jqy_XjeA",
+    "familyName": "Carrogis",
+    "givenName": "Louis",
+    "pseudonym": "Carmontelle"
+  },
+  {
+    "id": "http://rdfh.ch/0103/V7WPLJVdT_-y5XA5u-kIIw",
+    "familyName": "Carré",
+    "givenName": "Michel",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/JlwO0oc-S8Cm7N_WUNs1HQ",
+    "familyName": "Caylus (de)",
+    "givenName": "Anne Claude Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/FWYThU9kTWi36CsRsq18qQ",
+    "familyName": "Chabanon",
+    "givenName": "Michel Paul Guy de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/RhHNsQZbTeC5u0eyBm6d5Q",
+    "familyName": "Chamfort, de",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/kAVZYlukQFymX45N25tc0g",
+    "familyName": "Champein",
+    "givenName": "Stanislas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/RhHNsQZbTeC5u0eyBm6d5Q",
+    "familyName": "Champfort, de",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/xmaSkFsARjCo9m8XdCKxXw",
+    "familyName": "Champmeslé",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/iS8hpD4FQfiEjnjEo2myPA",
+    "familyName": "Charpentier",
+    "givenName": "Marc Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/p8HMnj0jT1ekmPZbc9IxOA",
+    "familyName": "Chastellux",
+    "givenName": "François Jean de",
+    "pseudonym": "Cheralier de Châtelus"
+  },
+  {
+    "id": "http://rdfh.ch/0103/cTcbwTQrTeKvpfDN-tSk2g",
+    "familyName": "Choudard",
+    "givenName": "Pierre Jean Baptiste",
+    "pseudonym": "Desforges"
+  },
+  {
+    "id": "http://rdfh.ch/0103/h7YPgH5CRhifkCRlFNuuXA",
+    "familyName": "Cifolelli",
+    "givenName": "Giovanni",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/gwznklGPQ5aUHWu3Xo1CXg",
+    "familyName": "Claris de Florian",
+    "givenName": "Jean-Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/dTMnQ4_uRN6fvyMCD2EZKA",
+    "familyName": "Clary",
+    "givenName": "Étienne",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/kmmPpo03Q4me-xijiidIcA",
+    "familyName": "Clermont, comte de",
+    "givenName": "Louis de Bourbon-Condé",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/eco9GvpGRvWhM-K8Yg5dxQ",
+    "familyName": "Coiny",
+    "givenName": "Jacques-Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/V71mm_w1TSyfkgijgEUdsA",
+    "familyName": "Colalto Mattiuzzi",
+    "givenName": "Antonio Cristoforo",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/hbMcqd_CSni_VTVKvpSg3Q",
+    "familyName": "Colardeau",
+    "givenName": "Charles-Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/010jBketTUyRN_Kd5qWMkA",
+    "familyName": "Colet",
+    "givenName": "Hippolyte",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/gITCNXdYQceiRVU6AlhPzw",
+    "familyName": "Colet",
+    "givenName": "Louise",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ixPjAET5RiKONUxoOZsZbw",
+    "familyName": "Collin d'Harleville",
+    "givenName": "Jean-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/jN96ZvycRK-7oCPLbzM98A",
+    "familyName": "Collin de Blamont",
+    "givenName": "François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/cLsACbF-RiSIYH1fDbow0Q",
+    "familyName": "Collé",
+    "givenName": "Charles",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Pp5SSh57SVerh0gu6uyu1g",
+    "familyName": "Comte de Linières",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/mM_NHBa-R1O7hHtsojsjjg",
+    "familyName": "Cordelet",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/rX-Ik1JEQKKOQ1mpnKP7zA",
+    "familyName": "Cordier de Launay, baronne de Staal",
+    "givenName": "Marguerite-Jeanne",
+    "pseudonym": "Mme de Staal-Delaunay"
+  },
+  {
+    "id": "http://rdfh.ch/0103/ZA6y7nfqStORllwr7x_ELw",
+    "familyName": "Corneille",
+    "givenName": "Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/JU84AjdXRL2uoWevU7SDWA",
+    "familyName": "Corneille",
+    "givenName": "Thomas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/lpt3V8ETQmmLnWoMIxgpWw",
+    "familyName": "Courcy",
+    "givenName": "Frédéric de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/aSsg2euwTq2JZu4mHmyoog",
+    "familyName": "Craven",
+    "givenName": "Lady Elizabeth",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Mn88j__2QaCSPolKdOt9fw",
+    "familyName": "Crébillon",
+    "givenName": "Prosper Jolyot de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/-pk_s7aST4SDze-q-6da3w",
+    "familyName": "Cérou",
+    "givenName": "Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/gWHjeRVUSSKizpkQ3-XSEQ",
+    "familyName": "D'Orléans, Duc d'Orléans (1701-1723)",
+    "givenName": "Philippe",
+    "pseudonym": "Le Régent"
+  },
+  {
+    "id": "http://rdfh.ch/0103/A7ZRJgtKQUuj8qtImZqEVw",
+    "familyName": "D***",
+    "givenName": "Mademoiselle",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/EfGvicwGTqmnwyCrZZtqdg",
+    "familyName": "Da Ponte",
+    "givenName": "Lorenzo",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/kaGoBnYERWW1V6_BfbS_AA",
+    "familyName": "Dalayrac",
+    "givenName": "Nicolas-Marie",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/cvSpTksuR-Kw6pbwuQYwlQ",
+    "familyName": "Dancourt",
+    "givenName": "Florent Carton dit",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/9VoJ-n2tTau5ec7G-OVPSg",
+    "familyName": "Dauvergne",
+    "givenName": "Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/PYkt2QawQKC7ZgsBpIbZ9A",
+    "familyName": "De la Font",
+    "givenName": "Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/bUs0nvc6RbaPGEg4CLTZ7A",
+    "familyName": "Deffand, marquise du",
+    "givenName": "Marie de Vichy-Chamrond",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/hfhqQNG0Tue8q6ZGbvsMjg",
+    "familyName": "Dehesse",
+    "givenName": "Jean-Baptiste",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/XjfCGe3iS_6atWvd-yAsUQ",
+    "familyName": "Delisle de La Drevetière",
+    "givenName": "Louis-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/96rn5t3MSpSLXC0KMj_Gxw",
+    "familyName": "Desfontaines",
+    "givenName": "François-Georges",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/jgAPOHg8Sn-qeIg39R5Y2Q",
+    "familyName": "Deshayes",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/MK02RfG4Rx6JiAQofaUHaQ",
+    "familyName": "Desmahis",
+    "givenName": "Joseph-François-Édouard Corsembleu",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/i3v2RbjYR7y7It7s0MM9WQ",
+    "familyName": "Desmarets",
+    "givenName": "Henri",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Z6Np_KXPT-y6EGGbjYF70g",
+    "familyName": "Despréaux",
+    "givenName": "Jean-Étienne",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/q2XokWAJTa6JQj9UZQtKlA",
+    "familyName": "Destouches",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/TazYLr8kQ1m9EhRAJSInNw",
+    "familyName": "Destouches",
+    "givenName": "André Cardinal",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/QxKRZ_NGRxK5fKYLgYtsSA",
+    "familyName": "Destouches",
+    "givenName": "Philippe Néricault, dit",
+    "pseudonym": "Destouches"
+  },
+  {
+    "id": "http://rdfh.ch/0103/I4j-Sg0JQg-i1v3gtGMyXA",
+    "familyName": "Dieulafoy",
+    "givenName": "Michel",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/lMZE-5PZQtaI1_W684ZeFw",
+    "familyName": "Dorvigny",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ZW_eBA2UR_afUzbFo4EDJw",
+    "familyName": "Doze",
+    "givenName": "Aimée Léocadie",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/FDGPaleoQYeCMS7d5y_Otg",
+    "familyName": "Du Terrail (marquis)",
+    "givenName": "Joseph Durey de Sauvoy ",
+    "pseudonym": "Marquis du Terrail"
+  },
+  {
+    "id": "http://rdfh.ch/0103/INwzlHuwRta1YHWkfmgzJQ",
+    "familyName": "Ducrest, marquis de",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/iqsJ6C12StmR_vWECAIROQ",
+    "familyName": "Dufresny",
+    "givenName": "Charles",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/6ITxmlpNQzyPXVZ3XOVOSA",
+    "familyName": "Dumanoir",
+    "givenName": "Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/_xBtyTfyRcuXIQ8bBbxTZg",
+    "familyName": "Dumas",
+    "givenName": "Alexandre (fils)",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/StGPVAraSZmDK7-iUsz0aw",
+    "familyName": "Dumas",
+    "givenName": "Alexandre (père)",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/gOLs1IzNREyzlmLzODtHxw",
+    "familyName": "Dunis",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/UlwfVfhBQN--mfAxnBZPnQ",
+    "familyName": "Duport",
+    "givenName": "Paul",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/pBKB6qAdRRGYeuuLWrda5Q",
+    "familyName": "Duport",
+    "givenName": "Paul",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/4DFY7UXkRdi6RnCaExyX9Q",
+    "familyName": "Durand",
+    "givenName": "Emile",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/vQe4od10RYWxKm_eOlIhxQ",
+    "familyName": "Durand",
+    "givenName": "Emile",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/PLg0cO0OSvizjCI63cgGXw",
+    "familyName": "Durosoy",
+    "givenName": "Barnabé Farmian",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ecLmkHncQOaPEroEL5VR8g",
+    "familyName": "Duteil",
+    "givenName": "Alexis",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/pDm7tv9kR0qtKs67hByp6Q",
+    "familyName": "Duval ",
+    "givenName": "Alexandre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/TPWC0mSOSY-ELSxCsfgexQ",
+    "familyName": "Duvernet",
+    "givenName": "Charles",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/b9ATsOuhRd6oH891fZ2Jtw",
+    "familyName": "Etienne",
+    "givenName": "Charles-Guillaume",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/YgMBZxgBSV6s0PjG-D8kJA",
+    "familyName": "Euripide",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/iIkZ69-kSsygbYu-fWkiKA",
+    "familyName": "Fabre des Essarts",
+    "givenName": "Marie-Auguste",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/PW6dLGUKSJq7G-G-8V92vQ",
+    "familyName": "Fagan",
+    "givenName": "Barthélémy-Christophe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/YT2wHGU8SDKCTaWKoqM3Iw",
+    "familyName": "Favart",
+    "givenName": "Charles-Simon",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/gJOZ7wluTIeSAA2hJRjfJg",
+    "familyName": "Favart",
+    "givenName": "Marie Justine Benoîte Duronceray",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/I55XD_gFTZeqvxSE9IHYAw",
+    "familyName": "Fenouillot de Falbaire de Quingey",
+    "givenName": "Charles-Georges",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/78whv-cRQ4KIrNTZJ5rusw",
+    "familyName": "Flotow",
+    "givenName": "Friedrich von",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/dC__xdKHSsOQk9Zzs6pz8A",
+    "familyName": "Forgeot",
+    "givenName": "Nicolas-Julien",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/CXmXLYMrTkC3dv173vjOaQ",
+    "familyName": "Forges",
+    "givenName": "M. de ",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/KzpxkytjTqarWielIRIg7g",
+    "familyName": "Fosse (de La)",
+    "givenName": "Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/LGUTpE-iSK2Yg5iMJtvIiQ",
+    "familyName": "Fournier",
+    "givenName": "Narcisse",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/A1drJH7pSi62G4Dm8bnnEQ",
+    "familyName": "Framéry",
+    "givenName": "Nicolas-Étienne",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/TYyScUbmQG2K6_Qs6fH4ew",
+    "familyName": "Francoeur",
+    "givenName": "François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/fMuTfmEPQHqNxjvTo587OQ",
+    "familyName": "François-Antoine",
+    "givenName": "Devaux",
+    "pseudonym": "Panpan"
+  },
+  {
+    "id": "http://rdfh.ch/0103/R5IcfrvISKWXJ0fzkxliZw",
+    "familyName": "Fuzelier",
+    "givenName": "Louis",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/2Ux1Lvo5THC1PSz1wN5ang",
+    "familyName": "Fuzée de Voisenon",
+    "givenName": "Claude-Henri",
+    "pseudonym": "Abbé Voisenon"
+  },
+  {
+    "id": "http://rdfh.ch/0103/GxuPS--aS5-jsLOGRLj06Q",
+    "familyName": "Galbert de Campistron",
+    "givenName": "Jean",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/4WtzkeGpQYul5KQOoYxIUQ",
+    "familyName": "Garde (de la)",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/qH-YVa1yQTScr8uAsQsxcA",
+    "familyName": "Gay",
+    "givenName": "Sophie",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/YX7oSQJ4QgGaORoVl2yUsg",
+    "familyName": "Genlis, comtesse de",
+    "givenName": "Stéphanie Félicité du Crest",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/xtl73mVYToSW0OjqW_pyxg",
+    "familyName": "Gilliers",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/GxTqTfDUTtSB12uu3NUzog",
+    "familyName": "Godefroid",
+    "givenName": "Félix",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/UrbIXSiZRw6WEtq4K3o3Cw",
+    "familyName": "Goldoni",
+    "givenName": "Carlo",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/4Ogpnxq_SJa9Zijn2O-lrA",
+    "familyName": "Gondinet",
+    "givenName": "Edmond",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/wIw3MKVnQRmeTdYZgNcHmw",
+    "familyName": "Gozlan",
+    "givenName": "Léon",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/xnjhHGDoRde8wH9t73rzVw",
+    "familyName": "Gozzi",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/FIiypexkRaOQcmX6M93sDw",
+    "familyName": "Graffigny (de)",
+    "givenName": "Françoise",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/yPCcA7oJQQ2cZ1cPhObE9g",
+    "familyName": "Gresset",
+    "givenName": "Jean-Baptiste-Louis",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/7YWA7tfdRkaZsBi5Gjubfg",
+    "familyName": "Grossec",
+    "givenName": "François-Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Hhrj7cXbQPSRP48Y2gq6Qg",
+    "familyName": "Grécourt",
+    "givenName": "Jean-Baptiste Willart de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/HFpnQLXvSy-9Er_TPTz-ig",
+    "familyName": "Grétry",
+    "givenName": "André-Ernest-Modeste",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ev0LIYWdTSSH_S8GyCIFAg",
+    "familyName": "Grétry",
+    "givenName": "André-Jospeph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/tK79Om_sSXOZNcNawMUysw",
+    "familyName": "Gueullette",
+    "givenName": "Thomas-Simon",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/QAeBhhcfTPC_ooGiUleWyQ",
+    "familyName": "Gullence",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/4FHbBkFHRA6f9zLeNkoGOw",
+    "familyName": "Hoffman",
+    "givenName": "François-Benoît",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/JgZnSot_T_GbY7ES3LmK-w",
+    "familyName": "Houssaye",
+    "givenName": "Arsène",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/brPMnq4BRdqbtEL0Zewv-Q",
+    "familyName": "Hèle (d')",
+    "givenName": "Thomas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/knbgewWpRU2cPsgVpchPIg",
+    "familyName": "Hénault",
+    "givenName": "Charles Jean-François",
+    "pseudonym": "Le Président Hénault"
+  },
+  {
+    "id": "http://rdfh.ch/0103/FxEV93rxSE2fQuVzL73Zkw",
+    "familyName": "Isoard/Izouard",
+    "givenName": "Jean-Baptiste-Claude",
+    "pseudonym": "Delisle de Sale"
+  },
+  {
+    "id": "http://rdfh.ch/0103/z5dQc6A5Sxu13Fb50lRlwQ",
+    "familyName": "Isouard",
+    "givenName": "Nicolò",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/NCWvYjNgRiWEVDpO9Ci3Cw",
+    "familyName": "La Borde",
+    "givenName": "Jean-Benjamin de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Cri3HT3pQ9aN1Ter7X5mVw",
+    "familyName": "La Chaussée",
+    "givenName": "Pierre-Claude",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Fs9ak1WqQTeLcFAAcatm2Q",
+    "familyName": "La Fare (de)",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/W5uJR8hDRpuoDitPu9I-tg",
+    "familyName": "La Fontaine",
+    "givenName": "Jean de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/QcgtVn17Ru-H-MIq2R6hvw",
+    "familyName": "La Harpe",
+    "givenName": "Jean François de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/9eBh9e2_QOK-P1kYF8_fBQ",
+    "familyName": "La Porte",
+    "givenName": "Joseph de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/LprYCHnCQtSM5dJ8dV8UYQ",
+    "familyName": "La Ribadière",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/WlzJkxDTTOKV_7M2HnQmIg",
+    "familyName": "Ladoucette",
+    "givenName": "Mme la baronne de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/7IjjwRwiQmWrrxZTHnbxoA",
+    "familyName": "Lamartelière",
+    "givenName": "Jean-Henri-Ferdinand",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/fN89IUgvSSyMxJ7XWssP9w",
+    "familyName": "Lambert",
+    "givenName": "Eugène",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/LYqHke6FSPuAHFg532e9Fw",
+    "familyName": "Laperrière",
+    "givenName": "Darnay de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/FbbNWAaORB-Gn5u58eQ4Bg",
+    "familyName": "Laujon",
+    "givenName": "Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/9tBQHOinQH2MaRajgl7FFA",
+    "familyName": "Laurès",
+    "givenName": "Antoine de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/0LfqQusWTa2f0ZzrC1VYGg",
+    "familyName": "Laus de Boissy",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/msr1axnRROa0zDSkuWiM8A",
+    "familyName": "Le Clerc",
+    "givenName": "Michel",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/4rjvsWBKSf6lmG1ZzaS6dg",
+    "familyName": "Le Grand",
+    "givenName": "Marc-Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/cjrdhtTgT_ee_nabKrXMpA",
+    "familyName": "Le Prieur",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/jkKaP84ATPC3bKTunYpK1w",
+    "familyName": "Le Prévost d'Exmes",
+    "givenName": "François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/_gNnhyC8RpqrnqmAilOmaQ",
+    "familyName": "Le Riche de La Popelinière",
+    "givenName": "Alexandre-Jean-Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/MIAtVB-ZS6-azfGxWo_nDA",
+    "familyName": "Leclair",
+    "givenName": "Jean-Marie",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/3b8qtZ2yS7-Om2gBei5luQ",
+    "familyName": "Lecomte",
+    "givenName": "Jules",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/HppSFaFPQvm5DNJT7uHgmA",
+    "familyName": "Legouvé",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/roYFQEoeTtmMHZqWiTuucg",
+    "familyName": "Legrand",
+    "givenName": "Marc-Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/kZjsiKK8SUqeze28B6dJjQ",
+    "familyName": "Lenoir",
+    "givenName": "Alexandre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/3QecCKyNRvabqIzXnfuDcA",
+    "familyName": "Lesage",
+    "givenName": "Alain-René",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/LX93BnwERcaeFhz4Ddtptg",
+    "familyName": "Letellier",
+    "givenName": "Jean-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/hX9aGnI0QQqiZBodqQT_SQ",
+    "familyName": "Lieudé De Sepmanville (de)",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/UVk__CG-S_am3epGp5K1eg",
+    "familyName": "Ligne, Prince de",
+    "givenName": "Charles Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/FbJgMTO2RyeFSuzizCXW5Q",
+    "familyName": "Limbourg (de)",
+    "givenName": "J. Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/IAt64W58Qs24FDu5iLmuRA",
+    "familyName": "Linant",
+    "givenName": "Nicolas-Michel",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/XPY2g4wAQFGJkJFBQszVoA",
+    "familyName": "Lonngpierre",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/-MrsjivNSZeNmV7Gi4T1Lw",
+    "familyName": "Lorenzani",
+    "givenName": "Paolo",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/3uekj69uRMyamMzIbyuzQA",
+    "familyName": "Louis",
+    "givenName": "Louis-Nicolas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/TdUkGXtqT7Ozih97IDBs9Q",
+    "familyName": "Lourdet De Santerre",
+    "givenName": "Jean-Baptiste",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/9pJS-MXeStyc04gHkTejGA",
+    "familyName": "Lully",
+    "givenName": "Jean-Baptiste",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/jHP9QEWrRI-hRMHikZOPQw",
+    "familyName": "M. de Bombarde",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/qoQQE9OtSYGHVpeG_PQJLA",
+    "familyName": "M.D.A",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Mkg7mZbhQnOfNPcJetvNDA",
+    "familyName": "Macort",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ZrwingurQPiJH3zBodwjxA",
+    "familyName": "Maffei",
+    "givenName": "Scipione",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/pEtKksVfRR64Ogrd5ev4XA",
+    "familyName": "Malézieu",
+    "givenName": "Nicolas de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/qe1HxxcQQLeh_J1ghYGWBg",
+    "familyName": "Malézieu",
+    "givenName": "Nicolas de,",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/B35Z84YqSbyuiQncvpTM_Q",
+    "familyName": "Mancini Mazarini, Duc de Nivernois",
+    "givenName": "Louis-Jules",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Uk7YGpkRSyCMNWOkr4rNWw",
+    "familyName": "Mandajors",
+    "givenName": "Jean-Pierre Des Ours de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/pvs1mc0RQMqSF5MjwD1J_w",
+    "familyName": "Marcet de Mézières",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/GZn4xEMDTSWlbz2MzURiqg",
+    "familyName": "Marion De Salins",
+    "givenName": "Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/YPmpqiNpROK-1hmY8ubpXw",
+    "familyName": "Marmontel",
+    "givenName": "Jean-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/OZgCdb6cRnq82z69TUENuQ",
+    "familyName": "Marot-Mercier",
+    "givenName": "Guillemette",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/pdkwLEmpTSyi_gM6Le6rzw",
+    "familyName": "Marquis de Surgères",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/OBiOjz68TcKhjE9vDbwxdg",
+    "familyName": "Marsollier Des Vivetière",
+    "givenName": "Benoît-Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ZGNd_NmaR3SPJcp_xzLZwg",
+    "familyName": "Martin",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/-z-9z9WcSsWlpUZd0bzZUw",
+    "familyName": "Massa (marquis de)",
+    "givenName": "Alexandre-Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Pm05IT1LSvyeNd1kVr6k3A",
+    "familyName": "Maupassant (de)",
+    "givenName": "Guy",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/l5V7B8keQMKNlYIJ-zUA5w",
+    "familyName": "Mayeur De Saint-Paul",
+    "givenName": "François-Marie",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/-BEOg8rZQaCKAsD3aAiz8Q",
+    "familyName": "Mazères",
+    "givenName": "Édouard",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ygT1L1LbScq0kfTJKY__uw",
+    "familyName": "Mereau",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/LdENh3HbT1WZ9M2_RiFjhA",
+    "familyName": "Merle",
+    "givenName": "Jean-Toussaint",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/p2-BKgYFSrC20wYCDgGO3w",
+    "familyName": "Michaud",
+    "givenName": "Stéphane",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/9iWkRnobSiafxMkilJHDaQ",
+    "familyName": "Millehault",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/1TS7UkUXQ-uOihusDed-7w",
+    "familyName": "Moissy (de)",
+    "givenName": "Alexandre-Guillaume",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/y5DgjKo4Ti-gh7-_8oxn3w",
+    "familyName": "Moline",
+    "givenName": "Pierre-Louis",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/YWNyPLn1TXK2v1f4Auc0Yg",
+    "familyName": "Molière (Poquelin dit)",
+    "givenName": "Jean-Baptiste",
+    "pseudonym": "Molière"
+  },
+  {
+    "id": "http://rdfh.ch/0103/URZ_erMgQjiVM5FYJzo3-w",
+    "familyName": "Mondolot",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/CnRVEQwJRrqbkqsRet0IrA",
+    "familyName": "Monsigny",
+    "givenName": "Pierre-Alexandre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/DhxHKo8CRDW9U5E1UL2hfA",
+    "familyName": "Montalembert (comte de?)",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/vr3Em_TzQxCxp67KyRNHPw",
+    "familyName": "Montesquiou (de)",
+    "givenName": "Anne-Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/dUPkZtpmSISyq-KlHizb_Q",
+    "familyName": "Montémont",
+    "givenName": "Albert de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/bSzaLbErS0erVh1oWD3g1Q",
+    "familyName": "Morand",
+    "givenName": "Pierre de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/W0jQrmIEQeWDoX21gWLNTg",
+    "familyName": "Moulinghem",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/0YLCMTvuQIG75WXvaBpH9A",
+    "familyName": "Mouret",
+    "givenName": "Jean-Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/30BUuYKMSI2sURGT0lb_DA",
+    "familyName": "Musset",
+    "givenName": "Alfred de ",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/dp-lU_y9SSucCBLLnIsMFw",
+    "familyName": "Mérard de Saint-Just",
+    "givenName": "Simon-Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/FG_wP_p4QvCRFqbtUWDMaA",
+    "familyName": "Nadaud",
+    "givenName": "Gustave",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/CvN_l6g8QRKEctHBFDpuow",
+    "familyName": "Naquet",
+    "givenName": "Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/zGT-7zifTty44T745VPuUg",
+    "familyName": "Nau",
+    "givenName": "François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/iYfKDVTZR8epaEGWkxoCMw",
+    "familyName": "Nelli",
+    "givenName": "Jacopo Angiolo",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/olD1fm0gTZiddEvzGV3Dhw",
+    "familyName": "Palaprat (de)",
+    "givenName": "Jean",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/MvQtWfF1SNWQ_iFnptRNpw",
+    "familyName": "Palissot de Montenoy",
+    "givenName": "Charles",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/e1srerXnTgij3yRSRM-kcg",
+    "familyName": "Panard",
+    "givenName": "Charles-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/e1srerXnTgij3yRSRM-kcg",
+    "familyName": "Pannard",
+    "givenName": "Charles-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/JESX0pw2RCaAMxOlC97NDg",
+    "familyName": "Paradis de Moncrif",
+    "givenName": "François-Augustin de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/aXQ1Ef0OTIC39qCCOl-PGQ",
+    "familyName": "Pavy",
+    "givenName": "Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/roYaLQJERPOJ_NefF_cP3Q",
+    "familyName": "Pellegrin",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/YNYDch7zTDylJiVTt5GxJg",
+    "familyName": "Person de Bérainville",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/rooy2qgpSNSHMxlEnAAp8A",
+    "familyName": "Pigault-Lebrun",
+    "givenName": "Charles-Antoine-Guillaume",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/qdZ5EwhrQteVrMVU0g2pwA",
+    "familyName": "Piis",
+    "givenName": "Augustin de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/FuCQT5oeRPeAdGjQqkVl8g",
+    "familyName": "Pinot Duclos",
+    "givenName": "Charles",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/NRhDYHIQSTWIA0TA_2XXOA",
+    "familyName": "Piron",
+    "givenName": "Alexis",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/l3Jg0W9uQ2eP1-ZDKoAnLQ",
+    "familyName": "Poinsinet",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/JI8ddbQ4TTGg-okK5NYuFA",
+    "familyName": "Poinsinet",
+    "givenName": "Antoine-Alexandre-Henri",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ZvDSPZItQ_2Y6T5SwR-3AA",
+    "familyName": "Poisson",
+    "givenName": "Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/plEhU_7ZRmmdi10gx-FX6A",
+    "familyName": "Polignac",
+    "givenName": "Melchior de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/rccoeWqTQU-C1NiQp9DhtQ",
+    "familyName": "Ponsard",
+    "givenName": "François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/PiX3yD8FQiWu_WL34nx3Bg",
+    "familyName": "Pont-de-Veyle, (de Fériol, ou Ferriol, comte de)",
+    "givenName": "Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/hsWxUiNaRtKQFxUxnnWlWQ",
+    "familyName": "Poulhariez",
+    "givenName": "Pierre-Nicolas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/EzLZsddpSZKLoZbztpi2lg",
+    "familyName": "Poullain de Saint-Foix",
+    "givenName": "Germain-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/B-t75W9FTnmOek5yVHkjWg",
+    "familyName": "Quinault",
+    "givenName": "Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/tmXVzVurRoei45HSbxf5nA",
+    "familyName": "Quétant",
+    "givenName": "François-Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/PPWROXnaQ8qVQWIPlafyTA",
+    "familyName": "Racine",
+    "givenName": "Jean",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/5PdVqDDCRTW6VS9jsjNdJA",
+    "familyName": "Racot de Grandval",
+    "givenName": "Charles-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/h4QH6OV6R8a6ZajakyTz8A",
+    "familyName": "Rameau",
+    "givenName": "Jean-Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/xy2x6MxTRZugjaSbyq99hw",
+    "familyName": "Rebel",
+    "givenName": "François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/XGv5uj3VTZKewVP99sK3Ew",
+    "familyName": "Reber",
+    "givenName": "Henri-Napoléon",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/XJVJeLP1SjqX9nuETYyfcA",
+    "familyName": "Regnard",
+    "givenName": "Jean-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/md5WORDESJ6uTuzESuC-4Q",
+    "familyName": "Renou",
+    "givenName": "Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/TGzucIvRS6e0dH0c3iGW1g",
+    "familyName": "Riccoboni",
+    "givenName": "Luigi",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/5WrnmHOYSM2Rk_eNBugsFQ",
+    "familyName": "Rivaudais, de la",
+    "givenName": "Joseph Quesnel",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/22PWywGQTPWO8BIRgQGPlg",
+    "familyName": "Rochon de Chabannes",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/t2cn1cHeRHKTzk_gOi1a1Q",
+    "familyName": "Romagnesi",
+    "givenName": "Jean-Antoine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/HuFYYorFRLOzo29KhfWNew",
+    "familyName": "Rousseau",
+    "givenName": "Jean-Baptiste",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/kRqK9GkKRJ23A2P0z4RZJA",
+    "familyName": "Rousseau",
+    "givenName": "Jean-Jacques",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/NxVmZjReQgi44jTvg19hdA",
+    "familyName": "Rousseau",
+    "givenName": "Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/L2MidoU3SdCCfcjw2REdTA",
+    "familyName": "Rousseau de Toulouse",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/utRSuEf4TMu19tXborwowA",
+    "familyName": "Rowe",
+    "givenName": "Nicholas",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/mukXTdzcQKqSjPjtlakCOQ",
+    "familyName": "Roy",
+    "givenName": "Pierre-Charles",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/5z7qTqUeT0aPIwrFGk7c1w",
+    "familyName": "Royer",
+    "givenName": "Pancrace",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/8IKfwQmrRYmXw9w9-GJjCw",
+    "familyName": "Rustaing, chevalier de Saint-Jorry",
+    "givenName": "Louis",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/-z-9z9WcSsWlpUZd0bzZUw",
+    "familyName": "Régnier",
+    "givenName": "Alexandre-Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/TRRz_aLJSpG-fGO6Iu5wrA",
+    "familyName": "Rénout",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/YLvylbEJQCGEYQxmqwzhBg",
+    "familyName": "Rétif",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/kWlsBFhZSy6amoG99VrhUA",
+    "familyName": "Sabran (de)",
+    "givenName": "Elzéar",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/alO1baIfTn-5MrBlHXYh6Q",
+    "familyName": "Saint-Georges",
+    "givenName": "M. de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/ZuySMNBwQmSukoBKbTPkkw",
+    "familyName": "Saint-Lambert (de)",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/qG6YqKuBSQiXN_Yj-vh1wQ",
+    "familyName": "Saintonge (de)",
+    "givenName": "Louise-Geneviève",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/WP7RDWqAQ9q8hbExHc6YLw",
+    "familyName": "Salley",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/1tervyTQT5muH6XcXbem1Q",
+    "familyName": "Sand",
+    "givenName": "George",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/opTK44lsSiOqGhFm7XHRxg",
+    "familyName": "Sand",
+    "givenName": "Maurice",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/tbAkXdeXSLGEq-NvtLGASg",
+    "familyName": "Saucerotte",
+    "givenName": "Françoise-Marie-Antoinette",
+    "pseudonym": "Mlle Raucourt"
+  },
+  {
+    "id": "http://rdfh.ch/0103/-GcipZFWTEqYe77wM8f8RA",
+    "familyName": "Saurin",
+    "givenName": "Bernard-Joseph",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/oGVmuh_bRNyQHByulBSwqA",
+    "familyName": "Sauvé de La Noue/Lanoue",
+    "givenName": "Jean-Baptiste",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/QHAjmnlVR1KXCtRhIub83w",
+    "familyName": "Savalette de Magnanville",
+    "givenName": "Charles Pierre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/o8zw1HSYTkm3fe-SnshwrA",
+    "familyName": "Scarron",
+    "givenName": "Paul",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Gvoq7v_pTP2qTg2AYCb8_g",
+    "familyName": "Scribe",
+    "givenName": "Eugène",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/SqJ3_cKhQfeaxF-suwqfgA",
+    "familyName": "Sedaine",
+    "givenName": "Michel-Jean",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/8sSSexMsSM-vrFezp1WEUg",
+    "familyName": "Senneterre",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/M9jDJmy8SuyCVyA8-Qz7uw",
+    "familyName": "Shakespeare",
+    "givenName": "William",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/5W8VyCKRSKeAThmh8aeorw",
+    "familyName": "Sobre",
+    "givenName": "Prince de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/B5nTBibZT26FXsZbT1PfIw",
+    "familyName": "Solms",
+    "givenName": "Marie de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Oj5FBLO1TmS5JEEjqyDUYg",
+    "familyName": "Staël (de)",
+    "givenName": "Auguste",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/J76Fi5UySJO4KJeuN7kmMw",
+    "familyName": "Staël (de)",
+    "givenName": "Germaine",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/oFV_RsOrQVaNaR8ZgFooNw",
+    "familyName": "Sussy",
+    "givenName": "Honoré de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/KdRU_1KLQb2KV_rxz3DiQQ",
+    "familyName": "Ségalas",
+    "givenName": "Anaïs",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/HEF_bhuURsyVxd07xCg8Ow",
+    "familyName": "Ségalas",
+    "givenName": "Bertile",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/UtPZxAIuSfSE7ybZkqx9MQ",
+    "familyName": "Ségur (de)",
+    "givenName": "Louis-Philippe",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/UJEAXzyhQZSMGFi0ZrwlnA",
+    "familyName": "Séneterre, comte de",
+    "givenName": "Henri-Charles",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/hOdWnSTFT121bZ4XIVPAOg",
+    "familyName": "Taconet",
+    "givenName": "Jacques",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/J47DbeXOSuSeST-SPjP-GA",
+    "familyName": "Tannevot",
+    "givenName": "Alexandre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/WpoXxkoNQ4eZceOOgfO_JQ",
+    "familyName": "Thulaux",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/5un3MzA5Tde59E0Vhxb-SQ",
+    "familyName": "Trudaine De Montigny",
+    "givenName": "Jean-Charles-Philbert",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/gvzyOh2nSNKRj-ePy1qclQ",
+    "familyName": "Ucceli",
+    "givenName": "Mme",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/7ZAWzF4_QBmBYBwLpxvQuw",
+    "familyName": "Valade",
+    "givenName": "Jean-Jacques-Denis",
+    "pseudonym": "http://viaf.org/viaf/9985918"
+  },
+  {
+    "id": "http://rdfh.ch/0103/WklyufxpTY2ge2ruyDDX_Q",
+    "familyName": "Vanderburch",
+    "givenName": "Émile ",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Y24phzfEQvO8JEJ5VlMwbg",
+    "familyName": "Vermond, abbé de",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/SUhV-qPbTsCxiYCZYGTr5w",
+    "familyName": "Vessaire (de)",
+    "givenName": null,
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/nc9DWJT_QgyKdqj1SuHIIg",
+    "familyName": "Vestri",
+    "givenName": "Gaetano-Apoline-Balthazar",
+    "pseudonym": "Vestris"
+  },
+  {
+    "id": "http://rdfh.ch/0103/KsPipsrgS3SB2ATFcATJcg",
+    "familyName": "Viancin",
+    "givenName": "Charles-François",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/lODBmcryTveygmKQy2OevA",
+    "familyName": "Villemain d'Abancourt",
+    "givenName": "François-Jean",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/5L0DKtQkSlW9ecGpvc8xnw",
+    "familyName": "Villevieille",
+    "givenName": "Léon",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/efNONKU2SB6yWFkGnIMVuw",
+    "familyName": "Voltaire (Arouet, dit)",
+    "givenName": "François-Marie",
+    "pseudonym": "Voltaire"
+  },
+  {
+    "id": "http://rdfh.ch/0103/DaYJfpIFSfSSCFdqzVCo3Q",
+    "familyName": "Voyer d’Argenson, marquis de Paulmy",
+    "givenName": "Marc Antoine René de",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/shLfn0WISL6vZjCOTkHFjg",
+    "familyName": "Watelet",
+    "givenName": "Claude-Henri",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/Kj0y9V2URgS1rDoeajndnA",
+    "familyName": "Werner",
+    "givenName": "Zacharias",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/lODBmcryTveygmKQy2OevA",
+    "familyName": "Willemain d'Abancourt",
+    "givenName": "François-Jean",
+    "pseudonym": null
+  }
+]
