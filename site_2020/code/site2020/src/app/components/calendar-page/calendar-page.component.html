@@ -9,7 +9,15 @@
     </mat-progress-bar>
   </span>
 
-  <h1>Représentations de l'année {{ year }}</h1>
+  <span *ngIf="year === 1; then unknown else known"></span>
+
+  <ng-template #unknown>
+    <h1>Représentations dont l'année n'est pas connue</h1>
+  </ng-template>
+
+  <ng-template #known>
+    <h1>Représentations de l'année {{ year }}</h1>
+  </ng-template>
   <tds-representations-list [representations]="representations" [titles]="true" [header]="false"></tds-representations-list>
 
   <a routerLink="/calendrier" title="retour vers le calendrier">
