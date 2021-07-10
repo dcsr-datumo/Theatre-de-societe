@@ -382,6 +382,9 @@ export class KnoraService {
             // if needed sort in the request
             // .sort((a, b) => Number(a.label) - Number(b.label));
             observer.next(representations);
+          }
+          // becareful of magic numbers
+          if (page.length == 25) {
             index = index + 1;
             aggregatedPage(observer);
           } else {
