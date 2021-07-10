@@ -1,5 +1,14 @@
 <div>
 
+  <span *ngIf="loading | async as progress">
+    <mat-progress-bar
+    mode="indeterminate"
+    color="warn"
+    style="position: absolute; top: 0; z-index: 100;"
+    >
+    </mat-progress-bar>
+  </span>
+
   <h1>Représentations de l'année {{ year }}</h1>
   <tds-representations-list [representations]="representations" [titles]="true" [header]="false"></tds-representations-list>
 
