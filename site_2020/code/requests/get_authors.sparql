@@ -1,0 +1,27 @@
+PREFIX tds: <http://www.knora.org/ontology/0103/theatre-societe#>
+PREFIX kb: <http://www.knora.org/ontology/knora-base#>
+
+SELECT
+    ?id 
+    ?pseudonym
+    ?familyName
+    ?givenName
+WHERE {
+    ?id a tds:Person .
+    OPTIONAL {
+	    ?id tds:hasPseudonym ?pseudoValue .
+    	?pseudoValue kb:valueHasString ?pseudonym .
+    }
+    OPTIONAL {
+	    ?id tds:hasFamilyName ?familyValue .
+        ?familyValue kb:valueHasString ?familyName .
+    }
+    OPTIONAL {
+	    ?id tds:hasGivenName ?givenValue .
+        ?givenValue kb:valueHasString ?givenName .
+    }
+    # this is to select authors
+    ?work a tds:Work .
+    ?work tds:workHasAuthor ?id
+}
+order by ?family ?given
