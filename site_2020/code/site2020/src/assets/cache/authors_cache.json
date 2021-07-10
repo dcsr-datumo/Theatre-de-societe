@@ -234,12 +234,6 @@
     "pseudonym": null
   },
   {
-    "id": "http://rdfh.ch/0103/ivKJ2wVjQ2K5Xl_5x1yauQ",
-    "familyName": "Brazier",
-    "givenName": "Nicolas",
-    "pseudonym": null
-  },
-  {
     "id": "http://rdfh.ch/0103/o86r8RxOQ12sTRZ6nipKag",
     "familyName": "Brazier",
     "givenName": "Nicolas",
@@ -745,12 +739,6 @@
   },
   {
     "id": "http://rdfh.ch/0103/4DFY7UXkRdi6RnCaExyX9Q",
-    "familyName": "Durand",
-    "givenName": "Emile",
-    "pseudonym": null
-  },
-  {
-    "id": "http://rdfh.ch/0103/vQe4od10RYWxKm_eOlIhxQ",
     "familyName": "Durand",
     "givenName": "Emile",
     "pseudonym": null

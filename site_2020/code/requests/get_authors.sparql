@@ -1,13 +1,15 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX tds: <http://www.knora.org/ontology/0103/theatre-societe#>
 PREFIX kb: <http://www.knora.org/ontology/knora-base#>
 
 SELECT
-    ?id 
+    distinct ?id 
     ?pseudonym
     ?familyName
     ?givenName
 WHERE {
     ?id a tds:Person .
+    ?id kb:isDeleted "false"^^xsd:boolean .
     OPTIONAL {
 	    ?id tds:hasPseudonym ?pseudoValue .
     	?pseudoValue kb:valueHasString ?pseudonym .
@@ -24,4 +26,4 @@ WHERE {
     ?work a tds:Work .
     ?work tds:workHasAuthor ?id
 }
-order by ?family ?given
+order by ?familyName ?givenName
