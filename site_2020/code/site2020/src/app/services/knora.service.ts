@@ -28,8 +28,10 @@ import { Group } from '../models/group.model';
 import { Membership } from '../models/membership.model';
 import CacheCalendarJson from '../../assets/cache/calendar_cache.json';
 import CacheAuthorsJson from '../../assets/cache/authors_cache.json';
+import CacheWorksJson from '../../assets/cache/works_cache.json';
 import { allowedNodeEnvironmentFlags } from 'process';
 import { PersonCache } from '../models/personCache.model';
+import { WorkCache } from '../models/workcache.model';
 
 @Injectable({
   providedIn: 'root',
@@ -309,6 +311,13 @@ export class KnoraService {
    */
   getAuthorsQuickCache(): PersonCache[] {
     return CacheAuthorsJson;
+  }
+
+  /**
+ * reads a cache file
+ */
+    getWorksQuickCache(): WorkCache[] {
+    return CacheWorksJson;
   }
 
   getQueryFilter(year: number): string {

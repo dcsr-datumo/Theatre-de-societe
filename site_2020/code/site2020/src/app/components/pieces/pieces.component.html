@@ -33,40 +33,41 @@
     </ng-template>
 
     <!--span *ngIf="counter | async as c">pièces: {{c}}</span-->
-    <span>pièces: {{counter | async}}
-      <span *ngIf="worksCount | async as c">
-        / {{c}}
+    <span *ngIf="works | async as works">
+
+      <span>pièces: {{works.length}} / {{allWorks.length}}
       </span>
+
+      <div class="list-item-header list-item-container">
+        <div class="list-item-header">titre</div>
+        <div class="list-item-header">auteur</div>
+      </div>
+
+      <!--ul class="left-list"-->
+        <mat-list-item *ngFor="let work of works">
+          <!-- {{work.label}} -->
+          <!--tds-work-line [iri]="work.id"></tds-work-line-->
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panel[work.id] = true">
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <span class="truncate">
+                      {{work.title}}
+                    </span>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{work.name}}
+                  </mat-panel-description>
+              </mat-expansion-panel-header>
+              <span *ngIf="panel[work.id]">
+                <tds-work-line [iri]="work.id"></tds-work-line>
+              </span>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-list-item>
+      <!--/ul-->
     </span>
 
-    <div class="list-item-header list-item-container">
-      <div class="list-item-header">titre</div>
-      <div class="list-item-header">auteur</div>
-    </div>
-
-    <!--ul class="left-list"-->
-      <mat-list-item *ngFor="let work of works | async">
-        <!-- {{work.label}} -->
-        <!--tds-work-line [iri]="work.id"></tds-work-line-->
-        <mat-accordion>
-          <mat-expansion-panel (opened)="panel[work.id] = true">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <span class="truncate">
-                    {{work.title}}
-                  </span>
-                </mat-panel-title>
-                <mat-panel-description>
-                  {{work.author}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <span *ngIf="panel[work.id]">
-              <tds-work-line [iri]="work.id"></tds-work-line>
-            </span>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </mat-list-item>
-    <!--/ul-->
   </div>
 
-  </div>
+</div>
