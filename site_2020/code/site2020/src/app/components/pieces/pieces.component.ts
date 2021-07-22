@@ -7,6 +7,7 @@ import { Work } from 'src/app/models/work.model';
 import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
 import { WorkMatch } from 'src/app/models/workmatch.model';
 import { ApiResponseError, CountQueryResponse } from '@dasch-swiss/dsp-js';
+import { WorkCache } from 'src/app/models/workcache.model';
 
 @Component({
   selector: 'tds-pieces',
@@ -14,11 +15,10 @@ import { ApiResponseError, CountQueryResponse } from '@dasch-swiss/dsp-js';
   styleUrls: ['./pieces.component.scss']
 })
 export class PiecesComponent implements OnInit {
-  id: string;
-  allWorks: WorkMatch[];
-  works: Observable<WorkMatch[]>;
-  worksCount: Observable<string>;
-  loading: Observable<boolean>;
+  allWorks: WorkCache[];
+  works: Observable<WorkCache[]>;
+  worksCount: Subject<number> = new Subject<number>();
+  loading: Subject<boolean> = new Subject<boolean>();
   counter: Observable<number>;
   panel: Map<string, boolean> = new Map<string, boolean>();
   @Input()
@@ -27,68 +27,46 @@ export class PiecesComponent implements OnInit {
   private searchTerms = new Subject<string>();
 
   constructor(
-    //private route: ActivatedRoute,
     private knoraService: KnoraService,
-    //private location: Location
   ) { }
 
   ngOnInit(): void {
-    // get the count
-    this.knoraService.getWorksCount().subscribe(
-      (response: CountQueryResponse) => {
-        this.worksCount = of(response.numberOfResults.toString());
-      },
-      (error: ApiResponseError) => {
-        this.worksCount = of('unknown');
-        console.error(error);
-      }
-    );
+    this.loading.next(true);
 
     let us = this;
 
     function readPage(observer) {
-      us.loading = of(true);
-      us.counter = of(0);
       // read pages on first load
-      us.knoraService.getWorks().subscribe(
-        data => {
-          observer.next(data);
-          us.allWorks = data;
-          us.counter = of(data.length);
-        },
-        error => console.log(error),
-        () => {
-          console.log("initial request is over");
-          us.loading = of(false);
+      us.allWorks = us.knoraService.getWorksQuickCache();
+      observer.next(us.allWorks);
+      us.loading.next(false);
 
-          // then answer the searches
-          us.searchTerms.pipe(
-            // temporise, don't over react
-            debounceTime(100),
-            // go to next stage only if needed
-            distinctUntilChanged()
-          ).subscribe(
-            term => {
-              console.log("search works: "+ term);
-              if (!term.trim()) {
-                // if not search term, return the complete set of works
-                observer.next(us.allWorks);
-                us.counter = of(us.allWorks.length);
-              }
-              term = term.toLowerCase();
-              let matches = us.allWorks.filter(work =>
-                  {
-                    return (
-                      (work.label && work.label.toLowerCase().includes(term))
-                      ||
-                      (work.title && work.title.toLowerCase().includes(term))
-                    );
-                  }
-                );
-              observer.next(matches);
-              us.counter = of(matches.length);
+      // then answer the searches
+      us.searchTerms.pipe(
+        // temporise, don't over react
+        debounceTime(100),
+        // go to next stage only if needed
+        distinctUntilChanged()
+      ).subscribe(
+        term => {
+          if (!term.trim()) {
+            // if not search term, return the complete set of works
+            observer.next(us.allWorks);
+            us.worksCount.next(us.allWorks.length);
+            return;
+          }
+          term = term.toLowerCase();
+          let matches = us.allWorks.filter(work =>
+            {
+              return (
+                (work.title && work.title.toLowerCase().includes(term))
+                  ||
+                (work.name && work.name.toLowerCase().includes(term))
+              );
             }
           );
+          observer.next(matches);
+          us.worksCount.next(matches.length);
         }
       );
     }

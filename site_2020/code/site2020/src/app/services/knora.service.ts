@@ -26,6 +26,12 @@ import { WorkMatch } from '../models/workmatch.model';
 import { PersonMatchAuthor } from '../models/personmatchauthor.model';
 import { Group } from '../models/group.model';
 import { Membership } from '../models/membership.model';
+import CacheCalendarJson from '../../assets/cache/calendar_cache.json';
+import CacheAuthorsJson from '../../assets/cache/authors_cache.json';
+import CacheWorksJson from '../../assets/cache/works_cache.json';
+import { allowedNodeEnvironmentFlags } from 'process';
+import { PersonCache } from '../models/personCache.model';
+import { WorkCache } from '../models/workcache.model';
 
 @Injectable({
   providedIn: 'root',
@@ -240,9 +246,86 @@ export class KnoraService {
     return new Observable(aggregateExtendPage);
   }
 
+  /**
+   * reads a cache file
+   * with the number of representations per day
+   * the index of the returned array is the year shifted by 1699
+   *
+   * @returns number[] an array of representations per year
+   */
+  getCalendarQuickCache(): number[] {
+    let all: number[] = [];
+
+    let lastYear = 1700;
+
+    // unknown : one decade with one year
+    all[0] = 0;
+    // prior to 1700, cumulate on 1700
+    all[1] = 0;
+
+    // split calendar in decades
+    CacheCalendarJson.forEach(element => {
+      let thisYear = +element.year;
+      let thisRepresentations = +element.representations;
+
+      // unknown have been marked as year 1
+      if(thisYear == 1) {
+        all[0] += thisRepresentations;
+        return;
+      }
+
+      // before 1700 : cumulate the representations in a single year
+      if(thisYear <= 1700) {
+        all[1] += thisRepresentations;
+        return;
+      }
+
+      if (thisYear >= 1900) {
+        // Note loic: for now put all outliers in the same slot
+        // all[201] += thisRepresentations;
+        all[0] += thisRepresentations;
+        return;
+      }
+
+      // fill the holes
+      while(++lastYear < thisYear) {
+          // fill an empty year
+          all[lastYear-1699] = 0;
+      }
+
+      // add this year
+      all[thisYear-1699] = thisRepresentations;
+    });
+
+    // fill the holes
+    while(++lastYear <= 1899) {
+      // fill an empty year
+      all[lastYear-1699] = 0;
+    }
+
+    return all;
+  }
+
+  /**
+   * reads a cache file
+   */
+  getAuthorsQuickCache(): PersonCache[] {
+    return CacheAuthorsJson;
+  }
+
+  /**
+ * reads a cache file
+ */
+    getWorksQuickCache(): WorkCache[] {
+    return CacheWorksJson;
+  }
+
   getQueryFilter(year: number): string {
     if (year === 1700) {
-      return "FILTER(knora-api:toSimpleDate(?date) < 'GREGORIAN:1701-1-1' ^^ <http://api.knora.org/ontology/knora-api/simple/v2#Date>)";
+      return `
+       FILTER(knora-api:toSimpleDate(?date) < 'GREGORIAN:1701-1-1' ^^ <http://api.knora.org/ontology/knora-api/simple/v2#Date>)
+       FILTER(knora-api:toSimpleDate(?date) > 'GREGORIAN:1400-1-1' ^^ <http://api.knora.org/ontology/knora-api/simple/v2#Date>)
+      `;
     }
     if (year === 1899) {
       return "FILTER(knora-api:toSimpleDate(?date) > 'GREGORIAN:1898-12-31' ^^ <http://api.knora.org/ontology/knora-api/simple/v2#Date>)";
@@ -317,6 +400,9 @@ export class KnoraService {
             // if needed sort in the request
             // .sort((a, b) => Number(a.label) - Number(b.label));
             observer.next(representations);
+          }
+          // becareful of magic numbers
+          if (page.length == 25) {
             index = index + 1;
             aggregatedPage(observer);
           } else {

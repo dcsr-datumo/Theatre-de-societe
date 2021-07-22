@@ -1,0 +1,11 @@
+        PREFIX theatre-societe: <http://www.knora.org/ontology/0103/theatre-societe#>
+        PREFIX knora-base: <http://www.knora.org/ontology/knora-base#>
+        select ?year (count(distinct ?s) as ?representations)
+        where { 
+	        ?s a theatre-societe:Representation .
+            ?s theatre-societe:hasDate ?date .
+            ?date knora-base:valueHasString ?dateString . 
+            bind(replace(?dateString, '-.*', '') as ?year)
+        }
+        group by ?year
+        order by ?year

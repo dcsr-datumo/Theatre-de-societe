@@ -1,6 +1,26 @@
 <div>
 
-  <h1>Représentations de l'année {{ year }}</h1>
+  <span *ngIf="loading | async as progress">
+    <mat-progress-bar
+    mode="indeterminate"
+    color="warn"
+    style="position: absolute; top: 0; z-index: 100;"
+    >
+    </mat-progress-bar>
+  </span>
+
+  <span *ngIf="year === 1; then unknown else known"></span>
+
+  <ng-template #unknown>
+    <h1>Représentations dont l'année n'est pas connue</h1>
+  </ng-template>
+
+  <ng-template #known>
+    <h1>Représentations de l'année {{ year }}</h1>
+  </ng-template>
   <tds-representations-list [representations]="representations" [titles]="true" [header]="false"></tds-representations-list>
 
+  <a routerLink="/calendrier" title="retour vers le calendrier">
+    <mat-icon aria-hidden="false" aria-label="calendrier">date_range</mat-icon>
+  </a>
 </div>

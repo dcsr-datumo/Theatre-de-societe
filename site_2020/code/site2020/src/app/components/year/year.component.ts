@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CacheCalendarYear } from 'src/app/models/cache-calendar-year.model';
 
 @Component({
   selector: 'tds-year',
@@ -8,7 +7,9 @@ import { CacheCalendarYear } from 'src/app/models/cache-calendar-year.model';
 })
 export class YearComponent implements OnInit {
   @Input()
-  year: CacheCalendarYear;
+  year: number;
+  @Input()
+  representations: number;
 
   constructor() { }
 

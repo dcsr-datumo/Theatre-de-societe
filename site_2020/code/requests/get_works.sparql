@@ -1,0 +1,25 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX tds: <http://www.knora.org/ontology/0103/theatre-societe#>
+PREFIX kb: <http://www.knora.org/ontology/knora-base#>
+
+SELECT
+    distinct ?id 
+    ?title 
+    ?author
+    ?name
+WHERE {
+    ?id a tds:Work .
+    ?id kb:isDeleted "false"^^xsd:boolean .
+    OPTIONAL {
+        ?id tds:workHasTitle ?titleValue .
+        ?titleValue kb:valueHasString ?title .
+    }
+    OPTIONAL {
+        ?id tds:workHasAuthor ?author .
+        OPTIONAL {
+            ?author tds:hasFamilyName ?nameValue .
+            ?nameValue kb:valueHasString ?name .
+        }
+    }
+}
+order by ?title

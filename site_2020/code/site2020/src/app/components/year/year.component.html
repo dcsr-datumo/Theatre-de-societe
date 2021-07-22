@@ -1,7 +1,19 @@
-    <a *ngIf="year.representations > '0'" routerLink="/year/{{year.label}}">
-      <span *ngIf="year.label == '1700'"><</span>
-      <span *ngIf="year.label == '1899'">></span>
-      {{ year.label }}
-    </a>
-    <span *ngIf="year.representations <= '0'">{{ year.label }}</span>
-    <button *ngIf="year.representations > '0'" color="accent" matBadge="{{year.representations}}"></button>
+<span *ngIf="representations > 0; then with else without"></span>
+
+<ng-template #with>
+  <a routerLink="/year/{{year}}">
+    <span *ngIf="year === 1700">&lt;</span>
+    <span *ngIf="year === 1899">&gt;</span>
+    <span *ngIf="year === 1">Dates non définies: </span>
+    <span *ngIf="year > 1">{{ year }}</span>
+    <button color="accent" matBadge="{{representations}}"></button>
+  </a>
+</ng-template>
+
+<ng-template #without>
+  <span>
+      <span *ngIf="year === 1700">&lt;</span>
+      <span *ngIf="year === 1899">&gt;</span>
+      {{ year }}
+  </span>
+</ng-template>
