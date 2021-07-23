@@ -7,3 +7,21 @@ span {
 a {
   color: #1976d2;
 }
+
+@media screen and (max-width: 910px) {
+  span {
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  span {
+    font-size: x-small;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  span {
+    font-size: xx-small;
+  }
+}
