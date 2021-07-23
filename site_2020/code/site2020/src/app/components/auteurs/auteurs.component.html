@@ -33,12 +33,7 @@
     <!-- </span> -->
 
       <span *ngIf="authors | async as authors">
-
-        <span>auteurs: {{authors.length}}
-          <span *ngIf="authorsCount | async as c">
-            / {{c}}
-          </span>
-        </span>
+        <span>auteurs: {{authors.length}} / {{ allAuthors.length}}
 
         <div class="list-item-header list-item-container">
           <div class="list-item-header">nom</div>
