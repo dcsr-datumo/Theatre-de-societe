@@ -3,70 +3,33 @@
   <h1>Auteurs</h1>
 
   <div>
+    <span *ngIf="loading | async as progress; then inprogress else ready"></span>
 
-    <!-- <span *ngIf="loading | async as progress"> -->
+    <ng-template #inprogress>
+      <div class="input">
+        <div class="dot-flashing"></div>
+      </div>
 
-      <span *ngIf="loading | async as progress; then inprogress else ready"></span>
+      <mat-progress-bar
+      mode="indeterminate"
+      color="warn"
+      style="position: absolute; top: 0; z-index: 100;"
+      >
+      </mat-progress-bar>
+    </ng-template>
 
-      <ng-template #inprogress>
-        <div class="input">
-          <div class="dot-flashing"></div>
-        </div>
+    <ng-template #ready>
+      <input #searchBox id="search-box"
+        class="input ready"
+        placeholder="entrer quelques lettres du nom de l'auteur..."
+        (input)="search(searchBox.value)"/>
+    </ng-template>
 
-        <mat-progress-bar
-        mode="indeterminate"
-        color="warn"
-        style="position: absolute; top: 0; z-index: 100;"
-        >
-        <!-- *ngIf="loading | async" -->
-        </mat-progress-bar>
-      </ng-template>
+    <span *ngIf="authors | async as authorsList">
+      <span>auteurs: {{authorsList.length}} / {{ allAuthors.length}}</span>
 
-      <ng-template #ready>
-        <input #searchBox id="search-box"
-          class="input ready"
-          placeholder="entrer quelques lettres du nom de l'auteur..."
-          (input)="search(searchBox.value)"/>
-      </ng-template>
-
-
-    <!-- </span> -->
-
-      <span *ngIf="authors | async as authors">
-        <span>auteurs: {{authors.length}} / {{ allAuthors.length}}</span>
-
-        <div class="list-item-header list-item-container">
-          <div class="list-item-header">nom</div>
-          <div class="list-item-header">pseudonyme</div>
-        </div>
-
-        <!--ul class="left-list"-->
-        <mat-list-item *ngFor="let author of authors">
-          <!-- {{work.label}} -->
-          <!--tds-work-line [iri]="work.id"></tds-work-line-->
-          <mat-accordion>
-            <mat-expansion-panel (opened)="panel[author.id] = true">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <span class="truncate">
-                    {{author.familyName}}
-                    <span *ngIf="author.givenName">
-                      , {{author.givenName}}
-                    </span>
-                  </span>
-                </mat-panel-title>
-                <mat-panel-description>
-                  {{author.pseudonym}}
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <span *ngIf="panel[author.id]">
-                <tds-person-line [iri]="author.id"></tds-person-line>
-              </span>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </mat-list-item>
-        <!--/ul-->
-      </span>
-    </div>
-
+      <tds-auteurspage [authors]=authorsList [reset]=reset></tds-auteurspage>
+    </span>
   </div>
+
+</div>

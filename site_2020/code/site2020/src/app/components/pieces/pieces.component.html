@@ -3,11 +3,6 @@
   <h1>Pièces</h1>
 
   <div>
-    <!-- <div class="filter-wrap">
-      <input [(ngModel)]="searchText" placeholder="Filter Works" class="filter-input">
-      <span class="filter-clear" *ngIf="searchText.length>0" (click)="clearFilter()">X</span>
-    </div> -->
-
 
     <span *ngIf="loading | async as progress; then inprogress else ready"></span>
 
@@ -21,7 +16,6 @@
       color="warn"
       style="position: absolute; top: 0; z-index: 100;"
       >
-      <!-- *ngIf="loading | async" -->
       </mat-progress-bar>
     </ng-template>
 
@@ -32,40 +26,12 @@
         (input)="search(searchBox.value)"/>
     </ng-template>
 
-    <!--span *ngIf="counter | async as c">pièces: {{c}}</span-->
     <span *ngIf="works | async as works">
 
       <span>pièces: {{works.length}} / {{allWorks.length}}
       </span>
 
-      <div class="list-item-header list-item-container">
-        <div class="list-item-header">titre</div>
-        <div class="list-item-header">auteur</div>
-      </div>
-
-      <!--ul class="left-list"-->
-        <mat-list-item *ngFor="let work of works">
-          <!-- {{work.label}} -->
-          <!--tds-work-line [iri]="work.id"></tds-work-line-->
-          <mat-accordion>
-            <mat-expansion-panel (opened)="panel[work.id] = true">
-              <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <span class="truncate">
-                      {{work.title}}
-                    </span>
-                  </mat-panel-title>
-                  <mat-panel-description>
-                    {{work.name}}
-                  </mat-panel-description>
-              </mat-expansion-panel-header>
-              <span *ngIf="panel[work.id]">
-                <tds-work-line [iri]="work.id"></tds-work-line>
-              </span>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </mat-list-item>
-      <!--/ul-->
+      <tds-piecespage [works]=works [reset]=reset></tds-piecespage>
     </span>
 
   </div>

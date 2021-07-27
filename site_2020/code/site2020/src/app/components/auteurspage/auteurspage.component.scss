@@ -1,0 +1,33 @@
+@import '../../local.scss';
+
+mat-panel-description {
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.margin {
+  padding: 0rem;
+  margin: 0rem;
+  margin-top: 1rem;
+  display: block;
+  justify-content: center;
+  background-color: rgba(white, .8);
+}
+
+.list-item-header {
+  margin-top: 0;
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+  width: 66%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

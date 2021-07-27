@@ -17,7 +17,6 @@ import { WorkCache } from 'src/app/models/workcache.model';
 export class PiecesComponent implements OnInit {
   allWorks: WorkCache[];
   works: Observable<WorkCache[]>;
-  worksCount: Subject<number> = new Subject<number>();
   loading: Subject<boolean> = new Subject<boolean>();
   counter: Observable<number>;
   panel: Map<string, boolean> = new Map<string, boolean>();
@@ -26,12 +25,15 @@ export class PiecesComponent implements OnInit {
 
   private searchTerms = new Subject<string>();
 
+  reset: Subject<number> = new Subject<number>();
+
   constructor(
     private knoraService: KnoraService,
   ) { }
 
   ngOnInit(): void {
     this.loading.next(true);
+    this.reset.next(0);
 
     let us = this;
 
@@ -40,6 +42,7 @@ export class PiecesComponent implements OnInit {
       us.allWorks = us.knoraService.getWorksQuickCache();
       observer.next(us.allWorks);
       us.loading.next(false);
+      us.reset.next(us.allWorks.length);
 
       // then answer the searches
       us.searchTerms.pipe(
@@ -52,7 +55,7 @@ export class PiecesComponent implements OnInit {
           if (!term.trim()) {
             // if not search term, return the complete set of works
             observer.next(us.allWorks);
-            us.worksCount.next(us.allWorks.length);
+            us.reset.next(us.allWorks.length);
             return;
           }
           term = term.toLowerCase();
@@ -66,7 +69,7 @@ export class PiecesComponent implements OnInit {
             }
           );
           observer.next(matches);
-          us.worksCount.next(matches.length);
+          us.reset.next(matches.length);
         }
       );
     }

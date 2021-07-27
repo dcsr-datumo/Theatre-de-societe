@@ -54,6 +54,8 @@ import { RepresentationsListComponent } from './components/representations-list/
 import { PopupLinkComponent } from './components/popup-link/popup-link.component';
 import { PlaceDetailsComponent } from './components/place-details/place-details.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AuteurspageComponent } from './components/auteurspage/auteurspage.component';
+import { PiecespageComponent } from './components/piecespage/piecespage.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, PublicationsComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent, AuteurspageComponent, PiecespageComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,

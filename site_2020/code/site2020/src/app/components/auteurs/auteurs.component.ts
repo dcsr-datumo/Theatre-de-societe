@@ -17,10 +17,11 @@ export class AuteursComponent implements OnInit {
   authors: Observable<PersonCache[]>;
   authorsCount: Subject<number> = new Subject<number>();
   loading: Subject<boolean> = new Subject<boolean>();
-  panel: Map<string, boolean> = new Map<string, boolean>();
   @Input()
   searchText: string = "";
   private searchTerms = new Subject<string>();
+
+  reset: Subject<number> = new Subject<number>();
 
 
   constructor(
@@ -29,11 +30,12 @@ export class AuteursComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading.next(true);
+    this.reset.next(0);
 
     // get the list of authors
     let us = this;
 
-    function readPage(observer) {
+    function readMatches(observer) {
       // initial load
       // get the list of authors
       us.allAuthors = us.knoraService.getAuthorsQuickCache();
@@ -55,7 +57,7 @@ export class AuteursComponent implements OnInit {
           if (!term.trim()) {
             // if not search term, return the complete set of works
             observer.next(us.allAuthors);
-            //us.counter = of(us.allAuthors.length);
+            us.reset.next(us.allAuthors.length);
           }
           term = term.toLowerCase();
           // search for the matches
@@ -72,10 +74,11 @@ export class AuteursComponent implements OnInit {
           );
           // sends the matches
           observer.next(matches);
+          us.reset.next(matches.length);
         }
       );
     }
-    this.authors = new Observable(readPage);
+    this.authors = new Observable(readMatches);
   }
 
   // called by the template when a text is entered
@@ -83,5 +86,4 @@ export class AuteursComponent implements OnInit {
     console.log("search adding: "+ term);
     this.searchTerms.next(term);
   }
-
 }
