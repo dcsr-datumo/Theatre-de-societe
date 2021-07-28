@@ -32,7 +32,11 @@ function do-main {
       exit 1
     fi
 
-    QUERY=`cat $ARG_QUERY | wwwenc`
+    if [[ "${ARG_QUERY##*.}" == "sparql" ]]; then
+        QUERY=`cat $ARG_QUERY | wwwenc`
+    else
+        QUERY=`cat $ARG_QUERY`
+    fi
 
     # check repo
     if [[ -z $ARG_REPO ]]; then
