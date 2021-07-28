@@ -5,7 +5,7 @@
     <span *ngIf="year === 1700">&lt;</span>
     <span *ngIf="year === 1899">&gt;</span>
     <span *ngIf="year === 1">Dates non définies: </span>
-    <span *ngIf="year > 1">{{ year }}</span>
+    <span *ngIf="year > 1" class="year">{{ year }}</span>
     <button color="accent" matBadge="{{representations}}"></button>
   </a>
 </ng-template>
