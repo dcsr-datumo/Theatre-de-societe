@@ -1,25 +1,52 @@
-# python specifics
+# Cache update
 
-- create a virtual environment (once):
+Now the cache are on the web application server.
 
-  ```bash
-  python3 -m venv ~/.python_venv/envname
-  ```
+## local
 
-- use it (everytime you want to run this script):
-
-  ```bash
-  source  ~/.python_venv/envname/bin/activate
-  ```
-
-- install pre-requisites:
-
-  ```bash
-  pip3 install -r requirements.txt
-  ```
-
-# refresh cash
-
+before a release, bundle a new version of the cache:
 ```bash
-python3 refreshCacheCalendarYear.py -v<knora_user_email> -q<knora_pwd> -thttp://knora.unil.ch -u<graphdb_user> -p<graphdb_pwd> -shttp://db.unil.ch:7200 -rknora 
+make clean
+make all_cache
+make copy_local 
+```
+
+## remote
+
+to update the cache on a remote host:
+```bash
+make clean
+make all_cache
+make copy_remote 
+```
+
+## dockerized
+
+the updater is then dockerized:
+```bash
+# build the image
+make build
+# publish it to docker hub
+make login
+make push
+```
+
+## release
+
+on the server:
+```bash
+# get the cache updater image
+podman pull docker.io/platec/tds_cache_updater:v0.1.0
+# make a folder to exchange files
+mkdir output
+# run the cache updater
+podman run --env-file /home/tdsadm/updater_prod_env -v /home/tdsadm/output:/app/output platec/tds_cache_updater:v0.1.0
+# copy the files to the server
+for file in `ls output/*.json`; do sudo podman cp $file tds:/usr/share/nginx/html/cache/; done
+```
+
+configure crontab to run the process regularly:
+```bash
+5 3 * * 6	/usr/bin/podman run --env-file /home/tdsadm/updater_prod_env -v /home/tdsadm/output:/app/output platec/tds_cache_updater:v0.1.0 && \
+            for file in `ls /home/tdsadm/output/*.json`; do sudo podman cp $file tds:/usr/share/nginx/html/cache/; done
 ```

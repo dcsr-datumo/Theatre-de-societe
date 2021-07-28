@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -54,6 +56,8 @@ import { RepresentationsListComponent } from './components/representations-list/
 import { PopupLinkComponent } from './components/popup-link/popup-link.component';
 import { PlaceDetailsComponent } from './components/place-details/place-details.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AuteurspageComponent } from './components/auteurspage/auteurspage.component';
+import { PiecespageComponent } from './components/piecespage/piecespage.component';
 
 @NgModule({
   declarations: [
@@ -63,9 +67,10 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, PublicationsComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent, AuteurspageComponent, PiecespageComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
     MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule, MatProgressBarModule,
     //MatDialog,

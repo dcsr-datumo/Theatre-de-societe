@@ -1,26 +1,19 @@
 ACCOUNT=platec
-CONTAINER=tds
-VERSION=v0.6.5
+CONTAINER=tds_cache_updater
+VERSION=v0.0.2
+ENVFILE=docker_env_prod_root
 
 .PHONY: build
 build: ## builds the web-app container
 	docker build -t ${ACCOUNT}/${CONTAINER}:${VERSION} .
 
-.PHONY: runlocal
-runlocal: ## run the freshly built container
-	docker run -p 80:80 --name tds ${ACCOUNT}/${CONTAINER}:${VERSION}
-
-.PHONY: stop
-stop: ## stop the docker instance
-	docker stop tds
-
-.PHONY: rm
-rm: ## remove the container
-	docker rm tds
+.PHONY: run
+run: ## run the freshly built container
+	docker run --env-file ${ENVFILE} --rm ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .PHONY: rmi
 rmi: ## remove the build image
-	docker rmi ${ACCOUNT}/${CONTAINER}:${VERSION}
+	docker rmi ${CONTAINER}:${VERSION}
 
 .PHONY: login
 login: ## docker hub login

@@ -2,14 +2,31 @@
   Recherche de représentation(s) par année
 </h1>
 
-<span *ngIf="outliers">
+<span *ngIf="loading | async ; then inprogress"></span>
+
+<ng-template #inprogress>
+  <div class="input">
+    <div class="dot-flashing"></div>
+  </div>
+
+  <mat-progress-bar
+  mode="indeterminate"
+  color="warn"
+  style="position: absolute; top: 0; z-index: 100;"
+  >
+  </mat-progress-bar>
+</ng-template>
+
+<span *ngIf="yearsQC | async as years">
+
+<span *ngIf="years[0]>0">
   <div>
-    <tds-year [year]=1 [representations]=outliers></tds-year>
+    <tds-year [year]=1 [representations]="years[0]"></tds-year>
   </div>
 </span>
 
 <ul *ngIf="yearsQC">
-  <li *ngFor="let representations of yearsQC; let i = index;" [ngClass]='{"century-spacer": (i+1700 >= 1800 && i+1700 <= 1809)}'>
+  <li *ngFor="let representations of years | slice:1; let i = index;" [ngClass]='{"century-spacer": (i+1700 >= 1800 && i+1700 <= 1809)}'>
     <tds-year [year]=i+1700 [representations]=representations></tds-year>
   </li>
 </ul>

@@ -1,0 +1,47 @@
+
+<span *ngIf="count>0">
+
+  <br>
+
+  <div class="margin">
+    <button (click)="firstPage()" [disabled]="page<1">&lt;&lt;</button>
+    <button (click)="updatePage(-1)" [disabled]="page<1">&lt;</button>
+    page: {{page+1}} / {{pageMax}}
+    <button (click)="updatePage(1)" [disabled]="(page+1)>=pageMax">&gt;</button>
+    <button (click)="lastPage()" [disabled]="(page+1)>=pageMax">&gt;&gt;</button>
+    </div>
+
+  <div class="list-item-header list-item-container">
+    <div class="list-item-header">nom</div>
+    <div class="list-item-header">pseudonyme</div>
+  </div>
+
+  <mat-list-item *ngFor="let author of authors.slice(pageLength*page, pageLength*(page+1))">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panel[author.id] = true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span class="truncate">
+              {{author.familyName}}
+              <span *ngIf="author.givenName">
+                , {{author.givenName}}
+              </span>
+            </span>
+          </mat-panel-title>
+          <mat-panel-description>
+            {{author.pseudonym}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <span *ngIf="panel[author.id]">
+          <tds-person-line [iri]="author.id"></tds-person-line>
+        </span>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-list-item>
+
+  <button (click)="firstPage()" [disabled]="page<1">&lt;&lt;</button>
+  <button (click)="updatePage(-1)" [disabled]="page<1">&lt;</button>
+  page: {{page+1}} / {{pageMax}}
+  <button (click)="updatePage(1)" [disabled]="(page+1)>=pageMax">&gt;</button>
+  <button (click)="lastPage()" [disabled]="(page+1)>=pageMax">&gt;&gt;</button>
+</span>

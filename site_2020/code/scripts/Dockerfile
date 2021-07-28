@@ -1,14 +1,16 @@
-FROM debian:stable
+FROM debian:stable AS build
+
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends jq make curl
+
+FROM build
 
 RUN mkdir /app
 
-COPY refreshCacheCalendarYear.py requirements.txt /app/
+COPY jq/ /app/jq
+COPY shell/ /app/shell
+COPY requests/ /app/requests
+COPY Makefile /app
+COPY shell/wwwenc /usr/bin/
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends python3 python3-pip
-
-RUN pip3 install -r /app/requirements.txt
-
-CMD python3 /app/refreshCacheCalendarYear.py \
-    -v${KNORA_USER} -q${KNORA_PSWD} -t${KNORA_HOST} -u${GRAPHDB_USER} \
-    -p${GRAPHDB_PSWD} -s${GRAPHDB_HOST} -r${REPO}
+CMD cd /app && make clean && make all_cache_enc
