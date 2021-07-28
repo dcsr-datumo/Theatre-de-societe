@@ -26,7 +26,6 @@ import { WorkMatch } from '../models/workmatch.model';
 import { PersonMatchAuthor } from '../models/personmatchauthor.model';
 import { Group } from '../models/group.model';
 import { Membership } from '../models/membership.model';
-import CacheCalendarJson from '../../assets/cache/calendar_cache.json';
 import CacheAuthorsJson from '../../assets/cache/authors_cache.json';
 import CacheWorksJson from '../../assets/cache/works_cache.json';
 import { allowedNodeEnvironmentFlags } from 'process';
@@ -270,7 +269,7 @@ export class KnoraService {
     let us = this;
     function histogram(observer) {
       // request the cache as served by angular
-      us.http.get<CalendarCache[]>("/assets/cache/calendar_cache.json").subscribe(
+      us.http.get<CalendarCache[]>(environment.assets + "/cache/calendar_cache.json").subscribe(
         (data: CalendarCache[]) => {
           data.forEach(element => {
             let thisYear = +element.year;
