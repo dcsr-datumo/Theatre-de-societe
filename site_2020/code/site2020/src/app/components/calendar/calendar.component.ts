@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { BehaviorSubject, Observable, Subject } from "rxjs";
+import { delay, finalize } from "rxjs/operators";
 import { KnoraService } from "../../services/knora.service";
 
 @Component({
@@ -7,15 +9,20 @@ import { KnoraService } from "../../services/knora.service";
   styleUrls: ["./calendar.component.scss"],
 })
 export class CalendarComponent implements OnInit {
-  yearsQC: number[];
-  outliers: number;
+  loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  yearsQC: Observable<number[]>;
 
   constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
-    this.yearsQC = this.knoraService.getCalendarQuickCache();
-    // Note loic: for now remove outliers
-    this.outliers = this.yearsQC.shift();
+    this.loading.next(true);
+    let us = this;
+    this.yearsQC = this.knoraService.getCalendarQuickCache().pipe(
+        finalize(() => {us.setLoading(false)})
+      );
   }
 
+  setLoading(status:boolean): void {
+    this.loading.next(status);
+  }
 }

@@ -32,6 +32,8 @@ import CacheWorksJson from '../../assets/cache/works_cache.json';
 import { allowedNodeEnvironmentFlags } from 'process';
 import { PersonCache } from '../models/personCache.model';
 import { WorkCache } from '../models/workcache.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CalendarCache } from '../models/calendarCache.model';
 
 @Injectable({
   providedIn: 'root',
@@ -54,9 +56,11 @@ export class KnoraService {
   worksRequest: string;
   representationsBaseRequest: string;
 
+  CalendarQC: number[];
+
   public placeDetails = new ReplaySubject<string>(1);
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.config = new KnoraApiConfig(
       environment.knoraApiProtocol as 'http' | 'https',
       environment.knoraApiHost,
@@ -253,7 +257,7 @@ export class KnoraService {
    *
    * @returns number[] an array of representations per year
    */
-  getCalendarQuickCache(): number[] {
+  getCalendarQuickCache(): Observable<number[]> {
     let all: number[] = [];
 
     let lastYear = 1700;
@@ -263,47 +267,57 @@ export class KnoraService {
     // prior to 1700, cumulate on 1700
     all[1] = 0;
 
-    // split calendar in decades
-    CacheCalendarJson.forEach(element => {
-      let thisYear = +element.year;
-      let thisRepresentations = +element.representations;
+    let us = this;
+    function histogram(observer) {
+      // request the cache as served by angular
+      us.http.get<CalendarCache[]>("/assets/cache/calendar_cache.json").subscribe(
+        (data: CalendarCache[]) => {
+          data.forEach(element => {
+            let thisYear = +element.year;
+            let thisRepresentations = +element.representations;
 
-      // unknown have been marked as year 1
-      if(thisYear == 1) {
-        all[0] += thisRepresentations;
-        return;
-      }
+            // unknown have been marked as year 1
+            if(thisYear == 1) {
+              all[0] += thisRepresentations;
+              return;
+            }
 
-      // before 1700 : cumulate the representations in a single year
-      if(thisYear <= 1700) {
-        all[1] += thisRepresentations;
-        return;
-      }
+            // before 1700 : cumulate the representations in a single year
+            if(thisYear <= 1700) {
+              all[1] += thisRepresentations;
+              return;
+            }
 
-      if (thisYear >= 1900) {
-        // Note loic: for now put all outliers in the same slot
-        // all[201] += thisRepresentations;
-        all[0] += thisRepresentations;
-        return;
-      }
+            if (thisYear >= 1900) {
+              // Note loic: for now put all outliers in the same slot
+              // all[201] += thisRepresentations;
+              all[0] += thisRepresentations;
+              return;
+            }
 
-      // fill the holes
-      while(++lastYear < thisYear) {
-          // fill an empty year
-          all[lastYear-1699] = 0;
-      }
+            // fill the holes
+            while(++lastYear < thisYear) {
+              // fill an empty year
+              all[lastYear-1699] = 0;
+            }
 
-      // add this year
-      all[thisYear-1699] = thisRepresentations;
-    });
-
-    // fill the holes
-    while(++lastYear <= 1899) {
-      // fill an empty year
-      all[lastYear-1699] = 0;
+            // add this year
+            all[thisYear-1699] = thisRepresentations;
+          });
+          observer.next(all);
+        },
+        (error) => console.log(error),
+        () => {
+          // fill the holes
+          while(++lastYear <= 1899) {
+            // fill an empty year
+            all[lastYear-1699] = 0;
+          }
+          observer.complete();
+        }
+      );
     }
-
-    return all;
+    return new Observable(histogram);
   }
 
   /**
