@@ -3,7 +3,7 @@
   <h1>Auteurs</h1>
 
   <div>
-    <span *ngIf="loading | async as progress; then inprogress else ready"></span>
+    <span *ngIf="loading | async; then inprogress else ready"></span>
 
     <ng-template #inprogress>
       <div class="input">

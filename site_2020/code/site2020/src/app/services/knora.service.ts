@@ -26,9 +26,6 @@ import { WorkMatch } from '../models/workmatch.model';
 import { PersonMatchAuthor } from '../models/personmatchauthor.model';
 import { Group } from '../models/group.model';
 import { Membership } from '../models/membership.model';
-import CacheAuthorsJson from '../../assets/cache/authors_cache.json';
-import CacheWorksJson from '../../assets/cache/works_cache.json';
-import { allowedNodeEnvironmentFlags } from 'process';
 import { PersonCache } from '../models/personCache.model';
 import { WorkCache } from '../models/workcache.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -322,15 +319,15 @@ export class KnoraService {
   /**
    * reads a cache file
    */
-  getAuthorsQuickCache(): PersonCache[] {
-    return CacheAuthorsJson;
+  getAuthorsQuickCache(): Observable<PersonCache[]> {
+    return this.http.get<PersonCache[]>(environment.assets + "/cache/authors_cache.json");
   }
 
   /**
- * reads a cache file
- */
-    getWorksQuickCache(): WorkCache[] {
-    return CacheWorksJson;
+   * reads a cache file
+   */
+  getWorksQuickCache(): Observable<WorkCache[]> {
+    return this.http.get<WorkCache[]>(environment.assets + "/cache/works_cache.json");
   }
 
   getQueryFilter(year: number): string {

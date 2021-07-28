@@ -1,12 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable, of, Subject } from "rxjs";
-import { ActivatedRoute } from '@angular/router';
-
+import { BehaviorSubject, Observable, of, Subject } from "rxjs";
 import { KnoraService } from 'src/app/services/knora.service';
-import { Work } from 'src/app/models/work.model';
 import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
-import { WorkMatch } from 'src/app/models/workmatch.model';
-import { ApiResponseError, CountQueryResponse } from '@dasch-swiss/dsp-js';
 import { WorkCache } from 'src/app/models/workcache.model';
 
 @Component({
@@ -17,9 +12,8 @@ import { WorkCache } from 'src/app/models/workcache.model';
 export class PiecesComponent implements OnInit {
   allWorks: WorkCache[];
   works: Observable<WorkCache[]>;
-  loading: Subject<boolean> = new Subject<boolean>();
+  loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   counter: Observable<number>;
-  panel: Map<string, boolean> = new Map<string, boolean>();
   @Input()
   searchText: string = "";
 
@@ -32,44 +26,56 @@ export class PiecesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loading.next(true);
     this.reset.next(0);
 
     let us = this;
 
     function readPage(observer) {
       // read pages on first load
-      us.allWorks = us.knoraService.getWorksQuickCache();
-      observer.next(us.allWorks);
-      us.loading.next(false);
-      us.reset.next(us.allWorks.length);
+      us.knoraService.getWorksQuickCache().subscribe(
+        (data: WorkCache[]) => {
+          // send them to the observer
+          us.allWorks = data;
+          observer.next(data);
+        },
+        (error) => { console.log(error) },
+        () => {
+          us.reset.next(us.allWorks.length);
+          us.loading.next(false);
+          console.log("passed initial value");
 
-      // then answer the searches
-      us.searchTerms.pipe(
-        // temporise, don't over react
-        debounceTime(100),
-        // go to next stage only if needed
-        distinctUntilChanged()
-      ).subscribe(
-        term => {
-          if (!term.trim()) {
-            // if not search term, return the complete set of works
-            observer.next(us.allWorks);
-            us.reset.next(us.allWorks.length);
-            return;
-          }
-          term = term.toLowerCase();
-          let matches = us.allWorks.filter(work =>
-            {
-              return (
-                (work.title && work.title.toLowerCase().includes(term))
-                  ||
-                (work.name && work.name.toLowerCase().includes(term))
+          // then answer the searches
+          us.searchTerms.pipe(
+            // temporise, don't over react
+            debounceTime(100),
+            // go to next stage only if needed
+            distinctUntilChanged()
+          ).subscribe(
+            term => {
+              us.loading.next(true);
+              if (!term.trim()) {
+                // if not search term, return the complete set of works
+                observer.next(us.allWorks);
+                us.reset.next(us.allWorks.length);
+                us.loading.next(false);
+                return;
+              }
+
+              term = term.toLowerCase();
+              let matches = us.allWorks.filter(work =>
+                {
+                  return (
+                    (work.title && work.title.toLowerCase().includes(term))
+                    ||
+                    (work.name && work.name.toLowerCase().includes(term))
+                  );
+                }
               );
+              observer.next(matches);
+              us.reset.next(matches.length);
+              us.loading.next(false);
             }
           );
-          observer.next(matches);
-          us.reset.next(matches.length);
         }
       );
     }
