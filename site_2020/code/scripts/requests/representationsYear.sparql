@@ -1,0 +1,77 @@
+PREFIX theatre-societe: <http://www.knora.org/ontology/0103/theatre-societe#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX knora: <http://www.knora.org/ontology/knora-base#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xml: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT 
+  ?representation 
+  (GROUP_CONCAT(DISTINCT(IF(BOUND(?work), STR(?work), "")); SEPARATOR='') AS ?work__Concat)   
+  (GROUP_CONCAT(DISTINCT(IF(BOUND(?place), STR(?place), "")); SEPARATOR='') AS ?place__Concat)
+  (GROUP_CONCAT(DISTINCT(IF(BOUND(?date), STR(?date), "")); SEPARATOR='') AS ?date__Concat)
+  (GROUP_CONCAT(DISTINCT(IF(BOUND(?linked_work), STR(?linked_work), "")); SEPARATOR='') AS ?linked_work__Concat)
+  (GROUP_CONCAT(DISTINCT(IF(BOUND(?placeName), STR(?placeName), "")); SEPARATOR='') AS ?placeName__Concat)
+  (GROUP_CONCAT(DISTINCT(IF(BOUND(?linkedPlaceVlaue), STR(?linkedPlaceVlaue), "")); SEPARATOR='') AS ?linkedPlaceVlaue__Concat)
+  (GROUP_CONCAT(DISTINCT(IF(BOUND(?playTitle), STR(?playTitle), "")); SEPARATOR='') AS ?playTitle__Concat) 
+
+WHERE { 
+  ?hasTitle rdfs:subPropertyOf* theatre-societe:workHasTitle . 
+  ?work ?title ?playTitle .
+  ?hasName rdfs:subPropertyOf* theatre-societe:placeHasName .
+  ?place ?hasName ?placeName .
+  ?isBasedOn rdfs:subPropertyOf* theatre-societe:representationIsBasedOn . 
+  ?representation ?isBasedOn ?work .
+  ?isBasedOnValue rdfs:subPropertyOf* theatre-societe:representationIsBasedOnValue . 
+  ?representation ?isBasedOnValue ?linked_work . 
+  ?linked_work rdf:type knora:LinkValue . 
+  ?linked_work rdf:object ?work . 
+  ?hasPlace rdfs:subPropertyOf* theatre-societe:representationHasPlace . 
+  ?representation ?hasPlace ?place . 
+  ?linkedPlace rdfs:subPropertyOf* theatre-societe:representationHasPlaceValue . 
+  ?representation ?linkedPlace ?linkedPlaceVlaue . 
+  ?linkedPlaceVlaue rdf:type knora:LinkValue . 
+  ?linkedPlaceVlaue rdf:object ?place . 
+  ?hasDate rdfs:subPropertyOf* theatre-societe:representationHasDate . 
+  ?representation ?hasDate ?date . 
+  ?date knora:valueHasStartJDN ?date__valueHasStartJDN . 
+  ?date knora:valueHasEndJDN ?date__valueHasEndJDN . 
+  
+  FILTER(
+      (
+          ("2360235"^^xml:integer <= ?date__valueHasEndJDN) && 
+          ("2360599"^^xml:integer >= ?date__valueHasStartJDN))) 
+  FILTER NOT EXISTS {
+    ?work knora:isDeleted "true"^^xml:boolean .  
+  } 
+  FILTER NOT EXISTS {  
+      ?playTitle knora:isDeleted "true"^^xml:boolean .  
+  } 
+  FILTER NOT EXISTS {  
+      ?place knora:isDeleted "true"^^xml:boolean .  
+  } 
+  FILTER NOT EXISTS {  
+      ?placeName knora:isDeleted "true"^^xml:boolean .  
+  } 
+  FILTER NOT EXISTS {  
+      ?representation knora:isDeleted "true"^^xml:boolean .  
+  } 
+  FILTER NOT EXISTS {  
+      ?linked_work knora:isDeleted "true"^^xml:boolean .  
+  } 
+  FILTER NOT EXISTS {  
+      ?linkedPlaceVlaue knora:isDeleted "true"^^xml:boolean .
+  } 
+  FILTER NOT EXISTS {  
+      ?date knora:isDeleted "true"^^xml:boolean .  
+  } 
+} 
+
+GROUP BY 
+  ?representation 
+  ?date__valueHasStartJDN 
+
+ORDER BY 
+  ASC(?date__valueHasStartJDN) 
+  ASC(?representation) 
+
+LIMIT 25
