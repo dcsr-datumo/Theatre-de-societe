@@ -1,0 +1,24 @@
+PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+#PREFIX theatre-societe: <http://api-sipipv.unil.ch/ontology/0103/theatre-societe/v2#>
+PREFIX theatre-societe: <http://knora.unil.ch/ontology/0103/theatre-societe/v2#>
+
+
+CONSTRUCT {
+  ?representation knora-api:isMainResource true .
+  ?representation theatre-societe:representationIsBasedOn ?work .
+  ?work theatre-societe:workHasTitle ?playTitle .
+  ?representation theatre-societe:representationHasPlace ?place .
+  ?place theatre-societe:placeHasName ?placeName .
+  ?representation theatre-societe:representationHasDate ?date .
+} WHERE {
+  BIND(<http://rdfh.ch/0103/lfIb9PhFRhq423-WPlc0yA> AS ?place)
+  ?representation a knora-api:Resource .
+  ?representation a theatre-societe:Representation .
+  ?representation theatre-societe:representationIsBasedOn ?work .
+  ?work theatre-societe:workHasTitle ?playTitle .
+  ?representation theatre-societe:representationHasPlace ?place .
+  ?place theatre-societe:placeHasName ?placeName .
+  ?representation theatre-societe:representationHasDate ?date .
+
+  #FILTER(?place = <http://rdfh.ch/0103/-GUaq2LgTAWFFNhLv8yFSg>)
+}
