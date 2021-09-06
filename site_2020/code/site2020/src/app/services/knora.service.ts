@@ -30,6 +30,7 @@ import { PersonCache } from '../models/personCache.model';
 import { WorkCache } from '../models/workcache.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CalendarCache } from '../models/calendarCache.model';
+import { PlaceCache } from '../models/placecache.model';
 
 @Injectable({
   providedIn: 'root',
@@ -328,6 +329,13 @@ export class KnoraService {
    */
   getWorksQuickCache(): Observable<WorkCache[]> {
     return this.http.get<WorkCache[]>(environment.assets + "/cache/works_cache.json");
+  }
+
+  /**
+   * reads a cache file
+   */
+   getPlacesQuickCache(): Observable<PlaceCache[]> {
+    return this.http.get<PlaceCache[]>(environment.assets + "/cache/places_cache.json");
   }
 
   getQueryFilter(year: number): string {
