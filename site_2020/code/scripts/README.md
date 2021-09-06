@@ -7,7 +7,9 @@ Now the cache are on the web application server.
 to use locally the same file as bundled with the docker container, do:
 
 ```bash
-. env/prod.env
+set -a
+. env/prod.env 
+set +a
 ```
 
 before the rest of the commands.
