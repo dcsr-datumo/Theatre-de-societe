@@ -1,0 +1,27 @@
+PREFIX kb: <http://www.knora.org/ontology/knora-base#>
+PREFIX tds: <http://www.knora.org/ontology/0103/theatre-societe#>
+
+SELECT
+    distinct ?id 
+    ?name
+    ?coord
+    ?notice
+WHERE {
+    ?id a tds:Place .
+    ?id kb:isDeleted "false"^^xsd:boolean .
+
+    OPTIONAL {
+        ?id tds:placeHasName ?nameValue .
+        ?nameValue kb:valueHasString ?name .
+    }
+
+    OPTIONAL {
+        ?id tds:placeHasCoordinates ?coordValue .
+        ?coordValue kb:valueHasString ?coord .
+    }
+
+    OPTIONAL {
+        ?id tds:placeHasNotice ?noticeValue .
+        ?noticeValue kb:valueHasString ?notice .
+    }
+}
