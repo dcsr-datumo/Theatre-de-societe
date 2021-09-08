@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Place } from 'src/app/models/place.model';
 import { PlaceMatch } from 'src/app/models/placematch.model';
+import { PlaceCache } from 'src/app/models/placecache.model';
 import { KnoraService } from 'src/app/services/knora.service';
 import { PopupLinkService } from 'src/app/services/popup-link.service';
 
@@ -66,22 +67,29 @@ export class MapComponent implements OnInit {
     }
   };
 
+  toLatLong(place: PlaceCache) : number[] {
+      return place.coord?.split(",")?.map(parseFloat);
+  }
+
   onMapReady(geomap: Map) {
     this.map = geomap;
     this.map$.emit(geomap);
     //let this_icon = icon({iconUrl: '/assets/img/marker-icon.png', shadowUrl: '/assets/img/marker-shadow.png'});
     let this_icon = icon({iconUrl: '/assets/img/marker-icon.png'});
 
-    let tv = this.knoraService.getPlaces().pipe(
+    let tv = this.knoraService.getPlacesQuickCache().pipe(
       map(
-        (matches: PlaceMatch[]) => matches.filter(
-          (place: PlaceMatch) => {
-            return !(place.latLong.length == 0 || isNaN(place.latLong[0]));
+        (matches: PlaceCache[]) => matches.filter(
+          (place: PlaceCache) => {
+            //console.log("latlong: "+ place.coord +" -- "+ place.latLong);
+            let latLong = this.toLatLong(place);
+            return (latLong && latLong.length == 2 && !isNaN(latLong[0]));
           }
         ).map(
-          (place: PlaceMatch) => {
+          (place: PlaceCache) => {
+            let latLong = this.toLatLong(place);
             let m = marker(
-              [place.latLong[0], place.latLong[1]],
+              [latLong[0], latLong[1]],
               {icon: this_icon}
             );
 

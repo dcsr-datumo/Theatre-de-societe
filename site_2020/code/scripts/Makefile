@@ -13,14 +13,19 @@ authors_cache.json: ## build the cache for works
 calendar_cache.json: ## build the cache for works
 	${SPARQLER} -q=requests/get_calendar.sparql | jq -f jq/calendar-filter.jq > output/calendar_cache.json
 
+.PHONY: places_cache.json
+places_cache.json: ## build the cache for places
+	${SPARQLER} -q=requests/get_places.sparql | jq -f jq/places-filter.jq > output/places_cache.json
+
 .PHONY: all_cache
-all_cache: works_cache.json authors_cache.json calendar_cache.json ## build all cache files
+all_cache: works_cache.json authors_cache.json calendar_cache.json places_cache.json ## build all cache files
 
 .PHONY: all_cache_enc
 all_cache_enc:  ## build all cache files encoded request
 	${SPARQLER} -q=requests/get_works.enc | jq -f jq/works-filter.jq > output/works_cache.json
 	${SPARQLER} -q=requests/get_authors.enc | jq -f jq/authors-filter.jq > output/authors_cache.json
 	${SPARQLER} -q=requests/get_calendar.enc | jq -f jq/calendar-filter.jq > output/calendar_cache.json
+	${SPARQLER} -q=requests/get_places.enc | jq -f jq/places-filter.jq > output/places_cache.json
 
 .PHONY: copy_local
 copy_local: ## copy the cache data files in the source before building the app
@@ -41,7 +46,7 @@ help: ## this help
 # yes, this makefile is used to dockerized itself
 ACCOUNT=platec
 CONTAINER=tds_cache_updater
-VERSION=v0.1.0
+VERSION=v0.2.0
 ENVFILE=docker_env_prod_root
 
 .PHONY: build
@@ -49,6 +54,7 @@ build: ## builds the web-app container
 	wwwenc < requests/get_authors.sparql > requests/get_authors.enc
 	wwwenc < requests/get_works.sparql > requests/get_works.enc
 	wwwenc < requests/get_calendar.sparql > requests/get_calendar.enc
+	wwwenc < requests/get_places.sparql > requests/get_places.enc
 	docker build -t ${ACCOUNT}/${CONTAINER}:${VERSION} .
 
 .PHONY: run

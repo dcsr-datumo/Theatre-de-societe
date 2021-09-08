@@ -2,6 +2,18 @@
 
 Now the cache are on the web application server.
 
+## load environment file
+
+to use locally the same file as bundled with the docker container, do:
+
+```bash
+set -a
+. env/prod.env 
+set +a
+```
+
+before the rest of the commands.
+
 ## local
 
 before a release, bundle a new version of the cache:
