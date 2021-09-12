@@ -1,15 +1,21 @@
 //@import '../../local.scss';
 
+.scroll {
+  overflow: auto;
+  max-height: 30em;
+  width: 100%;
+}
+
 div {
   color: black;
 
-  padding: 2rem 20%;
-  margin: 2rem;
-  margin-top: 4rem;
+  padding: 1rem;
+  //margin: 2rem;
+  //margin-top: 4rem;
   //display: flex;
   //flex-direction: column;
   //justify-content: center;
-  background-color: rgba(white, .8);
+  background-color: rgba(white, .9);
 
   display: block;
   justify-content: left;
@@ -22,6 +28,11 @@ div {
 // ul {
 //   text-align: left;
 // }
+
+.wide {
+  margin: 0;
+  padding: 1em;
+}
 
 a {
   color: #1976d2;

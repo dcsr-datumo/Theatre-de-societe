@@ -16,8 +16,18 @@
   </ng-template>
 
   <ng-template #known>
-    <h1>Représentations de l'année {{ year }}</h1>
+    <span *ngIf="year === 1700; then first else after"></span>
+
+    <ng-template #first>
+      <h1>Représentations de l'année {{ year }} et avant</h1>
+    </ng-template>
+
+    <ng-template #after>
+      <h1>Représentations de l'année {{ year }}</h1>
+    </ng-template>
+
   </ng-template>
+
   <tds-representations-list [representations]="representations" [titles]="true" [header]="false"></tds-representations-list>
 
   <a routerLink="/calendrier" title="retour vers le calendrier">

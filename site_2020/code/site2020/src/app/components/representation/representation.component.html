@@ -15,20 +15,6 @@
       <li *ngIf="rep.festival">
         Festival: <tds-festival [iri]="rep.festival"></tds-festival>
       </li>
-      <li *ngIf="rep.quote && rep.quote.length>0">
-        <span *ngIf="rep.quote.length == 1">
-          Source:
-          <tds-quote [iri]="rep.quote[0]"></tds-quote>
-        </span>
-        <span *ngIf="rep.quote.length > 1">
-          Sources:
-          <ul>
-            <li *ngFor="let quote of rep.quote">
-              <tds-quote [iri]="quote"></tds-quote>
-            </li>
-          </ul>
-        </span>
-      </li>
       <li *ngIf="rep.role && rep.role.length>0">
         <span *ngIf="rep.role.length == 1">
           Role:
@@ -59,6 +45,40 @@
       <li>
         <a href="{{rep.ark}}">perma-lien de cette représentation</a>
       </li>
+
+      <li *ngIf="rep.quote && rep.quote.length>0">
+        <span *ngIf="rep.quote.length == 1">
+          Source:
+          <tds-quote [iri]="rep.quote[0]"></tds-quote>
+        </span>
+        <span *ngIf="rep.quote.length > 1">
+          Sources:
+
+          <!-- div class="list-item-header list-item-container">
+            <div class="list-item-header">titre</div>
+            <div class="list-item-header">auteur</div>
+          </div -->
+
+          <mat-list-item *ngFor="let quote of rep.quote">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panel[quote.id] = true">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <span class="truncate">
+                      <tds-quote-line [iri]="quote"></tds-quote-line>
+                    </span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <span *ngIf="panel[quote.id]">
+                  <tds-quote [iri]="quote"></tds-quote>
+                </span>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-list-item>
+
+        </span>
+      </li>
+
     </ul>
   </span>
 </div>
