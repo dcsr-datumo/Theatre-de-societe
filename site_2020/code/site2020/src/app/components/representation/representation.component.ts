@@ -15,6 +15,8 @@ export class RepresentationComponent implements OnInit {
   id: string;
   representation: Observable<Representation>;
 
+  panel: Map<string, boolean> = new Map<string, boolean>();
+
   constructor(
     private route: ActivatedRoute,
     private knoraService: KnoraService,

@@ -1,3 +1,16 @@
 <span *ngIf="quote | async as q">
-  {{q.label}}
+  <div>
+    Volume: {{q.volume}}
+  </div>
+  <div>
+    Page: {{q.numPage}}    
+  </div>
+  <!--div>
+    Source: {{q.source}}
+  </div -->
+  <div>
+    Quote:
+    <div class="scroll, wide" [innerHTML]="q.quote"></div>
+  </div>
+
 </span>
