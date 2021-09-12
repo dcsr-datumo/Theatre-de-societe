@@ -1,6 +1,6 @@
 ACCOUNT=platec
 CONTAINER=tds
-VERSION=v0.6.6
+VERSION=v0.6.7
 
 .PHONY: build
 build: ## builds the web-app container
