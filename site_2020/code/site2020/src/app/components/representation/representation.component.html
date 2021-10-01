@@ -1,4 +1,4 @@
-<div>
+<div class="external">
   <span *ngIf="representation | async as rep">
     <h2>Représentation:</h2>
 
@@ -49,6 +49,7 @@
       <li *ngIf="rep.quote && rep.quote.length>0">
         <span *ngIf="rep.quote.length == 1">
           Source:
+          <tds-quote-line [iri]="rep.quote[0]"></tds-quote-line>
           <tds-quote [iri]="rep.quote[0]"></tds-quote>
         </span>
         <span *ngIf="rep.quote.length > 1">
