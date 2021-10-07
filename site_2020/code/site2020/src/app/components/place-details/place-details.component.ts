@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { delay, map, switchMap } from 'rxjs/operators';
 import { Place } from 'src/app/models/place.model';
 import { RepresentationMatch } from 'src/app/models/representationmatch.model';
 import { KnoraService } from 'src/app/services/knora.service';

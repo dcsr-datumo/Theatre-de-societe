@@ -4,8 +4,8 @@ PREFIX tds: <http://www.knora.org/ontology/0103/theatre-societe#>
 SELECT
     distinct ?id 
     ?name
-    ?coord
-    ?notice
+	(sample(distinct ?coord_candidate) as ?coord) 
+    (group_concat(distinct ?notice;separator=", ") as ?notices)
 WHERE {
     ?id a tds:Place .
     ?id kb:isDeleted "false"^^xsd:boolean .
@@ -17,11 +17,14 @@ WHERE {
 
     OPTIONAL {
         ?id tds:placeHasCoordinates ?coordValue .
-        ?coordValue kb:valueHasString ?coord .
+        ?coordValue kb:isDeleted "false"^^xsd:boolean .
+        ?coordValue kb:valueHasString ?coord_candidate .
     }
 
     OPTIONAL {
         ?id tds:placeHasNotice ?noticeValue .
+        ?noticeValue kb:isDeleted "false"^^xsd:boolean .
         ?noticeValue kb:valueHasString ?notice .
     }
 }
+group by ?id ?name
