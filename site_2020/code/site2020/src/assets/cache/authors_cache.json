@@ -558,12 +558,6 @@
     "pseudonym": null
   },
   {
-    "id": "http://rdfh.ch/0103/gWHjeRVUSSKizpkQ3-XSEQ",
-    "familyName": "D'Orléans, Duc d'Orléans (1701-1723)",
-    "givenName": "Philippe",
-    "pseudonym": "Le Régent"
-  },
-  {
     "id": "http://rdfh.ch/0103/A7ZRJgtKQUuj8qtImZqEVw",
     "familyName": "D***",
     "givenName": "Mademoiselle",
@@ -1026,6 +1020,12 @@
     "pseudonym": null
   },
   {
+    "id": "http://rdfh.ch/0103/v03PsNbERv27ur3sDBATWg",
+    "familyName": "La Fare",
+    "givenName": "Charles-Auguste, marquis de",
+    "pseudonym": null
+  },
+  {
     "id": "http://rdfh.ch/0103/Fs9ak1WqQTeLcFAAcatm2Q",
     "familyName": "La Fare (de)",
     "givenName": null,
@@ -1462,6 +1462,12 @@
     "familyName": "Nelli",
     "givenName": "Jacopo Angiolo",
     "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/gWHjeRVUSSKizpkQ3-XSEQ",
+    "familyName": "Orléans",
+    "givenName": "Philippe d'",
+    "pseudonym": "Le Régent"
   },
   {
     "id": "http://rdfh.ch/0103/olD1fm0gTZiddEvzGV3Dhw",

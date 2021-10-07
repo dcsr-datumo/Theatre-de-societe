@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter, NgZone, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Map, Control, DomUtil, ZoomAnimEvent , Layer, MapOptions, tileLayer, latLng, marker, Marker, LatLng, LatLngExpression, icon, popup } from 'leaflet';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Control, DomUtil, ZoomAnimEvent , Layer, MapOptions, tileLayer, latLng, marker, Marker, LatLng, LatLngExpression, icon, popup } from 'leaflet';
+import { Map as LeafletMap } from 'leaflet';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { debounceTime, delay, distinctUntilChanged, map } from 'rxjs/operators';
 import { Place } from 'src/app/models/place.model';
 import { PlaceMatch } from 'src/app/models/placematch.model';
 import { PlaceCache } from 'src/app/models/placecache.model';
@@ -15,7 +16,7 @@ import { PopupLinkService } from 'src/app/services/popup-link.service';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  @Output() map$: EventEmitter<Map> = new EventEmitter;
+  @Output() map$: EventEmitter<LeafletMap> = new EventEmitter;
   @Input() layers = [
     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       opacity: 0.7,
@@ -30,11 +31,14 @@ export class MapComponent implements OnInit {
     center:latLng(47,0)
   };
 
-  loading: Observable<boolean>;
+  loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
-  public map: Map;
+  public map: LeafletMap;
 
-  places: PlaceMatch[];
+  places: PlaceCache[] = [];
+  placesToLayers = new Map<string, Layer>();
+
+  private searchTerms = new Subject<string>();
 
   constructor(
     private route: ActivatedRoute,
@@ -47,7 +51,7 @@ export class MapComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.loading = of(true);
+    this.loading.next(true);
     let layers: [Layer];
     layers = [
         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
@@ -71,13 +75,14 @@ export class MapComponent implements OnInit {
       return place.coord?.split(",")?.map(parseFloat);
   }
 
-  onMapReady(geomap: Map) {
+  onMapReady(geomap: LeafletMap) {
+    let us = this;
     this.map = geomap;
     this.map$.emit(geomap);
     //let this_icon = icon({iconUrl: '/assets/img/marker-icon.png', shadowUrl: '/assets/img/marker-shadow.png'});
     let this_icon = icon({iconUrl: '/assets/img/marker-icon.png'});
 
-    let tv = this.knoraService.getPlacesQuickCache().pipe(
+    this.knoraService.getPlacesQuickCache().pipe(
       map(
         (matches: PlaceCache[]) => matches.filter(
           (place: PlaceCache) => {
@@ -95,7 +100,7 @@ export class MapComponent implements OnInit {
 
             m.bindTooltip(
               // adding '...' to tell that there is a pop-up content
-              place.name + (place.notice?" ...":""),
+              place.name + (place.notices?" ...":""),
               {
                 permanent: false,
                 opacity: 1,
@@ -132,6 +137,8 @@ export class MapComponent implements OnInit {
 
             });
 
+            this.places.push(place);
+            this.placesToLayers.set(place.id, m);
             return m;
           }
         )
@@ -142,8 +149,59 @@ export class MapComponent implements OnInit {
       },
       error => console.log(error),
       () => {
-        this.loading = of(false);
+        this.loading.next(false);
+        this.afterMapReady(geomap, us);
       }
     );
   }
+
+  afterMapReady(geomap: LeafletMap, us: MapComponent) {
+    // then start listening to the search box entry
+    us.searchTerms.pipe(
+      // temporise, don't over react
+      debounceTime(100),
+      // go to next stage only if needed
+      distinctUntilChanged()
+    ).subscribe(
+      term => {
+        us.loading.next(true);
+        delay(2000);
+        if (!term.trim()) {
+          // if not search term, return the complete set of places
+          console.log("all places");
+          for (const m of us.placesToLayers.values()) {
+            // note loic: not very elegant, should keep a list of removed places?
+            us.map.removeLayer(m);
+            us.map.addLayer(m);          
+          }
+          us.loading.next(false);
+          return;
+        }
+
+        term = term.toLowerCase();
+        // search for the matches
+        us.places.forEach(place => {
+          let m = us.placesToLayers.get(place.id);
+          if (m) {
+            us.map.removeLayer(m);
+            if (place.name && place.name.toLowerCase().includes(term)) {
+              us.map.addLayer(m);
+            }  
+          } else {
+            console.log("not found: "+ place.id)
+          }
+        }
+        );
+        us.loading.next(false);
+      }
+    )
+
+  }
+
+  // called by the template when a text is entered
+  search(term: string): void {
+    console.log("search adding: "+ term);
+    this.searchTerms.next(term);
+  }
+  
 }

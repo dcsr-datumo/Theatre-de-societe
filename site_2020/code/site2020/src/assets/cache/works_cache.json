@@ -160,6 +160,11 @@
     "name": "Biancolelli"
   },
   {
+    "id": "http://rdfh.ch/0103/QuxcdgjgQVC9AVGgds9SJw",
+    "title": "Ariane",
+    "name": "Corneille"
+  },
+  {
     "id": "http://rdfh.ch/0103/dAT27FvnSQObf79fMsplpA",
     "title": "Ariane",
     "name": "Sand"
@@ -340,11 +345,6 @@
     "name": "Sand"
   },
   {
-    "id": "http://rdfh.ch/0103/stPQuyIiSW6UDKD2hqkD0A",
-    "title": "Camille",
-    "name": "Sand"
-  },
-  {
     "id": "http://rdfh.ch/0103/zPB7tup4QlyvCFb8de5sXg",
     "title": "Camille",
     "name": "Sand"
@@ -353,6 +353,11 @@
     "id": "http://rdfh.ch/0103/_FuEy8EWRHK0SHQ93Ma1Lw",
     "title": "Camille et Constance ou la Courtisane amoureuse",
     "name": "Colardeau"
+  },
+  {
+    "id": "http://rdfh.ch/0103/stPQuyIiSW6UDKD2hqkD0A",
+    "title": "Camille ou Le Démon du foyer",
+    "name": "Sand"
   },
   {
     "id": "http://rdfh.ch/0103/zFojymZMT-ePUbzx56A2gw",
@@ -1070,6 +1075,11 @@
     "name": "Sand"
   },
   {
+    "id": "http://rdfh.ch/0103/9jKEXJNhQtC9bmQITQb6rQ",
+    "title": "L'Avocat chansonnier",
+    "name": "Carmontelle"
+  },
+  {
     "id": "http://rdfh.ch/0103/3UMWTZmWRhWpuzwAmq05Aw",
     "title": "L'Embarras du moment, divertissement de société",
     "name": "Quétant"
@@ -1615,6 +1625,11 @@
     "name": null
   },
   {
+    "id": "http://rdfh.ch/0103/2j5VEz6zQbKEDxqGouuITQ",
+    "title": "La Fête de Saint Louis à Villers-Cotterets",
+    "name": "Carmontelle"
+  },
+  {
     "id": "http://rdfh.ch/0103/8UFbdvcjSYeS-iPj97UhGg",
     "title": "La Fête de Saint Pierre",
     "name": "Quétant"
@@ -1625,6 +1640,11 @@
     "name": "Moline"
   },
   {
+    "id": "http://rdfh.ch/0103/ZqgQ2C7uTMuap5iMULsS7A",
+    "title": "La Fête de Thérèse",
+    "name": "Carmontelle"
+  },
+  {
     "id": "http://rdfh.ch/0103/moFBfNjURUi9fOPkW-X5zA",
     "title": "La Fête de famille",
     "name": "Person de Bérainville"
@@ -1633,6 +1653,11 @@
     "id": "http://rdfh.ch/0103/9bDuuIYMRdKZWeYTqZY_qg",
     "title": "La Fête de village",
     "name": "Palissot de Montenoy"
+  },
+  {
+    "id": "http://rdfh.ch/0103/vCe3XceLRQOFQMch-TkKBA",
+    "title": "La Fête du seigneur, ou la Tricherie revient à son maître",
+    "name": "Carmontelle"
   },
   {
     "id": "http://rdfh.ch/0103/QmW3_P4QT12TZXsaLPn9jw",
@@ -1788,6 +1813,11 @@
     "id": "http://rdfh.ch/0103/Qxm6KHa-SLKeOviAtRv_UA",
     "title": "La Petite Meûnière",
     "name": "Baculard d'Arnaud"
+  },
+  {
+    "id": "http://rdfh.ch/0103/Irt10xoQR66IrI_y6-jPQw",
+    "title": "La Place de Villers-Cotterets",
+    "name": "Carmontelle"
   },
   {
     "id": "http://rdfh.ch/0103/pdt6Xh9EQJW8DjxQhUZ_9Q",
@@ -3160,6 +3190,11 @@
     "name": "Gullence"
   },
   {
+    "id": "http://rdfh.ch/0103/zS3ZKMQIRF-ACgQFRrnpoQ",
+    "title": "Les Amours de Marli la ville",
+    "name": "Carmontelle"
+  },
+  {
     "id": "http://rdfh.ch/0103/1xfF2FoCRYa_9-robAWhkA",
     "title": "Les Amours de Pierre-le-Long et de Blanche Bazu",
     "name": "Colardeau"
@@ -3975,11 +4010,6 @@
     "name": "Sand"
   },
   {
-    "id": "http://rdfh.ch/0103/eYgJb21BTd-XqKv5ShLi1Q",
-    "title": "Panthée",
-    "name": "D'Orléans, Duc d'Orléans (1701-1723)"
-  },
-  {
     "id": "http://rdfh.ch/0103/QsKVtiSYTeOMGH39Ci7LUQ",
     "title": "Paris f...tant",
     "name": null
@@ -3988,6 +4018,11 @@
     "id": "http://rdfh.ch/0103/KI923xlMR--PzHBGh-32ag",
     "title": "Pastorale",
     "name": "Laujon"
+  },
+  {
+    "id": "http://rdfh.ch/0103/4ureeykZSGypGNBk6wIUSw",
+    "title": "Penthée",
+    "name": "La Fare"
   },
   {
     "id": "http://rdfh.ch/0103/d_N_MAqwSUaWMKXdjR5MCQ",
@@ -4073,6 +4108,11 @@
     "id": "http://rdfh.ch/0103/WUgpy-ZMQji-63AKRZHlsg",
     "title": "Platée",
     "name": "Rameau"
+  },
+  {
+    "id": "http://rdfh.ch/0103/Oc8TEBiyRsuqLiQ9bp524w",
+    "title": "Polyeucte",
+    "name": "Corneille"
   },
   {
     "id": "http://rdfh.ch/0103/9B4KNhosSGKq8h0U7u8nLg",

@@ -1,15 +1,15 @@
 <span *ngIf="quote | async as q">
-  <div>
+  <div *ngIf="q.volume">
     Volume: {{q.volume}}
   </div>
-  <div>
+  <div *ngIf="q.numPage">
     Page: {{q.numPage}}    
   </div>
   <!--div>
     Source: {{q.source}}
   </div -->
   <div>
-    Quote:
+    <p style="text-decoration: underline;">Citation:</p>
     <div class="scroll, wide" [innerHTML]="q.quote"></div>
   </div>
 

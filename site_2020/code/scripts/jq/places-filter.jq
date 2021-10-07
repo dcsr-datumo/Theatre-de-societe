@@ -11,6 +11,6 @@
         id: .id.value, 
         name: .name.value, 
         coord: .coord.value, 
-        notice: .notice.value 
+        notices: .notices.value 
     } 
 ]

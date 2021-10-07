@@ -1,15 +1,29 @@
-<mat-progress-bar
-*ngIf="loading | async"
-mode="indeterminate"
-color="warn"
-style="position: absolute; top: 0; z-index: 100;"
->
-</mat-progress-bar>
+<span *ngIf="loading | async; then inprogress else ready"></span>
+
+<ng-template #inprogress>
+  <div class="input">
+    <div class="dot-flashing"></div>
+  </div>
+
+    <mat-progress-bar
+      mode="indeterminate"
+      color="warn"
+      style="position: absolute; top: 0; z-index: 100;"
+    >
+    </mat-progress-bar>
+  </ng-template>
+
+<ng-template #ready>
+  <input #searchBox id="search-box"
+    class="input ready"
+    placeholder="entrer quelques lettres d'un nom de lieu..."
+    (input)="search(searchBox.value)"/>
+</ng-template>
 
 <div class="float-container">
 
   <div class="float-map">
-  <div style="height: 40rem;"
+  <div style="height: 48rem;"
     leaflet
     (leafletMapReady)="onMapReady($event)"
     [leafletOptions]="options"
@@ -22,4 +36,3 @@ style="position: absolute; top: 0; z-index: 100;"
   </div>
 
 </div>
-
