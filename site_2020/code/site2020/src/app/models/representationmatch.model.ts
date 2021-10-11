@@ -15,6 +15,8 @@ export class RepresentationMatch extends Resource {
 
   get dateShort(): string {
     const dateValues = this.readResource.getValues(`${this.tds}representationHasDate`);
+    if (!(dateValues && dateValues.length>0)) return "";
+
     const firstDate = dateValues[0];
     const date = firstDate["date"];
     let result = String(date['year']);
