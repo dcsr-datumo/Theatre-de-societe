@@ -165,7 +165,6 @@ export class MapComponent implements OnInit {
     ).subscribe(
       term => {
         us.loading.next(true);
-        delay(2000);
         if (!term.trim()) {
           // if not search term, return the complete set of places
           console.log("all places");
