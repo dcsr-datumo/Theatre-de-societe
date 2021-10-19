@@ -18,11 +18,15 @@
       </ng-template>
     </span>
 
-    <tds-representations-list
-    [representations]="getRepresentations(p.id)"
-    [titles]=true
-    [header]=true
-    >
+    <ng-container>
+
+    </ng-container>
+      <tds-representations-list
+      [source]="p.id"
+      [type]="'place'"
+      [titles]=true
+      [header]=true
+      >
     </tds-representations-list>
   </div>
 

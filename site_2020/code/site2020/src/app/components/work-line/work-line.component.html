@@ -1,13 +1,26 @@
 <span *ngIf="work | async as w">
-  <p>
-    <span *ngIf="w.authors && w.authors.length>0">
-      Auteur: <tds-person-line [iri]="w.authors"></tds-person-line>
-    </span>
+
+  <p *ngIf="w.authors && w.authors.length > 0">
+
+    <span *ngIf="w.authors.length > 1; then multi else single"></span>
+
+    <ng-template #single>
+      Auteur: <tds-person-line [iri]="w.authors[0]"></tds-person-line>
+    </ng-template>
+
+    <ng-template #multi>
+      Auteurs:
+      <ul>
+        <li *ngFor="let a of w.authors">
+          <tds-person-line [iri]="a"></tds-person-line>
+        </li>
+      </ul>
+    </ng-template>
   </p>
 
   <span>
     <tds-representations-list
-    [representations]="getRepresentations()" [header]="true" [titles]="false"
+    [source]="w.id" [type]="'work'" [header]="true" [titles]="false"
     >
     </tds-representations-list>
   </span>

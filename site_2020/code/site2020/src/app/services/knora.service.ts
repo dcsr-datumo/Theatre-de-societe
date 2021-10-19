@@ -7,7 +7,7 @@ import {
   ReadResource,
   CountQueryResponse,
 } from '@dasch-swiss/dsp-js';
-import { Observable, config, of, Subject, ReplaySubject } from 'rxjs';
+import { Observable, config, of, Subject, ReplaySubject, BehaviorSubject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
 import { RepresentationMatch } from '../models/representationmatch.model';
@@ -17,7 +17,7 @@ import { Work } from '../models/work.model';
 import { Genre } from '../models/genre.model';
 import { Quote } from '../models/quote.model';
 import { Festival } from '../models/festival.model';
-import { map, share, shareReplay, switchMap } from 'rxjs/operators';
+import { map, share, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
 import { Role } from '../models/role.model';
 import { Resource } from '../models/resource.model';
 import { PlaceMatch } from '../models/placematch.model';
@@ -421,12 +421,16 @@ export class KnoraService {
           }
           // becareful of magic numbers
           if (page.length == 25) {
-            index = index + 1;
+            index = ++index;
             aggregatedPage(observer);
           } else {
             service.cachedRepresentationMatches.set(cacheKey, representations);
             observer.complete();
           }
+        },
+        (e) => console.log("getRepresentation error: "+ e),
+        () => {
+          console.log('getRepresentations subscription ends for page: ' + index);
         }
       );
     }

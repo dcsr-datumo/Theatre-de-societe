@@ -25,9 +25,11 @@ export class CalendarPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loading = of(true);
+    // TODO: eventually, add a call back to representation list to get notified that the loading is over, cuttting it off for now
+    //this.loading = of(true);
+    this.loading = of(false);
     this.year = +this.route.snapshot.paramMap.get('year');
-    this.representations = this.knoraService.getRepresentationsByYear(this.year).pipe(finalize(() => this.loading = of(false)));
+    //this.representations = this.knoraService.getRepresentationsByYear(this.year).pipe(finalize(() => this.loading = of(false)));
   }
 
 }
