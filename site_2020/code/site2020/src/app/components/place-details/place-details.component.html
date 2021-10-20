@@ -18,16 +18,7 @@
       </ng-template>
     </span>
 
-    <ng-container>
-
-    </ng-container>
-      <tds-representations-list
-      [source]="p.id"
-      [type]="'place'"
-      [titles]=true
-      [header]=true
-      >
-    </tds-representations-list>
+    <tds-representations-list-map [source]="p.id"></tds-representations-list-map>
   </div>
 
   <ng-template #invite>

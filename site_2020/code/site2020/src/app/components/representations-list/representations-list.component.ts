@@ -20,7 +20,6 @@ export class RepresentationsListComponent implements OnInit {
   titles: boolean;
   panel: Map<string, boolean> = new Map<string, boolean>();
   representations: Observable<RepresentationMatch[]>;
-  subscription;
 
   constructor(
     private knoraService: KnoraService
@@ -50,20 +49,9 @@ export class RepresentationsListComponent implements OnInit {
       //   )
       // )
       ;
-
-      // special case for maps, listen to place details or the list is not updated
-      this.subscription = this.knoraService.placeDetails.subscribe(
-        (update: string) => {
-          console.log("change detected on: "+ update);
-          this.representations = this.knoraService.getRepresentationsByLink(update, "place");
-        }
-      );
     }
   }
 
   ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
   }
 }
