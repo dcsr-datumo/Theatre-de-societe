@@ -15,7 +15,7 @@ import { RepresentationMatch } from 'src/app/models/representationmatch.model';
 export class PlaceComponent implements OnInit {
   id : string;
   place : Observable<Place>;
-  representations : Observable<RepresentationMatch[]>;
+  iri : string;
   title=true;
 
   constructor(
@@ -25,9 +25,8 @@ export class PlaceComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('place');
-    let iri = `http://rdfh.ch/0103/${this.id}`;
-    this.place = this.knoraService.getPlace(iri);
-    this.representations = this.knoraService.getRepresentationsByLink(iri, "place");
+    this.iri = `http://rdfh.ch/0103/${this.id}`;
+    this.place = this.knoraService.getPlace(this.iri);
   }
 
 }
