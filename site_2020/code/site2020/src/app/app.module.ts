@@ -39,7 +39,7 @@ import { GenreComponent } from './components/genre/genre.component';
 import { YearComponent } from './components/year/year.component';
 import { MapComponent } from './components/map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-// import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
+import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
 //import { LeafletMarkerClusterOptions } from '@asymmetrik/ngx-leaflet-markercluster';
 import { AuteursComponent } from './components/auteurs/auteurs.component';
 import { PiecesComponent } from './components/pieces/pieces.component';
@@ -78,7 +78,7 @@ import { RepresentationsListMapComponent } from './components/representations-li
     //MatDialog,
     MatExpansionModule, MatMenuModule,
     LeafletModule,
-    // LeafletMarkerClusterModule,
+    LeafletMarkerClusterModule,
     FormsModule,
     PdfViewerModule
   ],
