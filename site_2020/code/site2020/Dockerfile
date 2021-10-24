@@ -3,6 +3,7 @@ FROM node:alpine AS builder
 WORKDIR /app
 
 COPY package.json .
+RUN npm update -g
 RUN npm install
 
 COPY . .
