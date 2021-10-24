@@ -2170,6 +2170,11 @@
     "name": null
   },
   {
+    "id": "http://rdfh.ch/0103/Jdop06m7SaqKBO7ueQy2AQ",
+    "title": "Le Bijou de la Reine",
+    "name": "Dumas"
+  },
+  {
     "id": "http://rdfh.ch/0103/-wL_cpcKQPaUeKhS98kXfg",
     "title": "Le Boeuf chauvet",
     "name": "Sand"
@@ -2918,11 +2923,6 @@
     "id": "http://rdfh.ch/0103/4PUhf6o3QjGSxPkobHdIjg",
     "title": "Le Tuteur",
     "name": "Dancourt"
-  },
-  {
-    "id": "http://rdfh.ch/0103/Jdop06m7SaqKBO7ueQy2AQ",
-    "title": "Le Verrou",
-    "name": "Dumas"
   },
   {
     "id": "http://rdfh.ch/0103/ER9JQ2tyS9eFbY6ZHPej9g",
