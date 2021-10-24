@@ -27,7 +27,10 @@
     leaflet
     (leafletMapReady)="onMapReady($event)"
     [leafletOptions]="options"
-    [leafletLayers]="layers">
+    [leafletLayers]="layers"
+    [leafletMarkerCluster]="markerClusterData"
+    [leafletMarkerClusterOptions]="markerClusterOptions"
+    (leafletMarkerClusterReady)="markerClusterReady($event)">
   </div>
   </div>
 
