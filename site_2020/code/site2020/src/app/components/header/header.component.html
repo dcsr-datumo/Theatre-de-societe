@@ -31,7 +31,12 @@
         <span>
 
           <span *ngFor="let item of Object.keys(site.menu)">
-            <button mat-button [matMenuTriggerFor]="menu" class="header-item">{{item | uppercase}}</button>
+            <button mat-button [matMenuTriggerFor]="menu" class="header-item">
+              {{item | uppercase}}
+              <mat-icon>
+                expand_more
+              </mat-icon>
+            </button>
             <mat-menu #menu="matMenu" yPosition="below">
               <button *ngFor="let subitem of site.menu[item]" mat-menu-item [routerLink]="subitem | noAccent">{{subitem}}</button>
             </mat-menu>
