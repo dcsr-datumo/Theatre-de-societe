@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -60,6 +61,7 @@ import { AuteurspageComponent } from './components/auteurspage/auteurspage.compo
 import { PiecespageComponent } from './components/piecespage/piecespage.component';
 import { QuoteLineComponent } from './components/quote-line/quote-line.component';
 import { RepresentationsListMapComponent } from './components/representations-list-map/representations-list-map.component';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
   declarations: [
@@ -74,13 +76,14 @@ import { RepresentationsListMapComponent } from './components/representations-li
   imports: [
     HttpClientModule,
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
-    MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule, MatProgressBarModule,
+    MatToolbarModule, MatTooltipModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule, MatProgressBarModule,
     //MatDialog,
     MatExpansionModule, MatMenuModule,
     LeafletModule,
     LeafletMarkerClusterModule,
     FormsModule,
-    PdfViewerModule
+    PdfViewerModule,
+    ClipboardModule
   ],
   providers: [ConvertStandofPipe],
   bootstrap: [AppComponent],
