@@ -6,11 +6,11 @@
     <span *ngIf="(p.familyName && p.familyName.length > 1); then family_multi else family_single"></span>
 
     <ng-template #family_single>
-      <span *ngIf="p.familyName">
+      <span *ngIf="showName && p.familyName">
         {{p.familyName[0]}}
       </span>
 
-      <span *ngIf="p.givenName && (p.givenName.length > 0)">
+      <span *ngIf="showName && p.givenName && (p.givenName.length > 0)">
         <span *ngFor="let n of p.givenName">
           , {{n}}
         </span>
@@ -19,7 +19,7 @@
     </ng-template>
 
     <ng-template #family_multi>
-      <div>
+      <div *ngIf="showName">
         Noms:
         <div>
           <ul>
@@ -54,7 +54,7 @@
     <!-- name -->
 
     <!-- pseudo -->
-    <div *ngIf="p.pseudonym">
+    <div *ngIf="showName && p.pseudonym">
       dit {{p.pseudonym[0]}}
       <span *ngFor="let pseudo of p.pseudonym.slice(1)">
         , {{pseudo}}
@@ -64,6 +64,7 @@
 
     <!-- birth and death -->
     <div>
+      <span *ngIf="!showName">Dates naissance et mort:  </span>
       <span *ngIf="p.birthDate;then birthknown else birthunknown"></span>
       <ng-template #birthknown>{{p.birthDate}}</ng-template>
       <ng-template #birthunknown>?</ng-template>
