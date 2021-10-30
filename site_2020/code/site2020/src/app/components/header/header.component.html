@@ -38,7 +38,7 @@
               </mat-icon>
             </button>
             <mat-menu #menu="matMenu" yPosition="below">
-              <button *ngFor="let subitem of site.menu[item]" mat-menu-item [routerLink]="subitem | noAccent">{{subitem}}</button>
+              <button *ngFor="let subitem of site.menu[item]" mat-menu-item [routerLink]="subitem | noAccent">{{subitem | titlecase }}</button>
             </mat-menu>
           </span>
 
