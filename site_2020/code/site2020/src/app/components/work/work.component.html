@@ -9,21 +9,26 @@
     <span *ngIf="w.authors.length > 1; then multi else single"></span>
 
     <ng-template #single>
-      Auteur: <tds-person-line [iri]="w.authors[0]"></tds-person-line>
+      Auteur:
+      <a *ngIf="w.authority" target="_blank" href="{{w.authority}}">
+        <button mat-button matTooltip="ouvrir la page de l'identifiant d'autorité"><span class="material-icons">perm_contact_calendar</span></button>
+      </a>
+      <tds-person-line [iri]="w.authors[0]" [showName]="true"></tds-person-line>
     </ng-template>
 
     <ng-template #multi>
       Auteurs:
+      <a *ngIf="w.authority" target="_blank" href="{{w.authority}}">
+        <button mat-button matTooltip="ouvrir la page de l'identifiant d'autorité"><span class="material-icons">perm_contact_calendar</span></button>
+      </a>
+
       <ul>
         <li *ngFor="let a of w.authors">
           <tds-person-line [iri]="a"></tds-person-line>
         </li>
       </ul>
     </ng-template>
-  </p>
 
-  <p *ngIf="w.authority">
-    Identifiant d'autorité: <a href="{{w.authority}}">{{ w.authority }}</a>
   </p>
 
 </span>
