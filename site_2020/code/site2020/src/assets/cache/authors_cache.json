@@ -1554,6 +1554,12 @@
     "pseudonym": null
   },
   {
+    "id": "http://rdfh.ch/0103/VQJT8xuGSBesVnK6x4RHgQ",
+    "familyName": "Poisot",
+    "givenName": "Charles-Emile",
+    "pseudonym": null
+  },
+  {
     "id": "http://rdfh.ch/0103/ZvDSPZItQ_2Y6T5SwR-3AA",
     "familyName": "Poisson",
     "givenName": "Philippe",
@@ -1893,6 +1899,12 @@
     "id": "http://rdfh.ch/0103/J47DbeXOSuSeST-SPjP-GA",
     "familyName": "Tannevot",
     "givenName": "Alexandre",
+    "pseudonym": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/H_QFvBEyR0yFZqyW4avcAw",
+    "familyName": "Thalberg",
+    "givenName": "Sigismund",
     "pseudonym": null
   },
   {
