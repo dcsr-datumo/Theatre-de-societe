@@ -11,6 +11,8 @@
         id: .id.value, 
         name: .name.value, 
         coord: .coord.value, 
-        notices: .notices.value 
+        notices: .notices.value,
+        minDate: .minDate.value,
+        maxDate: .maxDate.value
     } 
 ]
