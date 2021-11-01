@@ -3,11 +3,11 @@
     <a routerLink="/representation/{{rep.ref}}">
       <tds-work [iri]="rep.work"></tds-work>
       <p>
-        Lieu: <tds-place-line [iri]="rep.place"></tds-place-line>
-      </p>
-      <p>
         Date: {{ rep.dateShort }}
       </p>
     </a>
-  </span>
+    <p>
+      Lieu: <tds-place-line [iri]="rep.place"></tds-place-line>
+    </p>
+</span>
 </div>

@@ -9,6 +9,14 @@ mat-panel-description {
   width: 33%;
 }
 
+.nomargin {
+  margin: 0;
+  margin-left: 1em; // outer/2 :( Note loic: should avoid fixed numbers
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
 .spacer {
   flex: 1 1 auto;
 }

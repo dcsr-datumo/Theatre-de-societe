@@ -1,6 +1,16 @@
 <div class="external">
   <span *ngIf="representation | async as rep">
-    <h2>Représentation:</h2>
+
+    <div class="nomargin">
+      <h2>
+        Représentation:
+      </h2>
+      <span class="spacer"></span>
+      <button mat-button matTooltip="copier le permalien ARK dans le presse papier" [cdkCopyToClipboard]="rep.ark" [cdkCopyToClipboardAttempts]="6"><span class="material-icons">share</span></button>
+      <a target="_blank" href="{{rep.ark}}">
+        <button mat-button matTooltip="ouvrir le permalien ARK"><span class="material-icons">open_in_new</span></button>
+      </a>
+    </div>
 
     <ul>
       <li>
@@ -41,9 +51,6 @@
             </li>
           </ul>
         </span>
-      </li>
-      <li>
-        <a href="{{rep.ark}}">perma-lien de cette représentation</a>
       </li>
 
       <li *ngIf="rep.quote && rep.quote.length>0">

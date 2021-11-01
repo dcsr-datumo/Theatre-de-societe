@@ -14,10 +14,39 @@
   </ng-template>
 
 <ng-template #ready>
-  <input #searchBox id="search-box"
+  <div class="mat-slider-horizontal">
+    <input #searchBox id="search-box"
     class="input ready"
     placeholder="entrer quelques lettres d'un nom de lieu..."
     (input)="search(searchBox.value)"/>
+  </div>
+
+  <div>
+    <mat-slider #minslider
+      thumbLabel
+      tickInterval="10"
+      step=10
+      min="{{yearMin}}"
+      max="{{yearMax}}"
+      (valueChange)="handleValueMin($event)"
+      [(ngModel)]="valueMin"
+    >
+    </mat-slider>
+    <span ngClass="{{valueMin>yearMin?'red':'black'}}">{{valueMin}}</span>
+  </div>
+  <div>
+    <mat-slider #maxslider
+      thumbLabel
+      tickInterval="10"
+      step=10
+      min="{{yearMin}}"
+      max="{{yearMax}}"
+      (valueChange)="handleValueMax($event)"
+      [(ngModel)]="valueMax"
+    ></mat-slider>
+    <span ngClass="{{valueMax<yearMax?'red':'black'}}">{{valueMax}}</span>
+  </div>
+
 </ng-template>
 
 <div class="float-container">

@@ -42,7 +42,13 @@ export class MapComponent implements OnInit {
   places: PlaceCache[] = [];
   placesToLayers = new Map<string, Layer>();
 
-  private searchTerms = new Subject<string>();
+  yearMin = 1700;
+  yearMax = 1899;
+  valueMin = this.yearMin;
+  valueMax = this.yearMax;
+
+  private searchTerms = "";
+  private searchTermsDate = new BehaviorSubject<string>(this.searchTerms +","+ this.valueMin+","+this.valueMax);
 
   constructor(
     private route: ActivatedRoute,
@@ -88,25 +94,26 @@ export class MapComponent implements OnInit {
 
   afterMarkerClusterReady(geomap: LeafletMap, us: MapComponent) {
     // then start listening to the search box entry
-    us.searchTerms.pipe(
+    us.searchTermsDate.pipe(
       // temporise, don't over react
       debounceTime(100),
       // go to next stage only if needed
       distinctUntilChanged()
     ).subscribe(
-      term => {
+      termDate => {
         us.loading.next(true);
-        if (!term.trim()) {
-          // if not search term, return the complete set of places
-          console.log("all places");
-          for (const m of us.placesToLayers.values()) {
-            // note loic: not very elegant, should keep a list of removed places?
-            us.markerClusterGroup.removeLayer(m);
-            us.markerClusterGroup.addLayer(m);
-          }
-          us.loading.next(false);
-          return;
-        }
+        let [term, valmin, valmax] = termDate.split(',');
+        // if (!term.trim()) {
+        //   // if not search term, return the complete set of places
+        //   console.log("all pl aces");
+        //   for (const m of us.placesToLayers.values()) {
+        //     // note loic: not very elegant, should keep a list of removed places?
+        //     us.markerClusterGroup.removeLayer(m);
+        //     us.markerClusterGroup.addLayer(m);
+        //   }
+        //   us.loading.next(false);
+        //   return;
+        // }
 
         term = term.toLowerCase();
         // search for the matches
@@ -114,7 +121,13 @@ export class MapComponent implements OnInit {
           let m = us.placesToLayers.get(place.id);
           if (m) {
             us.markerClusterGroup.removeLayer(m);
-            if (place.name && place.name.toLowerCase().includes(term)) {
+            if (
+              (!term.trim() || (place.name && place.name.toLowerCase().includes(term)))
+              &&
+              (valmin == this.yearMin.toString() || (place.maxDate && place.maxDate >= valmin))
+              &&
+              (valmax == this.yearMax.toString() || (place.minDate && place.minDate <= valmax))
+            ) {
               us.markerClusterGroup.addLayer(m);
             }
           } else {
@@ -209,10 +222,21 @@ export class MapComponent implements OnInit {
 
   }
 
+  handleValueMin(event) {
+    this.valueMin = Math.min(this.yearMax-10, this.valueMin, this.valueMax-10);
+    this.searchTermsDate.next(this.searchTerms +","+ this.valueMin +","+ this.valueMax);
+  }
+
+  handleValueMax(event) {
+    this.valueMax = Math.max(this.yearMin+10, this.valueMax, this.valueMin+10);
+    this.searchTermsDate.next(this.searchTerms +","+ this.valueMin +","+ this.valueMax);
+  }
+
   // called by the template when a text is entered
   search(term: string): void {
     console.log("search adding: "+ term);
-    this.searchTerms.next(term);
+    this.searchTerms = term;
+    this.searchTermsDate.next(term +","+ this.valueMin +","+ this.valueMax);
   }
 
 }

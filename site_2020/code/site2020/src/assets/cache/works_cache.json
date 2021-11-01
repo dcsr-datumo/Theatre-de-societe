@@ -415,6 +415,11 @@
     "name": "Lully"
   },
   {
+    "id": "http://rdfh.ch/0103/JtK23gauShG9Il8YaS4Plw",
+    "title": "Chansons inconnues",
+    "name": null
+  },
+  {
     "id": "http://rdfh.ch/0103/hUd3ll40TnKvqQL7L8Ca3g",
     "title": "Charlot ou La comtesse de Givry",
     "name": "Voltaire (Arouet, dit)"
@@ -585,6 +590,11 @@
     "name": "Da Ponte"
   },
   {
+    "id": "http://rdfh.ch/0103/tfOaSwZySa-E0cM-W_3rhQ",
+    "title": "Don Juan",
+    "name": null
+  },
+  {
     "id": "http://rdfh.ch/0103/I_qEZ5QaSd2FvIIGtdd8aQ",
     "title": "Don Sanche d'Aragon",
     "name": "Corneille"
@@ -728,6 +738,11 @@
     "id": "http://rdfh.ch/0103/RSChl660QI-9IbxS-vmoJQ",
     "title": "Gilles, chirurgien anglais",
     "name": "Collé"
+  },
+  {
+    "id": "http://rdfh.ch/0103/CWsqGG-UQZWSdf8K7nsiSg",
+    "title": "Grande fantaisie sur Les Huguenots",
+    "name": "Poisot"
   },
   {
     "id": "http://rdfh.ch/0103/-H65EWadQWiyrURHM4mIXA",
@@ -2650,6 +2665,11 @@
     "name": "Laujon"
   },
   {
+    "id": "http://rdfh.ch/0103/nWSnllobTsqm_YsaOi9dZg",
+    "title": "Le Parrain",
+    "name": "Scribe"
+  },
+  {
     "id": "http://rdfh.ch/0103/RdkWdbaxSlyRDaMc6Qbd-Q",
     "title": "Le Peintre",
     "name": null
@@ -3880,6 +3900,16 @@
     "name": "Sand"
   },
   {
+    "id": "http://rdfh.ch/0103/4BEch825ScOrIqhKNIxvmw",
+    "title": "Morceau de violon",
+    "name": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/bd1R_aycRSiQWNdvovIaWA",
+    "title": "Morceau de violoncelle",
+    "name": null
+  },
+  {
     "id": "http://rdfh.ch/0103/edgNOzxqROGsIndEOxqblQ",
     "title": "Mort de Bucéphale",
     "name": "Rousseau"
@@ -4153,6 +4183,11 @@
     "id": "http://rdfh.ch/0103/_p3EeFxXTZCz_X_bnR0vyQ",
     "title": "Prologue en vers - Titre inconnu",
     "name": "Montémont"
+  },
+  {
+    "id": "http://rdfh.ch/0103/og6iFvRsTvyiIfYcO9uIxg",
+    "title": "Proverbe inconnu",
+    "name": null
   },
   {
     "id": "http://rdfh.ch/0103/AZIEl8PfRTml-PEY_sffbA",

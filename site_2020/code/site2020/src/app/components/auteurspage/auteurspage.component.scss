@@ -5,6 +5,10 @@ mat-panel-description {
   justify-content: right;
 }
 
+.h2 {
+  display: inline;
+}
+
 .margin {
   padding: 0rem;
   margin: 0rem;
@@ -22,8 +26,19 @@ mat-panel-description {
   width: 66%;
 }
 
+.nomargin {
+  margin: 0;
+  margin-left: 1em; // outer/2 :( Note loic: should avoid fixed numbers
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
 .spacer {
-  flex: 1 1 auto;
+  flex: fit-content;
+}
+
+.right {
+  margin-right: 83%;
 }
 
 .truncate {
