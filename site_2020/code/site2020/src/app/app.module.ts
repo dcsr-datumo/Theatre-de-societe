@@ -32,7 +32,7 @@ import { EquipeComponent } from './components/equipe/equipe.component';
 import { RepresentationLineComponent } from './components/representation-line/representation-line.component';
 import { WorkComponent } from './components/work/work.component';
 import { PlaceComponent } from './components/place/place.component';
-import { QuoteComponent } from './components/quote/quote.component';
+import { QuoteContentComponent } from './components/quote-content/quote-content.component';
 import { RoleComponent } from './components/role/role.component';
 import { FestivalComponent } from './components/festival/festival.component';
 import { RepresentationComponent } from './components/representation/representation.component';
@@ -69,7 +69,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     AppComponent, HeaderComponent,
     CalendarComponent, CalendarPageComponent,
     RepresentationLineComponent,
-    WorkComponent, PlaceComponent, QuoteComponent, RoleComponent, FestivalComponent,
+    WorkComponent, PlaceComponent, QuoteContentComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, PublicationsComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
     PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent, AuteurspageComponent, PiecespageComponent, QuoteLineComponent, RepresentationsListMapComponent

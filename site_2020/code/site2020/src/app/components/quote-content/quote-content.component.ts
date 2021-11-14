@@ -5,11 +5,11 @@ import { KnoraService } from "../../services/knora.service";
 import { Quote } from "../../models/quote.model";
 
 @Component({
-  selector: 'tds-quote',
-  templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.scss']
+  selector: 'tds-quote-content',
+  templateUrl: './quote-content.component.html',
+  styleUrls: ['./quote-content.component.scss']
 })
-export class QuoteComponent implements OnInit {
+export class QuoteContentComponent implements OnInit {
   @Input()
   iri: string;
 

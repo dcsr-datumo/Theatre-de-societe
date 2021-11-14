@@ -57,7 +57,7 @@
         <span *ngIf="rep.quote.length == 1">
           Source:
           <tds-quote-line [iri]="rep.quote[0]"></tds-quote-line>
-          <tds-quote [iri]="rep.quote[0]"></tds-quote>
+          <tds-quote-content [iri]="rep.quote[0]"></tds-quote-content>
         </span>
         <span *ngIf="rep.quote.length > 1">
           Sources:
@@ -78,7 +78,7 @@
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <span *ngIf="panel[quote.id]">
-                  <tds-quote [iri]="quote"></tds-quote>
+                  <tds-quote-content [iri]="quote"></tds-quote-content>
                 </span>
               </mat-expansion-panel>
             </mat-accordion>
