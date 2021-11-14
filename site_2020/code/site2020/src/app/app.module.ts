@@ -22,7 +22,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
 //import { MatDialog } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatSliderModule } from '@angular/material/slider';
 import { ProjetComponent } from './components/projet/projet.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { PublicationsComponent } from './components/publications/publications.component';
@@ -63,6 +62,7 @@ import { PiecespageComponent } from './components/piecespage/piecespage.componen
 import { QuoteLineComponent } from './components/quote-line/quote-line.component';
 import { RepresentationsListMapComponent } from './components/representations-list-map/representations-list-map.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -79,12 +79,13 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
     MatToolbarModule, MatTooltipModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule, MatProgressBarModule,
     //MatDialog,
-    MatExpansionModule, MatMenuModule, MatSliderModule,
+    MatExpansionModule, MatMenuModule,
     LeafletModule,
     LeafletMarkerClusterModule,
     FormsModule,
     PdfViewerModule,
-    ClipboardModule
+    ClipboardModule,
+    NgxSliderModule
   ],
   providers: [ConvertStandofPipe],
   bootstrap: [AppComponent],
