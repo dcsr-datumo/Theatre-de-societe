@@ -28,9 +28,11 @@ WHERE {
     }
     OPTIONAL {
         ?representation tds:representationHasPlace ?id .
+        ?representation kb:isDeleted "false"^^xsd:boolean .
         OPTIONAL {
             ?representation tds:representationHasDate ?date .
             ?date kb:valueHasString ?dateStr .
+            ?date kb:isDeleted "false"^^xsd:boolean .
         }
     }
 }

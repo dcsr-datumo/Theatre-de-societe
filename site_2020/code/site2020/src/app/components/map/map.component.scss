@@ -17,15 +17,83 @@
   background-color: rgba(255, 255, 255, 0.856);
 }
 
-.mat-slider-horizontal {
+.term-search {
   width: 40rem;
   margin-left: 2em;
   margin-right: 2em;
 }
+
+
+.input {
+  width: 100%;
+  max-width: 700px;
+}
+
+.slider {
+  width: 40%;
+  max-width: 700px;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+@media screen and (max-width: 1000px) {
+  .slider {
+    width: 90%;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+
 
 .red {
   color: #e91e63;
 }
 .black {
   color: black;
+}
+
+// We need to use ::ng-deep to overcome view encapsulation
+::ng-deep {
+  .slider .ngx-slider .ngx-slider-bar {
+    background: #8a8a8a;
+    height: 2px;
+  }
+  .slider .ngx-slider .ngx-slider-selection {
+    background: #e91e63;
+  }
+
+  .slider .ngx-slider .ngx-slider-pointer {
+    width: 1rem;
+    height: 1rem;
+    top: -.5rem; /* to remove the default positioning */
+    bottom: 0;
+    background-color: #e91e63;
+  }
+
+  .slider .ngx-slider .ngx-slider-pointer:after {
+    display: none;
+  }
+
+  .slider .ngx-slider .ngx-slider-bubble {
+    bottom: 14px;
+    color: #e91e63;
+  }
+
+  .slider .ngx-slider .ngx-slider-limit {
+    font-weight: bold;
+    color: #e91e63;
+  }
+
+  .slider .ngx-slider .ngx-slider-tick {
+    width: 2px;
+    height: 9px;
+    margin-left: 4px;
+    border-radius: 0;
+    background: #8a8a8a;
+    top: -3px;
+  }
+
+  .slider .ngx-slider .ngx-slider-tick.ngx-slider-selected {
+    background: #e91e63;
+  }
 }

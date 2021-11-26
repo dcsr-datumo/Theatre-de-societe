@@ -1,0 +1,38 @@
+<span *ngIf="quote | async as q">
+
+  <div *ngIf="!embedded" class="nomargin">
+    <h2>
+      Source:
+    </h2>
+    <span class="spacer"></span>
+    <button mat-button matTooltip="copier le permalien ARK dans le presse papier" [cdkCopyToClipboard]="q.ark" [cdkCopyToClipboardAttempts]="6"><span class="material-icons">share</span></button>
+    <a target="_blank" href="{{q.ark}}">
+      <button mat-button matTooltip="ouvrir le permalien ARK"><span class="material-icons">open_in_new</span></button>
+    </a>
+  </div>
+
+  <div *ngIf="embedded">
+    <a href="quote/{{q.ref}}">
+      <button mat-button matTooltip="ouvrir dans une page"><span class="material-icons embedded">article</span></button>
+    </a>
+    <button mat-button matTooltip="copier le permalien ARK dans le presse papier" [cdkCopyToClipboard]="q.ark" [cdkCopyToClipboardAttempts]="6"><span class="material-icons embedded">share</span></button>
+    <a target="_blank" href="{{q.ark}}">
+      <button mat-button matTooltip="ouvrir le permalien ARK"><span class="material-icons embedded">open_in_new</span></button>
+    </a>
+  </div>
+
+  <div *ngIf="q.volume">
+    Volume: {{q.volume}}
+  </div>
+  <div *ngIf="q.numPage">
+    Page: {{q.numPage}}
+  </div>
+  <!--div>
+    Source: {{q.source}}
+  </div -->
+  <div>
+    <p style="text-decoration: underline;">Citation:</p>
+    <div class="scroll, wide" [innerHTML]="q.quote"></div>
+  </div>
+
+</span>

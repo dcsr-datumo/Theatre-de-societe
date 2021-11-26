@@ -1,16 +1,3 @@
-<span *ngIf="quote | async as q">
-  <div *ngIf="q.volume">
-    Volume: {{q.volume}}
-  </div>
-  <div *ngIf="q.numPage">
-    Page: {{q.numPage}}    
-  </div>
-  <!--div>
-    Source: {{q.source}}
-  </div -->
-  <div>
-    <p style="text-decoration: underline;">Citation:</p>
-    <div class="scroll, wide" [innerHTML]="q.quote"></div>
-  </div>
-
-</span>
+<div class="external">
+  <tds-quote-content [iri]="iri" [embedded]="false"></tds-quote-content>
+</div>

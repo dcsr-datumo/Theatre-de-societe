@@ -1,8 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { KnoraService } from "../../services/knora.service";
-
-import { Quote } from "../../models/quote.model";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'tds-quote',
@@ -10,15 +7,14 @@ import { Quote } from "../../models/quote.model";
   styleUrls: ['./quote.component.scss']
 })
 export class QuoteComponent implements OnInit {
-  @Input()
   iri: string;
 
-  quote: Observable<Quote>;
-
-  constructor(private knoraService: KnoraService) { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.quote = this.knoraService.getQuote(this.iri);
+    let id = this.route.snapshot.paramMap.get('id');
+    this.iri = `http://rdfh.ch/0103/${id}`;
   }
-
 }

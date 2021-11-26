@@ -19,8 +19,13 @@
           <mat-expansion-panel-header>
             <mat-panel-title *ngIf="titles">
 
-              <span class="truncate">
-                {{representation.workTitle}}
+              <span class="truncate" matTooltip="ouvrir la page de la représentation">
+                <a routerLink="/representation/{{representation.ref}}">
+                  <button mat-button class="embedded">
+                    <span class="material-icons embedded">article</span>
+                  </button>
+                  {{representation.workTitle}}
+                </a>
               </span>
 
             </mat-panel-title>

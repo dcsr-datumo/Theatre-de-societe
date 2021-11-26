@@ -9,6 +9,7 @@ import { PlaceMatch } from 'src/app/models/placematch.model';
 import { PlaceCache } from 'src/app/models/placecache.model';
 import { KnoraService } from 'src/app/services/knora.service';
 import { PopupLinkService } from 'src/app/services/popup-link.service';
+import { Options } from '@angular-slider/ngx-slider';
 
 @Component({
   selector: 'tds-map',
@@ -43,9 +44,15 @@ export class MapComponent implements OnInit {
   placesToLayers = new Map<string, Layer>();
 
   yearMin = 1700;
-  yearMax = 1899;
+  yearMax = 1900;
   valueMin = this.yearMin;
   valueMax = this.yearMax;
+  sliderOptions: Options = {
+    floor: this.valueMin,
+    ceil: this.valueMax,
+    step: 10,
+    showTicks: true
+  };
 
   private searchTerms = "";
   private searchTermsDate = new BehaviorSubject<string>(this.searchTerms +","+ this.valueMin+","+this.valueMax);
@@ -126,7 +133,7 @@ export class MapComponent implements OnInit {
               &&
               (valmin == this.yearMin.toString() || (place.maxDate && place.maxDate >= valmin))
               &&
-              (valmax == this.yearMax.toString() || (place.minDate && place.minDate <= valmax))
+              (valmax > (this.yearMax-10).toString() || (place.minDate && place.minDate <= valmax))
             ) {
               us.markerClusterGroup.addLayer(m);
             }
@@ -222,13 +229,8 @@ export class MapComponent implements OnInit {
 
   }
 
-  handleValueMin(event) {
-    this.valueMin = Math.min(this.yearMax-10, this.valueMin, this.valueMax-10);
-    this.searchTermsDate.next(this.searchTerms +","+ this.valueMin +","+ this.valueMax);
-  }
-
-  handleValueMax(event) {
-    this.valueMax = Math.max(this.yearMin+10, this.valueMax, this.valueMin+10);
+  onTimeRangeHighValueChange(event) {
+    // console.log("high value: "+ event +", valueMin: "+ this.valueMin +", valueMax: "+ this.valueMax)
     this.searchTermsDate.next(this.searchTerms +","+ this.valueMin +","+ this.valueMax);
   }
 
