@@ -45,14 +45,9 @@
     "name": "Chastellux"
   },
   {
-    "id": "http://rdfh.ch/0103/yKLi6T_SRISEnS1m1X3pFg",
-    "title": "Adieux de la Parade dans la Société",
-    "name": "Collé"
-  },
-  {
     "id": "http://rdfh.ch/0103/aYmBWqdeTS2daUrYyCPADw",
     "title": "Agar dans le désert",
-    "name": "Staël (de)"
+    "name": "Staël"
   },
   {
     "id": "http://rdfh.ch/0103/fxL1kCHPTimt6xkxTr7HsA",
@@ -365,9 +360,19 @@
     "name": "Le Prieur"
   },
   {
+    "id": "http://rdfh.ch/0103/vCyYVbrPRBaOf013RNZtjQ",
+    "title": "Captifs",
+    "name": "Coypel"
+  },
+  {
     "id": "http://rdfh.ch/0103/y3lm9hg0TPeZ0GqcXjb7ug",
     "title": "Caquire",
     "name": "Vessaire (de)"
+  },
+  {
+    "id": "http://rdfh.ch/0103/lKXxnXKzS5q7VPOHLDdYxg",
+    "title": "Carré magique",
+    "name": "Staal de Launay"
   },
   {
     "id": "http://rdfh.ch/0103/90-tMHuURyyRGQ6i-RCvzA",
@@ -523,11 +528,6 @@
     "id": "http://rdfh.ch/0103/7wqnyfGSQSKCf-R5nEyobQ",
     "title": "Daphnis et Chloé",
     "name": "Sand"
-  },
-  {
-    "id": "http://rdfh.ch/0103/dvwtBJVxTkq0-avX1n3mRw",
-    "title": "Dervis",
-    "name": null
   },
   {
     "id": "http://rdfh.ch/0103/_8B6m7I9R4qh7UDwyUwAQg",
@@ -722,7 +722,7 @@
   {
     "id": "http://rdfh.ch/0103/xKlDfXU8S5qPNRQZuXPYhA",
     "title": "Geneviève de Brabant",
-    "name": "Staël (de)"
+    "name": "Staël"
   },
   {
     "id": "http://rdfh.ch/0103/fkz4i0PEQH6IWHPlpy3Fmg",
@@ -747,7 +747,7 @@
   {
     "id": "http://rdfh.ch/0103/-H65EWadQWiyrURHM4mIXA",
     "title": "Gustave Wasa",
-    "name": "Staël (de)"
+    "name": "Staël"
   },
   {
     "id": "http://rdfh.ch/0103/28BtHKinSuKo7GFNVOA7zA",
@@ -790,6 +790,11 @@
     "name": "Musset"
   },
   {
+    "id": "http://rdfh.ch/0103/_xduNqrLROmiMHHJ1Fhdkw",
+    "title": "Il ne faut pas croire tout ce que l'on voit",
+    "name": null
+  },
+  {
     "id": "http://rdfh.ch/0103/T79pKtrnTNCD03Tki_qX3w",
     "title": "Il était là!!!",
     "name": "Villevieille"
@@ -798,6 +803,11 @@
     "id": "http://rdfh.ch/0103/H2Un4-crQGifw1UazM_MLQ",
     "title": "Ils sont d'accord ou le vol du bouquet",
     "name": "Mondolot"
+  },
+  {
+    "id": "http://rdfh.ch/0103/bIa1dFIaQHCvv0ODFHSGNA",
+    "title": "Importuns de Chastenay",
+    "name": "Malézieu"
   },
   {
     "id": "http://rdfh.ch/0103/Jy3TCO2YTWaSgm-oVFqXXg",
@@ -850,6 +860,11 @@
     "name": "Sand"
   },
   {
+    "id": "http://rdfh.ch/0103/__p6VB7qQQyUuqIgtswvDw",
+    "title": "Jacques",
+    "name": "Sand"
+  },
+  {
     "id": "http://rdfh.ch/0103/pIicV9ufTLCdbnbzKHrILA",
     "title": "Jardinier de Chaillot",
     "name": "Caylus (de)"
@@ -892,7 +907,7 @@
   {
     "id": "http://rdfh.ch/0103/GSVzgtgyTLScphSYjY3YQg",
     "title": "Joseph",
-    "name": null
+    "name": "Genest"
   },
   {
     "id": "http://rdfh.ch/0103/t424AA5VROe2kXOfA4HIMw",
@@ -1180,9 +1195,19 @@
     "name": "La Porte"
   },
   {
+    "id": "http://rdfh.ch/0103/7Tz7McIITC2fm_Mrj3XpYw",
+    "title": "L'Hôte de Lemnos",
+    "name": "Malézieu"
+  },
+  {
     "id": "http://rdfh.ch/0103/6x3VpAECQZy2GtJZTwDnzw",
     "title": "L'Hôte de Lemnos (trad. de Mostellaria, de Plaute)",
     "name": "Malézieu"
+  },
+  {
+    "id": "http://rdfh.ch/0103/K-zBzw95QR-jjMbHpbGEfg",
+    "title": "L'Ile des esclaves",
+    "name": "Carlet de Chamblain de Marivaux"
   },
   {
     "id": "http://rdfh.ch/0103/XsCRKdjCTiaZoplDW4ZEiA",
@@ -1353,6 +1378,11 @@
     "id": "http://rdfh.ch/0103/zNHZSxoLQMye9YXm9suZBg",
     "title": "L'homme de campagne",
     "name": "Sand"
+  },
+  {
+    "id": "http://rdfh.ch/0103/gLFuWOvyQv66ZhE_j8M_sg",
+    "title": "L'impromptu de Livry",
+    "name": "Dancourt"
   },
   {
     "id": "http://rdfh.ch/0103/6o6GPn0XTl-ijlOgVgsI7Q",
@@ -1922,7 +1952,7 @@
   {
     "id": "http://rdfh.ch/0103/5NJ1GMgjRSWnLPDHRB4nxg",
     "title": "La Sunamite",
-    "name": "Staël (de)"
+    "name": "Staël"
   },
   {
     "id": "http://rdfh.ch/0103/Zcl5qlN0SvmbFXNGN4fO_g",
@@ -1946,7 +1976,7 @@
   },
   {
     "id": "http://rdfh.ch/0103/aUVwqgwbTDGteRxuM4-gHA",
-    "title": "La Tarentolle",
+    "title": "La Tarentole",
     "name": "Malézieu"
   },
   {
@@ -1963,6 +1993,11 @@
     "id": "http://rdfh.ch/0103/5s8i4GWzRtqguRw-LcgJBQ",
     "title": "La Vaporeuse",
     "name": null
+  },
+  {
+    "id": "http://rdfh.ch/0103/IYfqlqPWQ7msbS8PDAXJ-Q",
+    "title": "La Veillée de village, ou Les noces de Colin et de Ragonde",
+    "name": "Destouches"
   },
   {
     "id": "http://rdfh.ch/0103/xIfe7H8DRfWXRh_HI5Gs4A",
@@ -2077,7 +2112,7 @@
   {
     "id": "http://rdfh.ch/0103/wGBaq2B-Tmexiehz_MOLdA",
     "title": "La nouvelle école des femmes",
-    "name": "Moissy (de)"
+    "name": "Moissy"
   },
   {
     "id": "http://rdfh.ch/0103/1a2oeaBtQo-ye3EVTnh03w",
@@ -2237,7 +2272,7 @@
   {
     "id": "http://rdfh.ch/0103/E_INjl3WRmO5GuL0qfhIOw",
     "title": "Le Capitaine Kernadec",
-    "name": "Staël (de)"
+    "name": "Staël"
   },
   {
     "id": "http://rdfh.ch/0103/55R1_efWRaKIF2UHExXGbg",
@@ -2353,6 +2388,11 @@
     "id": "http://rdfh.ch/0103/KxTTYdCpTb-0Xtvzjkgf4Q",
     "title": "Le Dernier jour d’une muse [Corinne]",
     "name": "Solms"
+  },
+  {
+    "id": "http://rdfh.ch/0103/dvwtBJVxTkq0-avX1n3mRw",
+    "title": "Le Dervis",
+    "name": "Collé"
   },
   {
     "id": "http://rdfh.ch/0103/4MODRHIjQnSyrXlws7EPKA",
@@ -2542,7 +2582,7 @@
   {
     "id": "http://rdfh.ch/0103/Yq2KDB3ESHuXMpjcXPmHyg",
     "title": "Le Mannequin",
-    "name": "Staël (de)"
+    "name": "Staël"
   },
   {
     "id": "http://rdfh.ch/0103/TKKwhMCYSXye0YqA4F8u1g",
@@ -2715,9 +2755,19 @@
     "name": "Sand"
   },
   {
+    "id": "http://rdfh.ch/0103/DLHDjKAgRH2vtl3kipPoOA",
+    "title": "Le Prince de Cathay",
+    "name": "Malézieu"
+  },
+  {
     "id": "http://rdfh.ch/0103/p3zMUBIRQQmVvx92nR2huw",
     "title": "Le Prince de Noisy",
     "name": "Rebel"
+  },
+  {
+    "id": "http://rdfh.ch/0103/bb7ktg5IS22wUypbJuFC0A",
+    "title": "Le Prince de Noisy (adaptation par Jeans Dumas d'Aigueberre)",
+    "name": "Hamilton"
   },
   {
     "id": "http://rdfh.ch/0103/5uaXKcIRTXS9WQIZQcvczg",
@@ -3010,6 +3060,11 @@
     "name": "Pont-de-Veyle, (de Fériol, ou Ferriol, comte de)"
   },
   {
+    "id": "http://rdfh.ch/0103/_nvzuApNRfKMGjyF2GgvUw",
+    "title": "Le comte de Gabalis",
+    "name": "Villars"
+  },
+  {
     "id": "http://rdfh.ch/0103/H4fcx2cHSaqmWIMiEVol1Q",
     "title": "Le cœur sensible",
     "name": "Sand"
@@ -3175,6 +3230,11 @@
     "name": "Carlet de Chamblain de Marivaux"
   },
   {
+    "id": "http://rdfh.ch/0103/yKLi6T_SRISEnS1m1X3pFg",
+    "title": "Les Adieux de la Parade",
+    "name": "Collé"
+  },
+  {
     "id": "http://rdfh.ch/0103/nUMV3f5iTpe5HcpZz16Pyg",
     "title": "Les Adieux de la parade",
     "name": null
@@ -3301,8 +3361,13 @@
   },
   {
     "id": "http://rdfh.ch/0103/YqwnFm5wQFGLQB6nTKPBDA",
-    "title": "Les Crétards",
+    "title": "Les Crétard",
     "name": "Sand"
+  },
+  {
+    "id": "http://rdfh.ch/0103/swqCrxfcT3m1O43e0f67eg",
+    "title": "Les Dangers du faste",
+    "name": "Le Riche de La Popelinière"
   },
   {
     "id": "http://rdfh.ch/0103/kllpcvFuQ2ya06A2IcASoA",
@@ -3570,6 +3635,11 @@
     "name": "Favart"
   },
   {
+    "id": "http://rdfh.ch/0103/ejMfilmJS8KKrBRq_5NRIA",
+    "title": "Les Trois spectacles (Polixene, Avare amoureux, Pan et Doris)",
+    "name": "Aigueberre"
+  },
+  {
     "id": "http://rdfh.ch/0103/Eai6NdeoS02VYbSTUt4d1w",
     "title": "Les Trompeurs trompés",
     "name": "Garde (de la)"
@@ -3715,6 +3785,11 @@
     "name": "Grétry"
   },
   {
+    "id": "http://rdfh.ch/0103/y19BoK1rSu-bdv664huS9w",
+    "title": "Lysianasse",
+    "name": "Fontenelle"
+  },
+  {
     "id": "http://rdfh.ch/0103/eKRhZJIFR4erNgx8gm0Uhg",
     "title": "Léandre ambassadeur de Perse ",
     "name": "Laujon"
@@ -3807,7 +3882,7 @@
   {
     "id": "http://rdfh.ch/0103/MJTzzCvjRDyAaCYMfRg91g",
     "title": "Madame Prologue",
-    "name": null
+    "name": "Collé"
   },
   {
     "id": "http://rdfh.ch/0103/qO7UMw5oQv6X73-OSlIxmw",
@@ -4080,6 +4155,11 @@
     "name": "Racine"
   },
   {
+    "id": "http://rdfh.ch/0103/nskSSRMxTfa0oi9LLhwaNQ",
+    "title": "Pierre Riallo",
+    "name": "Sand"
+  },
+  {
     "id": "http://rdfh.ch/0103/QnRwUC48SNeR-AAsjETrew",
     "title": "Pierrot apprenti barbier",
     "name": "Sand"
@@ -4145,6 +4225,11 @@
     "name": "Rameau"
   },
   {
+    "id": "http://rdfh.ch/0103/EvLUk4_CQx6IHgViZM1DiA",
+    "title": "Polichinelle demandant une place dans l'Académie",
+    "name": "Malézieu"
+  },
+  {
     "id": "http://rdfh.ch/0103/Oc8TEBiyRsuqLiQ9bp524w",
     "title": "Polyeucte",
     "name": "Corneille"
@@ -4163,6 +4248,11 @@
     "id": "http://rdfh.ch/0103/sF0KikhZRS6teZc7g5dpBw",
     "title": "Prologue (pour Horace et Lydie)",
     "name": "Ponsard"
+  },
+  {
+    "id": "http://rdfh.ch/0103/6dZUbFYSQ6Os3lF6-Su2VQ",
+    "title": "Prologue (titre et auteur inconnus)",
+    "name": null
   },
   {
     "id": "http://rdfh.ch/0103/CTu8lAZcQ_KxFhWblmEvHw",
@@ -4195,6 +4285,16 @@
     "name": "Rousseau"
   },
   {
+    "id": "http://rdfh.ch/0103/wSo_8M_9Rd266NNdl2osQg",
+    "title": "Pyrgopolinice capitaine d'Ephèse (trad. du Miles gloriosus de Plaute)",
+    "name": "Malézieu"
+  },
+  {
+    "id": "http://rdfh.ch/0103/O0zkQ-okTSiXfnL-S_Vkww",
+    "title": "Pyrrhus et Téglis",
+    "name": "Morand"
+  },
+  {
     "id": "http://rdfh.ch/0103/w7wDr8sSSYuvXcIE_XzeXw",
     "title": "Pâris et Hélène",
     "name": null
@@ -4203,6 +4303,11 @@
     "id": "http://rdfh.ch/0103/POInK6O3SCi-MHBoTm0zlA",
     "title": "Pégasse gros lot ou la loterie des métromanes",
     "name": "Person de Bérainville"
+  },
+  {
+    "id": "http://rdfh.ch/0103/8kpQVherT2ymSucfaMW8Yw",
+    "title": "Pénélope",
+    "name": "Genest"
   },
   {
     "id": "http://rdfh.ch/0103/yjoP5vLGTBWgxbcjtuY8aA",
@@ -4305,6 +4410,11 @@
     "name": "Gresset"
   },
   {
+    "id": "http://rdfh.ch/0103/uMU1gbrhRcOKHY67GJ6m9w",
+    "title": "Sigismond ou la Vie est un songe",
+    "name": "Coypel"
+  },
+  {
     "id": "http://rdfh.ch/0103/iQ0shJeIS4qw0NNUHVFrqQ",
     "title": "Silvie ou la Fausse Niaise",
     "name": "Caylus (de)"
@@ -4335,6 +4445,11 @@
     "name": "Sand"
   },
   {
+    "id": "http://rdfh.ch/0103/XQVVBdShTnKVfKeDj5cKAA",
+    "title": "Thétis et Pelée",
+    "name": "Roy"
+  },
+  {
     "id": "http://rdfh.ch/0103/De09AFVGRuWRXK17jmDk_g",
     "title": "Tiridate",
     "name": "Galbert de Campistron"
@@ -4352,7 +4467,7 @@
   {
     "id": "http://rdfh.ch/0103/m1focKqrTq6uno6PwKTMow",
     "title": "Tragiflasque",
-    "name": null
+    "name": "Collé"
   },
   {
     "id": "http://rdfh.ch/0103/L7IzzHrgQqeTpscReLWeZA",
@@ -4375,9 +4490,19 @@
     "name": "Musset"
   },
   {
+    "id": "http://rdfh.ch/0103/bpzDO4LxQDSRhaPFHLtx7g",
+    "title": "Un héritage",
+    "name": "Duvernet"
+  },
+  {
     "id": "http://rdfh.ch/0103/gcZLebiAQMmIMb3F1SGUCQ",
     "title": "Un lion",
     "name": "Sand"
+  },
+  {
+    "id": "http://rdfh.ch/0103/DaS3x5jmStivdd3YA_aU-w",
+    "title": "Une nuit mystérieuse",
+    "name": "Duvernet"
   },
   {
     "id": "http://rdfh.ch/0103/XFhyiPBpTsWK5h-fSsZ3Nw",
@@ -4395,6 +4520,11 @@
     "name": "Sand"
   },
   {
+    "id": "http://rdfh.ch/0103/lot5rX15RquVCMhqvr49-w",
+    "title": "Une pêche en eau trouble",
+    "name": "Duvernet"
+  },
+  {
     "id": "http://rdfh.ch/0103/GjS0W3OcSxe_sRdqMxy-5Q",
     "title": "Une soirée chez Madame Geoffrin",
     "name": "Abrantès, Junot, duchesse de"
@@ -4408,6 +4538,11 @@
     "id": "http://rdfh.ch/0103/DEMIgQdvQeS5wFRgMmEWGw",
     "title": "Vingt-quatre Février",
     "name": "Werner"
+  },
+  {
+    "id": "http://rdfh.ch/0103/_3FwY--8TqebTHf0TTEolw",
+    "title": "Vive le roi, vive la Ligue",
+    "name": "Sand"
   },
   {
     "id": "http://rdfh.ch/0103/yR_A9c9tRtKXkGqFrqBkEg",
@@ -4482,7 +4617,7 @@
   {
     "id": "http://rdfh.ch/0103/6ulZ73QNQeGAosFVcg6nHQ",
     "title": "Zéphyr-Artillerie ou la Société des Francs-Péteurs (M.D.CC.XLIII, in-8 de X et 34 pages)",
-    "name": null
+    "name": "Le Corvaisier"
   },
   {
     "id": "http://rdfh.ch/0103/_ghzDD4iRG2P3hNmypUa9g",

@@ -13,7 +13,7 @@
     "coord": "48.864701, 2.338685",
     "notices": "",
     "minDate": "1732-04-17 CE",
-    "maxDate": "2018-01-25 CE"
+    "maxDate": "1733-01-29 CE"
   },
   {
     "id": "http://rdfh.ch/0103/7a4BfpmNQnCVdev6cqrp8A",
@@ -49,11 +49,11 @@
   },
   {
     "id": "http://rdfh.ch/0103/Zb59mwbTT-2b5PeGuEPYhw",
-    "name": "Chez la duchesse du Maine, Sceaux",
-    "coord": "48.775490, 2.287332",
-    "notices": "",
-    "minDate": "1746-01-01 CE - 1746-12-31 CE",
-    "maxDate": "1750-06-22 CE"
+    "name": "Sceaux, château de, Chez la duchesse du Maine",
+    "coord": "48.7732827, 2.3012009,16",
+    "notices": "[Trott]\u001e«...enfin, la comédie, sur ce petit théâtre qui avait survécu inviolable à toutes les vicissitudes et à toutes les décadences. » (Corr. de la  marquise du Deffand, intro.)\u001e“I'm writing ... to let you know of a Fuzelier link you may not be aware of. Did you know he was involved in the  \"Nuits de Sceaux\" in 1702-3 ? It seems he wrote songs that Bernier set to music, including a suite under the title \"Diane et  Endymion\". I haven't got enough info here to cross-check the Sceaux refs., but this strikes me as new and interesting, first  because it puts him into Theatre de Societe very early, and second because it adds to the little we know of his profile at the time he was contributing to Bertrand's work.” (courriel de Barry Russell, le 18 avril 2002) \u001e[>From BNF, Catalogue des manuscrits musicaux antérieur à 1800 conservés au départment de la Musique. A et B. Paris, 1999. -910- BERNIER, Nicolas (1664-1734) [Cantates...] _Cantates Francoises ou Musique de Chambre..._ ...Texte des cantates 1, 3 à 6 du Livre 1er de Bernier de Jean-Baptiste Rousseau ; celui des cantates 1 à 6 du Livre 2 de Bernier  : de Louis Fuzelier (...) Editions: Paris, Foucault, 1703.Ms: BN Mus. [X. 961 (1-3) et L. 3747. -917- BERNIER, Nicolas (1664-1734) [Diane et Endimion. Cantate..] _Diane Et Endimion. Cantate a Deux Voix, sans Symphonie, composée par Monsieur Bernier._ -Ms. [Ca 1703]. ...Texte de Louis Fuzelier. - Daté d'après l'édition : Paris : Foucault, 1703. Ms: BN Mus.[D.1023] For both refs, see David Tunley, _The Eighteenth Century French Cantata_, London, Dobson, 1974 ; p.72-90.]\u001e\"Le Pavillon de l'Aurore, théâtre de cette Nuit mémorable, est une exquise construction de style Louis XIV que l'ont peut encore admirer aujourd'hui, sise dans les jardins, et composée d'une salle ornée d'un plafond peint par Le Brun, flanquée de deux petits cabinets.\" (Voillier, p. 103-104)  \u001e, \"En décembre 1699, pour être agréable à son épouse, le duc du Maine fait l’acquisition du château de Sceaux, tout près du bourg de Châtenay, ancienne propriété de Colbert, puis de son fils le marquis de Seignelay. (...) \"\u001eCatherine Cessac, \"Les enchantements de Sceaux : thématique des spectacles offerts par la duchesse du Maine\", in Quéro D., Plagnol-Diéval M.-E., « Les théâtres de société au XVIIIe siècle » in Etudes sur le 18e siècle, Volume XXXIII, Editions de l'Université de Bruxelles, 2005, p. 12.\u001e",
+    "minDate": "1704-12-01 CE - 1704-12-31 CE",
+    "maxDate": "1750-08-01 CE - 1750-08-31 CE"
   },
   {
     "id": "http://rdfh.ch/0103/Xq5NRl1VR8qBzqNaUSRhLQ",
@@ -76,7 +76,7 @@
     "name": "Mon-Repos, Lausanne",
     "coord": "46.519046, 6.641990",
     "notices": "",
-    "minDate": "1757-02-01 CE - 1757-02-28 CE",
+    "minDate": "1757-02-18 CE",
     "maxDate": "1770-03-19 CE"
   },
   {
@@ -189,7 +189,7 @@
     "coord": "48.8555556, 1.4402778",
     "notices": "[Trott]\u001e(1681-1715) appartient au Maréchal Louis-Joseph de Vendôme.   “La majesté du lieu se révéla propice aux fastes des soirées auxquelles participèrent La Fontaine, Molière ou encore Lulli, en présence du Dauphin, fils de Louis XIV.” (A la recherche des châteaux disparus, p. 94)   (1715-1723) appartient à la veuve de Vendôme, puis à la princesse de Condé qui y mourut en 1723.   La duchesse du Maine l’a obtenu en 1723.\u001eJardins de Le Nôtre.\u001eSource : A la recherche des châteaux disparus, p. 94 ; Correspondance de Mme du Deffand\u001e",
     "minDate": "1747-08-01 CE - 1747-08-31 CE",
-    "maxDate": "1747-08-24 CE"
+    "maxDate": "1747-09-01 CE - 1747-09-30 CE"
   },
   {
     "id": "http://rdfh.ch/0103/aMXwvjXvTTatbJ7bNA6gPg",
@@ -330,8 +330,8 @@
   {
     "id": "http://rdfh.ch/0103/Kf_RFyFtS22XoQn7VEpdXA",
     "name": "Bagnolet, théâtre de (Duc d'Orléans) ",
-    "coord": "48.8619444, 2.4063889",
-    "notices": "[Trott]\u001eAcheté par le Régent en septembre 1717   Hérité par son petit-fils, Louis le Gros, en 1752, à la mort de son père. \u001e“[Louis], qui se plaisait à Bagnolet, y inaugura en 1761 le petit théâtre” (A la recherche des châteaux disparus, p. 101) \u001eLe Pavillon de l’Ermitage faisait partie du domaine, mais ce dernier a été morcellé en 1769.  \u001e",
+    "coord": "48.861949, 2.406262",
+    "notices": "Un plan général du château et de ses jardins à l'époque de Françoise-Marie de Bourbon, duchesse d'Orléans, épouse du Régent, est disponible sur Gallica\u001e, [Trott - remanié]\u001eAcheté par le Régent en septembre 1717. Ou plutôt, selon Saint-Simon, par sa femme, Françoise-Marie de Bourbon, qui y habita. Hérité par son petit-fils, Louis-Philippe d'Orléans, dit le Gros, en 1752, à la mort de son père. \u001e\"[Louis], qui se plaisait à Bagnolet, y inaugura en 1761 le petit théâtre*. Il fut peut-être aussi à l'origine du remaniement de l'Hermitage, réalisé à la fin du XVIIIe siècle, lui donnant l'aspect que nous lui connaissons aujourd'hui\" (Jean-Marc Hoffmann et Paul Vögele, A la recherche des châteaux disparus d'Ile-de-France, Genève, Vögele Editions, 2004, p. 101).\u001e*en réalité le théâtre inaugure fin 1759\u001e \u001e, D'après les mémoires de Collé, le \"petit théâtre de Bagnolet\" est inauguré le jour de Noël 1759 [\"il a fait faire un petit théâtre à Bagnolet, où il joua, le jour de Noël, le prologue des Deux Gilles et la Mère Rivale.\" (Collé, Journal et mémoires, 1868, t. 2, p. 207]\u001eA court d'argent pour acheter le château de Raincy, le duc vend Bagnolet le 9 mai 1769 à François Ageron, horloger, et François-Philippe Jalasson, orfèvre.\u001eDès 1770 les nouveaux propriétaires morcèlent le domaine et le vendent par lots.\u001eAujourd'hui il n'en reste que le Pavillon de l'Ermitage (adresse actuelle: 148 rue de Bagnolet 75020 Paris)\u001e",
     "minDate": "0001-01-01 CE - 0001-12-31 CE",
     "maxDate": "1769-12-25 CE"
   },
@@ -698,7 +698,7 @@
   {
     "id": "http://rdfh.ch/0103/3zBxIUzZSHC3iNrYR521jw",
     "name": "Boussy-Saint-Antoine, château de",
-    "coord": "48688847, 2.529764",
+    "coord": "48.6889177, 2.5278571,17",
     "notices": "[Trott]\u001eL'Impromptu de Boussy, Laus de Boissy, 1768.\u001e",
     "minDate": "1768-01-01 CE - 1768-12-31 CE",
     "maxDate": "1768-01-01 CE - 1768-12-31 CE"
@@ -804,7 +804,7 @@
     "name": "Fontaine-Martel, théâtre de Mme",
     "coord": "48.8633333, 2.4886111",
     "notices": "[Trott]\u001eMme Fontaine-Martel, morte en 1733 (1731-32). Rue des Bons Enfants.\u001eLettre de Voltaire, le 18 avril 1732 – “Pour nous autres Fontaine-Martel, nous jouons la comédie assez régulièrement. Nous répétâmes hier la nouvelle Eryphile.” Corr. de Voltaire, D  480.\u001e",
-    "minDate": "1732-04-17 CE",
+    "minDate": "1732-02-01 CE - 1732-02-29 CE",
     "maxDate": "1732-04-17 CE"
   },
   {
@@ -949,7 +949,7 @@
     "coord": "48.7652778, 2.2780556",
     "notices": "[Trott]\u001eLETTRE A MADEM. DE SCUDERY.\u001eElle est écrite de Chastenai par M. l'Abbé Genest sur les premieres Festes qui s'y firent.\u001e[...] \"La vûë de cette petite maison est charmante ; tout ce qui est aux environs ne semble fait que pour elle [le Duchesse du Maine]. On diroit que Seaux & Berny n'ont été faits que pour lui rendre hommage de leurs parterres, de leurs jardins, & de leurs superbes bâtimens ; qu'ils ne sont qu'un ornement attaché à cette maison, & n'ont été placez que pour lui offrir une agréable perspective. / ... Madame la Duchesse du Maine y demeure depuis que la Cour est à Fontainebleau, les incommoditez de sa grossesse l'empêchant d'y aller.\" (p. 31-32)\u001e\"A voir aussi comment tout est empressé pour le service & le divertissement de cette Princesse, Rege incolumi mens omnibus una est. Vous croiriez voir, comme au travers de ces ruches de verre, les Abeilles autour de leur Roi.\" (p. 34)\u001e\"Il [le Prince, mari de la Duchesse du Maine] cherche avec soin tout ce qui peut la divertir. Il a vû que dans les temps qu'elle étoit obligée à garder la chambre, elle s'amuseroit, & feroit quelque éxercice en jouänt des Comédies, à quoi elle se plaît beaucoup. Il en représente avec elle ; & l'on peut dire qu'il est également louable par le motif & par l'éxecution. Il est si vrai d'ailleurs que tout peut être rectifié par un bon usage, que ces divertissements sont là mille fois plus agréables que sur les théâtres publics, sans en avoir aucun des défauts. La dignité des / Acteurs les releve, & il y a une certaine noblesse dans leurs personnes & dans leurs actions qui corrige tout ce qui est à craindre dans ces spectacles.\u001eOn representa le Medecin malgré lui; M. de Malézieu dont je viens de vous parler y joüoit le rolle le plus difficile. Avec tout ce que je vous en ai dit, il est encore un des meilleurs Acteurs qu'on ait jamais vûs. Il se revêt de tous les personnages, soit sérieux, soit comiques : de sorte que ce ne sont point des images, mais la chose même qu'il represente. Madame de Maneville Dame d'honneur de Madame la Duchesse du Maine, joüa aussi fort bien. Leurs Altesses n'eurent pas de peine à trouver dans leur maison aussi bien que dans la famille de M. de Malézieu qui est aimable & nombreuse ce qu'il leur falloit encore de bons / Acteurs, & la Piéce fut trés-bien éxecutée.\" (p. 48-50)\u001e[le même soir] \"... Après le soupé Madame la Princesse fut invitée d'aller en carrosse à quelques pas de la maison ; Elle vit à la clarté des flambeaux un / Fort, & vis-à-vis deux grands Navires qui paroissoient à l'ancre dans un pré. On ôta les chevaux ; les carosses furent ainsi changez en Amphithéâtre.\u001eLes Navires distinguez par leurs fanaux s'approcherent du Fort, & commencerent à le canoner & à le bombarder. Le Fort répondit aussi par des boulets rouges : les vaisseaux revirerent diligemment, & tirerent de nouvelles bordées. On voyait le cercle des bombes, & la trace directe des boulets qui étoient des fusées. Tout cela étoit compassé avec une justesse incroyable. Ensuite les Troupes de terre attaquerent le Fort à plusieurs reprises, & la défense ne fut pas moins vigoureuse que l'attaque. On lançoit de part & d'autre une infinité de fusées qui imitoient le feu des grenades. Les attaques paroissoient à la lueur du feu. Enfin le feu se prit / aux Vaisseaux : Ils sauterent en élançant dans les airs une double girandole. De même le feu se mit aux magazins du Fort, & il sauta en élançant aussi une girandole qui égala sans doute celle qu'on voit tous les ans au Château Saint-Ange à Rome.\u001e(...)\u001eIl faut remarquer, Mademoiselle, que la Lune déroboit ici quelque chose à l'éclat des feux ; mais cependant elle contribua beaucoup à la beauté du spectacle. La sérénité du Ciel aussi-bien que le bruit de la Fête avoit attiré tous les habitans des villages circonvoisins. Les champs étoient couverts de spectateurs, & cette/ sombre lumiere qui ne laissoit voir que des coëffures & des cravates blanches, en cachant tous les défauts des visages & des habillemens, faisoit que tout paroissoit beau & propre. Mille voix d'admiration & de joie suivoient le mouvement de chaque fusée. Au retour on n'entendit que des chants par toute la campagne. On ne vit que des Danses que le Duc du Maine regarda avec plaisir, s'intéressant avec tendresse à voir les peuples commencer à goûter quelques fruits de la paix.\" (p. 50-53)\u001eA Chatenay, le   1699.\u001e(dans Les Divertissements de Sceaux, p. 28-57)\u001e, [Trott]\u001e\"C'est à Châtenay, à deux pas de Sceaux, que s'ouvre la série des jeux dits de Sceaux, qui furent imaginés par Malézieu dans le but de distraire, de fêter et d'aduler sa jeune et noble conquête. Ils s'y succédèrent jusqu'à ce que le château de Sceaux, acheté par le duc du Maine après la mort de marquis de Seignelay [année?], fut jugé suffisamment prêt à recevoir ses nouveaux propriétaires.\" (Voillier, p. 97) \u001e(...) \u001eLe \"théâtre avait été dressé dans les jardins et occupait le fond d'une vaste tente sous laquelle prirent place plus de trois cents invités.\" (Voillier, p. 99)\u001e",
     "minDate": "1699-01-01 CE - 1699-12-31 CE",
-    "maxDate": "1705-01-01 CE - 1705-12-31 CE"
+    "maxDate": "1710-08-06 CE"
   },
   {
     "id": "http://rdfh.ch/0103/isLT1k2ORQeVX9Q3Le3zGw",
@@ -969,9 +969,9 @@
   },
   {
     "id": "http://rdfh.ch/0103/NwYEHhjBRpi7T1dcs_ie1g",
-    "name": "Chaussée d'Antin, chez Mlle Guimard",
-    "coord": "48.872502, 2.333455",
-    "notices": "[Trott]\u001e“Un peu plus haut que l’hôtel Montmorency, la Guimard fit élever un hôtel rival de celui de la Dervieux [chez le prince Soubise? ou ailleurs?], construit sur les plans de Le Doux, que les souverains étrangers, en leur séjour à Paris, vinrent visiter. «C’était le Temple de Terpsichore couronnée par Apollon; groupe en pierre de Conflans, de 6 pieds de proportions sculpté par M. le  Comte, sculpteur du Roi et derrière ces colonnes en bas-reliefs: le triomphe de la Muse de la  Danse montée sur un char trainé par des Amours entourée par des Bacchantes et des Faunes et  suivie des grâces de la chorégraphie, deux faunes jouant des cymbales, indiquent par leurs  mouvements, la danse de caractère» [Thierry, Guide des amateurs, 1787, p. 147]. Au–dessus de  la porte d’entrée était une jolie salle de spectacle, au plafond peint par Taravel, peintre du roi.  Aménagée pour contenir en son parterre, en ses loges ouvertes ou grillées, cinq cents personnes, c’était un chef-d’oeuvre du genre. (Capon, 1902, p. 103) \u001e\"...l'hôtel Guimard (1770-1772), malgré sa façade néo-classique est distribué en grande partie comme un hôtel du début du XVIIIe siècle (...) Au premier étage, l'appartement comprend une chambre à coucher disposée de façon très appréciée depuis le début du siècle: ... C'est un programme luxueux et, qui plus est, destiné à une femme, une danseuse. Ceci explique l'existence de deux appartements avec un boudoir, d'un théâtre et de nombreuses «installataions sanitaires» de grandes dimensions, fait rarissime à l'époque et lié au statut social et professionnel de sa cliente.\" (Architectures de la vie privée, p. 65-66 NOTE: à la page 65, \"coupe et plans du rez-de-chaussée\") \u001e“L’ouverture du théâtre particulier de la Guimard devait avoir lieu pour la représentation de la Partie de chasse de Henri IV, et la Vérité dans le vin, au commencement de décembre 1772, c’était une fureur pour se procurer des billets et ce jour d’inauguration fut un triomphe; cette compagnie composée d’hommes de la plus grande distinction, comptait deux princes du sang: le duc de Chartres et le comte de Lamarche; en femmes, une assemblée de filles du plus joli minois, toutes ‘radieuses’ de diamants. Ce succès dura jusqu’au moment où la Guimard, commençant à sentir l’âge, résolut de se débarrasser de cette demeure; elle eût l’idée originale de la mettre en loterie, elle obtint qu’on ne mit pas d’opposition sur cette tombola qui devait avoir 2.500 billets à 120 livres. Le lundi, 22 mai 1785, l’hôtel était gagné par la comtesse de Lau, porteuse d’un seul billet qui revendit l’hôtel   500.000 francs au banquier Perrigauz; ce fut là que M. Jacques Laffite commença sa fortune.”  (Capon, 1902. p 104) \u001e\"Les premiers artistes de la capitale y jouaient tour-à-tour; Mlle Guimard y représenta le personnage de Victorine, dans le Philosophe sans le savoir, d'une manière inimitable jusqu'à l'avénement de Mlle Mars dont ce rôle fut le triomphe. (...) Fleury joua le marquis dans Turcaret, sur le théâtre de la rue du Mont-Blanc, le rôle du comte de Guelphar, du Galant Escroc, et plusieurs autres rôles, aidé qu'il fut par le chevalier de Boufflers.\" (Dinaux, I, p. 394) \u001e\"Cette salle était le rendez-vous ordinaire des courtisanes les plus recherchées et des hommes frivoles et aimables. On y jouait quelquefois des pièces faites exprès pour ce théâtre. Les acteurs et les actrices étaient la demoiselle Guimard et ses camarades de l'Opéra. Le sieur Laborde, premier valet de chambre du roi, se chargeait de diriger les spectacles que donnait la demoiselle Guimard. C'est pour eux que Collé composa les pièces contenues dans son Théâtre de société, et Carmontelle ses proverbes dramatiques.\" (Dulaure, III, p. 470). \u001e\"La salle de Paris, située rue de la Chaussée-d'Antin, est de la plus grande élégance et représente en petit celle de Versailles. Elle contient environ cinq cents personnes. C'est en vain quel'archevêque s'est opposé à son ouverture, on aseulement interdit à sa demande la Vérité dans le vin, pièce des plus licencieuses, ce qui a faitdire que Monseigneur ne voulait pas qu'elle sortit du tonneau plus que du puits. Comme chez les Verrières, il y avait des logesouvertes et aussi des loges grillées pour abriter « les femmes honnêtes, les personnages graveset les gens d'Église quand par hasard ils n'osaientse montrer ouvertement.\" (Maugras, p. 101-102)\u001e",
+    "name": "Chaussée d'Antin, chez Mlle Guimard (Temple de Terpsichore ou hôtel Guimard)",
+    "coord": "48.87187, 2.33369",
+    "notices": "[Trott]\u001e“Un peu plus haut que l’hôtel Montmorency, la Guimard fit élever un hôtel rival de celui de la Dervieux [chez le prince Soubise? ou ailleurs?], construit sur les plans de Le Doux, que les souverains étrangers, en leur séjour à Paris, vinrent visiter. «C’était le Temple de Terpsichore couronnée par Apollon; groupe en pierre de Conflans, de 6 pieds de proportions sculpté par M. le  Comte, sculpteur du Roi et derrière ces colonnes en bas-reliefs: le triomphe de la Muse de la  Danse montée sur un char trainé par des Amours entourée par des Bacchantes et des Faunes et  suivie des grâces de la chorégraphie, deux faunes jouant des cymbales, indiquent par leurs  mouvements, la danse de caractère» [Thierry, Guide des amateurs, 1787, p. 147]. Au–dessus de  la porte d’entrée était une jolie salle de spectacle, au plafond peint par Taravel, peintre du roi.  Aménagée pour contenir en son parterre, en ses loges ouvertes ou grillées, cinq cents personnes, c’était un chef-d’oeuvre du genre. (Capon, 1902, p. 103) \u001e\"...l'hôtel Guimard (1770-1772), malgré sa façade néo-classique est distribué en grande partie comme un hôtel du début du XVIIIe siècle (...) Au premier étage, l'appartement comprend une chambre à coucher disposée de façon très appréciée depuis le début du siècle: ... C'est un programme luxueux et, qui plus est, destiné à une femme, une danseuse. Ceci explique l'existence de deux appartements avec un boudoir, d'un théâtre et de nombreuses «installataions sanitaires» de grandes dimensions, fait rarissime à l'époque et lié au statut social et professionnel de sa cliente.\" (Architectures de la vie privée, p. 65-66 NOTE: à la page 65, \"coupe et plans du rez-de-chaussée\") \u001e“L’ouverture du théâtre particulier de la Guimard devait avoir lieu pour la représentation de la Partie de chasse de Henri IV, et la Vérité dans le vin, au commencement de décembre 1772, c’était une fureur pour se procurer des billets et ce jour d’inauguration fut un triomphe; cette compagnie composée d’hommes de la plus grande distinction, comptait deux princes du sang: le duc de Chartres et le comte de Lamarche; en femmes, une assemblée de filles du plus joli minois, toutes ‘radieuses’ de diamants. Ce succès dura jusqu’au moment où la Guimard, commençant à sentir l’âge, résolut de se débarrasser de cette demeure; elle eût l’idée originale de la mettre en loterie, elle obtint qu’on ne mit pas d’opposition sur cette tombola qui devait avoir 2.500 billets à 120 livres. Le lundi, 22 mai 1785, l’hôtel était gagné par la comtesse de Lau, porteuse d’un seul billet qui revendit l’hôtel   500.000 francs au banquier Perrigauz; ce fut là que M. Jacques Laffite commença sa fortune.”  (Capon, 1902. p 104) \u001e\"Les premiers artistes de la capitale y jouaient tour-à-tour; Mlle Guimard y représenta le personnage de Victorine, dans le Philosophe sans le savoir, d'une manière inimitable jusqu'à l'avénement de Mlle Mars dont ce rôle fut le triomphe. (...) Fleury joua le marquis dans Turcaret, sur le théâtre de la rue du Mont-Blanc, le rôle du comte de Guelphar, du Galant Escroc, et plusieurs autres rôles, aidé qu'il fut par le chevalier de Boufflers.\" (Dinaux, I, p. 394) \u001e\"Cette salle était le rendez-vous ordinaire des courtisanes les plus recherchées et des hommes frivoles et aimables. On y jouait quelquefois des pièces faites exprès pour ce théâtre. Les acteurs et les actrices étaient la demoiselle Guimard et ses camarades de l'Opéra. Le sieur Laborde, premier valet de chambre du roi, se chargeait de diriger les spectacles que donnait la demoiselle Guimard. C'est pour eux que Collé composa les pièces contenues dans son Théâtre de société, et Carmontelle ses proverbes dramatiques.\" (Dulaure, III, p. 470). \u001e\"La salle de Paris, située rue de la Chaussée-d'Antin, est de la plus grande élégance et représente en petit celle de Versailles. Elle contient environ cinq cents personnes. C'est en vain quel'archevêque s'est opposé à son ouverture, on aseulement interdit à sa demande la Vérité dans le vin, pièce des plus licencieuses, ce qui a faitdire que Monseigneur ne voulait pas qu'elle sortit du tonneau plus que du puits. Comme chez les Verrières, il y avait des logesouvertes et aussi des loges grillées pour abriter « les femmes honnêtes, les personnages graveset les gens d'Église quand par hasard ils n'osaientse montrer ouvertement.\" (Maugras, p. 101-102)\u001e, Correspond au 9, rue de la Chaussée d'Antin, jusqu'au milieu du XIXe siècle.\u001eEn 1862, ce qu’il restait du Temple de Terpsichore sera emporté par le percement de la rue Meyerbeer [source: Aline Boutillon, 9e histoire]\u001e",
     "minDate": "1772-12-01 CE - 1772-12-31 CE",
     "maxDate": "1772-12-01 CE - 1772-12-31 CE"
   },
@@ -1019,9 +1019,9 @@
     "id": "http://rdfh.ch/0103/OsfWWay9Tj2orHaKE7fcPg",
     "name": "Chenonceaux, chez Mme Dupin",
     "coord": "47.3250000, 1.0705556",
-    "notices": "[Trott]\u001e Il s’agit-il de la femme de Claude Dupin (1686-1769), fermier général.  \"À l'hôtel Lambert de Paris, succédera le château de Chenonceau (acquis par son époux) où elle tiendra une cour brillante. \"\u001e\"Dans la récente biographie du cardinal de Bernis par Jean-Paul Desprat (Perrin, 2000, p.90-91), l'auteur donne plusieurs précisions sur un voyage que plusieurs personnes, y compris Marivaux, firent à Chenonceaux, en novembre 1736. Marivaux y aurait lu des extraits de La Vie de Marianne en \"mimant\" et aurait fait répéter lui-même plusieurs jours durant son Ile des esclaves à Duclos (Arlequin), d'Argental (Iphicrate), madame Dupin (Euphrosine) et Bernis (Cléanthis).\" (Contribution de Gilles Plante).\u001e",
-    "minDate": null,
-    "maxDate": null
+    "notices": "Mme Dupin : Il s’agit-il de Louise Marie Madeleine Guillaume de Fontaine (1686-1769), femme de Claude Dupin (1686-1769), fermier général.\u001e[Trott]\u001e \"À l'hôtel Lambert de Paris, succédera le château de Chenonceau (acquis par son époux) où elle tiendra une cour brillante. \"\u001e\"Dans la récente biographie du cardinal de Bernis par Jean-Paul Desprat (Perrin, 2000, p.90-91), l'auteur donne plusieurs précisions sur un voyage que plusieurs personnes, y compris Marivaux, firent à Chenonceaux, en novembre 1736. Marivaux y aurait lu des extraits de La Vie de Marianne en \"mimant\" et aurait fait répéter lui-même plusieurs jours durant son Ile des esclaves à Duclos (Arlequin), d'Argental (Iphicrate), madame Dupin (Euphrosine) et Bernis (Cléanthis).\" (Contribution de Gilles Plante).\u001e",
+    "minDate": "1736-11-01 CE - 1736-11-30 CE",
+    "maxDate": "1736-11-01 CE - 1736-11-30 CE"
   },
   {
     "id": "http://rdfh.ch/0103/Dq5B23NFTDqFe35HF91iCg",
@@ -1108,8 +1108,8 @@
     "name": "Clagny, théâtre au château de",
     "coord": "48.8088889, 2.1372222",
     "notices": "[Trott]\u001eJardins de Le Nôtre.\u001e“lors des déplacements au château de Clagny où résidait la duchesse quand la famille royale faisait ses séjours annuels à Marly. En outre, comme Malézieu organisait dans sa résidence de Châtenay des fêtes régulières, la duchesse et son entourage y participèrent également. Adolphe Jullien décrit longuement dans son étude du théâtre de la duchesse du Maine toutes les péripéties d'une vie vouée au spectacle. Parmi les faits saillants, il faut retenir l'extraordinaire hétérogénéité de ces activités collectives. Les participants avaient des origines diverses, déployaient des talents multiples et produisaient un mélange très riche de manifestations scéniques. Le répertoire incorporait des pièces de Corneille, Molière (la duchesse joua Célimène), Quinault, Genest (qui écrivit sur commande la tragédie Joseph pour le séjour à Clagny), Racine (la duchesse elle-même joua le rôle principal d'Athalie en 1714 ou avant), des ouvrages lyriques de Destouches, Mouret, Mathau.” (Trott, p. 171) \u001e\"Il lui [à la duchesse du Maine] faut un public de plus en plus nombreux, et au cours des hivers 1706, 1707 et 1708, ce sera dans son château de Clagny, à la porte même de Versailles, qu'elle donnera ses représentations où se rendra toute la Cour.\" (Voillier, p. 100-101)\u001e",
-    "minDate": "1706-01-01 CE - 1706-12-31 CE",
-    "maxDate": "1707-01-22 CE"
+    "minDate": "1703-01-01 CE - 1703-12-31 CE",
+    "maxDate": "1708-03-27 CE"
   },
   {
     "id": "http://rdfh.ch/0103/Llt5KPu_SKi_jpiqaIZ4dg",
@@ -1418,8 +1418,8 @@
   {
     "id": "http://rdfh.ch/0103/Wg3iD4KlS-6pVXCeqKfsFw",
     "name": "Dupin, chez Mme",
-    "coord": "48.8508333, 2.3594444",
-    "notices": "[Trott]\u001eÀ Chenonceaux.\u001eMme Dupin (1686-1769) Il s’agit-il de la femme de Claude Dupin (1686-1769), fermier général. \u001e\"À l'hôtel Lambert de Paris, succédera le château de Chenonceau (acquis par son époux) où elle tiendra une cour brillante. \"\u001e\"Dans la récente biographie du cardinal de Bernis par Jean-Paul Desprat (Perrin, 2000, p.90-91), l'auteur donne plusieurs précisions sur un voyage que plusieurs personnes, y compris Marivaux, firent à Chenonceaux, en novembre 1736. Marivaux y aurait lu des extraits de La Vie de Marianne en \"mimant\" et aurait fait répéter lui-même plusieurs jours durant son Ile des esclaves à Duclos (Arlequin), d'Argental (Iphicrate), madame Dupin (Euphrosine) et Bernis (Cléanthis).\" (Contribution de Gilles Plante). \u001e",
+    "coord": "48.8509674, 2.3593794,19",
+    "notices": "Mme Dupin : Il s’agit-il de Louise Marie Madeleine Guillaume de Fontaine (1686-1769), femme de Claude Dupin (1686-1769), fermier général. \u001eVoir 1) Hôtel Lambert et 2) Château de Chenonceau\u001e1) Le couple est propriétaire le l'Hôtel Lambert de 1732 à 1739, où Mme Dupin tient un salon littéraire recevant, entre autres, Voltaire, Marivaux, Montesquieu, Buffon, Grimm, et Rousseau\u001e[Trott]\u001e2) À Chenonceau.\u001e\"À l'hôtel Lambert de Paris, succédera le château de Chenonceau (acquis par son époux) où elle tiendra une cour brillante. \"\u001e\"Dans la récente biographie du cardinal de Bernis par Jean-Paul Desprat (Perrin, 2000, p.90-91), l'auteur donne plusieurs précisions sur un voyage que plusieurs personnes, y compris Marivaux, firent à Chenonceau, en novembre 1736. Marivaux y aurait lu des extraits de La Vie de Marianne en \"mimant\" et aurait fait répéter lui-même plusieurs jours durant son Ile des esclaves à Duclos (Arlequin), d'Argental (Iphicrate), madame Dupin (Euphrosine) et Bernis (Cléanthis).\" (Contribution de Gilles Plante). \u001e",
     "minDate": null,
     "maxDate": null
   },
@@ -2010,7 +2010,7 @@
   {
     "id": "http://rdfh.ch/0103/kE1xXYtvR6m6T2vB3tw5fg",
     "name": "Lambert, Hôtel",
-    "coord": "48.851522, 2.357445",
+    "coord": "48.8509674, 2.3593794,19",
     "notices": "[Trott]\u001eLa version abrégée d'Hillairet confirme que l'Hôtel Lambert, se trouve dans l'île Saint-Louis: construit par Le Vau, décoré par Lebrun et Lesueur, il appartient au président aux comptes Nicolas Lambert de Thorigny, dit Lambert le Riche, avant de devenir en 1729 la propriété du fermier général Dupin, puis en 1739 celle du marquis et de la marquise du Châtelet, et en 1745 celle du fermier général Marin de la Haye.\u001e«Mme du Châtelet y recevait fréquemment ou y donnait la comédie, on y dansait, on y jouait gros jeu. [...] Toutefois, Mme du Châtelet ne séjourna pas longtemps à l'hôtel Lambert. Elle le loua dès 1744 à l'ambassadeur du Portugal et, le 25 octobre 1745, devant Meny, nantie de la procuration de son mari, elle le vendait pour 160 000 livres à Marin de la Haye, alors locataire de l'hôtel de Bretonvilliers.»\u001e(L'Ile Saint-Louis..., p. 104) \u001e\u001e",
     "minDate": null,
     "maxDate": null
@@ -2050,7 +2050,7 @@
   {
     "id": "http://rdfh.ch/0103/BIHspz1jTS6e9l8KZIw_1A",
     "name": "Hôtel de Lauzun",
-    "coord": "48.8516667, 2.3591667",
+    "coord": "48.8513231, 2.358976,19.15",
     "notices": "",
     "minDate": null,
     "maxDate": null
@@ -2116,8 +2116,8 @@
     "name": "Livry, chez le comte de",
     "coord": null,
     "notices": "[Trott]\u001e\"la société soupa chez le Souverain [=Livry], qui pour obliger Tonton, qui désirait ardemment de donner un noeud d'épée à son Ingrat, imagina de faire servir un pâté à l'entremets.  Il était préparé de façon qu'à l'instant que l'on en fit l'ouverture, les cinq noeuds d'épées, posés sur des tire-bourre, s'élevèrent en gerbe.  Cette gerbe de noeud de ruban parut surmontée par un, plus élevé que les autres, qui portait un petit Amour qui vint précisément se poser sur l'assiette de l'Ingrat, en lui présentant le ruban dont il était chargé.  Ces amusements moins étendus reçurent le nom de Lazzillons qu'on leur donna ce jour-là. \" (Lazzis. p. 168) \u001e",
-    "minDate": null,
-    "maxDate": null
+    "minDate": "1705-08-12 CE",
+    "maxDate": "1705-08-12 CE"
   },
   {
     "id": "http://rdfh.ch/0103/xWKyg_IiRw29H_fbfX75Mw",
@@ -2274,8 +2274,8 @@
   {
     "id": "http://rdfh.ch/0103/j-ngF6pDRbCacPctA2gtOg",
     "name": "Marseille, en société ",
-    "coord": "43.2963889, 5.3700000",
-    "notices": "",
+    "coord": "43.2970173, 5.3768244,17",
+    "notices": "Faute de renseignement, on a adopté par défaut les coordonnées GPS de la mairie des 1er et 7e arrondissements\u001e",
     "minDate": "1733-01-01 CE - 1733-12-31 CE",
     "maxDate": "1733-01-01 CE - 1733-12-31 CE"
   },
@@ -2540,8 +2540,8 @@
     "name": "Nîmes, en société",
     "coord": "43.8377778, 4.3608333",
     "notices": "",
-    "minDate": null,
-    "maxDate": null
+    "minDate": "1731-01-01 CE - 1731-12-31 CE",
+    "maxDate": "1731-01-01 CE - 1731-12-31 CE"
   },
   {
     "id": "http://rdfh.ch/0103/9LF59nhuSTOTXI6EiXBlpA",
@@ -2578,7 +2578,7 @@
   {
     "id": "http://rdfh.ch/0103/dvjGbAmCRjO9QZgeQhnoGQ",
     "name": "Orbessan, château d'",
-    "coord": "42.5425000, 0.6088889",
+    "coord": "43.542568, 0.608926",
     "notices": "[Trott]\u001e«une scène est installée à demeure ; on y joue tantôt des tragédies de Voltaire, tantôt des comédies grivoises de Collé.»\" [BREGAIL p. 130] \u001e",
     "minDate": null,
     "maxDate": null
@@ -3097,16 +3097,16 @@
   },
   {
     "id": "http://rdfh.ch/0103/dgpR54pSRb-n_AdEIUwqqg",
-    "name": "Saint-Domingue",
-    "coord": "18.4900000, -69.8833333",
-    "notices": "",
+    "name": "Saint-Domingue, Le Cap",
+    "coord": "19.7599, 72.2000 ",
+    "notices": "Cap-Français, souvent appelé Le Cap, fut le chef-lieu de la colonie française de Saint-Domingue, avant que celui-ci ne soit fixé à Port-au-Prince en 1770.\u001eAu XVIIIe siècle, le quartier du Cap comprenait également les paroisses de la Petite-Anse, de la Plaine-du-Nord et de l'Acul.\u001eLors de l'indépendance d'Haïti, Cap-Français fut rebaptisé Cap-Haïtien\u001eSource: Archives nationales d'outre-mer\u001e",
     "minDate": "1765-11-19 CE",
     "maxDate": "1765-11-19 CE"
   },
   {
     "id": "http://rdfh.ch/0103/hVmQgL8qTtaLFo-oSt4naw",
     "name": "Saint-Germain-en-Laye, château royal (Château Vieux et Château Neuf)",
-    "coord": "48° 53′ 53″ nord, 2° 06′ 04″ est",
+    "coord": "48.8980556, 2.0961111",
     "notices": "[Trott]\u001eRefait en 1603-.\u001eURL:  http://perso.wanadoo.fr/j2.jaeger/stgerm1.html.\u001eDeux éléments, le château-vieux et le château-neuf.\u001e",
     "minDate": "1669-01-01 CE - 1669-12-31 CE",
     "maxDate": "1669-01-01 CE - 1669-12-31 CE"
@@ -3284,8 +3284,8 @@
     "name": "Château de sceaux",
     "coord": "48.7744444, 2.3000000",
     "notices": "[Trott]\u001e“...enfin, la comédie, sur ce petit théâtre qui avait survécu inviolable à toutes les vicissitudes et à toutes les décadences.” (Corr. de la  marquise du Deffand, intro.)\u001e«I'm writing ... to let you know of a Fuzelier link you may not be aware of. Did you know he was involved in the  \"Nuits de Sceaux\" in 1702-3 ? It seems he wrote songs that Bernier set to music, including a suite under the title \"Diane et  Endymion\". I haven't got enough info here to cross-check the Sceaux refs., but this strikes me as new and interesting, first  because it puts him into Theatre de Societe very early, and second because it adds to the little we know of his profile at the time he was contributing to Bertrand's work.» (courriel de Barry Russell, le 18 avril 2002) \u001e[>From BNF, Catalogue des manuscrits musicaux antérieur à 1800 conservés au départment de la Musique. A et B. Paris, 1999. -910- BERNIER, Nicolas (1664-1734) [Cantates...] _Cantates Francoises ou Musique de Chambre..._ ...Texte des cantates 1, 3 à 6 du Livre 1er de Bernier de Jean-Baptiste Rousseau ; celui des cantates 1 à 6 du Livre 2 de Bernier  : de Louis Fuzelier (...) Editions: Paris, Foucault, 1703.Ms: BN Mus. [X. 961 (1-3) et L. 3747. -917- BERNIER, Nicolas (1664-1734) [Diane et Endimion. Cantate..] _Diane Et Endimion. Cantate a Deux Voix, sans Symphonie, composée par Monsieur Bernier._ -Ms. [Ca 1703]. ...Texte de Louis Fuzelier. - Daté d'après l'édition : Paris : Foucault, 1703. Ms: BN Mus.[D.1023] For both refs, see David Tunley, _The Eighteenth Century French Cantata_, London, Dobson, 1974 ; p.72-90.]\u001e\"Le Pavillon de l'Aurore, théâtre de cette Nuit mémorable, est une exquise construction de style Louis XIV que l'ont peut encore admirer aujourd'hui, sise dans les jardins, et composée d'une salle ornée d'un plafond peint par Le Brun, flanquée de deux petits cabinets.\" (Voillier, p. 103-104)  \u001e, \"En décembre 1699, pour être agréable à son épouse, le duc du Maine fait l’acquisition du château de Sceaux, tout près du bourg de Châtenay, ancienne propriété de Colbert, puis de son fils le marquis de Seignelay. (...) \"\u001eRéférence : CESSAC Catherine, \"Les enchantements de Sceaux : thématique des spectacles offerts par la duchesse du Maine\", in Quéro D., Plagnol-Diéval M.-E., « Les théâtres de société au XVIIIe siècle » in Etudes sur le 18e siècle, Volume XXXIII, Editions de l'Université de Bruxelles, 2005, p. 12.\u001e",
-    "minDate": "1750-08-01 CE - 1750-08-31 CE",
-    "maxDate": "1750-08-01 CE - 1750-08-31 CE"
+    "minDate": null,
+    "maxDate": null
   },
   {
     "id": "http://rdfh.ch/0103/XEITMAPfQl6HLnTPa4G3xQ",
@@ -3382,14 +3382,6 @@
     "notices": "",
     "minDate": "1713-05-02 CE",
     "maxDate": "1713-05-02 CE"
-  },
-  {
-    "id": "http://rdfh.ch/0103/Ay9fQqllSeS6pcmNnAsGng",
-    "name": "Temple de Terpsichore (hôtel Guimard)",
-    "coord": "48.8783806, 2.3335222",
-    "notices": "",
-    "minDate": null,
-    "maxDate": null
   },
   {
     "id": "http://rdfh.ch/0103/A3wD4U5zSqOgyucDUEfX_w",
@@ -3628,8 +3620,8 @@
     "name": "Château de Versailles, appartement de Mme de Maintenon",
     "coord": "48.8047222, 2.1202797",
     "notices": "[Trott]\u001eÀ Versailles ou à St-Cyr?\u001e“Les représentations de Saint-Cyr sont de l’ordre spécial du Théâtre collégiaque. Mais on donnait  la comédie chez Madame de Maintenon, comme en fait foi la lettre de la Palatine, en 1702, au roi  d’Espagne.” – Clarétie, p. 12\u001e",
-    "minDate": null,
-    "maxDate": null
+    "minDate": "1702-02-01 CE - 1702-02-28 CE",
+    "maxDate": "1702-02-01 CE - 1702-02-28 CE"
   },
   {
     "id": "http://rdfh.ch/0103/dM2XoPQETGmKBEz5DgiF3g",
@@ -3652,8 +3644,8 @@
     "name": "Château de Versailles, Chez le Dauphin Louis Ferdinand",
     "coord": "48.8047222, 2.1202797",
     "notices": "[Trott]\u001eSes appartements reçoivent donc bon nombre de concerts de type musique de chambre - où le chant est à l’honneur, le Dauphin étant doté une belle voix - , mais aussi des spectacles de marionnettes - tels ceux de Fantoccini.\u001e",
-    "minDate": "1773-06-25 CE",
-    "maxDate": "1773-06-25 CE"
+    "minDate": null,
+    "maxDate": null
   },
   {
     "id": "http://rdfh.ch/0103/qxWWdHbmTbSzDydOMlSMyg",
@@ -4140,7 +4132,7 @@
     "name": "Château de Nohant",
     "coord": "46.625167, 1.975330",
     "notices": "Site officiel de la Maison de George Sand à Nohant\u001e",
-    "minDate": "1846-12-08 CE",
+    "minDate": "1657-09-16 CE",
     "maxDate": "1879-10-18 CE"
   },
   {
@@ -4450,7 +4442,7 @@
   {
     "id": "http://rdfh.ch/0103/lnKqe4ByST6POxwZ2SnhhA",
     "name": "Toulouse, Waux-Hall",
-    "coord": "43° 36′ 16″ nord, 1° 26′ 38″ est",
+    "coord": "43.6044444, 1.4438889",
     "notices": "\" Le Waux-Hall\u001eDes spectacles privés à Toulouse, nous n’avons que quelques traces fragmentaires. Il ne subsiste pratiquement rien d’autre que plusieurs relations de fêtes donnant lieu à des représentations théâtrales occasionnelles : la venue de grands seigneurs, une fête organisée par Joseph Patrat en 1782 en l’honneur du célèbre haute-contre Joseph Legros en fin de tournée à Toulouse [3], etc. Mais quant à des scènes « régulières », seule la mention de la comédie privée des familles Savignac et Bournazel semblait jusqu’alors valide [4] ; elle est toutefois définitivement terminée au début de la décennie qui nous intéresse ; l’identité de ses promoteurs nous permet de supposer que s’y regroupaient principalement des personnes de la noblesse locale et du parlement, ce qui faisait de cette scène une comédie non pas bourgeoise mais plutôt « de cour ». C’est au début de la décennie 1770 que s’établit à Toulouse une autre scène privée qui prend le nom de « Waux-Hall ».\u001eSituée intra muros, mais relativement éloignée du cœur de la ville, cette salle fait partie d’une « maison de plaisance appelée le Waux-Hall » [5] et occupe un des deux corps de bâtiment. La seule description trouvée jusqu’à présent en est relativement brève : « une salle superbe peinte à la détrempe avec un très joli théâtre et ses décorations » [6]. Il est donc assuré que cette salle a été conçue ou aménagée exclusivement pour des représentations théâtrales et autres divertissements, tels que bals et concerts. S’il reste difficile d’évaluer la surface occupée par ce lieu – les plans cadastraux datent de 1680 et ne seront pas refaits avant la fin du XVIIIe siècle ; de plus l’emprise du bâti n’est pas représentée, si tant est que cette bâtisse soit déjà présente dès 1680 –, on sait que l’étage du dessus comprend un salon, deux chambres, un buffet de décharge. On cite aussi une galerie, donnant peut-être sur l’extérieur, ou permettant au contraire de suivre le spectacle dans la salle du dessous. D’après la typologie des pièces de l’étage, il paraît envisageable qu’environ soixante à quatre- vingts spectateurs puissent prendre place au rez-de-chaussée du Waux-Hall, encore ce chiffre pourrait-il bien être revu à la hausse. La configuration de la scène elle-même nous reste inconnue, mais la rapidité avec laquelle on installe un théâtre à quatre rangs de coulisses en une journée, lors d’une fête en banlieue de Toulouse en 1784 [7], permet d’imaginer un dispositif bien plus avancé. Aucun des deux actionnaires principaux cités n’est propriétaire à Toulouse à cette période. Il semble donc que cette salle soit louée à un particulier, qui n’a peut-être aucun lien avec la société. La maison étant mise en vente en 1775, les amateurs vont devoir rechercher un nouveau lieu. Ce sera la salle du Concert, ancienne salle de l’Opéra depuis le XVIIe siècle, reconvertie en scène musicale depuis l’incendie qui la ravagea en 1748. Cela permet à la société du Waux-Hall de se réunir dans un lieu parfaitement adapté à la scène et de plus situé au cœur même de la ville. Mais cette nouvelle proximité avec la salle de spectacle officielle est à même de faire renaître l’antagonisme vécu dans les années 1740 entre la nouvelle scène du Capitole et l’ancien Opéra. \"\u001eNotes de bas de page :\u001e3. Affiches et annonces de Toulouse, n° 40, mercredi 2 octobre 1782, p. 162 ; et n° 41, mercredi 9 octobre 1782, p. 164.\u001e4. L’historien de l’art Mesuret avait découvert l’existence de ce théâtre de société par l’intermédiaire du livret d’une exposition de l’Académie de Peinture de Toulouse, où, en 1775, le peintre Moretti exposait un dessin de décoration pour le théâtre du comte de Bournazel (Robert MESURET, Les expositions de l’Académie royale de Toulouse de 1751 à 1791, Toulouse, Espic, 1972).\u001e5. Affiches et annonces de Toulouse, n° 32, mercredi 9 août 1775, p. 131.\u001e6. Ibid.\u001e7. Affiches et annonces de Toulouse, n° 45, mercredi 10 novembre 1784, pp. 181-182.\u001eSource : Lavedan (de) Gérard, « Théâtre officiel et comédie bourgeoise, une frontière mouvante : le cas de Toulouse dans les années 1770 », in Quéro Dominique, Les Théâtres de société au XVIIIe siècle, 2005, p. 150-151.\u001e",
     "minDate": null,
     "maxDate": null
@@ -4652,8 +4644,8 @@
     "name": "Monriond (Lausanne, Suisse), chez Voltaire",
     "coord": null,
     "notices": "\"Voltaire a une résidence d’hiver à Monrion près de Lausanne\" (Gouhier, Rousseau et Voltaire : portraits dans deux miroirs, p. 114, chapitre VII)\u001e",
-    "minDate": "1757-03-01 CE - 1757-03-31 CE",
-    "maxDate": "1757-03-01 CE - 1757-03-31 CE"
+    "minDate": null,
+    "maxDate": null
   },
   {
     "id": "http://rdfh.ch/0103/uPwva_3UTN6EbDxR_TbYXA",
@@ -4730,8 +4722,8 @@
   {
     "id": "http://rdfh.ch/0103/NsB0o8dJQ1CeBgPezzieVw",
     "name": "Mexico, chez Madame la Vicomtesse de Noue",
-    "coord": "19° 25′ 57″ nord, 99° 07′ 54″ ouest",
-    "notices": "Les coordonnées GPS sont celles de la ville de Mexico.\u001e",
+    "coord": "19.3498187, -99.1812234",
+    "notices": "Faute de renseignements plus précis, les coordonnées GPS sont celles génériques de la ville de Mexico aujourd'hui\u001e",
     "minDate": "1866-09-22 CE",
     "maxDate": "1866-09-22 CE"
   },
@@ -4781,7 +4773,7 @@
     "coord": "48.8641515, 2.3678081",
     "notices": "11, Rue de Crussol, Paris (aujourd’hui 75011).\u001eDans les années 1820, Anaïs Ségalas, née Anne Caroline Ménard, habite avec sa mère au 13 rue de Crussol, près des théâtres des boulevards. Elles ont pour voisin au 11 de la même rue, Victor Ségalas, alors avocat à la cour royale de Paris, qu'elle épouse le 17 janvier 1827 à Paris, devenant Anaïs Ségalas.\u001e« Madame Ségalas avait nommé son salon : Théâtre Crussol, du nom de la rue où est situé son joli petit hôtel, et sur ce théâtre nous l’avons vue jouer le rôle d’une femme du monde et celui d’une actrice célèbre qui dit des vers fort tragiques et de la prose fort comique… »\u001e(Jeanne-Justine Fouqueau de Pussy, « Correspondance », in Le Journal des demoiselles, mai 1844, no V, deuxième année, 3e série, pp. 156-157)\u001e",
     "minDate": "1844-03-01 CE - 1844-03-31 CE",
-    "maxDate": "1893-06-01 CE - 1893-06-30 CE"
+    "maxDate": "1867-02-26 CE"
   },
   {
     "id": "http://rdfh.ch/0103/ZvfwWQuGS96FqzOnfo96sw",
@@ -4934,5 +4926,13 @@
     "notices": "116/118, Rue de Grenelle, 75008 Paris.\u001e",
     "minDate": "1849-03-13 CE",
     "maxDate": "1849-03-13 CE"
+  },
+  {
+    "id": "http://rdfh.ch/0103/htr3zqDmQeGVvjZboO6SDw",
+    "name": "Château de Versailles, appartement de Mme la duchesse du Maine",
+    "coord": "48.8048651, 2.1181666",
+    "notices": "Dominique Quéro, « Le théâtres de société de la duchesse du Maine », Les Plaisirs de l'Arsenal. Poésie, musique, danse et érudition au XVIIe et au XVIIIe siècle, p. 395.\u001e",
+    "minDate": "1694-01-01 CE - 1694-12-31 CE",
+    "maxDate": "1694-01-01 CE - 1694-12-31 CE"
   }
 ]
