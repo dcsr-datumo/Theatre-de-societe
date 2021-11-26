@@ -20,7 +20,9 @@
         Lieu: <tds-place-line [iri]="rep.place"></tds-place-line>
       </li>
       <li>
-        Date: <a routerLink="/year/{{ rep.scaledYear }}">{{ rep.dateShort }}</a>
+        Date: <a routerLink="/year/{{ rep.scaledYear }}" matTooltip="ouvrir dans une page">{{ rep.dateShort }}
+            <button mat-button><span class="material-icons embedded">article</span></button>
+        </a>
       </li>
       <li *ngIf="rep.festival">
         Festival: <tds-festival [iri]="rep.festival"></tds-festival>
