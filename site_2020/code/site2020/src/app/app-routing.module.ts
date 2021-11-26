@@ -15,6 +15,7 @@ import { MapComponent } from './components/map/map.component';
 import { AuteursComponent } from './components/auteurs/auteurs.component';
 import { PiecesComponent } from './components/pieces/pieces.component';
 import { PlaceComponent } from './components/place/place.component';
+import { QuoteComponent } from './components/quote/quote.component';
 
 const routes: Routes = [
   { path: 'calendrier', component: CalendarComponent },
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'auteurs', component: AuteursComponent },
   { path: 'pieces', component: PiecesComponent },
   { path: 'place/:place', component: PlaceComponent },
-  { path: '',   redirectTo: '/projet', pathMatch: 'full' }
+  { path: 'quote/:id', component: QuoteComponent },
+  { path: '',   redirectTo: '/projet', pathMatch: 'full' },
 ];
 
 @NgModule({

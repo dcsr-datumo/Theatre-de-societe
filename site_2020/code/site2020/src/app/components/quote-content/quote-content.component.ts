@@ -12,6 +12,8 @@ import { Quote } from "../../models/quote.model";
 export class QuoteContentComponent implements OnInit {
   @Input()
   iri: string;
+  @Input()
+  embedded: boolean;
 
   quote: Observable<Quote>;
 

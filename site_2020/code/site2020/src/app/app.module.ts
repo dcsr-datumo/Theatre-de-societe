@@ -32,7 +32,6 @@ import { EquipeComponent } from './components/equipe/equipe.component';
 import { RepresentationLineComponent } from './components/representation-line/representation-line.component';
 import { WorkComponent } from './components/work/work.component';
 import { PlaceComponent } from './components/place/place.component';
-import { QuoteContentComponent } from './components/quote-content/quote-content.component';
 import { RoleComponent } from './components/role/role.component';
 import { FestivalComponent } from './components/festival/festival.component';
 import { RepresentationComponent } from './components/representation/representation.component';
@@ -59,20 +58,24 @@ import { PlaceDetailsComponent } from './components/place-details/place-details.
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AuteurspageComponent } from './components/auteurspage/auteurspage.component';
 import { PiecespageComponent } from './components/piecespage/piecespage.component';
-import { QuoteLineComponent } from './components/quote-line/quote-line.component';
 import { RepresentationsListMapComponent } from './components/representations-list-map/representations-list-map.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { QuoteComponent } from './components/quote/quote.component';
+import { QuoteLineComponent } from './components/quote-line/quote-line.component';
+import { QuoteContentComponent } from './components/quote-content/quote-content.component';
+
 
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent,
     CalendarComponent, CalendarPageComponent,
     RepresentationLineComponent,
-    WorkComponent, PlaceComponent, QuoteContentComponent, RoleComponent, FestivalComponent,
+    WorkComponent, PlaceComponent, RoleComponent, FestivalComponent,
     GenreComponent,
     ProjetComponent, AgendaComponent, PublicationsComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent, AuteurspageComponent, PiecespageComponent, QuoteLineComponent, RepresentationsListMapComponent
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent, AuteurspageComponent, PiecespageComponent, RepresentationsListMapComponent,
+    QuoteComponent, QuoteContentComponent, QuoteLineComponent
   ],
   imports: [
     HttpClientModule,
