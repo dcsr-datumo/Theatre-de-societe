@@ -12,6 +12,10 @@
     "representations": "1"
   },
   {
+    "year": "1657",
+    "representations": "1"
+  },
+  {
     "year": "1659",
     "representations": "1"
   },
@@ -33,7 +37,7 @@
   },
   {
     "year": "1694",
-    "representations": "1"
+    "representations": "2"
   },
   {
     "year": "1699",
@@ -49,22 +53,34 @@
   },
   {
     "year": "1702",
+    "representations": "3"
+  },
+  {
+    "year": "1703",
+    "representations": "2"
+  },
+  {
+    "year": "1704",
     "representations": "2"
   },
   {
     "year": "1705",
-    "representations": "4"
+    "representations": "7"
   },
   {
     "year": "1706",
-    "representations": "4"
+    "representations": "5"
   },
   {
     "year": "1707",
-    "representations": "1"
+    "representations": "6"
   },
   {
     "year": "1708",
+    "representations": "4"
+  },
+  {
+    "year": "1710",
     "representations": "1"
   },
   {
@@ -73,11 +89,15 @@
   },
   {
     "year": "1713",
-    "representations": "2"
+    "representations": "3"
   },
   {
     "year": "1714",
-    "representations": "5"
+    "representations": "10"
+  },
+  {
+    "year": "1715",
+    "representations": "1"
   },
   {
     "year": "1716",
@@ -117,19 +137,19 @@
   },
   {
     "year": "1729",
-    "representations": "2"
+    "representations": "3"
   },
   {
     "year": "1730",
-    "representations": "2"
+    "representations": "3"
   },
   {
     "year": "1731",
-    "representations": "6"
+    "representations": "18"
   },
   {
     "year": "1732",
-    "representations": "15"
+    "representations": "16"
   },
   {
     "year": "1733",
@@ -137,7 +157,7 @@
   },
   {
     "year": "1734",
-    "representations": "5"
+    "representations": "8"
   },
   {
     "year": "1735",
@@ -145,7 +165,7 @@
   },
   {
     "year": "1736",
-    "representations": "7"
+    "representations": "8"
   },
   {
     "year": "1737",
@@ -153,7 +173,7 @@
   },
   {
     "year": "1738",
-    "representations": "2"
+    "representations": "4"
   },
   {
     "year": "1739",
@@ -185,15 +205,15 @@
   },
   {
     "year": "1746",
-    "representations": "2"
+    "representations": "3"
   },
   {
     "year": "1747",
-    "representations": "33"
+    "representations": "35"
   },
   {
     "year": "1748",
-    "representations": "30"
+    "representations": "31"
   },
   {
     "year": "1749",
@@ -289,7 +309,7 @@
   },
   {
     "year": "1772",
-    "representations": "13"
+    "representations": "14"
   },
   {
     "year": "1773",
@@ -425,11 +445,11 @@
   },
   {
     "year": "1837",
-    "representations": "13"
+    "representations": "14"
   },
   {
     "year": "1839",
-    "representations": "4"
+    "representations": "6"
   },
   {
     "year": "1840",
@@ -461,7 +481,7 @@
   },
   {
     "year": "1849",
-    "representations": "23"
+    "representations": "26"
   },
   {
     "year": "1850",
@@ -469,11 +489,11 @@
   },
   {
     "year": "1851",
-    "representations": "22"
+    "representations": "23"
   },
   {
     "year": "1852",
-    "representations": "10"
+    "representations": "12"
   },
   {
     "year": "1853",
@@ -493,11 +513,11 @@
   },
   {
     "year": "1857",
-    "representations": "19"
+    "representations": "24"
   },
   {
     "year": "1858",
-    "representations": "5"
+    "representations": "6"
   },
   {
     "year": "1859",

@@ -46,7 +46,7 @@ help: ## this help
 # yes, this makefile is used to dockerized itself
 ACCOUNT=platec
 CONTAINER=tds_cache_updater
-VERSION=v1.0.1
+VERSION=v1.1.1
 ENVFILE=docker_env_prod_root
 
 .PHONY: build

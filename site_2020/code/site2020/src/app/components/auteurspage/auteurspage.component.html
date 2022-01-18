@@ -33,7 +33,36 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <span *ngIf="panel[author.id]">
-          <tds-person-line [iri]="author.id"></tds-person-line>
+          <tds-person-line [iri]="author.id" [showName]="false"></tds-person-line>
+
+          <!-- list of works -->
+          <span *ngIf="author.familyName">
+
+            <div class="nomargin">
+              <div class="nomargin">Pièces:</div>
+            </div>
+
+            <mat-list-item *ngFor="let work of getWorks(author.familyName)">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panel[work.id] = true">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <span class="truncate">
+                      {{work.title}}
+                    </span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <span *ngIf="panel[work.id]">
+                  <tds-work-line [iri]="work.id"></tds-work-line>
+                </span>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-list-item>
+
+          </span>
+          <!-- /list of works -->
+
+
         </span>
       </mat-expansion-panel>
     </mat-accordion>

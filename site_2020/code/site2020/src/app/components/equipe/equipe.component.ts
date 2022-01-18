@@ -14,6 +14,8 @@ export class EquipeComponent implements OnInit {
   panelChrisOpenState: boolean;
   panelPaulOpenState: boolean;
   panelFionaOpenState: boolean;
+  panelThibautOpenState: boolean;
+  panelBiondaOpenState: boolean;
 
   constructor(private siteService: SiteService) {
     this.site = siteService;

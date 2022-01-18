@@ -10,6 +10,7 @@ import { KnoraService } from 'src/app/services/knora.service';
 })
 export class PersonLineComponent implements OnInit {
   @Input() iri : string;
+  @Input() showName : boolean;
   person: Observable<Person>;
 
   constructor(

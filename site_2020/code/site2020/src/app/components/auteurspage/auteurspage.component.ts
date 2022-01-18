@@ -2,6 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { PersonCache } from 'src/app/models/personCache.model';
+import { WorkCache } from 'src/app/models/workcache.model';
+
+import { KnoraService } from "../../services/knora.service";
 
 @Component({
   selector: 'tds-auteurspage',
@@ -15,6 +18,8 @@ export class AuteurspageComponent implements OnInit {
   reset: Subject<number>;
   count: number;
 
+  allWorks: WorkCache[];
+
   page: number = 0;
   pageMax: number = 0;
 
@@ -22,7 +27,9 @@ export class AuteurspageComponent implements OnInit {
 
   pageLength: number = 25;
 
-  constructor() { }
+  constructor(
+    private knoraService: KnoraService
+  ) { }
 
   ngOnInit(): void {
     this.page = 0;
@@ -39,6 +46,18 @@ export class AuteurspageComponent implements OnInit {
       }
     );
     this.reset.next(this.authors.length);
+
+
+    us.knoraService.getWorksQuickCache().subscribe(
+      (data: WorkCache[]) => {
+        us.allWorks = data;
+      }
+    );
+
+  }
+
+  getWorks(author: string) {
+    return this.allWorks.filter(work => work.name === author);
   }
 
   updatePage(value:number) {

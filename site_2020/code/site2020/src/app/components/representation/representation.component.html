@@ -1,6 +1,16 @@
 <div class="external">
   <span *ngIf="representation | async as rep">
-    <h2>Représentation:</h2>
+
+    <div class="nomargin">
+      <h2>
+        Représentation:
+      </h2>
+      <span class="spacer"></span>
+      <button mat-button matTooltip="copier le permalien ARK dans le presse papier" [cdkCopyToClipboard]="rep.ark" [cdkCopyToClipboardAttempts]="6"><span class="material-icons">share</span></button>
+      <a target="_blank" href="{{rep.ark}}">
+        <button mat-button matTooltip="ouvrir le permalien ARK"><span class="material-icons">open_in_new</span></button>
+      </a>
+    </div>
 
     <ul>
       <li>
@@ -10,7 +20,9 @@
         Lieu: <tds-place-line [iri]="rep.place"></tds-place-line>
       </li>
       <li>
-        Date: <a routerLink="/year/{{ rep.scaledYear }}">{{ rep.dateShort }}</a>
+        Date: <a routerLink="/year/{{ rep.scaledYear }}" matTooltip="ouvrir dans une page">{{ rep.dateShort }}
+            <button mat-button><span class="material-icons embedded">article</span></button>
+        </a>
       </li>
       <li *ngIf="rep.festival">
         Festival: <tds-festival [iri]="rep.festival"></tds-festival>
@@ -42,15 +54,12 @@
           </ul>
         </span>
       </li>
-      <li>
-        <a href="{{rep.ark}}">perma-lien de cette représentation</a>
-      </li>
 
       <li *ngIf="rep.quote && rep.quote.length>0">
         <span *ngIf="rep.quote.length == 1">
           Source:
           <tds-quote-line [iri]="rep.quote[0]"></tds-quote-line>
-          <tds-quote [iri]="rep.quote[0]"></tds-quote>
+          <tds-quote-content [iri]="rep.quote[0]" [embedded]="true"></tds-quote-content>
         </span>
         <span *ngIf="rep.quote.length > 1">
           Sources:
@@ -71,7 +80,7 @@
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <span *ngIf="panel[quote.id]">
-                  <tds-quote [iri]="quote"></tds-quote>
+                  <tds-quote-content [iri]="quote" [embedded]="true"></tds-quote-content>
                 </span>
               </mat-expansion-panel>
             </mat-accordion>

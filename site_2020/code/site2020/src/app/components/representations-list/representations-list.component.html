@@ -1,11 +1,11 @@
 <span *ngIf="representations | async as reps">
 
   <span *ngIf="reps.length>0">
-    <span *ngIf="header">
+    <div class="nomargin" *ngIf="header">
       <span *ngIf="reps.length>1;then multi else single"></span>
-      <ng-template #single>Représentation:</ng-template>
-      <ng-template #multi>Représentations:</ng-template>
-    </span>
+      <ng-template #single><span class="left">Représentation:</span></ng-template>
+      <ng-template #multi><span class="left">Représentations:</span></ng-template>
+    </div>
 
     <div class="list-item-header list-item-container">
       <div  *ngIf="titles" class="list-item-header">Titre</div>
@@ -19,8 +19,13 @@
           <mat-expansion-panel-header>
             <mat-panel-title *ngIf="titles">
 
-              <span class="truncate">
-                {{representation.workTitle}}
+              <span class="truncate" matTooltip="ouvrir la page de la représentation">
+                <a routerLink="/representation/{{representation.ref}}">
+                  <button mat-button class="embedded">
+                    <span class="material-icons embedded">article</span>
+                  </button>
+                  {{representation.workTitle}}
+                </a>
               </span>
 
             </mat-panel-title>

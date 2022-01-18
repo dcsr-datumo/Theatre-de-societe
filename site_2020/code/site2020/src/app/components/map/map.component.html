@@ -14,10 +14,23 @@
   </ng-template>
 
 <ng-template #ready>
-  <input #searchBox id="search-box"
+  <div class="slider">
+    <input #searchBox id="search-box"
     class="input ready"
     placeholder="entrer quelques lettres d'un nom de lieu..."
     (input)="search(searchBox.value)"/>
+  </div>
+
+  <div class="slider">
+    <ngx-slider
+      [(value)]="valueMin"
+      [(highValue)]="valueMax"
+      [options]="sliderOptions"
+      (highValueChange)="onTimeRangeHighValueChange($event)">
+    </ngx-slider>
+  </div>
+
+
 </ng-template>
 
 <div class="float-container">
