@@ -27,7 +27,7 @@ all_cache_enc:  ## build all cache files encoded request
 	${SPARQLER} -q=requests/get_calendar.enc | jq -f jq/calendar-filter.jq > output/calendar_cache.json
 	${SPARQLER} -q=requests/get_places.enc | jq -f jq/places-filter.jq > output/places_cache.json
 
-.PHONY: copy_local
+.PHONY: copy_local
 copy_local: ## copy the cache data files in the source before building the app
 	cp output/*.json ../site2020/src/assets/cache/
 
