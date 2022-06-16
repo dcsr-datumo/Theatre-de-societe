@@ -1,0 +1,134 @@
+# query one or the other server
+
+@server_dasch = api.ls-test-server.dasch.swiss
+@server_unil = knora.unil.ch
+@server = {{server_dasch}}
+
+### gravsearch, place's representation list
+#   get representations with title, place and date for a given place
+#   takes less than 1s
+
+POST https://{{server}}/v2/searchextended
+
+PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+PREFIX theatre-societe: <http://{{server}}/ontology/0103/theatre-societe/v2#>
+CONSTRUCT {
+    ?representation knora-api:isMainResource true .
+    ?representation theatre-societe:representationIsBasedOn ?work .
+    ?work theatre-societe:workHasTitle ?playTitle .
+    ?representation theatre-societe:representationHasPlace ?place .
+    ?place theatre-societe:placeHasName ?placeName .
+    ?representation theatre-societe:representationHasDate ?date .
+} WHERE {
+    BIND(<http://rdfh.ch/0103/lfIb9PhFRhq423-WPlc0yA> AS ?place)
+
+    ?representation a knora-api:Resource .
+    ?representation a theatre-societe:Representation .
+    ?representation theatre-societe:representationIsBasedOn ?work .
+    ?work theatre-societe:workHasTitle ?playTitle .
+    ?representation theatre-societe:representationHasPlace ?place .
+    ?place theatre-societe:placeHasName ?placeName .
+    ?representation theatre-societe:representationHasDate ?date .
+}
+ORDER BY ?date
+
+### gravsearch get representations for a given year
+#   knora.unil.ch : 231ms
+#   dasch.swiss   : time-out after 20s
+
+POST https://{{server}}/v2/searchextended
+
+PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+PREFIX theatre-societe: <http://{{server}}/ontology/0103/theatre-societe/v2#>
+CONSTRUCT {
+  ?representation knora-api:isMainResource true .
+  ?representation theatre-societe:representationIsBasedOn ?work .
+  ?work theatre-societe:workHasTitle ?playTitle .
+  ?representation theatre-societe:representationHasPlace ?place .
+  ?place theatre-societe:placeHasName ?placeName .
+  ?representation theatre-societe:representationHasDate ?date .
+} WHERE {
+  ?representation a knora-api:Resource .
+  ?representation a theatre-societe:Representation .
+  ?representation theatre-societe:representationIsBasedOn ?work .
+  ?work theatre-societe:workHasTitle ?playTitle .
+  ?representation theatre-societe:representationHasPlace ?place .
+  ?place theatre-societe:placeHasName ?placeName .
+  ?representation theatre-societe:representationHasDate ?date .
+
+  FILTER(knora-api:toSimpleDate(?date) = 'GREGORIAN:1706-1-1:1706-12-31'^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)
+}
+ORDER BY ?date
+
+### gravsearch get representations for a given year with no details of Representation
+#   knora.unil.ch : 334ms
+#   dasch.swiss   : 680ms ... 1.7s
+
+# occurences in 1706 :  5
+# occurences in 1750 : 59
+@year_1750 = 1750
+@year_1706 = 1706
+@year = {{year_1706}}
+
+#POST https://{{server}}/v2/searchextended/count
+
+POST https://{{server}}/v2/searchextended
+
+PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+PREFIX theatre-societe: <http://{{server}}/ontology/0103/theatre-societe/v2#>
+CONSTRUCT {
+  ?representation knora-api:isMainResource true .
+  ?representation theatre-societe:representationHasDate ?date .
+} WHERE {
+  ?representation a knora-api:Resource .
+  ?representation a theatre-societe:Representation .
+  ?representation theatre-societe:representationHasDate ?date .
+
+  FILTER(knora-api:toSimpleDate(?date) = 'GREGORIAN:{{year}}-1-1:{{year}}-12-31'^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)
+}
+ORDER BY ?date
+
+### gravsearch, representations and their date 
+#   takes 300 ~ 500 ms
+
+@offset_0 = 0
+@offset_20 = 20
+@offset = {{offset_20}}
+
+
+POST https://{{server}}/v2/searchextended
+    
+PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+PREFIX tds: <http://{{server}}/ontology/0103/theatre-societe/v2#>
+
+CONSTRUCT {
+    ?resource knora-api:isMainResource true .
+    ?resource tds:representationHasDate ?date .
+
+} WHERE {
+    ?resource a knora-api:Resource .
+    ?resource a tds:Representation .
+
+    ?resource tds:representationHasDate ?date .
+}
+OFFSET 20
+
+### gravsearch, count representations 
+#   1456 / 25 * 500ms => 29s
+#   I should better list the whole representations and sort them in the code
+
+POST https://{{server}}/v2/searchextended/count
+    
+PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+PREFIX tds: <http://{{server}}/ontology/0103/theatre-societe/v2#>
+
+CONSTRUCT {
+    ?resource knora-api:isMainResource true .
+    ?resource tds:representationHasDate ?date .
+
+} WHERE {
+    ?resource a knora-api:Resource .
+    ?resource a tds:Representation .
+
+    ?resource tds:representationHasDate ?date .
+}
