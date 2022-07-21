@@ -6,8 +6,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT
     distinct ?id 
     ?pseudonym
-    ?familyName
-    ?givenName
+    (GROUP_CONCAT(distinct ?familyName  ; separator=';') as ?familyNames)
+    (GROUP_CONCAT(distinct ?givenName  ; separator=';') as ?givenNames)
+    ?label
 WHERE {
     ?id a tds:Person .
     ?id kb:isDeleted "false"^^xsd:boolean .
@@ -19,7 +20,6 @@ WHERE {
     OPTIONAL {
 	    ?id tds:hasFamilyName ?familyValue .
         ?familyValue kb:isDeleted "false"^^xsd:boolean .
-
         ?familyValue kb:valueHasString ?familyName .
     }
     OPTIONAL {
@@ -40,4 +40,5 @@ WHERE {
 
     filter(?label = "femme"@fr)
 }
-order by ?familyName ?givenName
+group by ?id ?pseudonym ?label  
+order by ?familyName
