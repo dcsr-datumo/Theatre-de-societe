@@ -19,17 +19,17 @@ export class RepresentationMatch extends Resource {
 
     const firstDate = dateValues[0];
     const date = firstDate["date"];
-    let result = String(date['year']);
+    let result = String(date['year']);
     if (date['month']) {
-      result = String(date['month']) + '/' + result;
+      result = String(date['month']) + '/' + result;
     }
     if (date['day']) {
-      result = String(date['day']) + '/' + result;
+      result = String(date['day']) + '/' + result;
     }
     return result;
   }
 
-  get workTitle(): string {
+  get workTitle(): string {
     return this.getLinkedValue(`${this.tds}representationIsBasedOnValue`, `${this.tds}workHasTitle`);
   }
 

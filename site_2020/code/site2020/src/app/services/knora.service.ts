@@ -271,7 +271,7 @@ export class KnoraService {
         (data: CalendarCache[]) => {
           data.forEach(element => {
             let thisYear = +element.year;
-            let thisRepresentations = +element.representations;
+            let thisRepresentations = +element.representations;
 
             // unknown have been marked as year 1
             if(thisYear == 1) {
@@ -498,10 +498,10 @@ export class KnoraService {
     // get the cache
     let cache;
     if (!service.cache.has(cname)) {
-      cache = new Map<string, T>();
+      cache = new Map<string, T>();
       service.cache.set(cname, cache);
     } else {
-      cache = service.cache.get(cname);
+      cache = service.cache.get(cname);
     }
 
     // check the cache
@@ -511,7 +511,7 @@ export class KnoraService {
 
     // send the request
     return service.knoraApiConnection.v2.res.getResource(iri).pipe(
-      map((response: ReadResource) => {
+      map((response: ReadResource) => {
         const rep = ctor(response);
         cache.set(iri, rep);
         return rep;
@@ -521,51 +521,51 @@ export class KnoraService {
 
   getRepresentation(iri: string): Observable<Representation> {
     const service = this;
-    return service.getResource(iri, "representation", (resource: ReadResource) => new Representation(resource));
+    return service.getResource(iri, "representation", (resource: ReadResource) => new Representation(resource));
   }
 
   getPlace(iri: string): Observable<Place> {
     const service = this;
-    return service.getResource(iri, "place", (resource: ReadResource) => new Place(resource));
+    return service.getResource(iri, "place", (resource: ReadResource) => new Place(resource));
   }
 
   getGenre(iri: string): Observable<Genre> {
     const service = this;
-    return service.getResource(iri, "genre", (resource: ReadResource) => new Genre(resource));
+    return service.getResource(iri, "genre", (resource: ReadResource) => new Genre(resource));
   }
   getQuote(iri: string): Observable<Quote> {
     const service = this;
-    return service.getResource(iri, "quote", (resource: ReadResource) => new Quote(resource));
+    return service.getResource(iri, "quote", (resource: ReadResource) => new Quote(resource));
   }
 
   getFestival(iri: string): Observable<Festival> {
     const service = this;
-    return service.getResource(iri, "festival", (resource: ReadResource) => new Festival(resource));
+    return service.getResource(iri, "festival", (resource: ReadResource) => new Festival(resource));
   }
 
   getWork(iri: string): Observable<Work> {
     const service = this;
-    return service.getResource(iri, "work", (resource: ReadResource) => new Work(resource));
+    return service.getResource(iri, "work", (resource: ReadResource) => new Work(resource));
   }
 
   getRole(iri: string): Observable<Role> {
     const service = this;
-    return service.getResource(iri, "Role", (resource: ReadResource) => new Role(resource));
+    return service.getResource(iri, "Role", (resource: ReadResource) => new Role(resource));
   }
 
   getPerson(iri: string): Observable<Person> {
     const service = this;
-    return service.getResource(iri, "Person", (resource: ReadResource) => new Person(resource));
+    return service.getResource(iri, "Person", (resource: ReadResource) => new Person(resource));
   }
 
   getGroup(iri: string): Observable<Group> {
     const service = this;
-    return service.getResource(iri, "Group", (resource: ReadResource) => new Group(resource));
+    return service.getResource(iri, "Group", (resource: ReadResource) => new Group(resource));
   }
 
   getMembership(iri: string): Observable<Membership> {
     const service = this;
-    return service.getResource(iri, "Membership", (resource: ReadResource) => new Membership(resource));
+    return service.getResource(iri, "Membership", (resource: ReadResource) => new Membership(resource));
   }
 
   // representations per year

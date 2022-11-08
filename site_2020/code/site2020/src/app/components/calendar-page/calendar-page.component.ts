@@ -15,7 +15,7 @@ import { finalize, map } from 'rxjs/operators';
 export class CalendarPageComponent implements OnInit {
   year: number;
   representations: Observable<RepresentationMatch[]>;
-  title = false;
+  title = false;
   loading: Observable<boolean>;
 
   constructor(
