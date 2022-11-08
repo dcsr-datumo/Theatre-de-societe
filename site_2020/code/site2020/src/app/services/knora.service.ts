@@ -361,6 +361,16 @@ export class KnoraService {
       PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
       CONSTRUCT {
         ?representation knora-api:isMainResource true .
+  /**
+   * misses the trailing '}'
+   */
+  getRepresentationMatchBaseRequest(): string {
+    if (!this.representationsBaseRequest) {
+      this.representationsBaseRequest = `
+      PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
+      PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
+      CONSTRUCT {
+        ?representation knora-api:isMainResource true .
         ?representation theatre-societe:representationIsBasedOn ?work .
         ?work theatre-societe:workHasTitle ?playTitle .
         ?representation theatre-societe:representationHasPlace ?place .
@@ -384,7 +394,7 @@ export class KnoraService {
   }
 
   // representations per year
-  getRepresentationsPage(request: string, page: number): Observable<RepresentationMatch[]> {
+  getRepresentationMatchesPage(request: string, page: number): Observable<RepresentationMatch[]> {
     let query = `
      ${request}
      ORDER BY ?date
@@ -400,7 +410,7 @@ export class KnoraService {
   }
 
 
-  getRepresentations(request: string, cacheKey: string): Observable<RepresentationMatch[]> {
+  getRepresentationMatches(request: string, cacheKey: string): Observable<RepresentationMatch[]> {
     const service = this;
     if (service.cachedRepresentationMatches.has(cacheKey)) {
       return of(service.cachedRepresentationMatches.get(cacheKey));
@@ -409,7 +419,7 @@ export class KnoraService {
     let representations: RepresentationMatch[] = [];
     function aggregatedPage(observer) {
       console.log('call getRepresentations for page: ' + index);
-      service.getRepresentationsPage(request, index).subscribe(
+      service.getRepresentationMatchesPage(request, index).subscribe(
         (page: RepresentationMatch[]) => {
           // for debug purposes
           // if (page.length > 0 && index < 2) {
@@ -420,7 +430,7 @@ export class KnoraService {
             observer.next(representations);
           }
           // becareful of magic numbers
-          if (page.length == 25) {
+          if (page.length == 25) {
             index = ++index;
             aggregatedPage(observer);
           } else {
@@ -444,6 +454,13 @@ export class KnoraService {
    * - getRepresentationsByYear
    */
 
+  getRepresentationMatchesByYearRequest(year: number): string {
+    return `
+        ${this.getRepresentationMatchBaseRequest()}
+        ${this.getQueryFilter(year)}
+      }
+    `;
+  }
   getRepresentationsByYearRequest(year: number): string {
     return `
         ${this.getRepresentationBaseRequest()}
@@ -457,7 +474,11 @@ export class KnoraService {
     return this.getSearchCount(request);
   }
 
-  getRepresentationsByYear(year: number): Observable<RepresentationMatch[]> {
+  getRepresentationMatchesByYear(year: number): Observable<RepresentationMatch[]> {
+    let request = this.getRepresentationMatchesByYearRequest(year);
+    let cacheKey = year.toString();
+    return this.getRepresentationMatches(request, cacheKey);
+  }
     let request = this.getRepresentationsByYearRequest(year);
     let cacheKey = year.toString();
     return this.getRepresentations(request, cacheKey);
@@ -470,6 +491,16 @@ export class KnoraService {
    * - getRepresentationsByLink
    */
 
+   getRepresentationMatchesByLinkRequest(iri: string, link: string): string {
+    return `
+        ${this.getRepresentationMatchBaseRequest()}
+      }
+    `.replace(
+      '} WHERE {',
+      `} WHERE {
+        BIND(<${iri}> AS ?${link})
+      `);
+  }
   getRepresentationsByLinkRequest(iri: string, link: string): string {
     return `
         ${this.getRepresentationBaseRequest()}
@@ -486,7 +517,12 @@ export class KnoraService {
     return this.getSearchCount(request);
   }
 
-  getRepresentationsByLink(iri: string, link: string): Observable<RepresentationMatch[]> {
+  getRepresentationMatchesByLink(iri: string, link: string): Observable<RepresentationMatch[]> {
+    let request = this.getRepresentationMatchesByLinkRequest(iri, link);
+    let cacheKey = iri.toString();
+    return this.getRepresentationMatches(request, cacheKey);
+  }
+
     let request = this.getRepresentationsByLinkRequest(iri, link);
     let cacheKey = iri.toString();
     return this.getRepresentations(request, cacheKey);

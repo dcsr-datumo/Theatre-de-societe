@@ -27,7 +27,7 @@ export class RepresentationsListComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.type == "year") {
-      this.representations = this.knoraService.getRepresentationsByYear(+this.source)
+      this.representations = this.knoraService.getRepresentationMatchesByYear(+this.source)
       // .pipe(
       //   map((representations: RepresentationMatch[]) =>
       //     representations.map((representation: RepresentationMatch) => {
@@ -39,7 +39,7 @@ export class RepresentationsListComponent implements OnInit {
       ;
 
     } else {
-      this.representations = this.knoraService.getRepresentationsByLink(this.source, this.type)
+      this.representations = this.knoraService.getRepresentationMatchesByLink(this.source, this.type)
       // .pipe(
       //   map((representations: RepresentationMatch[]) =>
       //     representations.map((representation: RepresentationMatch) => {
