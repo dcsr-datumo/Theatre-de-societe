@@ -8,7 +8,7 @@
     </div>
 
     <div class="list-item-header list-item-container">
-      <div  *ngIf="titles" class="list-item-header">Titre</div>
+      <div *ngIf="titles" class="list-item-header">Titre</div>
       <div class="list-item-header">Lieu</div>
       <div class="list-item-header">Date</div>
     </div>
@@ -24,14 +24,14 @@
                   <button mat-button class="embedded">
                     <span class="material-icons embedded">article</span>
                   </button>
-                  {{representation.workTitle}}
+                    <span *ngIf="works[representation.work] | async as work">{{work.title}}</span>
                 </a>
               </span>
 
             </mat-panel-title>
             <mat-panel-description>
               <span class="truncate">
-                {{representation.placeName}}
+                <span *ngIf="places[representation.place] | async as place">{{place.name}}</span>
               </span>
               <span class="spacer"></span>
 

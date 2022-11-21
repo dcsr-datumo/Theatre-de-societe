@@ -40,7 +40,7 @@ export class KnoraService {
   config: KnoraApiConfig;
   cachedCalendar: CacheCalendarYear[];
   cachedCalendarExtended: CacheCalendarYear[];
-  cachedRepresentation: Map<string, Representation> = new Map<string, Representation>();
+  cachedRepresentations: Map<string, Representation[]> = new Map<string, Representation[]>();
   cachedRepresentationMatches: Map<string, RepresentationMatch[]> = new Map<string, RepresentationMatch[]>();
   cachedPlaces: PlaceMatch[];
   cachedAuthors: PersonMatchAuthor[];
@@ -67,6 +67,7 @@ export class KnoraService {
       true
     );
     this.knoraApiConnection = new KnoraApiConnection(this.config);
+    this.cache
   }
 
   getCalendarCacheRequest() {
@@ -354,13 +355,27 @@ export class KnoraService {
   /**
    * misses the trailing '}'
    */
-  getRepresentationBaseRequest(): string {
+   getRepresentationBaseRequest(): string {
     if (!this.representationsBaseRequest) {
       this.representationsBaseRequest = `
       PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
       PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
       CONSTRUCT {
         ?representation knora-api:isMainResource true .
+        ?representation theatre-societe:representationHasDate ?date .
+        ?representation theatre-societe:representationIsBasedOn ?work .
+        ?representation theatre-societe:representationHasPlace ?place .
+      } WHERE {
+        ?representation a knora-api:Resource .
+        ?representation a theatre-societe:Representation .
+        ?representation theatre-societe:representationHasDate ?date .
+        ?representation theatre-societe:representationIsBasedOn ?work .
+        ?representation theatre-societe:representationHasPlace ?place .
+        `;
+    }
+    return this.representationsBaseRequest;
+  }
+
   /**
    * misses the trailing '}'
    */
@@ -447,6 +462,60 @@ export class KnoraService {
     return new Observable(aggregatedPage);
   }
 
+    // representations per year
+    getRepresentationsPage(request: string, page: number): Observable<Representation[]> {
+      let query = `
+       ${request}
+       ORDER BY ?date
+       OFFSET ${page}
+      `;
+      console.log(query);
+      return this.knoraApiConnection.v2.search.doExtendedSearch(query)
+        .pipe(
+          map((response: ReadResourceSequence) => response.resources.map(
+            (resource: ReadResource) => new Representation(resource)
+          ))
+        );
+    }
+
+
+  getRepresentations(request: string, cacheKey: string): Observable<Representation[]> {
+    const service = this;
+    if (service.cachedRepresentations.has(cacheKey)) {
+      return of(service.cachedRepresentations.get(cacheKey));
+    }
+    let index = 0;
+    let representations: Representation[] = [];
+    function aggregatedPage(observer) {
+      console.log('call getRepresentations for page: ' + index);
+      service.getRepresentationsPage(request, index).subscribe(
+        (page: Representation[]) => {
+          // for debug purposes
+          // if (page.length > 0 && index < 2) {
+          if (page.length > 0) {
+            representations = representations.concat(page);
+            // if needed sort in the request
+            // .sort((a, b) => Number(a.label) - Number(b.label));
+            observer.next(representations);
+          }
+          // becareful of magic numbers
+          if (page.length == 25) {
+            index = ++index;
+            aggregatedPage(observer);
+          } else {
+            service.cachedRepresentations.set(cacheKey, representations);
+            observer.complete();
+          }
+        },
+        (e) => console.log("getRepresentation error: "+ e),
+        () => {
+          console.log('getRepresentations subscription ends for page: ' + index);
+        }
+      );
+    }
+    return new Observable(aggregatedPage);
+  }
+
   /**
    * Representations by data:
    * - getRepresentationsByYearRequest
@@ -479,6 +548,8 @@ export class KnoraService {
     let cacheKey = year.toString();
     return this.getRepresentationMatches(request, cacheKey);
   }
+
+  getRepresentationsByYear(year: number): Observable<Representation[]> {
     let request = this.getRepresentationsByYearRequest(year);
     let cacheKey = year.toString();
     return this.getRepresentations(request, cacheKey);
@@ -523,6 +594,7 @@ export class KnoraService {
     return this.getRepresentationMatches(request, cacheKey);
   }
 
+  getRepresentationsByLink(iri: string, link: string): Observable<Representation[]> {
     let request = this.getRepresentationsByLinkRequest(iri, link);
     let cacheKey = iri.toString();
     return this.getRepresentations(request, cacheKey);
@@ -579,7 +651,10 @@ export class KnoraService {
     return service.getResource(iri, "festival", (resource: ReadResource) => new Festival(resource));
   }
 
+
   getWork(iri: string): Observable<Work> {
+    console.log("get work: ", iri);
+
     const service = this;
     return service.getResource(iri, "work", (resource: ReadResource) => new Work(resource));
   }
