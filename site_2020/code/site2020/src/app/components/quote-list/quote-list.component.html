@@ -9,11 +9,11 @@
 
     <mat-list-item *ngFor="let quote of quotes">
       <mat-accordion *ngIf="!quote.isDeleted">
-        <mat-expansion-panel (opened)="panel[quote.id] = true">
+        <mat-expansion-panel (opened)="panel[quote.id] = true" (closed)="panel[quote.id] = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
               <div>
-                <span class="truncate">
+                <span [ngClass]="{truncate: !panel[quote.id]}">
                  {{quote.label}}
                 </span>
               </div>
