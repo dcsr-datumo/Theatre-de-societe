@@ -62,7 +62,6 @@ import { RepresentationsListMapComponent } from './components/representations-li
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { QuoteComponent } from './components/quote/quote.component';
-import { QuoteLineComponent } from './components/quote-line/quote-line.component';
 import { QuoteContentComponent } from './components/quote-content/quote-content.component';
 import { QuoteListComponent } from './components/quote-list/quote-list.component';
 
