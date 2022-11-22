@@ -14,7 +14,7 @@
 
     <ul>
       <li>
-        Pièce:  <tds-work [iri]="rep.work"></tds-work>
+        Pièce: <tds-work [iri]="rep.work"></tds-work>
       </li>
       <li>
         Lieu: <tds-place-line [iri]="rep.place"></tds-place-line>
@@ -55,40 +55,7 @@
         </span>
       </li>
 
-      <li *ngIf="rep.quote && rep.quote.length>0">
-        <span *ngIf="rep.quote.length == 1">
-          Source:
-          <tds-quote-line [iri]="rep.quote[0]"></tds-quote-line>
-          <tds-quote-content [iri]="rep.quote[0]" [embedded]="true"></tds-quote-content>
-        </span>
-        <span *ngIf="rep.quote.length > 1">
-          Sources:
-
-          <!-- div class="list-item-header list-item-container">
-            <div class="list-item-header">titre</div>
-            <div class="list-item-header">auteur</div>
-          </div -->
-
-          <mat-list-item *ngFor="let quote of rep.quote">
-            <mat-accordion>
-              <mat-expansion-panel (opened)="panel[quote.id] = true">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <span class="truncate">
-                      <tds-quote-line [iri]="quote"></tds-quote-line>
-                    </span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <span *ngIf="panel[quote.id]">
-                  <tds-quote-content [iri]="quote" [embedded]="true"></tds-quote-content>
-                </span>
-              </mat-expansion-panel>
-            </mat-accordion>
-          </mat-list-item>
-
-        </span>
-      </li>
-
+      <tds-quote-list [quotes_iri]="rep.quote"></tds-quote-list>
     </ul>
   </span>
 </div>

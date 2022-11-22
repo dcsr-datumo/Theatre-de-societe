@@ -64,6 +64,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { QuoteComponent } from './components/quote/quote.component';
 import { QuoteLineComponent } from './components/quote-line/quote-line.component';
 import { QuoteContentComponent } from './components/quote-content/quote-content.component';
+import { QuoteListComponent } from './components/quote-list/quote-list.component';
 
 
 @NgModule({
@@ -75,7 +76,7 @@ import { QuoteContentComponent } from './components/quote-content/quote-content.
     GenreComponent,
     ProjetComponent, AgendaComponent, PublicationsComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
     PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent, AuteurspageComponent, PiecespageComponent, RepresentationsListMapComponent,
-    QuoteComponent, QuoteContentComponent, QuoteLineComponent
+    QuoteComponent, QuoteContentComponent, QuoteListComponent
   ],
   imports: [
     HttpClientModule,

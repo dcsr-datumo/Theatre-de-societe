@@ -1,0 +1,30 @@
+<li *ngIf="quotes && quotes.length>0">
+  <span *ngIf="quotes.length == 1">
+    Source: {{quotes[0].label}}
+    <tds-quote-content [quote]="quotes[0]" [embedded]="true"></tds-quote-content>
+
+  </span>
+  <span *ngIf="quotes.length > 1">
+    Sources:
+
+    <mat-list-item *ngFor="let quote of quotes">
+      <mat-accordion *ngIf="!quote.isDeleted">
+        <mat-expansion-panel (opened)="panel[quote.id] = true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div>
+                <span class="truncate">
+                 {{quote.label}}
+                </span>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <tds-quote-content [quote]="quote" [embedded]="true"></tds-quote-content>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-list-item>
+
+  </span>
+</li>
