@@ -1,4 +1,7 @@
+<span *ngIf="quote">
+
   <div *ngIf="!embedded" class="nomargin">
+
     <h2>
       Source:
     </h2>
@@ -32,3 +35,4 @@
     <p style="text-decoration: underline;">Citation:</p>
     <div class="scroll, wide" [innerHTML]="quote.quote"></div>
   </div>
+</span>
