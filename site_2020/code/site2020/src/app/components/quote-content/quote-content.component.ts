@@ -11,16 +11,13 @@ import { Quote } from "../../models/quote.model";
 })
 export class QuoteContentComponent implements OnInit {
   @Input()
-  iri: string;
+  quote: Quote;
   @Input()
   embedded: boolean;
 
-  quote: Observable<Quote>;
-
-  constructor(private knoraService: KnoraService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.quote = this.knoraService.getQuote(this.iri);
   }
 
 }

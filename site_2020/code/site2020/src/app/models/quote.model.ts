@@ -30,4 +30,8 @@ export class Quote extends Resource {
     return this.converter.transform(quote);
   }
 
+  get isDeleted(): boolean {
+    return this.label === "Deleted Resource";
+  }
+
 }
