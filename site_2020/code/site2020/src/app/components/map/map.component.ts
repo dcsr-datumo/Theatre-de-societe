@@ -204,7 +204,7 @@ export class MapComponent implements OnInit {
 
             m.on('click' , () => {
               this.ngZone.run(() => {
-                console.log("map to placeDetail: " + place.id + " : "+ place.name);
+                // console.log("map to placeDetail: " + place.id + " : "+ place.name);
                 this.knoraService.placeDetails.next(place.id);
               });
 
@@ -236,7 +236,6 @@ export class MapComponent implements OnInit {
 
   // called by the template when a text is entered
   search(term: string): void {
-    console.log("search adding: "+ term);
     this.searchTerms = term;
     this.searchTermsDate.next(term +","+ this.valueMin +","+ this.valueMax);
   }

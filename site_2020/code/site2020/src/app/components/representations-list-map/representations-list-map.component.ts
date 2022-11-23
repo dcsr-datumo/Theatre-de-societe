@@ -32,13 +32,11 @@ export class RepresentationsListMapComponent implements OnInit {
     const us = this;
     this.subscription = this.knoraService.placeDetails.subscribe(
       (update: string) => {
-        console.log("change detected on: "+ update);
         this.representations = this.knoraService.getRepresentationsByLink(update, "place")
         .pipe(
           tap( (representations: Representation[]) => {
             representations.forEach(
               (representation: Representation) => {
-                console.log("works adding: "+ representation.work);
                 us.works[representation.work] = us.knoraService.getWork(representation.work);
               }
             )

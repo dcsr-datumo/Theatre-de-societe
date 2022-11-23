@@ -97,7 +97,6 @@ export class KnoraService {
     `${this.getCalendarCacheRequest()}
      ORDER BY ?year
      OFFSET ${page}`;
-    console.log(gravsearchQuery);
     return this.knoraApiConnection.v2.search.doExtendedSearch(gravsearchQuery)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
@@ -111,7 +110,6 @@ export class KnoraService {
     const service = this;
     let page = 0;
     function multiPage(observer) {
-      console.log('call getCalendarCache for page: ' + page);
       service.getCalendarCache(page).subscribe(
         (years: CacheCalendarYear[]) => {
           if (years.length > 0) {
@@ -143,7 +141,6 @@ export class KnoraService {
     }
 
     function aggregatedPage(observer) {
-      console.log('call getCalendarCache for page: ' + page);
       service.getCalendarCache(page).subscribe(
         (years: CacheCalendarYear[]) => {
           if (years.length > 0) {
@@ -415,7 +412,6 @@ export class KnoraService {
      ORDER BY ?date
      OFFSET ${page}
     `;
-    console.log(query);
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
@@ -433,7 +429,6 @@ export class KnoraService {
     let index = 0;
     let representations: RepresentationMatch[] = [];
     function aggregatedPage(observer) {
-      console.log('call getRepresentations for page: ' + index);
       service.getRepresentationMatchesPage(request, index).subscribe(
         (page: RepresentationMatch[]) => {
           // for debug purposes
@@ -469,7 +464,6 @@ export class KnoraService {
        ORDER BY ?date
        OFFSET ${page}
       `;
-      console.log(query);
       return this.knoraApiConnection.v2.search.doExtendedSearch(query)
         .pipe(
           map((response: ReadResourceSequence) => response.resources.map(
@@ -487,7 +481,6 @@ export class KnoraService {
     let index = 0;
     let representations: Representation[] = [];
     function aggregatedPage(observer) {
-      console.log('call getRepresentations for page: ' + index);
       service.getRepresentationsPage(request, index).subscribe(
         (page: Representation[]) => {
           // for debug purposes
@@ -653,8 +646,6 @@ export class KnoraService {
 
 
   getWork(iri: string): Observable<Work> {
-    console.log("get work: ", iri);
-
     const service = this;
     return service.getResource(iri, "work", (resource: ReadResource) => new Work(resource));
   }
@@ -701,8 +692,6 @@ export class KnoraService {
     }
     OFFSET ${page}
     `;
-    console.log('query places:');
-    console.log(query);
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
@@ -719,7 +708,6 @@ export class KnoraService {
     let index = 0;
     let matches: PlaceMatch[] = [];
     function aggregatedPage(observer) {
-      console.log('call getPlace for page: ' + index);
       service.getPlacePage(index).subscribe(
         (page: PlaceMatch[]) => {
           // for debug, don't load the whole place list
@@ -786,8 +774,6 @@ export class KnoraService {
       ${this.getAuthorsQuery()}
       OFFSET ${page}
     `;
-    console.log('query authors:');
-    console.log(query);
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
@@ -804,7 +790,6 @@ export class KnoraService {
     let index = 0;
     let authors: PersonMatchAuthor[] = [];
     function aggregatedPage(observer) {
-      console.log('call getAuthors for page: ' + index);
       service.getAuthorsPage(index).subscribe(
         (page: PersonMatchAuthor[]) => {
           if (page.length > 0) {
@@ -862,8 +847,6 @@ export class KnoraService {
     ORDER BY ?title
     OFFSET ${page}
     `;
-    console.log('query works:');
-    console.log(query);
     return this.knoraApiConnection.v2.search.doExtendedSearch(query)
       .pipe(
         map((response: ReadResourceSequence) => response.resources.map(
@@ -880,7 +863,6 @@ export class KnoraService {
     let index = 0;
     let works: WorkMatch[] = [];
     function aggregatedPage(observer) {
-      console.log('call getWorks for page: ' + index);
       service.getWorksPage(index).subscribe(
         (page: WorkMatch[]) => {
           // // note loic: for debug
@@ -912,7 +894,6 @@ export class KnoraService {
     let index = 0;
     let works: WorkMatch[] = [];
     function aggregatedPage(observer) {
-      console.log('call getWorks for page: ' + index);
       service.getWorksPage(index).subscribe(
         (page: WorkMatch[]) => {
           // // note loic: for debug

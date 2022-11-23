@@ -30,7 +30,7 @@ export class AuteursComponent implements OnInit {
     this.reset.next(0);
 
     // get the list of authors
-    let us = this;
+    let us = this;
 
     function readMatches(observer) {
       // initial load
@@ -38,7 +38,7 @@ export class AuteursComponent implements OnInit {
       us.knoraService.getAuthorsQuickCache().subscribe(
         (data: PersonCache[]) => {
           // send them to the observer
-          us.allAuthors = data;
+          us.allAuthors = data;
           observer.next(data);
           us.authorsCount.next(us.allAuthors.length);
         },
@@ -46,7 +46,6 @@ export class AuteursComponent implements OnInit {
         () => {
           us.reset.next(us.allAuthors.length);
           us.loading.next(false);
-          console.log("passed initial value")
 
           // then start listening to the search box entry
           us.searchTerms.pipe(
@@ -68,7 +67,7 @@ export class AuteursComponent implements OnInit {
 
               term = term.toLowerCase();
               // search for the matches
-              let matches = us.allAuthors.filter(author =>
+              let matches = us.allAuthors.filter(author =>
                 {
                   return (
                     (author.familyName && author.familyName.toLowerCase().includes(term))
@@ -93,7 +92,6 @@ export class AuteursComponent implements OnInit {
 
   // called by the template when a text is entered
   search(term: string): void {
-    console.log("search adding: "+ term);
     this.searchTerms.next(term);
   }
 }

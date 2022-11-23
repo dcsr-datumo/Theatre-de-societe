@@ -28,13 +28,11 @@ export class PiecespageComponent implements OnInit {
     this.count = 1;
 
     let us = this;
-    console.log("count/pageMax:"+us.count+"/"+us.pageMax);
     this.reset.subscribe(
       newCount => {
         us.count = newCount;
         us.page = 0;
-        us.pageMax = Math.ceil(newCount/us.pageLength);
-        console.log("count/pageMax:"+newCount+"/"+us.pageMax);
+        us.pageMax = Math.ceil(newCount/us.pageLength);
       }
     );
     this.reset.next(this.works.length);

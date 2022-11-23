@@ -42,7 +42,6 @@ export class PiecesComponent implements OnInit {
         () => {
           us.reset.next(us.allWorks.length);
           us.loading.next(false);
-          console.log("passed initial value");
 
           // then answer the searches
           us.searchTerms.pipe(
@@ -84,7 +83,6 @@ export class PiecesComponent implements OnInit {
 
   // called by the template when a text is entered
   search(term: string): void {
-    console.log("search adding: "+ term);
     this.searchTerms.next(term);
   }
 
