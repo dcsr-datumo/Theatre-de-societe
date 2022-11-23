@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Observable, config } from "rxjs";
+import { Observable, config, BehaviorSubject } from "rxjs";
 
 import { KnoraService } from "../../services/knora.service";
 import { Representation } from '../../models/representation.model';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'tds-representation',
@@ -17,6 +18,8 @@ export class RepresentationComponent implements OnInit {
 
   panel: Map<string, boolean> = new Map<string, boolean>();
 
+  loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+
   constructor(
     private route: ActivatedRoute,
     private knoraService: KnoraService,
@@ -24,8 +27,11 @@ export class RepresentationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    let us = this;
     this.id = this.route.snapshot.paramMap.get('id');
-    this.representation = this.knoraService.getRepresentation(`http://rdfh.ch/0103/${this.id}`);
+    this.representation = this.knoraService.getRepresentation(`http://rdfh.ch/0103/${this.id}`).pipe(finalize(() => {
+      us.loading.next(false);
+    }));
   }
 
 }

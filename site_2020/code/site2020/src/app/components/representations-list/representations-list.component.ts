@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { BehaviorSubject, MonoTypeOperatorFunction, Observable } from 'rxjs';
+import { finalize, map, tap } from 'rxjs/operators';
 import { Place } from 'src/app/models/place.model';
 import { Representation } from 'src/app/models/representation.model';
 import { RepresentationMatch } from 'src/app/models/representationmatch.model';
@@ -26,29 +26,33 @@ export class RepresentationsListComponent implements OnInit {
   works: Map<string, Observable<Work>> = new Map<string, Observable<Work>>();
   places: Map<string, Observable<Place>> = new Map<string, Observable<Place>>();
 
+  loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+
   constructor(
     private knoraService: KnoraService
   ){}
 
   ngOnInit(): void {
-    console.log("start representations");
-
     const us = this;
 
-    const myTap = tap( (representations: Representation[]) => {
+    const _tap = tap( (representations: Representation[]) => {
       representations.map( (representation : Representation) => {
         // get the representations' work
         us.works[representation.work] = us.knoraService.getWork(representation.work);
         // get the representation's place
         us.places[representation.place] = us.knoraService.getPlace(representation.place);
       });
-    })
+    });
+
+    const _finalise: MonoTypeOperatorFunction<Representation[]> = finalize(() => {
+      us.loading.next(false);
+    });
 
     if (this.type == "year") {
-      this.representations = this.knoraService.getRepresentationsByYear(+this.source).pipe(myTap);
+      this.representations = this.knoraService.getRepresentationsByYear(+this.source).pipe(_tap, _finalise);
 
     } else {
-      this.representations = this.knoraService.getRepresentationsByLink(this.source, this.type).pipe(myTap);
+      this.representations = this.knoraService.getRepresentationsByLink(this.source, this.type).pipe(_tap, _finalise);
     }
 
   }

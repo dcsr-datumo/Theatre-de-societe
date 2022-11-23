@@ -1,3 +1,12 @@
 <div class="external">
+
+  <mat-progress-bar
+  *ngIf="loading | async"
+  mode="indeterminate"
+  color="warn"
+  style="top: 0; z-index: 100;"
+  >
+  </mat-progress-bar>
+
   <tds-quote-content [quote]="quote" [embedded]="false"></tds-quote-content>
 </div>
