@@ -46,7 +46,7 @@ export class KnoraService {
   cachedAuthors: PersonMatchAuthor[];
   cachedWorks: Work[];
   cachedWorkMatches: WorkMatch[];
-  cache: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
+  cache = new Map<string, Map<string, Object>>();
 
   calendarCacheRequest: string;
   authorsRequest: string;
@@ -67,13 +67,11 @@ export class KnoraService {
       true
     );
     this.knoraApiConnection = new KnoraApiConnection(this.config);
-    this.cache
   }
 
   getCalendarCacheRequest() {
-    if(!this.calendarCacheRequest) {
-      this.calendarCacheRequest =
-      `
+    if (!this.calendarCacheRequest) {
+      this.calendarCacheRequest = `
       PREFIX knora-api: <http://api.knora.org/ontology/knora-api/v2#>
       PREFIX theatre-societe: <http://${environment.knoraApiHost}/ontology/0103/theatre-societe/v2#>
       CONSTRUCT {
@@ -170,7 +168,7 @@ export class KnoraService {
     let lastYear: CacheCalendarYear;
 
     // result set (recursively build up)
-    let allYearsExtended: CacheCalendarYear[] = [];
+    const allYearsExtended: CacheCalendarYear[] = [];
 
     // if we already have the final result set, send it straight away
     if (this.cachedCalendarExtended) {
@@ -253,7 +251,7 @@ export class KnoraService {
    * @returns number[] an array of representations per year
    */
   getCalendarQuickCache(): Observable<number[]> {
-    let all: number[] = [];
+    const all: number[] = [];
 
     let lastYear = 1700;
 
@@ -262,23 +260,23 @@ export class KnoraService {
     // prior to 1700, cumulate on 1700
     all[1] = 0;
 
-    let us = this;
+    const us = this;
     function histogram(observer) {
       // request the cache as served by angular
-      us.http.get<CalendarCache[]>(environment.assets + "/cache/calendar_cache.json").subscribe(
+      us.http.get<CalendarCache[]>(environment.assets + '/cache/calendar_cache.json').subscribe(
         (data: CalendarCache[]) => {
           data.forEach(element => {
-            let thisYear = +element.year;
-            let thisRepresentations = +element.representations;
+            const thisYear = +element.year;
+            const thisRepresentations = +element.representations;
 
             // unknown have been marked as year 1
-            if(thisYear == 1) {
+            if (thisYear === 1) {
               all[0] += thisRepresentations;
               return;
             }
 
             // before 1700 : cumulate the representations in a single year
-            if(thisYear <= 1700) {
+            if (thisYear <= 1700) {
               all[1] += thisRepresentations;
               return;
             }
@@ -291,22 +289,22 @@ export class KnoraService {
             }
 
             // fill the holes
-            while(++lastYear < thisYear) {
+            while (++lastYear < thisYear) {
               // fill an empty year
-              all[lastYear-1699] = 0;
+              all[lastYear - 1699] = 0;
             }
 
             // add this year
-            all[thisYear-1699] = thisRepresentations;
+            all[thisYear - 1699] = thisRepresentations;
           });
           observer.next(all);
         },
         (error) => console.log(error),
         () => {
           // fill the holes
-          while(++lastYear <= 1899) {
+          while (++lastYear <= 1899) {
             // fill an empty year
-            all[lastYear-1699] = 0;
+            all[lastYear - 1699] = 0;
           }
           observer.complete();
         }
@@ -319,21 +317,21 @@ export class KnoraService {
    * reads a cache file
    */
   getAuthorsQuickCache(): Observable<PersonCache[]> {
-    return this.http.get<PersonCache[]>(environment.assets + "/cache/authors_cache.json");
+    return this.http.get<PersonCache[]>(environment.assets + '/cache/authors_cache.json');
   }
 
   /**
    * reads a cache file
    */
   getWorksQuickCache(): Observable<WorkCache[]> {
-    return this.http.get<WorkCache[]>(environment.assets + "/cache/works_cache.json");
+    return this.http.get<WorkCache[]>(environment.assets + '/cache/works_cache.json');
   }
 
   /**
    * reads a cache file
    */
    getPlacesQuickCache(): Observable<PlaceCache[]> {
-    return this.http.get<PlaceCache[]>(environment.assets + "/cache/places_cache.json");
+    return this.http.get<PlaceCache[]>(environment.assets + '/cache/places_cache.json');
   }
 
   getQueryFilter(year: number): string {
@@ -344,7 +342,7 @@ export class KnoraService {
       `;
     }
     if (year === 1899) {
-      return "FILTER(knora-api:toSimpleDate(?date) > 'GREGORIAN:1898-12-31' ^^ <http://api.knora.org/ontology/knora-api/simple/v2#Date>)";
+      return 'FILTER(knora-api:toSimpleDate(?date) > \'GREGORIAN:1898-12-31\' ^^ <http://api.knora.org/ontology/knora-api/simple/v2#Date>)';
     }
     return `FILTER(knora-api:toSimpleDate(?date) = 'GREGORIAN:${year}-1-1:${year}-12-31'^^<http://api.knora.org/ontology/knora-api/simple/v2#Date>)`;
   }
@@ -407,7 +405,7 @@ export class KnoraService {
 
   // representations per year
   getRepresentationMatchesPage(request: string, page: number): Observable<RepresentationMatch[]> {
-    let query = `
+    const query = `
      ${request}
      ORDER BY ?date
      OFFSET ${page}
@@ -440,7 +438,7 @@ export class KnoraService {
             observer.next(representations);
           }
           // becareful of magic numbers
-          if (page.length == 25) {
+          if (page.length === 25) {
             index = ++index;
             aggregatedPage(observer);
           } else {
@@ -448,7 +446,7 @@ export class KnoraService {
             observer.complete();
           }
         },
-        (e) => console.log("getRepresentation error: "+ e),
+        (e) => console.log('getRepresentation error: ' + e),
         () => {
           console.log('getRepresentations subscription ends for page: ' + index);
         }
@@ -459,7 +457,7 @@ export class KnoraService {
 
     // representations per year
     getRepresentationsPage(request: string, page: number): Observable<Representation[]> {
-      let query = `
+      const query = `
        ${request}
        ORDER BY ?date
        OFFSET ${page}
@@ -492,7 +490,7 @@ export class KnoraService {
             observer.next(representations);
           }
           // becareful of magic numbers
-          if (page.length == 25) {
+          if (page.length === 25) {
             index = ++index;
             aggregatedPage(observer);
           } else {
@@ -500,7 +498,7 @@ export class KnoraService {
             observer.complete();
           }
         },
-        (e) => console.log("getRepresentation error: "+ e),
+        (e) => console.log('getRepresentation error: ' + e),
         () => {
           console.log('getRepresentations subscription ends for page: ' + index);
         }
@@ -532,19 +530,19 @@ export class KnoraService {
   }
 
   getRepresentationsByYearCount(year: number): Observable<ApiResponseError | CountQueryResponse> {
-    let request = this.getRepresentationsByYearRequest(year);
+    const request = this.getRepresentationsByYearRequest(year);
     return this.getSearchCount(request);
   }
 
   getRepresentationMatchesByYear(year: number): Observable<RepresentationMatch[]> {
-    let request = this.getRepresentationMatchesByYearRequest(year);
-    let cacheKey = year.toString();
+    const request = this.getRepresentationMatchesByYearRequest(year);
+    const cacheKey = year.toString();
     return this.getRepresentationMatches(request, cacheKey);
   }
 
   getRepresentationsByYear(year: number): Observable<Representation[]> {
-    let request = this.getRepresentationsByYearRequest(year);
-    let cacheKey = year.toString();
+    const request = this.getRepresentationsByYearRequest(year);
+    const cacheKey = year.toString();
     return this.getRepresentations(request, cacheKey);
   }
 
@@ -577,19 +575,19 @@ export class KnoraService {
   }
 
   getRepresentationsByLinkCount(iri: string, link: string): Observable<ApiResponseError | CountQueryResponse> {
-    let request = this.getRepresentationsByLinkRequest(iri, link);
+    const request = this.getRepresentationsByLinkRequest(iri, link);
     return this.getSearchCount(request);
   }
 
   getRepresentationMatchesByLink(iri: string, link: string): Observable<RepresentationMatch[]> {
-    let request = this.getRepresentationMatchesByLinkRequest(iri, link);
-    let cacheKey = iri.toString();
+    const request = this.getRepresentationMatchesByLinkRequest(iri, link);
+    const cacheKey = iri.toString();
     return this.getRepresentationMatches(request, cacheKey);
   }
 
   getRepresentationsByLink(iri: string, link: string): Observable<Representation[]> {
-    let request = this.getRepresentationsByLinkRequest(iri, link);
-    let cacheKey = iri.toString();
+    const request = this.getRepresentationsByLinkRequest(iri, link);
+    const cacheKey = iri.toString();
     return this.getRepresentations(request, cacheKey);
   }
 
@@ -607,8 +605,8 @@ export class KnoraService {
 
     // check the cache
     if (cache.has(iri)) {
-       return of(cache.get(iri))
-    };
+      return of(cache.get(iri));
+    }
 
     // send the request
     return service.knoraApiConnection.v2.res.getResource(iri).pipe(
@@ -622,52 +620,52 @@ export class KnoraService {
 
   getRepresentation(iri: string): Observable<Representation> {
     const service = this;
-    return service.getResource(iri, "representation", (resource: ReadResource) => new Representation(resource));
+    return service.getResource(iri, 'representation', (resource: ReadResource) => new Representation(resource));
   }
 
   getPlace(iri: string): Observable<Place> {
     const service = this;
-    return service.getResource(iri, "place", (resource: ReadResource) => new Place(resource));
+    return service.getResource(iri, 'place', (resource: ReadResource) => new Place(resource));
   }
 
   getGenre(iri: string): Observable<Genre> {
     const service = this;
-    return service.getResource(iri, "genre", (resource: ReadResource) => new Genre(resource));
+    return service.getResource(iri, 'genre', (resource: ReadResource) => new Genre(resource));
   }
   getQuote(iri: string): Observable<Quote> {
     const service = this;
-    return service.getResource(iri, "quote", (resource: ReadResource) => new Quote(resource));
+    return service.getResource(iri, 'quote', (resource: ReadResource) => new Quote(resource));
   }
 
   getFestival(iri: string): Observable<Festival> {
     const service = this;
-    return service.getResource(iri, "festival", (resource: ReadResource) => new Festival(resource));
+    return service.getResource(iri, 'festival', (resource: ReadResource) => new Festival(resource));
   }
 
 
   getWork(iri: string): Observable<Work> {
     const service = this;
-    return service.getResource(iri, "work", (resource: ReadResource) => new Work(resource));
+    return service.getResource(iri, 'work', (resource: ReadResource) => new Work(resource));
   }
 
   getRole(iri: string): Observable<Role> {
     const service = this;
-    return service.getResource(iri, "Role", (resource: ReadResource) => new Role(resource));
+    return service.getResource(iri, 'Role', (resource: ReadResource) => new Role(resource));
   }
 
   getPerson(iri: string): Observable<Person> {
     const service = this;
-    return service.getResource(iri, "Person", (resource: ReadResource) => new Person(resource));
+    return service.getResource(iri, 'Person', (resource: ReadResource) => new Person(resource));
   }
 
   getGroup(iri: string): Observable<Group> {
     const service = this;
-    return service.getResource(iri, "Group", (resource: ReadResource) => new Group(resource));
+    return service.getResource(iri, 'Group', (resource: ReadResource) => new Group(resource));
   }
 
   getMembership(iri: string): Observable<Membership> {
     const service = this;
-    return service.getResource(iri, "Membership", (resource: ReadResource) => new Membership(resource));
+    return service.getResource(iri, 'Membership', (resource: ReadResource) => new Membership(resource));
   }
 
   // representations per year
@@ -713,7 +711,7 @@ export class KnoraService {
           // for debug, don't load the whole place list
           // if (page.length > 0 && index < 2) {
           if (page.length > 0) {
-              matches = matches.concat(page);
+            matches = matches.concat(page);
             // if needed sort in the request
             // .sort((a, b) => Number(a.label) - Number(b.label));
             observer.next(matches);
@@ -922,10 +920,10 @@ export class KnoraService {
    * until a selected iri comes through the observer placeDetails
    */
   getPlaceDetailsWithDefault(): Observable<Place> {
-    let us = this;
+    const us = this;
     function switchIriForPlace(observer) {
       // TODO: note loic: make it configurable
-      let initialIri = 'http://rdfh.ch/0103/4eHAX522RRaoBRFarcAoLQ'
+      const initialIri = 'http://rdfh.ch/0103/4eHAX522RRaoBRFarcAoLQ';
       us.getPlace(initialIri).subscribe(
         (place: Place) => observer.next(place),
         (error) => console.log(error),
@@ -934,12 +932,12 @@ export class KnoraService {
           (iri: string) => {
             us.getPlace(iri).subscribe(
               (place: Place) => observer.next(place)
-            )
+            );
           }
         );
         }
-      )
-    };
+      );
+    }
     return new Observable<Place>(switchIriForPlace);
   }
 

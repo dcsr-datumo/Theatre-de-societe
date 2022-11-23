@@ -11,7 +11,7 @@ import { Representation } from 'src/app/models/representation.model';
   styleUrls: ['./work-line.component.scss']
 })
 export class WorkLineComponent implements OnInit {
-  @Input() iri : string;
+  @Input() iri: string;
   work: Observable<Work>;
 
   constructor(
@@ -23,6 +23,6 @@ export class WorkLineComponent implements OnInit {
   }
 
   getRepresentations(): Observable<Representation[]> {
-    return this.knoraService.getRepresentationsByLink(this.iri, "work");
+    return this.knoraService.getRepresentationsByLink(this.iri, 'work');
   }
 }

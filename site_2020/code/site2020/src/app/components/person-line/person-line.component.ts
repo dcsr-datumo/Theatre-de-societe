@@ -9,8 +9,8 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./person-line.component.scss']
 })
 export class PersonLineComponent implements OnInit {
-  @Input() iri : string;
-  @Input() showName : boolean;
+  @Input() iri: string;
+  @Input() showName: boolean;
   person: Observable<Person>;
 
   constructor(

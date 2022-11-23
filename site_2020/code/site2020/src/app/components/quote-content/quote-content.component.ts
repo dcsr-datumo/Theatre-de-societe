@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 
-import { Quote } from "../../models/quote.model";
+import { Quote } from '../../models/quote.model';
 
 @Component({
   selector: 'tds-quote-content',

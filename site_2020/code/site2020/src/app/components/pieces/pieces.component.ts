@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, of, Subject } from "rxjs";
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { KnoraService } from 'src/app/services/knora.service';
 import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
 import { WorkCache } from 'src/app/models/workcache.model';
@@ -15,11 +15,11 @@ export class PiecesComponent implements OnInit {
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   counter: Observable<number>;
   @Input()
-  searchText: string = "";
+  searchText = '';
 
   private searchTerms = new Subject<string>();
 
-  reset: Subject<number> = new Subject<number>();
+  reset = new Subject<number>();
 
   constructor(
     private knoraService: KnoraService,
@@ -28,7 +28,7 @@ export class PiecesComponent implements OnInit {
   ngOnInit(): void {
     this.reset.next(0);
 
-    let us = this;
+    const us = this;
 
     function readPage(observer) {
       // read pages on first load
@@ -38,7 +38,7 @@ export class PiecesComponent implements OnInit {
           us.allWorks = data;
           observer.next(data);
         },
-        (error) => { console.log(error) },
+        (error) => { console.log(error); },
         () => {
           us.reset.next(us.allWorks.length);
           us.loading.next(false);
@@ -61,7 +61,7 @@ export class PiecesComponent implements OnInit {
               }
 
               term = term.toLowerCase();
-              let matches = us.allWorks.filter(work =>
+              const matches = us.allWorks.filter(work =>
                 {
                   return (
                     (work.title && work.title.toLowerCase().includes(term))

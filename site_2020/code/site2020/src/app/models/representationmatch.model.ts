@@ -15,10 +15,10 @@ export class RepresentationMatch extends Resource {
 
   get dateShort(): string {
     const dateValues = this.readResource.getValues(`${this.tds}representationHasDate`);
-    if (!(dateValues && dateValues.length>0)) return "";
+    if (!(dateValues && dateValues.length > 0)) { return ''; }
 
     const firstDate = dateValues[0];
-    const date = firstDate["date"];
+    const date = firstDate['date'];
     let result = String(date['year']);
     if (date['month']) {
       result = String(date['month']) + '/' + result;

@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { debounceTime, delay, distinctUntilChanged } from 'rxjs/operators';
 import { PersonCache } from 'src/app/models/personCache.model';
 
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 
 @Component({
   selector: 'tds-auteurs',
@@ -16,7 +16,7 @@ export class AuteursComponent implements OnInit {
   authorsCount: Subject<number> = new Subject<number>();
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   @Input()
-  searchText: string = "";
+  searchText = '';
   private searchTerms = new Subject<string>();
 
   reset: Subject<number> = new Subject<number>();
@@ -30,7 +30,7 @@ export class AuteursComponent implements OnInit {
     this.reset.next(0);
 
     // get the list of authors
-    let us = this;
+    const us = this;
 
     function readMatches(observer) {
       // initial load
@@ -42,7 +42,7 @@ export class AuteursComponent implements OnInit {
           observer.next(data);
           us.authorsCount.next(us.allAuthors.length);
         },
-        (error) => { console.log(error) },
+        (error) => { console.log(error); },
         () => {
           us.reset.next(us.allAuthors.length);
           us.loading.next(false);
@@ -67,7 +67,7 @@ export class AuteursComponent implements OnInit {
 
               term = term.toLowerCase();
               // search for the matches
-              let matches = us.allAuthors.filter(author =>
+              const matches = us.allAuthors.filter(author =>
                 {
                   return (
                     (author.familyName && author.familyName.toLowerCase().includes(term))
@@ -83,10 +83,10 @@ export class AuteursComponent implements OnInit {
               us.reset.next(matches.length);
               us.loading.next(false);
             }
-          )
+          );
         }
-      )
-    };
+      );
+    }
     this.authors = new Observable(readMatches);
   }
 

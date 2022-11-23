@@ -9,7 +9,7 @@ import { KnoraService } from 'src/app/services/knora.service';
 })
 export class QuoteListComponent implements OnInit {
   @Input()
-  quotes_iri: [string];
+  quotesIri: [string];
 
   quotes = new Array<Quote>();
 
@@ -19,13 +19,13 @@ export class QuoteListComponent implements OnInit {
   constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
-    let us = this;
+    const us = this;
     // we get all of the resources, even the deleted ones :(
     // so we have to subscribe to them all to filter out the deleted ones
-    this.quotes_iri.forEach((iri: string) => {
+    this.quotesIri.forEach((iri: string) => {
       this.knoraService.getQuote(iri).subscribe((quote: Quote) => {
-        // i did not find an accessible member "isDeleted" !
-        if(!(quote.label === "Deleted Resource")) {
+        // i did not find an accessible member 'isDeleted' !
+        if (!(quote.label === 'Deleted Resource')) {
           us.quotes.push(quote);
           us.panel[quote.id] = false;
         }

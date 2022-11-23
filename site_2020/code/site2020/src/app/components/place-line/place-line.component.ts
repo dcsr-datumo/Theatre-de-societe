@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable, config } from "rxjs";
+import { Observable, config } from 'rxjs';
 
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 import { Place } from '../../models/place.model';
 
 
@@ -11,8 +11,8 @@ import { Place } from '../../models/place.model';
   styleUrls: ['./place-line.component.scss']
 })
 export class PlaceLineComponent implements OnInit {
-  @Input() iri : string;
-  place : Observable<Place>;
+  @Input() iri: string;
+  place: Observable<Place>;
 
   constructor(private knoraService: KnoraService) { }
 

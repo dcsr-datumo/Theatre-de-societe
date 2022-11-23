@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
  * @param xml
  */
 
- @Pipe({
+@Pipe({
   name: 'convertStandof'
 })
 export class ConvertStandofPipe implements PipeTransform {
@@ -13,7 +13,7 @@ export class ConvertStandofPipe implements PipeTransform {
   transform(value: string, ...args: unknown[]): string {
     if (value) {
       // strip out the '<xml...' part
-      let matches = value.match('<text>.*');
+      const matches = value.match('<text>.*');
       if (matches && matches.length > 0) {
         return matches[0];
       }
@@ -25,6 +25,6 @@ export class ConvertStandofPipe implements PipeTransform {
       // http://ark.dasch.swiss/ark:/72163/1/0103/zYucAQWeR2=hxo2Te4kE0Af
       // or http interceptors?
     }
-    return "";
+    return '';
   }
 }

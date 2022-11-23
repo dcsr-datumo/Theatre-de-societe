@@ -14,12 +14,12 @@ export class PiecespageComponent implements OnInit {
   reset: Subject<number>;
   count: number;
 
-  page: number = 0;
-  pageMax: number = 0;
+  page = 0;
+  pageMax = 0;
 
-  panel: Map<string, boolean> = new Map<string, boolean>();
+  panel = new Map<string, boolean>();
 
-  pageLength: number = 25;
+  pageLength = 25;
 
   constructor() { }
 
@@ -27,24 +27,24 @@ export class PiecespageComponent implements OnInit {
     this.page = 0;
     this.count = 1;
 
-    let us = this;
+    const us = this;
     this.reset.subscribe(
       newCount => {
         us.count = newCount;
         us.page = 0;
-        us.pageMax = Math.ceil(newCount/us.pageLength);
+        us.pageMax = Math.ceil(newCount / us.pageLength);
       }
     );
     this.reset.next(this.works.length);
   }
 
-  updatePage(value:number) {
+  updatePage(value: number) {
     this.page = this.page + value;
   }
   firstPage() {
     this.page = 0;
   }
   lastPage() {
-    this.page = this.pageMax-1;
+    this.page = this.pageMax - 1;
   }
 }

@@ -1,16 +1,15 @@
-import { ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject, MonoTypeOperatorFunction, Observable } from 'rxjs';
-import { finalize, map, tap } from 'rxjs/operators';
+import { finalize, tap } from 'rxjs/operators';
 import { Place } from 'src/app/models/place.model';
 import { Representation } from 'src/app/models/representation.model';
-import { RepresentationMatch } from 'src/app/models/representationmatch.model';
 import { Work } from 'src/app/models/work.model';
 import { KnoraService } from 'src/app/services/knora.service';
 
 @Component({
-  selector: "tds-representations-list",
-  templateUrl: "./representations-list.component.html",
-  styleUrls: ["./representations-list.component.scss"],
+  selector: 'tds-representations-list',
+  templateUrl: './representations-list.component.html',
+  styleUrls: ['./representations-list.component.scss'],
 })
 export class RepresentationsListComponent implements OnInit {
   @Input()
@@ -36,7 +35,7 @@ export class RepresentationsListComponent implements OnInit {
     const us = this;
 
     const _tap = tap( (representations: Representation[]) => {
-      representations.map( (representation : Representation) => {
+      representations.map( (representation: Representation) => {
         // get the representations' work
         us.works[representation.work] = us.knoraService.getWork(representation.work);
         // get the representation's place
@@ -48,7 +47,7 @@ export class RepresentationsListComponent implements OnInit {
       us.loading.next(false);
     });
 
-    if (this.type == "year") {
+    if (this.type === 'year') {
       this.representations = this.knoraService.getRepresentationsByYear(+this.source).pipe(_tap, _finalise);
 
     } else {
@@ -57,6 +56,4 @@ export class RepresentationsListComponent implements OnInit {
 
   }
 
-  ngOnDestroy() {
-  }
 }

@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Observable, config, of } from "rxjs";
+import { Observable } from 'rxjs';
 
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 import { RepresentationMatch } from '../../models/representationmatch.model';
-import { finalize, map } from 'rxjs/operators';
 
 @Component({
   selector: 'tds-calendar-page',
@@ -18,9 +17,7 @@ export class CalendarPageComponent implements OnInit {
   title = false;
 
   constructor(
-    private route: ActivatedRoute,
-    private knoraService: KnoraService,
-    private location: Location
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {

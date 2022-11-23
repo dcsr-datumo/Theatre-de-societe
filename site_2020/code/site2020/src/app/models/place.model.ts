@@ -22,8 +22,8 @@ export class Place extends Resource {
 
   get notices(): string[] {
     const property = `${environment.baseOntology}placeHasNotice`;
-    let values = this.getValues(property);
-    if (!values) return null;
+    const values = this.getValues(property);
+    if (!values) { return null; }
     return values.map( notice => this.converter.transform(notice));
   }
 

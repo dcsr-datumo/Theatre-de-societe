@@ -29,15 +29,15 @@ export class Representation extends Resource {
 
   get year(): number {
     const property = `${environment.baseOntology}representationHasDate`;
-    let dateValues = this.readResource.getValues(property);
-    let date = dateValues[0]['date']; // [0] -> no check: date is mandatory
-    return date['year']
+    const dateValues = this.readResource.getValues(property);
+    const date = dateValues[0]['date']; // [0] -> no check: date is mandatory
+    return date['year'];
   }
 
   get scaledYear(): number {
-    let year = this.year;
-    if (year < 1700) return 1700;
-    if (year > 1899) return 1899;
+    const year = this.year;
+    if (year < 1700) { return 1700; }
+    if (year > 1899) { return 1899; }
     return year;
   }
 
