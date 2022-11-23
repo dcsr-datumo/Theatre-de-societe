@@ -64,7 +64,7 @@
         </span>
       </li>
 
-      <tds-quote-list [quotes_iri]="rep.quote"></tds-quote-list>
+      <tds-quote-list *ngIf="rep.quote" [quotes_iri]="rep.quote"></tds-quote-list>
     </ul>
   </span>
 </div>
