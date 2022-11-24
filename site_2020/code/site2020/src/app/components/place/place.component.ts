@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable, config } from "rxjs";
+import { Observable, config } from 'rxjs';
 
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 import { Place } from '../../models/place.model';
 import { ActivatedRoute } from '@angular/router';
 import { RepresentationMatch } from 'src/app/models/representationmatch.model';
@@ -13,10 +13,10 @@ import { RepresentationMatch } from 'src/app/models/representationmatch.model';
   styleUrls: ['./place.component.scss']
 })
 export class PlaceComponent implements OnInit {
-  id : string;
-  place : Observable<Place>;
-  iri : string;
-  title=true;
+  id: string;
+  place: Observable<Place>;
+  iri: string;
+  title = true;
 
   constructor(
     private route: ActivatedRoute,

@@ -4,7 +4,7 @@ PREFIX kb: <http://www.knora.org/ontology/knora-base#>
 
 SELECT
     distinct ?id ?title 
-    (MIN(?name) as ?name)
+    (MIN(?nameV) as ?name)
 WHERE {
     ?id a tds:Work .
     ?id kb:isDeleted "false"^^xsd:boolean .
@@ -17,7 +17,7 @@ WHERE {
         ?author kb:isDeleted "false"^^xsd:boolean .
         OPTIONAL {
             ?author tds:hasFamilyName ?nameValue .
-            ?nameValue kb:valueHasString ?name .
+            ?nameValue kb:valueHasString ?nameV .
         }
     }
 }

@@ -17,7 +17,7 @@ export class SiteService {
   selectedMenuSubItem = 'projet';
   secondaryTitle = 'Catalogue des représentations données en société en France et en Suisse Romande entre 1700 et 1871';
 
-  //urlPre = '/Theatre-de-societe';
+  // urlPre = '/Theatre-de-societe';
   urlPre = '';
 
   constructor() { }

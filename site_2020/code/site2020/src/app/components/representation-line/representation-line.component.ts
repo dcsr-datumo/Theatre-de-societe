@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Interpolation } from '@angular/compiler';
-import { Observable, config } from "rxjs";
+import { Observable, config } from 'rxjs';
 
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 import { Representation } from '../../models/representation.model';
 
 @Component({
@@ -11,7 +11,7 @@ import { Representation } from '../../models/representation.model';
   styleUrls: ['./representation-line.component.scss']
 })
 export class RepresentationLineComponent implements OnInit {
-  @Input() iri : string;
+  @Input() iri: string;
   representation: Observable<Representation>;
 
   constructor(

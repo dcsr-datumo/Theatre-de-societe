@@ -45,25 +45,25 @@ export class Resource {
   }
 
   getLinkedValue(linkedProperty: string, valueProperty: string): string {
-    const linkedValues = this.readResource.properties[linkedProperty];
-    if (!(linkedValues && linkedValues.length >0)) return null;
+    const linkedValues = this.readResource.properties[linkedProperty];
+    if (!(linkedValues && linkedValues.length > 0)) { return null; }
     const linkedValue = linkedValues[0];
-    const value = linkedValue["linkedResource"].properties[valueProperty][0].text;
+    const value = linkedValue['linkedResource'].properties[valueProperty][0].text;
     return String(value);
   }
 
   getDateShort(property: string): string {
-    let dateValues = this.readResource.getValues(property);
-    let dateVal = dateValues[0];
-    if (!dateVal) return null;
-    let date = dateVal['date'];
-    if (!date) return null;
-    let result = String(date['year']);
+    const dateValues = this.readResource.getValues(property);
+    const dateVal = dateValues[0];
+    if (!dateVal) { return null; }
+    const date = dateVal['date'];
+    if (!date) { return null; }
+    let result = String(date['year']);
     if (date['month']) {
-      result = String(date['month']) + '/' + result;
+      result = String(date['month']) + '/' + result;
     }
     if (date['day']) {
-      result = String(date['day']) + '/' + result;
+      result = String(date['day']) + '/' + result;
     }
     return result;
   }

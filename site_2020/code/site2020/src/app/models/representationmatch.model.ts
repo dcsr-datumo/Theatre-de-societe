@@ -15,21 +15,21 @@ export class RepresentationMatch extends Resource {
 
   get dateShort(): string {
     const dateValues = this.readResource.getValues(`${this.tds}representationHasDate`);
-    if (!(dateValues && dateValues.length>0)) return "";
+    if (!(dateValues && dateValues.length > 0)) { return ''; }
 
     const firstDate = dateValues[0];
-    const date = firstDate["date"];
-    let result = String(date['year']);
+    const date = firstDate['date'];
+    let result = String(date['year']);
     if (date['month']) {
-      result = String(date['month']) + '/' + result;
+      result = String(date['month']) + '/' + result;
     }
     if (date['day']) {
-      result = String(date['day']) + '/' + result;
+      result = String(date['day']) + '/' + result;
     }
     return result;
   }
 
-  get workTitle(): string {
+  get workTitle(): string {
     return this.getLinkedValue(`${this.tds}representationIsBasedOnValue`, `${this.tds}workHasTitle`);
   }
 

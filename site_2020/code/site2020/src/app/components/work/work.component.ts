@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { KnoraService } from "../../services/knora.service";
-import { Observable, config } from "rxjs";
+import { KnoraService } from '../../services/knora.service';
+import { Observable, config } from 'rxjs';
 import { Work } from 'src/app/models/work.model';
 
 @Component({
@@ -9,7 +9,7 @@ import { Work } from 'src/app/models/work.model';
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent implements OnInit {
-  @Input() iri : string;
+  @Input() iri: string;
   work: Observable<Work>;
 
   constructor(
