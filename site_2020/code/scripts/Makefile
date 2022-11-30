@@ -3,19 +3,19 @@ URL=https://admin:${TS_PSWD}@db.ls-prod-server.dasch.swiss/dsp-repo/sparql
 
 .PHONY: works_cache.json
 works_cache.json: ## 1. build the cache for works
-	${CURL}  --data-urlencode "query@requests/get_works.sparql" ${URL} | jq -f jq/works-filter.jq > output/works_cache.json
+	${CURL}  -k --data-urlencode "query@requests/get_works.sparql" ${URL} | jq -f jq/works-filter.jq > output/works_cache.json
 
 .PHONY: authors_cache.json
 authors_cache.json: ## 1. build the cache for works
-	${CURL}  --data-urlencode "query@requests/get_authors.sparql" ${URL} | jq -f jq/authors-filter.jq > output/authors_cache.json
+	${CURL}  -k --data-urlencode "query@requests/get_authors.sparql" ${URL} | jq -f jq/authors-filter.jq > output/authors_cache.json
 
 .PHONY: calendar_cache.json
 calendar_cache.json: ## 1. build the cache for works
-	${CURL}  --data-urlencode "query@requests/get_calendar.sparql" ${URL} | jq -f jq/calendar-filter.jq > output/calendar_cache.json
+	${CURL}  -k --data-urlencode "query@requests/get_calendar.sparql" ${URL} | jq -f jq/calendar-filter.jq > output/calendar_cache.json
 
 .PHONY: places_cache.json
 places_cache.json: ## 1. build the cache for places
-	${CURL}  --data-urlencode "query@requests/get_places.sparql" ${URL} | jq -f jq/places-filter.jq > output/places_cache.json
+	${CURL}  -k --data-urlencode "query@requests/get_places.sparql" ${URL} | jq -f jq/places-filter.jq > output/places_cache.json
 
 .PHONY: all_cache
 all_cache: works_cache.json authors_cache.json calendar_cache.json places_cache.json ## 2. build all cache files
@@ -40,7 +40,7 @@ help: ## this help
 ACCOUNT=platec
 CONTAINER=tds_cache_updater
 VERSION=v2.0.0
-ENVFILE=docker_env_prod_dasch
+ENVFILE=env/dasch.env
 
 .PHONY: build
 build: ## 4. docker: builds the web-app container
@@ -48,7 +48,7 @@ build: ## 4. docker: builds the web-app container
 
 .PHONY: run
 run: ## 4. docker: run the freshly built container
-	docker run --env-file ${ENVFILE} --rm ${ACCOUNT}/${CONTAINER}:${VERSION}
+	docker run --env-file ${ENVFILE} -v output:/app/output --rm ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .PHONY: rmi
 rmi: ## 4. docker: remove the build image
