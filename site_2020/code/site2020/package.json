@@ -25,7 +25,7 @@
     "@angular/router": "~10.2.5",
     "@asymmetrik/ngx-leaflet": "^8.1.0",
     "@asymmetrik/ngx-leaflet-markercluster": "^5.0.1",
-    "@dasch-swiss/dsp-js": "1.0.0-rc.3",
+    "@dasch-swiss/dsp-js": "7.4.7",
     "@types/leaflet.markercluster": "^1.4.5",
     "leaflet": "^1.7.1",
     "leaflet.markercluster": "^1.5.3",
