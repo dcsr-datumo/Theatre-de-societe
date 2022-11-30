@@ -1,5 +1,5 @@
 CURL=/usr/bin/curl -H "Accept: application/json"
-URL=https://admin:${GRAPHDB_PSWD}@db.ls-prod-server.dasch.swiss/dsp-repo/sparql
+URL=https://admin:${TS_PSWD}@db.ls-prod-server.dasch.swiss/dsp-repo/sparql
 
 .PHONY: works_cache.json
 works_cache.json: ## 1. build the cache for works
