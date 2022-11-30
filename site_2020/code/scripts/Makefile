@@ -48,7 +48,7 @@ build: ## 4. docker: builds the web-app container
 
 .PHONY: run
 run: ## 4. docker: run the freshly built container
-	docker run --env-file ${ENVFILE} -v output:/app/output --rm ${ACCOUNT}/${CONTAINER}:${VERSION}
+	docker run --env-file ${ENVFILE} -v ${PWD}/output:/app/output --rm ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .PHONY: rmi
 rmi: ## 4. docker: remove the build image
