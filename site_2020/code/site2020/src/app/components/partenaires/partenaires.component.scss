@@ -12,8 +12,14 @@ li {
   flex: 1 0 30%;
   max-width: 30%;
   margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 img {
   width: 100%;
+}
+
+p {
+  min-height: 2em;
 }

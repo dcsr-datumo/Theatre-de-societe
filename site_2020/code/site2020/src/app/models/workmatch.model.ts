@@ -12,7 +12,7 @@ export class WorkMatch extends Resource {
 
   get author(): string {
     const authorProperty = `${environment.baseOntology}workHasAuthorValue`;
-    const nameProperty = `${environment.baseOntology}hasFamilyName`
+    const nameProperty = `${environment.baseOntology}hasFamilyName`;
     return this.getLinkedValue(authorProperty, nameProperty);
   }
 

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 
-import { Quote } from "../../models/quote.model";
+import { Quote } from '../../models/quote.model';
 
 @Component({
   selector: 'tds-quote-content',
@@ -11,16 +11,13 @@ import { Quote } from "../../models/quote.model";
 })
 export class QuoteContentComponent implements OnInit {
   @Input()
-  iri: string;
+  quote: Quote;
   @Input()
   embedded: boolean;
 
-  quote: Observable<Quote>;
-
-  constructor(private knoraService: KnoraService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.quote = this.knoraService.getQuote(this.iri);
   }
 
 }

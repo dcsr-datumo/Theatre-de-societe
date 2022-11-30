@@ -1,34 +1,27 @@
-#SPARQLER=./shell/query-graphdb.sh -e=env/prod.env -h=knora.unil.ch --port=7200 -r=knora-prod -f=json
-SPARQLER=./shell/query-graphdb.sh -u=${GRAPHDB_USER} -p=${GRAPHDB_PSWD} -h=${HOST} --port=${PORT} -r=${REPO} -f=json
+CURL=/usr/bin/curl -H "Accept: application/json"
+URL=https://admin:${TS_PSWD}@db.ls-prod-server.dasch.swiss/dsp-repo/sparql
 
 .PHONY: works_cache.json
-works_cache.json: ## build the cache for works
-	${SPARQLER} -q=requests/get_works.sparql | jq -f jq/works-filter.jq > output/works_cache.json
+works_cache.json: ## 1. build the cache for works
+	${CURL}  -k --data-urlencode "query@requests/get_works.sparql" ${URL} | jq -f jq/works-filter.jq > output/works_cache.json
 
 .PHONY: authors_cache.json
-authors_cache.json: ## build the cache for works
-	${SPARQLER} -q=requests/get_authors.sparql | jq -f jq/authors-filter.jq > output/authors_cache.json
+authors_cache.json: ## 1. build the cache for works
+	${CURL}  -k --data-urlencode "query@requests/get_authors.sparql" ${URL} | jq -f jq/authors-filter.jq > output/authors_cache.json
 
 .PHONY: calendar_cache.json
-calendar_cache.json: ## build the cache for works
-	${SPARQLER} -q=requests/get_calendar.sparql | jq -f jq/calendar-filter.jq > output/calendar_cache.json
+calendar_cache.json: ## 1. build the cache for works
+	${CURL}  -k --data-urlencode "query@requests/get_calendar.sparql" ${URL} | jq -f jq/calendar-filter.jq > output/calendar_cache.json
 
 .PHONY: places_cache.json
-places_cache.json: ## build the cache for places
-	${SPARQLER} -q=requests/get_places.sparql | jq -f jq/places-filter.jq > output/places_cache.json
+places_cache.json: ## 1. build the cache for places
+	${CURL}  -k --data-urlencode "query@requests/get_places.sparql" ${URL} | jq -f jq/places-filter.jq > output/places_cache.json
 
 .PHONY: all_cache
-all_cache: works_cache.json authors_cache.json calendar_cache.json places_cache.json ## build all cache files
-
-.PHONY: all_cache_enc
-all_cache_enc:  ## build all cache files encoded request
-	${SPARQLER} -q=requests/get_works.enc | jq -f jq/works-filter.jq > output/works_cache.json
-	${SPARQLER} -q=requests/get_authors.enc | jq -f jq/authors-filter.jq > output/authors_cache.json
-	${SPARQLER} -q=requests/get_calendar.enc | jq -f jq/calendar-filter.jq > output/calendar_cache.json
-	${SPARQLER} -q=requests/get_places.enc | jq -f jq/places-filter.jq > output/places_cache.json
+all_cache: works_cache.json authors_cache.json calendar_cache.json places_cache.json ## 2. build all cache files
 
 .PHONY: copy_local
-copy_local: ## copy the cache data files in the source before building the app
+copy_local: ## 3. copy the cache data files in the source before building the app
 	cp output/*.json ../site2020/src/assets/cache/
 
 #.PHONY: copy_remote
@@ -36,41 +29,37 @@ copy_local: ## copy the cache data files in the source before building the app
 #	podman cp output/*.json tds:/usr/share/nginx/html/cache/
 
 .PHONY: clean
-clean: ## delete the files that have been worked out so far
+clean: ## 0. delete the files that have been worked out so far
 	rm -f output/*.json 
 
 .PHONY: help
 help: ## this help
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+.*:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+.*:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort -k2
 
 # yes, this makefile is used to dockerized itself
 ACCOUNT=platec
 CONTAINER=tds_cache_updater
-VERSION=v1.1.1
-ENVFILE=docker_env_prod_root
+VERSION=v2.0.0
+ENVFILE=env/dasch.env
 
 .PHONY: build
-build: ## builds the web-app container
-	wwwenc < requests/get_authors.sparql > requests/get_authors.enc
-	wwwenc < requests/get_works.sparql > requests/get_works.enc
-	wwwenc < requests/get_calendar.sparql > requests/get_calendar.enc
-	wwwenc < requests/get_places.sparql > requests/get_places.enc
+build: ## 4. docker: builds the web-app container
 	docker build -t ${ACCOUNT}/${CONTAINER}:${VERSION} .
 
 .PHONY: run
-run: ## run the freshly built container
-	docker run --env-file ${ENVFILE} --rm ${ACCOUNT}/${CONTAINER}:${VERSION}
+run: ## 4. docker: run the freshly built container
+	docker run --env-file ${ENVFILE} -v ${PWD}/output:/app/output --rm ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .PHONY: rmi
-rmi: ## remove the build image
+rmi: ## 4. docker: remove the build image
 	docker rmi ${CONTAINER}:${VERSION}
 
 .PHONY: login
-login: ## docker hub login
+login: ## 5. docker: docker hub login
 	docker login -u ${ACCOUNT}
 
 .PHONY: push
-push: ## push the image to docker hub
+push: ## 5. docker: push the image to docker hub
 	docker push ${ACCOUNT}/${CONTAINER}:${VERSION}
 
 .DEFAULT_GOAL := help

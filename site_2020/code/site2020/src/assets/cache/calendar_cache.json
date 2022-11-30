@@ -69,7 +69,7 @@
   },
   {
     "year": "1706",
-    "representations": "5"
+    "representations": "6"
   },
   {
     "year": "1707",
@@ -213,7 +213,7 @@
   },
   {
     "year": "1748",
-    "representations": "31"
+    "representations": "30"
   },
   {
     "year": "1749",
@@ -221,7 +221,7 @@
   },
   {
     "year": "1750",
-    "representations": "58"
+    "representations": "53"
   },
   {
     "year": "1751",
@@ -229,7 +229,7 @@
   },
   {
     "year": "1752",
-    "representations": "18"
+    "representations": "19"
   },
   {
     "year": "1753",
@@ -241,7 +241,7 @@
   },
   {
     "year": "1755",
-    "representations": "23"
+    "representations": "22"
   },
   {
     "year": "1756",
@@ -249,35 +249,35 @@
   },
   {
     "year": "1757",
-    "representations": "24"
+    "representations": "35"
   },
   {
     "year": "1758",
-    "representations": "11"
+    "representations": "20"
   },
   {
     "year": "1759",
-    "representations": "14"
+    "representations": "25"
   },
   {
     "year": "1760",
-    "representations": "30"
+    "representations": "34"
   },
   {
     "year": "1761",
-    "representations": "13"
+    "representations": "18"
   },
   {
     "year": "1762",
-    "representations": "33"
+    "representations": "35"
   },
   {
     "year": "1763",
-    "representations": "24"
+    "representations": "23"
   },
   {
     "year": "1764",
-    "representations": "8"
+    "representations": "24"
   },
   {
     "year": "1765",
@@ -289,7 +289,7 @@
   },
   {
     "year": "1767",
-    "representations": "25"
+    "representations": "38"
   },
   {
     "year": "1768",
@@ -297,31 +297,31 @@
   },
   {
     "year": "1769",
-    "representations": "21"
+    "representations": "24"
   },
   {
     "year": "1770",
-    "representations": "19"
+    "representations": "70"
   },
   {
     "year": "1771",
-    "representations": "5"
+    "representations": "7"
   },
   {
     "year": "1772",
-    "representations": "14"
+    "representations": "17"
   },
   {
     "year": "1773",
-    "representations": "6"
+    "representations": "7"
   },
   {
     "year": "1774",
-    "representations": "2"
+    "representations": "8"
   },
   {
     "year": "1775",
-    "representations": "12"
+    "representations": "21"
   },
   {
     "year": "1776",
@@ -329,23 +329,23 @@
   },
   {
     "year": "1777",
-    "representations": "11"
+    "representations": "12"
   },
   {
     "year": "1778",
-    "representations": "12"
+    "representations": "13"
   },
   {
     "year": "1779",
-    "representations": "12"
+    "representations": "13"
   },
   {
     "year": "1780",
-    "representations": "9"
+    "representations": "15"
   },
   {
     "year": "1781",
-    "representations": "18"
+    "representations": "20"
   },
   {
     "year": "1782",
@@ -353,15 +353,15 @@
   },
   {
     "year": "1783",
-    "representations": "8"
+    "representations": "9"
   },
   {
     "year": "1784",
-    "representations": "17"
+    "representations": "20"
   },
   {
     "year": "1785",
-    "representations": "18"
+    "representations": "23"
   },
   {
     "year": "1786",
@@ -369,11 +369,11 @@
   },
   {
     "year": "1787",
-    "representations": "2"
+    "representations": "6"
   },
   {
     "year": "1788",
-    "representations": "7"
+    "representations": "22"
   },
   {
     "year": "1789",
@@ -393,43 +393,51 @@
   },
   {
     "year": "1793",
-    "representations": "1"
+    "representations": "4"
   },
   {
     "year": "1794",
-    "representations": "1"
+    "representations": "2"
   },
   {
     "year": "1798",
-    "representations": "1"
+    "representations": "2"
   },
   {
     "year": "1799",
     "representations": "6"
   },
   {
+    "year": "1804",
+    "representations": "5"
+  },
+  {
     "year": "1805",
-    "representations": "3"
+    "representations": "5"
   },
   {
     "year": "1806",
-    "representations": "13"
+    "representations": "14"
   },
   {
     "year": "1807",
-    "representations": "7"
+    "representations": "11"
   },
   {
     "year": "1808",
-    "representations": "3"
+    "representations": "18"
   },
   {
     "year": "1809",
-    "representations": "1"
+    "representations": "2"
   },
   {
     "year": "1811",
     "representations": "9"
+  },
+  {
+    "year": "1813",
+    "representations": "7"
   },
   {
     "year": "1817",
@@ -481,7 +489,7 @@
   },
   {
     "year": "1849",
-    "representations": "26"
+    "representations": "25"
   },
   {
     "year": "1850",
@@ -493,11 +501,11 @@
   },
   {
     "year": "1852",
-    "representations": "12"
+    "representations": "9"
   },
   {
     "year": "1853",
-    "representations": "6"
+    "representations": "7"
   },
   {
     "year": "1854",
@@ -517,7 +525,7 @@
   },
   {
     "year": "1858",
-    "representations": "6"
+    "representations": "4"
   },
   {
     "year": "1859",
@@ -606,5 +614,229 @@
   {
     "year": "2018",
     "representations": "1"
+  },
+  {
+    "year": "2022",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:0175 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1700 CE",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1705 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1706 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1745 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1748",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1748 CE:1749 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1749 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1750",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1750 CE",
+    "representations": "6"
+  },
+  {
+    "year": "GREGORIAN:1752 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1753",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1754",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1755 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1757",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1761",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1762",
+    "representations": "10"
+  },
+  {
+    "year": "GREGORIAN:1763",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1766",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1767",
+    "representations": "11"
+  },
+  {
+    "year": "GREGORIAN:1767 CE",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1768",
+    "representations": "16"
+  },
+  {
+    "year": "GREGORIAN:1769",
+    "representations": "4"
+  },
+  {
+    "year": "GREGORIAN:1770",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1771",
+    "representations": "3"
+  },
+  {
+    "year": "GREGORIAN:1772",
+    "representations": "3"
+  },
+  {
+    "year": "GREGORIAN:1772 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1773",
+    "representations": "18"
+  },
+  {
+    "year": "GREGORIAN:1774",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1776",
+    "representations": "4"
+  },
+  {
+    "year": "GREGORIAN:1777",
+    "representations": "6"
+  },
+  {
+    "year": "GREGORIAN:1778",
+    "representations": "10"
+  },
+  {
+    "year": "GREGORIAN:1780",
+    "representations": "3"
+  },
+  {
+    "year": "GREGORIAN:1781",
+    "representations": "4"
+  },
+  {
+    "year": "GREGORIAN:1782",
+    "representations": "4"
+  },
+  {
+    "year": "GREGORIAN:1783",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1784 CE",
+    "representations": "3"
+  },
+  {
+    "year": "GREGORIAN:1785",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1785 CE",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1786",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1788",
+    "representations": "10"
+  },
+  {
+    "year": "GREGORIAN:1789",
+    "representations": "17"
+  },
+  {
+    "year": "GREGORIAN:1790",
+    "representations": "5"
+  },
+  {
+    "year": "GREGORIAN:1794",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1797",
+    "representations": "3"
+  },
+  {
+    "year": "GREGORIAN:1800",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1801",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1849",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1852",
+    "representations": "3"
+  },
+  {
+    "year": "GREGORIAN:1857",
+    "representations": "2"
+  },
+  {
+    "year": "GREGORIAN:1858",
+    "representations": "23"
+  },
+  {
+    "year": "GREGORIAN:1859",
+    "representations": "13"
+  },
+  {
+    "year": "GREGORIAN:1890",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1893",
+    "representations": "1"
+  },
+  {
+    "year": "GREGORIAN:1908",
+    "representations": "3"
   }
 ]
