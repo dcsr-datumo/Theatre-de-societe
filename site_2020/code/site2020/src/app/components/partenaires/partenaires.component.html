@@ -3,10 +3,10 @@
 
   <ul>
     <li *ngFor="let partner of Object.values(partners)">
-      <img src="{{site.urlPre}}/assets/img/partners/{{partner['img']}}" alt="{{partner['name']}}">
       <p>
         {{partner['name']}}
       </p>
+      <img src="{{site.urlPre}}/assets/img/partners/{{partner['img']}}" alt="{{partner['name']}}">
     </li>
   </ul>
 
