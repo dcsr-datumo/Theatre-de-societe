@@ -11,7 +11,7 @@ export class Quote extends Resource {
   }
 
   get source(): string {
-    let source = this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}quoteHasSource`);
+    const source = this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}quoteHasSource`);
     // quoteHasSourceValue
     return this.converter.transform(source);
   }
@@ -25,9 +25,13 @@ export class Quote extends Resource {
   }
 
   get quote(): string {
-    let quote = this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}hasQuote`);
+    const quote = this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}hasQuote`);
     // quoteHasSourceValue
     return this.converter.transform(quote);
+  }
+
+  get isDeleted(): boolean {
+    return this.label === 'Deleted Resource';
   }
 
 }

@@ -1,4 +1,4 @@
 export class CalendarCache {
-  year:string;
-  representations:string;
+  year: string;
+  representations: string;
 }

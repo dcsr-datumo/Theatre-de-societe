@@ -20,9 +20,9 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./place-details.component.scss']
 })
 export class PlaceDetailsComponent implements OnInit {
-  id : string;
-  place : Observable<Place>;
-  title=true;
+  id: string;
+  place: Observable<Place>;
+  title = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,12 +30,12 @@ export class PlaceDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.place = this.knoraService.placeDetails.pipe(
-      switchMap((iri: string) => { return this.knoraService.getPlace(iri) } )
-    )
+    this.place = this.knoraService.placeDetails.pipe(
+      switchMap((iri: string) => this.knoraService.getPlace(iri))
+    );
   }
 
   getRepresentations(iri: string) {
-    return this.knoraService.getRepresentationsByLink(iri, "place");
+    return this.knoraService.getRepresentationsByLink(iri, 'place');
   }
 }

@@ -12,13 +12,12 @@ export class PartenairesComponent implements OnInit {
 
   partners = {
     fns: { img: 'fns.png', name: 'Fonds national suisse pour la recherche' },
-    unil: { img: 'unil.png', name: 'Université de Lausanne' },
-    ladhul: { img: 'ladhul.png', name: 'Labo. d\'humanités digitales de l\'Unil' },
+    unil: { img: 'unilogo_bleu.svg', name: 'UNIL' },
     ceredi: { img: 'ceredi.png', name: 'Ceredi' },
     lis: { img: 'lis.png', name: 'LIS' },
     crimel: { img: 'crimel.png', name: 'Crimel' },
-    platec: { img: 'platec_logo.png', name: 'PlaTec' },
-    dasch: { img: 'DaSCH-logo.png', name: 'DaSCH' }
+    dasch: { img: 'DaSCH_Logo_full_name_coloured.png', name: 'DaSCH' },
+    DCSR: { img: 'dcsr_unilogo_bleu.svg', name: 'DCSR' }
   };
 
   constructor(private siteService: SiteService) {

@@ -1,5 +1,5 @@
 import { ApplicationRef, ComponentFactoryResolver, Injectable, Injector } from '@angular/core';
-import { DomUtil, LeafletMouseEvent, Marker } from "leaflet"
+import { DomUtil, LeafletMouseEvent, Marker } from 'leaflet';
 import { PopupLinkComponent } from '../components/popup-link/popup-link.component';
 
 @Injectable({
@@ -14,9 +14,9 @@ export class PopupLinkService {
     ) { }
 
   register(marker: Marker, link: string, text: string): void  {
-    //marker.on('click');
-    //marker.on(click, ($event: MouseEvent)  => this.popup($event.target, link) );
-    //marker.addEventListener('click', () => {console.log("strange "+ marker.getTooltip())});
+    // marker.on('click');
+    // marker.on(click, ($event: MouseEvent)  => this.popup($event.target, link) );
+    // marker.addEventListener('click', () => {console.log("strange "+ marker.getTooltip())});
     marker.on('click', (event: LeafletMouseEvent) => this.popup(event.target, link, text));
   }
 

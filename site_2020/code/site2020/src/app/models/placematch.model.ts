@@ -18,12 +18,12 @@ export class PlaceMatch extends Resource {
   }
 
   get latLong(): number[] {
-    let place = this.place;
+    const place = this.place;
 
     if (!place)
-      return [];
+      { return []; }
 
-    let spnb: string[] = this.place.split(',');
+    const spnb: string[] = this.place.split(',');
     return spnb.map( s => Number(s) );
   }
 
@@ -33,7 +33,7 @@ export class PlaceMatch extends Resource {
 
   get notice(): string {
     // arbitrarily grab the first value
-    let notice =  this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}placeHasNotice`);
+    const notice =  this.getFirstValueAsStringOrNullOfProperty(`${environment.baseOntology}placeHasNotice`);
     return this.converter.transform(notice);
   }
 }

@@ -8,9 +8,7 @@ FROM build
 RUN mkdir /app
 
 COPY jq/ /app/jq
-COPY shell/ /app/shell
 COPY requests/ /app/requests
 COPY Makefile /app
-COPY shell/wwwenc /usr/bin/
 
-CMD cd /app && make clean && make all_cache_enc
+CMD cd /app && make clean && make all_cache
