@@ -9,8 +9,8 @@ import { Work } from '../models/work.model';
 export class FilterWorkTitlePipe implements PipeTransform {
 
   transform(works: Observable<Work[]>, title: string): Observable<Work[]> {
-    if(!works) return works;
-    if(!title) return works;
+    if (!works) { return works; }
+    if (!title) { return works; }
 
     title = title.toLowerCase();
 

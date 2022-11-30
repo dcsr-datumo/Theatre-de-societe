@@ -20,7 +20,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
-//import { MatDialog } from '@angular/material/dialog';
+// import { MatDialog } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ProjetComponent } from './components/projet/projet.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
@@ -40,7 +40,7 @@ import { YearComponent } from './components/year/year.component';
 import { MapComponent } from './components/map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
-//import { LeafletMarkerClusterOptions } from '@asymmetrik/ngx-leaflet-markercluster';
+// import { LeafletMarkerClusterOptions } from '@asymmetrik/ngx-leaflet-markercluster';
 import { AuteursComponent } from './components/auteurs/auteurs.component';
 import { PiecesComponent } from './components/pieces/pieces.component';
 import { NoAccentPipe } from './pipes/no-accent.pipe';
@@ -62,8 +62,8 @@ import { RepresentationsListMapComponent } from './components/representations-li
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { QuoteComponent } from './components/quote/quote.component';
-import { QuoteLineComponent } from './components/quote-line/quote-line.component';
 import { QuoteContentComponent } from './components/quote-content/quote-content.component';
+import { QuoteListComponent } from './components/quote-list/quote-list.component';
 
 
 @NgModule({
@@ -73,15 +73,19 @@ import { QuoteContentComponent } from './components/quote-content/quote-content.
     RepresentationLineComponent,
     WorkComponent, PlaceComponent, RoleComponent, FestivalComponent,
     GenreComponent,
-    ProjetComponent, AgendaComponent, PublicationsComponent, BiblioComponent, PartenairesComponent, ContactComponent, EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
-    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent, MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent, PlaceDetailsComponent, AuteurspageComponent, PiecespageComponent, RepresentationsListMapComponent,
-    QuoteComponent, QuoteContentComponent, QuoteLineComponent
+    ProjetComponent, AgendaComponent, PublicationsComponent, BiblioComponent, PartenairesComponent, ContactComponent,
+    EquipeComponent, RepresentationComponent, YearComponent, MapComponent, AuteursComponent, NoAccentPipe,
+    PiecesComponent, WorkLineComponent, FilterWorkTitlePipe, PersonLineComponent, GroupLineComponent,
+    MembershipLineComponent, PlaceLineComponent, ConvertStandofPipe, RepresentationsListComponent, PopupLinkComponent,
+    PlaceDetailsComponent, AuteurspageComponent, PiecespageComponent, RepresentationsListMapComponent,
+    QuoteComponent, QuoteContentComponent, QuoteListComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, LayoutModule,
-    MatToolbarModule, MatTooltipModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule, MatCardModule, MatProgressBarModule,
-    //MatDialog,
+    MatToolbarModule, MatTooltipModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatBadgeModule,
+    MatCardModule, MatProgressBarModule,
+    // MatDialog,
     MatExpansionModule, MatMenuModule,
     LeafletModule,
     LeafletMarkerClusterModule,

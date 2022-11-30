@@ -3,7 +3,7 @@
         select ?year (count(distinct ?s) as ?representations)
         where { 
 	        ?s a theatre-societe:Representation .
-            ?s theatre-societe:hasDate ?date .
+            ?s theatre-societe:representationHasDate ?date .
             ?date knora-base:valueHasString ?dateString . 
             bind(replace(?dateString, '-.*', '') as ?year)
         }

@@ -1,14 +1,4 @@
 <div>
-
-  <span *ngIf="loading | async as progress">
-    <mat-progress-bar
-    mode="indeterminate"
-    color="warn"
-    style="position: absolute; top: 0; z-index: 100;"
-    >
-    </mat-progress-bar>
-  </span>
-
   <span *ngIf="year === 1; then unknown else known"></span>
 
   <ng-template #unknown>

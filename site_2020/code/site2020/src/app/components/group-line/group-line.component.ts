@@ -9,7 +9,7 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./group-line.component.scss']
 })
 export class GroupLineComponent implements OnInit {
-  @Input() iri : string;
+  @Input() iri: string;
   group: Observable<Group>;
 
   constructor(

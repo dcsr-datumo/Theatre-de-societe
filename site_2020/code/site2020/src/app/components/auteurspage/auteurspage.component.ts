@@ -4,7 +4,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { PersonCache } from 'src/app/models/personCache.model';
 import { WorkCache } from 'src/app/models/workcache.model';
 
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 
 @Component({
   selector: 'tds-auteurspage',
@@ -20,12 +20,12 @@ export class AuteurspageComponent implements OnInit {
 
   allWorks: WorkCache[];
 
-  page: number = 0;
-  pageMax: number = 0;
+  page = 0;
+  pageMax = 0;
 
-  panel: Map<string, boolean> = new Map<string, boolean>();
+  panel = new Map<string, boolean>();
 
-  pageLength: number = 25;
+  pageLength = 25;
 
   constructor(
     private knoraService: KnoraService
@@ -35,14 +35,12 @@ export class AuteurspageComponent implements OnInit {
     this.page = 0;
     this.count = 1;
 
-    let us = this;
-    console.log("count/pageMax:"+us.count+"/"+us.pageMax);
+    const us = this;
     this.reset.subscribe(
       newCount => {
         us.count = newCount;
         us.page = 0;
-        us.pageMax = Math.ceil(newCount/us.pageLength);
-        console.log("count/pageMax:"+newCount+"/"+us.pageMax);
+        us.pageMax = Math.ceil(newCount / us.pageLength);
       }
     );
     this.reset.next(this.authors.length);
@@ -60,13 +58,13 @@ export class AuteurspageComponent implements OnInit {
     return this.allWorks.filter(work => work.name === author);
   }
 
-  updatePage(value:number) {
+  updatePage(value: number) {
     this.page = this.page + value;
   }
   firstPage() {
     this.page = 0;
   }
   lastPage() {
-    this.page = this.pageMax-1;
+    this.page = this.pageMax - 1;
   }
 }

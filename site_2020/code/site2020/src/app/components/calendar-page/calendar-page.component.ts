@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Observable, config, of } from "rxjs";
+import { Observable } from 'rxjs';
 
-import { KnoraService } from "../../services/knora.service";
+import { KnoraService } from '../../services/knora.service';
 import { RepresentationMatch } from '../../models/representationmatch.model';
-import { finalize, map } from 'rxjs/operators';
 
 @Component({
   selector: 'tds-calendar-page',
@@ -15,21 +14,14 @@ import { finalize, map } from 'rxjs/operators';
 export class CalendarPageComponent implements OnInit {
   year: number;
   representations: Observable<RepresentationMatch[]>;
-  title = false;
-  loading: Observable<boolean>;
+  title = false;
 
   constructor(
-    private route: ActivatedRoute,
-    private knoraService: KnoraService,
-    private location: Location
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    // TODO: eventually, add a call back to representation list to get notified that the loading is over, cuttting it off for now
-    //this.loading = of(true);
-    this.loading = of(false);
     this.year = +this.route.snapshot.paramMap.get('year');
-    //this.representations = this.knoraService.getRepresentationsByYear(this.year).pipe(finalize(() => this.loading = of(false)));
   }
 
 }
