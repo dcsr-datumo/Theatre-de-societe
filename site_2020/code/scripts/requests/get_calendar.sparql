@@ -5,7 +5,7 @@
 	        ?s a theatre-societe:Representation .
             ?s theatre-societe:representationHasDate ?date .
             ?date knora-base:valueHasString ?dateString . 
-            bind(replace(?dateString, '-.*', '') as ?year)
+            bind(replace(replace(replace(?dateString, '-.*', ''), 'GREGORIAN:', ''), ' .*', '') as ?year)
         }
         group by ?year
         order by ?year
