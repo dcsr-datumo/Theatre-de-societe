@@ -39,7 +39,7 @@ help: ## this help
 # yes, this makefile is used to dockerized itself
 ACCOUNT=platec
 CONTAINER=tds_cache_updater
-VERSION=v2.0.0
+VERSION=v2.0.1
 ENVFILE=env/dasch.env
 
 .PHONY: build
