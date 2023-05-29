@@ -58,6 +58,10 @@ export class AuteurspageComponent implements OnInit {
     return this.allWorks.filter(work => work.name === author);
   }
 
+  getWorksByAuthorId(authorId: string) {
+    return this.allWorks.filter(work => ((work.authorIds != null) && work.authorIds.indexOf(authorId) >= 0));
+  }
+
   updatePage(value: number) {
     this.page = this.page + value;
   }

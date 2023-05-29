@@ -42,7 +42,7 @@
               <div class="nomargin">Pièces:</div>
             </div>
 
-            <mat-list-item *ngFor="let work of getWorks(author.familyName)">
+            <mat-list-item *ngFor="let work of getWorksByAuthorId(author.id)">
             <mat-accordion>
               <mat-expansion-panel (opened)="panel[work.id] = true">
                 <mat-expansion-panel-header>
