@@ -1,12 +1,16 @@
-FROM node:10-alpine AS builder
+FROM node:12-alpine AS builder
 
 WORKDIR /app
 
 COPY package.json .
-RUN npm update -g
+COPY package-lock.json .
 RUN npm install
 
-COPY . .
+COPY src src
+COPY angular.json .
+COPY tsconfig.app.json .
+COPY tsconfig.json .
+
 RUN npm run build
 
 FROM nginx:alpine
