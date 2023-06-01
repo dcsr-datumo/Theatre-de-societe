@@ -10,6 +10,7 @@
         # map `id`, `title` and `name` from their `value` property 
         id: .id.value, 
         title: .title.value, 
-        name: .name.value 
+        name: .name.value, 
+        authorIds: .authorIds.value
     } 
 ]

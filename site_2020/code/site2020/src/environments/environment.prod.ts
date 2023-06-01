@@ -1,8 +1,9 @@
 export const environment = {
   production: true,
   knoraApiProtocol: "https",
-  knoraApiHost: "knora.unil.ch",
+  knoraApiHost: "api.ls-prod-server.dasch.swiss",
   knoraApiPort: 443,
-  baseOntology : `http://knora.unil.ch/ontology/0103/theatre-societe/v2#`,
+  baseOntology : `http://api.ls-prod-server.dasch.swiss/ontology/0103/theatre-societe/v2#`,
   assets: ""
+
 };
