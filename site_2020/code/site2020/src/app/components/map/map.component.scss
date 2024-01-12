@@ -23,7 +23,6 @@
   margin-right: 2em;
 }
 
-
 .input {
   width: 100%;
   max-width: 700px;
@@ -44,10 +43,10 @@
   }
 }
 
-
 .red {
   color: #e91e63;
 }
+
 .black {
   color: black;
 }
@@ -58,6 +57,7 @@
     background: #8a8a8a;
     height: 2px;
   }
+  
   .slider .ngx-slider .ngx-slider-selection {
     background: #e91e63;
   }

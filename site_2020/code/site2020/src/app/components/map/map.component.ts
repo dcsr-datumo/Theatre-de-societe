@@ -1,13 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter, NgZone, ElementRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Layer, MapOptions, tileLayer, latLng, marker, Marker, icon, MarkerClusterGroup } from 'leaflet';
 import { Map as LeafletMap } from 'leaflet';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { Options } from 'ngx-slider-v2';
+import { BehaviorSubject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { PlaceCache } from 'src/app/models/placecache.model';
 import { KnoraService } from 'src/app/services/knora.service';
-import { PopupLinkService } from 'src/app/services/popup-link.service';
-import { Options } from '@angular-slider/ngx-slider';
+// import { PopupLinkService } from 'src/app/services/popup-link.service';
 
 @Component({
   selector: 'tds-map',
@@ -55,12 +54,7 @@ export class MapComponent implements OnInit {
   private searchTerms = '';
   private searchTermsDate = new BehaviorSubject<string>(this.searchTerms + ',' + this.valueMin + ',' + this.valueMax);
 
-  constructor(
-    private knoraService: KnoraService,
-    public ngZone: NgZone,
-    public elementRef: ElementRef
-  ) {
-   }
+  constructor(private knoraService: KnoraService, public ngZone: NgZone, public elementRef: ElementRef) { }
 
   ngOnInit(): void {
     this.loading.next(true);
@@ -69,14 +63,13 @@ export class MapComponent implements OnInit {
     layers = [
         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
     ];
-
   }
 
   ngOnDestroy() {
     try {
       this.map.clearAllEventListeners();
       this.map.off();
-      this.map.remove();
+      // this.map.remove(); // Removed automatically by the library 'LeafletMap'
     } catch (error) {
       console.log(error);
     }
@@ -98,8 +91,7 @@ export class MapComponent implements OnInit {
       debounceTime(100),
       // go to next stage only if needed
       distinctUntilChanged()
-    ).subscribe(
-      termDate => {
+    ).subscribe(termDate => {
         us.loading.next(true);
         let [term, valmin, valmax] = termDate.split(',');
         // if (!term.trim()) {
@@ -120,13 +112,9 @@ export class MapComponent implements OnInit {
           let m = us.placesToLayers.get(place.id);
           if (m) {
             us.markerClusterGroup.removeLayer(m);
-            if (
-              (!term.trim() || (place.name && place.name.toLowerCase().includes(term)))
-              &&
-              (valmin === this.yearMin.toString() || (place.maxDate && place.maxDate >= valmin))
-              &&
-              (valmax > (this.yearMax - 10).toString() || (place.minDate && place.minDate <= valmax))
-            ) {
+            if ((!term.trim() || (place.name && place.name.toLowerCase().includes(term))) &&
+                (valmin === this.yearMin.toString() || (place.maxDate && place.maxDate >= valmin)) &&
+                (valmax > (this.yearMax - 10).toString() || (place.minDate && place.minDate <= valmax))) {
               us.markerClusterGroup.addLayer(m);
             }
           } else {
@@ -137,7 +125,6 @@ export class MapComponent implements OnInit {
         us.loading.next(false);
       }
     );
-
   }
 
   markerClusterReady(markerCluster: MarkerClusterGroup) {

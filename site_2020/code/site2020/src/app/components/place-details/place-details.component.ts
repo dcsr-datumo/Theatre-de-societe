@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, ReplaySubject, Subject } from 'rxjs';
-import { delay, map, switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { Place } from 'src/app/models/place.model';
-import { RepresentationMatch } from 'src/app/models/representationmatch.model';
 import { KnoraService } from 'src/app/services/knora.service';
-
 
 /**
  * Place details:
@@ -24,10 +22,7 @@ export class PlaceDetailsComponent implements OnInit {
   place: Observable<Place>;
   title = true;
 
-  constructor(
-    private route: ActivatedRoute,
-    private knoraService: KnoraService
-  ) { }
+  constructor(private route: ActivatedRoute, private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     this.place = this.knoraService.placeDetails.pipe(

@@ -16,10 +16,7 @@ export class QuoteComponent implements OnInit {
 
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
-  constructor(
-    private route: ActivatedRoute,
-    private knoraService: KnoraService
-  ) { }
+  constructor(private route: ActivatedRoute, private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     const us = this;

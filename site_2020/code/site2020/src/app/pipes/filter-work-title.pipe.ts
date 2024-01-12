@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Work } from '../models/work.model';
 
 @Pipe({
@@ -22,5 +21,4 @@ export class FilterWorkTitlePipe implements PipeTransform {
     //   })
     // );
   }
-
 }

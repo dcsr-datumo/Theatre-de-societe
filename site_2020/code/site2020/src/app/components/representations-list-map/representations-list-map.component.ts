@@ -12,8 +12,7 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./representations-list-map.component.scss']
 })
 export class RepresentationsListMapComponent implements OnInit {
-  @Input()
-  source: string;
+  @Input() source: string;
   type = 'place';
   header = true;
   titles = 'title';
@@ -25,20 +24,16 @@ export class RepresentationsListMapComponent implements OnInit {
 
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
-  constructor(
-    private knoraService: KnoraService
-  ){}
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     // special case for maps, listen to place details or the list is not updated
     const us = this;
-    this.subscription = this.knoraService.placeDetails.subscribe(
-      (update: string) => {
+    this.subscription = this.knoraService.placeDetails.subscribe( (update: string) => {
         this.representations = this.knoraService.getRepresentationsByLink(update, 'place')
         .pipe(
           tap( (representations: Representation[]) => {
-            representations.forEach(
-              (representation: Representation) => {
+            representations.forEach( (representation: Representation) => {
                 us.works[representation.work] = us.knoraService.getWork(representation.work);
               }
             );
@@ -56,6 +51,5 @@ export class RepresentationsListMapComponent implements OnInit {
       this.subscription.unsubscribe();
     }
   }
-
 
 }

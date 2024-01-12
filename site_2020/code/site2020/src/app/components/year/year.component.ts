@@ -6,14 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./year.component.scss']
 })
 export class YearComponent implements OnInit {
-  @Input()
-  year: number;
-  @Input()
-  representations: number;
+  @Input() year: number;
+  @Input() representations: number;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

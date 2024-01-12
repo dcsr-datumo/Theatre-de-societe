@@ -9,15 +9,14 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./festival.component.scss']
 })
 export class FestivalComponent implements OnInit {
-  @Input()
-  iri: string;
+  @Input() iri: string;
 
   festival: Observable<Festival>;
 
   constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
-    this.festival = this.knoraService.getFestival(this.iri);
+    this.festival = this.knoraService.getFestival(this.iri);
   }
 
 }

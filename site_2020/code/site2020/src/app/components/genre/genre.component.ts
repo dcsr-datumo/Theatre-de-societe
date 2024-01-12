@@ -9,8 +9,7 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./genre.component.scss']
 })
 export class GenreComponent implements OnInit {
-  @Input()
-  iri: string;
+  @Input() iri: string;
 
   genre: Observable<Genre>;
 

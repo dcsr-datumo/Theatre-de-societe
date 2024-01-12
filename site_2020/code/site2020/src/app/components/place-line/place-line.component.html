@@ -1,5 +1,5 @@
 <span *ngIf="place | async as place$">
   <a [routerLink]="['/place/', place$.ref]" matTooltip="ouvrir la page de {{ place$.name }}">{{ place$.name }}
-      <button mat-button><span class="material-icons embedded">article</span></button>
+    <button mat-button><span class="material-icons embedded">article</span></button>
   </a>
 </span>

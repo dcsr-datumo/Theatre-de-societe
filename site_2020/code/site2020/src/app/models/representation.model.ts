@@ -64,5 +64,4 @@ export class Representation extends Resource {
   get genre(): string[] {
     return this.getIrisOf('representationHasGenreValue');
   }
-
 }

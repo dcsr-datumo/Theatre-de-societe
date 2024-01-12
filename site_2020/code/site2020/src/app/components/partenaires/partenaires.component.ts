@@ -24,7 +24,6 @@ export class PartenairesComponent implements OnInit {
     this.site = siteService;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

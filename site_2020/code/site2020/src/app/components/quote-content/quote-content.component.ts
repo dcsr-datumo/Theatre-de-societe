@@ -1,7 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { KnoraService } from '../../services/knora.service';
-
 import { Quote } from '../../models/quote.model';
 
 @Component({
@@ -10,14 +7,11 @@ import { Quote } from '../../models/quote.model';
   styleUrls: ['./quote-content.component.scss']
 })
 export class QuoteContentComponent implements OnInit {
-  @Input()
-  quote: Quote;
-  @Input()
-  embedded: boolean;
+  @Input() quote: Quote;
+  @Input() embedded: boolean;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

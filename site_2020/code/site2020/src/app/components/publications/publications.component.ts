@@ -13,7 +13,6 @@ export class PublicationsComponent implements OnInit {
     this.site = siteService;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

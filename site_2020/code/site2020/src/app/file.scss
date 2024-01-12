@@ -8,16 +8,15 @@
 
 div {
   color: black;
-
   //display: flex;
   //flex-direction: column;
   //justify-content: center;
   background-color: rgba(white, .9);
-
   display: block;
   justify-content: left;
   text-align: left;
 }
+
 // span {
 //   text-align: left;
 // }
@@ -39,6 +38,10 @@ div {
 
 a {
   color: #1976d2;
+
+  button {
+    color: #1976d2 !important;
+  }
 }
 
 .truncate {

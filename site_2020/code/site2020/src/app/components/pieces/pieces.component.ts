@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { KnoraService } from 'src/app/services/knora.service';
-import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { WorkCache } from 'src/app/models/workcache.model';
 
 @Component({
@@ -14,16 +14,13 @@ export class PiecesComponent implements OnInit {
   works: Observable<WorkCache[]>;
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   counter: Observable<number>;
-  @Input()
-  searchText = '';
+  @Input() searchText = '';
 
   private searchTerms = new Subject<string>();
 
   reset = new Subject<number>();
 
-  constructor(
-    private knoraService: KnoraService,
-  ) { }
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     this.reset.next(0);
@@ -49,8 +46,7 @@ export class PiecesComponent implements OnInit {
             debounceTime(100),
             // go to next stage only if needed
             distinctUntilChanged()
-          ).subscribe(
-            term => {
+          ).subscribe(term => {
               us.loading.next(true);
               if (!term.trim()) {
                 // if not search term, return the complete set of works
@@ -61,8 +57,7 @@ export class PiecesComponent implements OnInit {
               }
 
               term = term.toLowerCase();
-              const matches = us.allWorks.filter(work =>
-                {
+              const matches = us.allWorks.filter(work => {
                   return (
                     (work.title && work.title.toLowerCase().includes(term))
                     ||
@@ -78,7 +73,7 @@ export class PiecesComponent implements OnInit {
         }
       );
     }
-    this.works = new Observable(readPage);
+    this.works = new Observable(readPage);
   }
 
   // called by the template when a text is entered

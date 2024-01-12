@@ -24,11 +24,11 @@ mat-toolbar-row {
 
 .header-item {
   margin-left: 1rem;
-  color: #1976d2;
+  color: #1976d2 !important;
+  font-size: large;
 }
 
-
-.mat-button {
+mat-button {
   margin-left: 1rem;
   color: #1976d2;
   font-size: large;

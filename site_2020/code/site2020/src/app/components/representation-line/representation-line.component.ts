@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Interpolation } from '@angular/compiler';
-import { Observable, config } from 'rxjs';
-
+import { Observable } from 'rxjs';
 import { KnoraService } from '../../services/knora.service';
 import { Representation } from '../../models/representation.model';
 
@@ -14,9 +12,7 @@ export class RepresentationLineComponent implements OnInit {
   @Input() iri: string;
   representation: Observable<Representation>;
 
-  constructor(
-    private knoraService: KnoraService,
-  ) { }
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     // get the representation

@@ -12,9 +12,7 @@ export class GroupLineComponent implements OnInit {
   @Input() iri: string;
   group: Observable<Group>;
 
-  constructor(
-    private knoraService: KnoraService
-  ) { }
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     this.group = this.knoraService.getGroup(this.iri);

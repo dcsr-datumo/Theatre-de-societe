@@ -12,9 +12,7 @@ export class MembershipLineComponent implements OnInit {
   @Input() iri: string;
   membership: Observable<Membership>;
 
-  constructor(
-    private knoraService: KnoraService,
-  ) { }
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     this.membership = this.knoraService.getMembership(this.iri);

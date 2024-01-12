@@ -5,20 +5,19 @@
     <div class="dot-flashing"></div>
   </div>
 
-    <mat-progress-bar
-      mode="indeterminate"
-      color="warn"
-      style="position: absolute; top: 0; z-index: 100;"
-    >
-    </mat-progress-bar>
-  </ng-template>
+  <mat-progress-bar
+    mode="indeterminate"
+    color="warn"
+    style="position: absolute; top: 0; z-index: 100;">
+  </mat-progress-bar>
+</ng-template>
 
 <ng-template #ready>
   <div class="slider">
     <input #searchBox id="search-box"
-    class="input ready"
-    placeholder="entrer quelques lettres d'un nom de lieu..."
-    (input)="search(searchBox.value)"/>
+      class="input ready"
+      placeholder="entrer quelques lettres d'un nom de lieu..."
+      (input)="search(searchBox.value)"/>
   </div>
 
   <div class="slider">
@@ -29,26 +28,22 @@
       (highValueChange)="onTimeRangeHighValueChange($event)">
     </ngx-slider>
   </div>
-
-
 </ng-template>
 
 <div class="float-container">
-
   <div class="float-map">
-  <div style="height: 48rem;"
-    leaflet
-    (leafletMapReady)="onMapReady($event)"
-    [leafletOptions]="options"
-    [leafletLayers]="layers"
-    [leafletMarkerCluster]="markerClusterData"
-    [leafletMarkerClusterOptions]="markerClusterOptions"
-    (leafletMarkerClusterReady)="markerClusterReady($event)">
-  </div>
+    <div style="height: 48rem;"
+      leaflet
+      (leafletMapReady)="onMapReady($event)"
+      [leafletOptions]="options"
+      [leafletLayers]="layers"
+      [leafletMarkerCluster]="markerClusterData"
+      [leafletMarkerClusterOptions]="markerClusterOptions"
+      (leafletMarkerClusterReady)="markerClusterReady($event)">
+    </div>
   </div>
 
   <div class="float-side">
     <tds-place-details></tds-place-details>
   </div>
-
 </div>

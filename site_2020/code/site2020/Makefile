@@ -1,6 +1,6 @@
 ACCOUNT=platec
 CONTAINER=tds
-VERSION=v1.1.1
+VERSION=${VERSION_TAG}
 
 .PHONY: build
 build: ## builds the web-app container
@@ -29,7 +29,6 @@ login: ## docker hub login
 .PHONY: push
 push: ## push the image to docker hub
 	docker push ${ACCOUNT}/${CONTAINER}:${VERSION}
-
 
 .PHONY: help
 help: ## this help

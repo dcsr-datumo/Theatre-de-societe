@@ -15,7 +15,6 @@
           , {{n}}
         </span>
       </span>
-
     </ng-template>
 
     <ng-template #family_multi>
@@ -31,7 +30,6 @@
       </div>
 
       <div *ngIf="p.givenName && (p.givenName.length > 0)">
-
         <span *ngIf="(p.givenName.length > 1);then given_multi else given_single"></span>
 
         <ng-template #given_single>
@@ -48,9 +46,7 @@
         </ng-template>
 
       </div>
-
     </ng-template>
-
     <!-- name -->
 
     <!-- pseudo -->

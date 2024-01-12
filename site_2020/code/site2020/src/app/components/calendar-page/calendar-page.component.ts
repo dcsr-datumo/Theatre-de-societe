@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
-
-import { KnoraService } from '../../services/knora.service';
 import { RepresentationMatch } from '../../models/representationmatch.model';
 
 @Component({
@@ -16,9 +13,7 @@ export class CalendarPageComponent implements OnInit {
   representations: Observable<RepresentationMatch[]>;
   title = false;
 
-  constructor(
-    private route: ActivatedRoute
-  ) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.year = +this.route.snapshot.paramMap.get('year');

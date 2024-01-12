@@ -1,20 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { QuoteComponent } from './quote-content.component';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { QuoteContentComponent } from './quote-content.component';
 
 describe('QuoteComponent', () => {
-  let component: QuoteComponent;
-  let fixture: ComponentFixture<QuoteComponent>;
+  let component: QuoteContentComponent;
+  let fixture: ComponentFixture<QuoteContentComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuoteComponent ]
+      declarations: [ QuoteContentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuoteComponent);
+    fixture = TestBed.createComponent(QuoteContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

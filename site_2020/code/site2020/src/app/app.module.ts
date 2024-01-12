@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -60,11 +58,10 @@ import { AuteurspageComponent } from './components/auteurspage/auteurspage.compo
 import { PiecespageComponent } from './components/piecespage/piecespage.component';
 import { RepresentationsListMapComponent } from './components/representations-list-map/representations-list-map.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { QuoteComponent } from './components/quote/quote.component';
 import { QuoteContentComponent } from './components/quote-content/quote-content.component';
 import { QuoteListComponent } from './components/quote-list/quote-list.component';
-
+import { NgxSliderModule } from 'ngx-slider-v2';
 
 @NgModule({
   declarations: [
@@ -97,4 +94,4 @@ import { QuoteListComponent } from './components/quote-list/quote-list.component
   providers: [ConvertStandofPipe],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

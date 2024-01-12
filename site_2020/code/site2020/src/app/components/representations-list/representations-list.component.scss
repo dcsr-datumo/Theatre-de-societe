@@ -3,6 +3,7 @@
 mat-panel-description {
   flex-wrap: wrap;
   justify-content: right;
+  flex-grow: 1.2 !important;
 }
 
 .mat-expansion-panel-header-title, .mat-expansion-panel-header-description {

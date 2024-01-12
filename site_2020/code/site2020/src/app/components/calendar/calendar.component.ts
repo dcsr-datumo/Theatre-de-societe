@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { delay, finalize } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { KnoraService } from '../../services/knora.service';
 
 @Component({

@@ -12,14 +12,10 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./representations-list.component.scss'],
 })
 export class RepresentationsListComponent implements OnInit {
-  @Input()
-  source: string;
-  @Input()
-  type: string;
-  @Input()
-  header: boolean;
-  @Input()
-  titles: boolean;
+  @Input() source: string;
+  @Input() type: string;
+  @Input() header: boolean;
+  @Input() titles: boolean;
   panel: Map<string, boolean> = new Map<string, boolean>();
   representations: Observable<Representation[]>;
   works: Map<string, Observable<Work>> = new Map<string, Observable<Work>>();
@@ -27,9 +23,7 @@ export class RepresentationsListComponent implements OnInit {
 
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
-  constructor(
-    private knoraService: KnoraService
-  ){}
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     const us = this;

@@ -1,12 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { PopupLinkComponent } from './popup-link.component';
 
 describe('PopupLinkComponent', () => {
   let component: PopupLinkComponent;
   let fixture: ComponentFixture<PopupLinkComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PopupLinkComponent ]
     })

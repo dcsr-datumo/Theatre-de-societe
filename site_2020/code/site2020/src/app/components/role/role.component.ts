@@ -9,8 +9,7 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./role.component.scss']
 })
 export class RoleComponent implements OnInit {
-  @Input()
-  iri: string;
+  @Input() iri: string;
 
   role: Observable<Role>;
 

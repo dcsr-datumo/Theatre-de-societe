@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { Observable, config, BehaviorSubject } from 'rxjs';
-
+import { Observable, BehaviorSubject } from 'rxjs';
 import { KnoraService } from '../../services/knora.service';
 import { Representation } from '../../models/representation.model';
 import { finalize } from 'rxjs/operators';
@@ -20,11 +18,7 @@ export class RepresentationComponent implements OnInit {
 
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
-  constructor(
-    private route: ActivatedRoute,
-    private knoraService: KnoraService,
-    private location: Location
-  ) { }
+  constructor(private route: ActivatedRoute, private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     const us = this;

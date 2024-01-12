@@ -1,7 +1,7 @@
 <span *ngIf="work | async as w">
 
   <p>
-    Titre: {{ w.title }}
+    Titre: {{ w.title }}
   </p>
 
   <p *ngIf="w.authors && w.authors.length > 0">
@@ -32,4 +32,3 @@
   </p>
 
 </span>
-

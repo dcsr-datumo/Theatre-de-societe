@@ -1,10 +1,7 @@
-import { ReadResource, ReadValue } from '@dasch-swiss/dsp-js';
+import { ReadResource } from '@dasch-swiss/dsp-js';
 import { Resource } from './resource.model';
 import { environment } from '../../environments/environment';
-import { KnoraService } from '../services/knora.service';
 import { ConvertStandofPipe } from '../pipes/convert-standof.pipe';
-import { retry } from 'rxjs/operators';
-import { convertPropertyBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 
 export class PlaceMatch extends Resource {
   private converter = new ConvertStandofPipe();

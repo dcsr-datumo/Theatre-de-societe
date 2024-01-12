@@ -1,12 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RepresentationsListMapComponent } from './representations-list-map.component';
 
 describe('RepresentationListMapComponent', () => {
   let component: RepresentationsListMapComponent;
   let fixture: ComponentFixture<RepresentationsListMapComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RepresentationsListMapComponent ]
     })

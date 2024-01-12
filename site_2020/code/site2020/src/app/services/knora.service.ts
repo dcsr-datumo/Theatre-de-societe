@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-  KnoraApiConfig,
-  KnoraApiConnection,
-  ApiResponseError,
-  ReadResourceSequence,
-  ReadResource,
-  CountQueryResponse,
-} from '@dasch-swiss/dsp-js';
-import { Observable, config, of, Subject, ReplaySubject, BehaviorSubject } from 'rxjs';
+import { KnoraApiConfig, KnoraApiConnection, ApiResponseError, ReadResourceSequence, ReadResource, CountQueryResponse } from '@dasch-swiss/dsp-js';
+import { Observable, of, ReplaySubject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { CacheCalendarYear } from '../models/cache-calendar-year.model';
 import { RepresentationMatch } from '../models/representationmatch.model';
@@ -17,7 +10,7 @@ import { Work } from '../models/work.model';
 import { Genre } from '../models/genre.model';
 import { Quote } from '../models/quote.model';
 import { Festival } from '../models/festival.model';
-import { map, share, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Role } from '../models/role.model';
 import { Resource } from '../models/resource.model';
 import { PlaceMatch } from '../models/placematch.model';
@@ -28,7 +21,7 @@ import { Group } from '../models/group.model';
 import { Membership } from '../models/membership.model';
 import { PersonCache } from '../models/personCache.model';
 import { WorkCache } from '../models/workcache.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { CalendarCache } from '../models/calendarCache.model';
 import { PlaceCache } from '../models/placecache.model';
 

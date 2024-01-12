@@ -1,4 +1,4 @@
-import { ReadResource, ReadValue } from '@dasch-swiss/dsp-js';
+import { ReadResource } from '@dasch-swiss/dsp-js';
 import { Resource } from './resource.model';
 import { ConvertStandofPipe } from '../pipes/convert-standof.pipe';
 import { environment } from '../../environments/environment';
@@ -33,5 +33,4 @@ export class Quote extends Resource {
   get isDeleted(): boolean {
     return this.label === 'Deleted Resource';
   }
-
 }

@@ -8,6 +8,10 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        },
+        "@schematics/angular:directive": {
+        },
+        "@schematics/angular:pipe": {
         }
       },
       "root": "",
@@ -17,10 +21,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "pdfjs-dist",
+              "leaflet",
+              "leaflet.markercluster",
+              "@dasch-swiss/dsp-js"
+            ],
             "outputPath": "dist/site2020",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -34,7 +44,7 @@
             ],
             "styles": [
               "./node_modules/leaflet/dist/leaflet.css",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "src/theme.scss",
               "./node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css"
@@ -52,7 +62,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -107,7 +116,7 @@
             ],
             "styles": [
               "./node_modules/leaflet/dist/leaflet.css",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "src/theme.scss"
             ],
@@ -119,30 +128,16 @@
           "options": {
             "tsConfig": [
               "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "site2020:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "site2020:serve:production"
-            }
-          }
         }
       }
     }
   },
-  "defaultProject": "site2020",
   "cli": {
     "analytics": "6ddd0141-0ba0-4798-8eac-8a02bb3edba5"
   }

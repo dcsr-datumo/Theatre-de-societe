@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { debounceTime, delay, distinctUntilChanged } from 'rxjs/operators';
 import { PersonCache } from 'src/app/models/personCache.model';
-
 import { KnoraService } from '../../services/knora.service';
 
 @Component({
@@ -15,16 +14,11 @@ export class AuteursComponent implements OnInit {
   authors: Observable<PersonCache[]>;
   authorsCount: Subject<number> = new Subject<number>();
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
-  @Input()
-  searchText = '';
+  @Input() searchText = '';
   private searchTerms = new Subject<string>();
-
   reset: Subject<number> = new Subject<number>();
 
-
-  constructor(
-    private knoraService: KnoraService
-  ) { }
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     this.reset.next(0);

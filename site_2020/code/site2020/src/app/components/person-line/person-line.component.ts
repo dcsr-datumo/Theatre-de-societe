@@ -13,9 +13,7 @@ export class PersonLineComponent implements OnInit {
   @Input() showName: boolean;
   person: Observable<Person>;
 
-  constructor(
-    private knoraService: KnoraService
-  ) { }
+  constructor(private knoraService: KnoraService) { }
 
   ngOnInit(): void {
     this.person = this.knoraService.getPerson(this.iri);

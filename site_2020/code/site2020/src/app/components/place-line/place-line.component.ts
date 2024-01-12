@@ -1,9 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable, config } from 'rxjs';
-
+import { Observable } from 'rxjs';
 import { KnoraService } from '../../services/knora.service';
 import { Place } from '../../models/place.model';
-
 
 @Component({
   selector: 'tds-place-line',

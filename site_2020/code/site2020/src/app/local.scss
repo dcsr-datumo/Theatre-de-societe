@@ -1,4 +1,4 @@
-  @import 'input.scss';
+@import 'input.scss';
 
 * {
   // color: black;
@@ -15,7 +15,6 @@ div {
   justify-content: center;
   background-color: rgba(white, .8);
 }
-
 
 h1 {
   font: initial;
@@ -39,7 +38,6 @@ p {
 a {
   color: #1976d2;
 }
-
 
 .list-item-header {
   background-color: #f4f4f4;

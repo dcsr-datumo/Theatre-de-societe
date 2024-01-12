@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { KnoraService } from './knora.service';
 
 describe('KnoraService', () => {

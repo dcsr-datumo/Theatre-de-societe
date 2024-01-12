@@ -8,13 +8,11 @@ import { KnoraService } from 'src/app/services/knora.service';
   styleUrls: ['./quote-list.component.scss']
 })
 export class QuoteListComponent implements OnInit {
-  @Input()
-  quotesIri: [string];
+  @Input() quotesIri: [string];
 
   quotes = new Array<Quote>();
 
   panel: Map<string, boolean> = new Map<string, boolean>();
-
 
   constructor(private knoraService: KnoraService) { }
 

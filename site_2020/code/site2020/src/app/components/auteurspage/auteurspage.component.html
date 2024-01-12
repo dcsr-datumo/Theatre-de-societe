@@ -16,57 +16,50 @@
     <div class="list-item-header">pseudonyme</div>
   </div>
 
-  <mat-list-item *ngFor="let author of authors.slice(pageLength*page, pageLength*(page+1))">
-    <mat-accordion>
-      <mat-expansion-panel (opened)="panel[author.id] = true">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <span class="truncate">
-              {{author.familyName}}
-              <span *ngIf="author.givenName">
-                , {{author.givenName}}
-              </span>
+  <mat-accordion *ngFor="let author of authors.slice(pageLength*page, pageLength*(page+1))">
+    <mat-expansion-panel (opened)="panel[author.id] = true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <span class="truncate">
+            {{author.familyName}}
+            <span *ngIf="author.givenName">
+              , {{author.givenName}}
             </span>
-          </mat-panel-title>
-          <mat-panel-description>
-            {{author.pseudonym}}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <span *ngIf="panel[author.id]">
-          <tds-person-line [iri]="author.id" [showName]="false"></tds-person-line>
-
-          <!-- list of works -->
-          <span *ngIf="author.familyName">
-
-            <div class="nomargin">
-              <div class="nomargin">Pièces:</div>
-            </div>
-
-            <mat-list-item *ngFor="let work of getWorksByAuthorId(author.id)">
-            <mat-accordion>
-              <mat-expansion-panel (opened)="panel[work.id] = true">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <span class="truncate">
-                      {{work.title}}
-                    </span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <span *ngIf="panel[work.id]">
-                  <tds-work-line [iri]="work.id"></tds-work-line>
-                </span>
-              </mat-expansion-panel>
-            </mat-accordion>
-          </mat-list-item>
-
           </span>
-          <!-- /list of works -->
+        </mat-panel-title>
+        <mat-panel-description>
+          {{author.pseudonym}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <span *ngIf="panel[author.id]">
+        <tds-person-line [iri]="author.id" [showName]="false"></tds-person-line>
 
+        <!-- list of works -->
+        <span *ngIf="author.familyName">
+          <div class="nomargin">
+            <div class="nomargin">Pièces:</div>
+          </div>
 
+          <mat-accordion *ngFor="let work of getWorksByAuthorId(author.id)">
+            <mat-expansion-panel (opened)="panel[work.id] = true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="truncate">
+                    {{work.title}}
+                  </span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <span *ngIf="panel[work.id]">
+                <tds-work-line [iri]="work.id"></tds-work-line>
+              </span>
+            </mat-expansion-panel>
+          </mat-accordion>
         </span>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </mat-list-item>
+        <!-- /list of works -->
+
+      </span>
+    </mat-expansion-panel>
+  </mat-accordion>
 
   <button (click)="firstPage()" [disabled]="page<1">&lt;&lt;</button>
   <button (click)="updatePage(-1)" [disabled]="page<1">&lt;</button>

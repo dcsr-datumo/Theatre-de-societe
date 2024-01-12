@@ -1,8 +1,8 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="false">
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
@@ -22,18 +22,18 @@
           (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button-->
-        <span><a class="title"
-          [routerLink]="'/'"
-          (click)="site.selectedMenuItem='à propos'; site.selectedMenuSubItem='projet';">
-          {{site.title | uppercase}}
-        </a></span>
+        <span>
+          <a class="title" [routerLink]="'/'" (click)="site.selectedMenuItem='à propos'; site.selectedMenuSubItem='projet';">
+            {{site.title | uppercase}}
+          </a>
+        </span>
         <span class="header-spacer"></span>
         <span>
 
           <span *ngFor="let item of Object.keys(site.menu)">
             <button mat-button [matMenuTriggerFor]="menu" class="header-item">
               {{item | uppercase}}
-              <mat-icon>
+              <mat-icon iconPositionEnd>
                 expand_more
               </mat-icon>
             </button>
@@ -60,9 +60,7 @@
     </mat-toolbar>
     <!-- Add Content Here -->
 
-
     <router-outlet></router-outlet>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
-

@@ -9,16 +9,14 @@
     page: {{page+1}} / {{pageMax}}
     <button (click)="updatePage(1)" [disabled]="(page+1)>=pageMax">&gt;</button>
     <button (click)="lastPage()" [disabled]="(page+1)>=pageMax">&gt;&gt;</button>
-    </div>
+  </div>
 
+  <div class="list-item-header list-item-container">
+    <div class="list-item-header">titre</div>
+    <div class="list-item-header">auteur</div>
+  </div>
 
-<div class="list-item-header list-item-container">
-  <div class="list-item-header">titre</div>
-  <div class="list-item-header">auteur</div>
-</div>
-
-<mat-list-item *ngFor="let work of works.slice(pageLength*page, pageLength*(page+1))">
-  <mat-accordion>
+  <mat-accordion *ngFor="let work of works.slice(pageLength*page, pageLength*(page+1))">
     <mat-expansion-panel (opened)="panel[work.id] = true">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -35,12 +33,10 @@
       </span>
     </mat-expansion-panel>
   </mat-accordion>
-</mat-list-item>
 
-
-<button (click)="firstPage()" [disabled]="page<1">&lt;&lt;</button>
-<button (click)="updatePage(-1)" [disabled]="page<1">&lt;</button>
-page: {{page+1}} / {{pageMax}}
-<button (click)="updatePage(1)" [disabled]="(page+1)>=pageMax">&gt;</button>
-<button (click)="lastPage()" [disabled]="(page+1)>=pageMax">&gt;&gt;</button>
+  <button (click)="firstPage()" [disabled]="page<1">&lt;&lt;</button>
+  <button (click)="updatePage(-1)" [disabled]="page<1">&lt;</button>
+  page: {{page+1}} / {{pageMax}}
+  <button (click)="updatePage(1)" [disabled]="(page+1)>=pageMax">&gt;</button>
+  <button (click)="lastPage()" [disabled]="(page+1)>=pageMax">&gt;&gt;</button>
 </span>

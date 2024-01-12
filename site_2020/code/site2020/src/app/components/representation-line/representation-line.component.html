@@ -1,6 +1,6 @@
 <div>
   <span *ngIf="representation | async as rep">
-      <tds-work [iri]="rep.work"></tds-work>
+    <tds-work [iri]="rep.work"></tds-work>
     <p>
       Date: <a routerLink="/year/{{ rep.scaledYear }}" matTooltip="ouvrir la page de l'année {{ rep.scaledYear }}">{{ rep.dateShort }}
       <button mat-button><span class="material-icons embedded">article</span></button>

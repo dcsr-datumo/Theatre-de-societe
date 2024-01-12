@@ -7,11 +7,7 @@ import { PopupLinkComponent } from '../components/popup-link/popup-link.componen
 })
 export class PopupLinkService {
 
-  constructor(
-    private cfr: ComponentFactoryResolver,
-    private injector: Injector,
-    private appRef: ApplicationRef
-    ) { }
+  constructor(private cfr: ComponentFactoryResolver, private injector: Injector, private appRef: ApplicationRef) { }
 
   register(marker: Marker, link: string, text: string): void  {
     // marker.on('click');

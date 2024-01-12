@@ -1,12 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RepresentationLineComponent } from './representation-line.component';
 
 describe('RepresentationLineComponent', () => {
   let component: RepresentationLineComponent;
   let fixture: ComponentFixture<RepresentationLineComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RepresentationLineComponent ]
     })

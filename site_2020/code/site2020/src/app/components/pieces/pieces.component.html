@@ -12,10 +12,9 @@
       </div>
 
       <mat-progress-bar
-      mode="indeterminate"
-      color="warn"
-      style="position: absolute; top: 0; z-index: 100;"
-      >
+        mode="indeterminate"
+        color="warn"
+        style="position: absolute; top: 0; z-index: 100;">
       </mat-progress-bar>
     </ng-template>
 
@@ -28,7 +27,7 @@
 
     <span *ngIf="works | async as works">
 
-      <span>pièces: {{works.length}} / {{allWorks.length}}
+      <span>pièces: {{works.length}} / {{allWorks.length}}
       </span>
 
       <tds-piecespage [works]=works [reset]=reset></tds-piecespage>

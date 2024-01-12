@@ -1,11 +1,9 @@
 <mat-progress-bar
-*ngIf="loading | async"
-mode="indeterminate"
-color="warn"
-style="top: 0; z-index: 100;"
->
+  *ngIf="loading | async"
+  mode="indeterminate"
+  color="warn"
+  style="top: 0; z-index: 100;">
 </mat-progress-bar>
-
 
 <span *ngIf="representations | async as reps">
 
@@ -22,39 +20,39 @@ style="top: 0; z-index: 100;"
       <div class="list-item-header">Date</div>
     </div>
 
-    <mat-list-item *ngFor="let representation of reps">
-      <mat-accordion>
-        <mat-expansion-panel (opened)="panel[representation.id] = true">
-          <mat-expansion-panel-header>
-            <mat-panel-title *ngIf="titles">
+    <!-- <mat-list-item *ngFor="let representation of reps"> -->
+    <mat-accordion *ngFor="let representation of reps">
+      <mat-expansion-panel (opened)="panel[representation.id] = true">
+        <mat-expansion-panel-header>
+          <mat-panel-title *ngIf="titles">
 
-              <span class="truncate" matTooltip="ouvrir la page de la représentation">
-                <a routerLink="/representation/{{representation.ref}}">
-                  <button mat-button class="embedded">
-                    <span class="material-icons embedded">article</span>
-                  </button>
-                    <span *ngIf="works[representation.work] | async as work">{{work.title}}</span>
-                </a>
-              </span>
+            <span class="truncate" matTooltip="ouvrir la page de la représentation">
+              <a routerLink="/representation/{{representation.ref}}">
+                <button mat-button class="embedded">
+                  <span class="material-icons embedded">article</span>
+                </button>
+                <span *ngIf="works[representation.work] | async as work">{{work.title}}</span>
+              </a>
+            </span>
 
-            </mat-panel-title>
-            <mat-panel-description>
-              <span class="truncate">
-                <span *ngIf="places[representation.place] | async as place">{{place.name}}</span>
-              </span>
-              <span class="spacer"></span>
+          </mat-panel-title>
+          <mat-panel-description>
+            <span class="truncate">
+              <span *ngIf="places[representation.place] | async as place">{{place.name}}</span>
+            </span>
+            <span class="spacer"></span>
 
-              <span *ngIf="representation.dateShort !== '1'" class="truncate">
-                {{representation.dateShort}}
-              </span>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <span *ngIf="panel[representation.id]">
-            <tds-representation-line [iri]="representation.id"></tds-representation-line>
-          </span>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </mat-list-item>
+            <span *ngIf="representation.dateShort !== '1'" class="truncate">
+              {{representation.dateShort}}
+            </span>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <span *ngIf="panel[representation.id]">
+          <tds-representation-line [iri]="representation.id"></tds-representation-line>
+        </span>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!-- </mat-list-item> -->
 
   </span>
 </span>
