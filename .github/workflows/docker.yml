@@ -2,9 +2,9 @@ name: docker
 
 on:
   push:
-    branches: [ "master", "upgrade-angular" ]
+    branches: [ "upgrade-angular" ]
   pull_request:
-    branches: [ "master", "upgrade-angular" ]
+    branches: [ "upgrade-angular" ]
 
 env:
   DOCKERHUB_REPOSITORY: platec/tds
@@ -35,7 +35,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: site_2020/code/site2020/
           file: site_2020/code/site2020/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
