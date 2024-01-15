@@ -2,3 +2,4 @@ site2020_back
 **/.yalc/**
 .vscode/**
 site_2020/code/scripts/env/prod.env
+.DS_Store
