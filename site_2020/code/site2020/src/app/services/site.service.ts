@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,10 @@ export class SiteService {
   secondaryTitle = 'Catalogue des représentations données en société en France et en Suisse Romande entre 1700 et 1871';
 
   // urlPre = '/Theatre-de-societe';
-  urlPre = '';
+  urlPre = environment.urlPre;
 
-  constructor() { }
+  constructor() { 
+    console.log('urlPre : ' + this.urlPre);
+
+  }
 }
