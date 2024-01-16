@@ -20,9 +20,4 @@ export class SiteService {
 
   // urlPre = '/Theatre-de-societe';
   urlPre = environment.urlPre;
-
-  constructor() { 
-    console.log('urlPre : ' + this.urlPre);
-
-  }
 }
