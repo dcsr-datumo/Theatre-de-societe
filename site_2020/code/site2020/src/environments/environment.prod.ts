@@ -4,5 +4,6 @@ export const environment = {
   knoraApiHost: "api.ls-prod-server.dasch.swiss",
   knoraApiPort: 443,
   baseOntology : `http://api.ls-prod-server.dasch.swiss/ontology/0103/theatre-societe/v2#`,
-  assets: "https://theatresdesociete.unil.ch"
+  assets: "",
+  urlPre: "https://theatresdesociete.unil.ch"
 };
