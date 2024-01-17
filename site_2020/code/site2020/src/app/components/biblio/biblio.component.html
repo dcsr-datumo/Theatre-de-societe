@@ -1,9 +1,19 @@
 <div>
   <h1>Bibliographie</h1>
 
-  <a href="{{site.urlPre}}/assets/doc/Biblio_TheatresDeSociete.pdf" download="Biblio_TheatresDeSociete.pdf">
+  <a href="assets/doc/Biblio_TheatresDeSociete.pdf" download="Biblio_TheatresDeSociete.pdf">
     Télécharger
   </a>
+
+  <!-- <a [routerLink]="" (click)="download(fileToDownload)">
+    Télécharger
+  </a> -->
+
+  <!-- <button (click)="download(fileToDownload)">
+    Télécharger
+  </button> -->
+
+  <!-- {{site.urlPre}} -->
 
   <pdf-viewer src="{{site.urlPre}}/assets/doc/Biblio_TheatresDeSociete.pdf"></pdf-viewer>
 </div>
