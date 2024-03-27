@@ -34,7 +34,7 @@
     "ng2-pdf-viewer": "^9.1.5",
     "ngx-slider-v2": "^17.0.0",
     "@angular/ssr": "^17.0.9",
-    "express": "^4.18.2",
+    "express": "^4.19.2",
     "rxjs": "~6.6.7",
     "tslib": "^2.3.0",
     "worker-loader": "^3.0.8",
