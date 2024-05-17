@@ -6,25 +6,27 @@
   </span>
   <span *ngIf="quotes.length > 1">
     Sources:
+    <!-- <mat-list-item *ngFor="let quote of quotes"> -->
+      <!-- <mat-accordion *ngIf="!quote.isDeleted"> -->
+      <mat-accordion *ngFor="let quote of quotes">  
+        @if(!quote.isDeleted) {
+          <mat-expansion-panel (opened)="panel[quote.id] = true" (closed)="panel[quote.id] = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="text">
+                  <span [ngClass]="{truncate: !panel[quote.id]}">
+                    {{quote.label}}
+                  </span>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <tds-quote-content [quote]="quote" [embedded]="true"></tds-quote-content>
 
-    <mat-list-item *ngFor="let quote of quotes">
-      <mat-accordion *ngIf="!quote.isDeleted">
-        <mat-expansion-panel (opened)="panel[quote.id] = true" (closed)="panel[quote.id] = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <div>
-                <span [ngClass]="{truncate: !panel[quote.id]}">
-                 {{quote.label}}
-                </span>
-              </div>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-
-          <tds-quote-content [quote]="quote" [embedded]="true"></tds-quote-content>
-
-        </mat-expansion-panel>
+          </mat-expansion-panel>
+        }
       </mat-accordion>
-    </mat-list-item>
+      <!-- </mat-accordion> -->
+    <!-- </mat-list-item> -->
 
   </span>
 </li>

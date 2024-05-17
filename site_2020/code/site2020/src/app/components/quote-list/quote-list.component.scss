@@ -1,1 +1,14 @@
 @import '../../file.scss';
+
+mat-panel-title {
+    width: 100%;
+}
+
+.text {
+    width: 100%;
+    display: flex;
+}
+
+div span.truncate  {
+    margin-right: 15px;
+}
