@@ -16,7 +16,8 @@ case "$cache_name" in
   calendar_cache.json)
     expression='type == "array" and length > 0 and all(.[];
       (.year | type == "string" and length > 0) and
-      (.representations | type == "string"))'
+      (.representations | type == "string")) and
+      ((map(.year) | length) == (map(.year) | unique | length))'
     ;;
   places_cache.json)
     expression='type == "array" and length > 0 and all(.[];
@@ -25,14 +26,16 @@ case "$cache_name" in
       (.coord | . == null or type == "string") and
       (.notices | . == null or type == "string") and
       (.minDate | . == null or type == "string") and
-      (.maxDate | . == null or type == "string"))'
+      (.maxDate | . == null or type == "string")) and
+      ((map(.id) | length) == (map(.id) | unique | length))'
     ;;
   works_cache.json)
     expression='type == "array" and length > 0 and all(.[];
       (.id | type == "string" and length > 0) and
       (.title | type == "string") and
       (.name | . == null or type == "string") and
-      (.authorIds | . == null or type == "string"))'
+      (.authorIds | . == null or type == "string")) and
+      ((map(.id) | length) == (map(.id) | unique | length))'
     ;;
   *)
     echo "Unknown cache name: $cache_name" >&2

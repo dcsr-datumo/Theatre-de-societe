@@ -24,7 +24,8 @@ change does not require rebuilding the image.
 
 Generate a complete cache set in a staging directory. The command promotes it
 to `output/` only after all four files are non-empty JSON arrays whose records
-contain the fields and value types expected by the application:
+contain the fields and value types expected by the application. Works and
+places identifiers, plus calendar years, must also be unique:
 
 ```bash
 set -a
