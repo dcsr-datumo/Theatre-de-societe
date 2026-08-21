@@ -39,15 +39,40 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Validate bundled cache schemas
+        if: ${{ matrix.component == 'cache-updater' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in authors_cache.json calendar_cache.json places_cache.json works_cache.json; do
+            bash site_2020/code/scripts/validate-cache.sh \
+              "site_2020/code/site2020/src/assets/cache/$file" \
+              "$file"
+          done
+
       - name: Build without publishing
         uses: docker/build-push-action@v5
         with:
           context: ${{ matrix.context }}
           platforms: linux/amd64
+          load: true
           push: false
           tags: ${{ matrix.image }}:ci-${{ github.sha }}
           cache-from: type=gha,scope=${{ matrix.component }}
           cache-to: type=gha,mode=max,scope=${{ matrix.component }}
+
+      - name: Verify cache-updater secret boundary
+        if: ${{ matrix.component == 'cache-updater' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="${{ matrix.image }}:ci-${{ github.sha }}"
+          docker run --rm "$image" \
+            bash -lc 'test ! -e /app/env && test -f /app/validate-cache.sh'
+          if docker run --rm "$image"; then
+            echo "Updater unexpectedly succeeded without a credential" >&2
+            exit 1
+          fi
 
   publish-application:
     name: Publish application image

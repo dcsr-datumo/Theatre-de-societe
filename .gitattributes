@@ -1,0 +1,2 @@
+# Do not render the removed historical environment file in diffs.
+site_2020/code/scripts/env/local.env -diff

@@ -10,5 +10,8 @@ RUN mkdir /app
 COPY jq/ /app/jq
 COPY requests/ /app/requests
 COPY Makefile /app
+COPY validate-cache.sh /app
 
-CMD cd /app && make clean && make all_cache
+WORKDIR /app
+
+CMD ["make", "refresh"]
