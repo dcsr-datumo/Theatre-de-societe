@@ -45,6 +45,15 @@ make push
 
 ## release
 
+The repository CI validates this image without publishing on pull requests and
+`master`. An explicit `updater-vX.Y.Z` Git tag publishes only the matching
+`platec/tds_cache_updater:vX.Y.Z` AMD64/ARM64 image. Application images use the
+separate `app-vX.Y.Z` tag family. Neither release path updates `latest`
+automatically.
+
+The commands below describe the production runtime procedure; a new image and
+generated caches still require explicit operational approval and validation.
+
 on the server:
 ```bash
 # get the cache updater image
