@@ -1,50 +1,132 @@
-name: docker
+name: containers
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
+    tags:
+      - "app-v*"
+      - "updater-v*"
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
-env:
-  DOCKERHUB_REPOSITORY: platec/tds
-  VERSION: v2.0.13
+permissions:
+  contents: read
+
+concurrency:
+  group: containers-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
 
 jobs:
+  validate:
+    name: Validate ${{ matrix.component }} (AMD64, no publish)
+    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - component: application
+            context: site_2020/code/site2020
+            image: platec/tds
+          - component: cache-updater
+            context: site_2020/code/scripts
+            image: platec/tds_cache_updater
 
-  docker:
-    name: Build & Push
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build without publishing
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.context }}
+          platforms: linux/amd64
+          push: false
+          tags: ${{ matrix.image }}:ci-${{ github.sha }}
+          cache-from: type=gha,scope=${{ matrix.component }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.component }}
+
+  publish-application:
+    name: Publish application image
+    if: ${{ startsWith(github.ref, 'refs/tags/app-v') }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-        
-      - name: Set up docker Buildx
+
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        
+
+      - name: Extract application image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: platec/tds
+          flavor: latest=false
+          tags: |
+            type=match,pattern=app-(v.*),group=1
+
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build and publish application
         uses: docker/build-push-action@v5
         with:
-          context: site_2020/code/site2020/
+          context: site_2020/code/site2020
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ env.DOCKERHUB_REPOSITORY }}:${{ env.VERSION }}, ${{ env.DOCKERHUB_REPOSITORY }}:latest
-          cache-from: type=registry,ref=${{ env.DOCKERHUB_REPOSITORY }}:${{ env.VERSION }}
-          cache-to: type=inline
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=application
+          cache-to: type=gha,mode=max,scope=application
 
-      - name: Update description
-        uses: peter-evans/dockerhub-description@v4
+  publish-cache-updater:
+    name: Publish cache-updater image
+    if: ${{ startsWith(github.ref, 'refs/tags/updater-v') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Extract cache-updater image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: platec/tds_cache_updater
+          flavor: latest=false
+          tags: |
+            type=match,pattern=updater-(v.*),group=1
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ env.DOCKERHUB_REPOSITORY }}
+
+      - name: Build and publish cache updater
+        uses: docker/build-push-action@v5
+        with:
+          context: site_2020/code/scripts
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=cache-updater
+          cache-to: type=gha,mode=max,scope=cache-updater
