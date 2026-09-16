@@ -61,6 +61,31 @@ jobs:
           cache-from: type=gha,scope=${{ matrix.component }}
           cache-to: type=gha,mode=max,scope=${{ matrix.component }}
 
+      - name: Verify application asset redirects behind TLS proxy
+        if: ${{ matrix.component == 'application' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker run -d --rm --name tds-redirect-check -p 127.0.0.1:18080:80 "${{ matrix.image }}:ci-${{ github.sha }}"
+          trap 'docker stop tds-redirect-check >/dev/null' EXIT
+          curl --retry 10 --retry-all-errors --retry-delay 1 --fail --silent http://127.0.0.1:18080/ >/dev/null
+          python3 - <<'PYTHON'
+          import urllib.request, urllib.error
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, *args):
+                  return None
+          opener = urllib.request.build_opener(NoRedirect)
+          for asset in ['img/valentina.png', 'cache/authors_cache.json']:
+              request = urllib.request.Request('http://127.0.0.1:18080/assets/' + asset,
+                  headers={'Host': 'theatresdesociete.unil.ch', 'X-Forwarded-Proto': 'https'})
+              try:
+                  response = opener.open(request, timeout=10)
+              except urllib.error.HTTPError as error:
+                  response = error
+              assert response.status == 301, response.status
+              assert response.headers.get('Location') == '/' + asset, response.headers.get('Location')
+          PYTHON
+
       - name: Verify cache-updater secret boundary
         if: ${{ matrix.component == 'cache-updater' }}
         shell: bash
