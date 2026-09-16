@@ -14,19 +14,7 @@ export class RepresentationMatch extends Resource {
   }
 
   get dateShort(): string {
-    const dateValues = this.readResource.getValues(`${this.tds}representationHasDate`);
-    if (!(dateValues && dateValues.length > 0)) { return ''; }
-
-    const firstDate = dateValues[0];
-    const date = firstDate['date'];
-    let result = String(date['year']);
-    if (date['month']) {
-      result = String(date['month']) + '/' + result;
-    }
-    if (date['day']) {
-      result = String(date['day']) + '/' + result;
-    }
-    return result;
+    return this.getDateShort(`${this.tds}representationHasDate`);
   }
 
   get workTitle(): string {

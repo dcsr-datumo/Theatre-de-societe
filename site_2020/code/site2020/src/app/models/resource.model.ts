@@ -1,3 +1,4 @@
+import { formatKnoraDate } from './format-knora-date';
 // stolen from @gfoo
 import { ReadResource } from '@dasch-swiss/dsp-js';
 import { environment } from '../../environments/environment';
@@ -56,16 +57,7 @@ export class Resource {
     const dateValues = this.readResource.getValues(property);
     const dateVal = dateValues[0];
     if (!dateVal) { return null; }
-    const date = dateVal['date'];
-    if (!date) { return null; }
-    let result = String(date['year']);
-    if (date['month']) {
-      result = String(date['month']) + '/' + result;
-    }
-    if (date['day']) {
-      result = String(date['day']) + '/' + result;
-    }
-    return result;
+    return formatKnoraDate(dateVal['date']);
   }
 
 }
